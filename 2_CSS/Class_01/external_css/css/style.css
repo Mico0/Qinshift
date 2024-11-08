@@ -1,0 +1,30 @@
+/* Apllies to the whole web site */
+* {
+  background-color: beige;
+  font-family: "Roboto Slab";
+}
+.lorem-article {
+  background-color: brown;
+}
+#header {
+  color: green;
+}
+li {
+  list-style: none;
+  display: inline-block;
+  padding: 10px;
+}
+li > a {
+  text-decoration: none;
+  background-color: blue;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+}
+li > a:hover {
+  text-decoration: underline;
+  color: blue;
+  background-color: white;
+  border: 5px dotted blue;
+}
