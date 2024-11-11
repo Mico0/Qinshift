@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "Doto";
+  src: url(../fonts/Doto-Regular.ttf);
+}
+::selection {
+  background-color: #f63e02;
+}
+h1 {
+  /* color: rgb(255, 0, 0); Red */
+  /* color: rgb(0, 255, 0); Green */
+  /* color: rgb(0, 0, 255); Blue */
+
+  /* If you hover over the color a color picker will be shown */
+  color: rgb(255, 242, 0);
+  background-color: #faa300;
+}
+.hex-code {
+  color: #ee3250;
+}
+#named-colors {
+  color: darkorange;
+  background-color: rgba(255, 150, 03, 0.5);
+}
+body {
+  background-color: #e57c04;
+  font-family: "Roboto", sans-serif;
+  font-size: 25px;
+  /* 
+  EM = 2 * Default size defined for font ex. 2 * 16.5px
+  REM = the same thing but calculates it according to the parrent element
+  */
+}
+hr {
+  /* background-color: #f63e02; */
+  height: 0.2rem;
+  border: 1px dotted black;
+}
+.container {
+  font-size: 40px;
+  font-weight: 300;
+}
+.paragraph {
+  font-size: 1.5em;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-style: oblique;
+  /* Shorthand - one line multiple property and value assignment */
+  text-decoration: underline wavy #f63e02;
+  letter-spacing: 0.2em;
+  word-spacing: 5px;
+}
+.rem-example {
+  font-size: 2rem;
+  font-weight: 200;
+  text-transform: lowercase;
+  font-style: italic;
+  line-height: 2;
+}
+.paragraph::first-letter {
+  color: red;
+  font-size: 100px;
+}
+.paragraph::first-line {
+  text-decoration: underline dotted black;
+}
