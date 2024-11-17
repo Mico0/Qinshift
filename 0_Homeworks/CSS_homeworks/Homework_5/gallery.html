@@ -21,15 +21,28 @@
   </head>
   <body>
     <header>
-      <nav id="navbar">
+      <nav id="navbar_desktop">
         <a href="./index.html"
           ><img src="./images/startup.png" id="logo" alt=""
         /></a>
-        <div class="menu">
+        <div id="menu">
           <a href="./about.html">About Us</a>
           <a href="./gallery.html">Gallery</a>
           <a href="./contact.html">Contact</a>
         </div>
+      </nav>
+      <nav id="navbar_mobile">
+        <a href="./index.html"
+          ><img src="./images/startup.png" id="logo" alt=""
+        /></a>
+        <div id="menu_mobile">
+          <a href="./about.html">About Us</a>
+          <a href="./gallery.html">Gallery</a>
+          <a href="./contact.html">Contact</a>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="hamMenu()">
+          <i class="fa fa-bars"></i>
+        </a>
       </nav>
     </header>
     <main></main>
