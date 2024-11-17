@@ -1,0 +1,159 @@
+@font-face {
+  font-family: "Space Grotesk";
+  src: url(../fonts/SpaceGrotesk-VariableFont_wght.ttf);
+}
+body {
+  font-family: "Space Grotesk", serif;
+  font-size: 18px;
+  /* color: white; */
+  /* background-color: #1d1135; */
+  /* width: 1200px; */
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#navbar_desktop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: #0c164f;
+  transition: 0.4s;
+  z-index: 99;
+  position: fixed;
+  width: 99%;
+  top: 0;
+}
+#navbar_desktop a {
+  text-align: center;
+  padding: 12px;
+  line-height: 25px;
+  text-decoration: none;
+}
+#navbar_mobile {
+  display: none;
+}
+header a > #logo {
+  height: 60px;
+  margin-right: 30px;
+}
+.navbar_scroll {
+  width: 90% !important;
+  margin: 0 auto;
+  border: 7px solid #0c164f;
+  background-color: white !important;
+  border-radius: 30px;
+}
+.container {
+  margin: 0 auto;
+  /* width: 62.5rem; */
+  display: flex;
+  flex-wrap: wrap;
+}
+.page_divider {
+  display: block;
+  width: 100%;
+  height: 6.25rem;
+  margin-bottom: 30px;
+}
+
+#entry-title {
+  margin: 0 auto;
+  padding: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url(../images/galactic_background.jpg);
+  background-position: bottom;
+  height: 20rem;
+}
+#entry-title > h1 {
+  margin-top: 5rem;
+}
+#mainCTA {
+  /* width: 40rem; */
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+.cta_box {
+  width: 25rem;
+  border: 8px solid #0c164f;
+  border-radius: 8px;
+  margin: 30px 20px 30px 20px;
+  padding: 20px;
+  text-align: center;
+}
+.cta_box > img {
+  height: 100px;
+}
+
+#footer {
+  margin: 0 auto;
+  /* width: 30rem; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: Center;
+  background-color: #0c164f;
+  height: 3rem;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    width: 100%;
+  }
+  #entry-title {
+    flex-direction: column;
+    height: 100%;
+    background-position: right;
+  }
+  #mainCTA {
+    flex-direction: column;
+  }
+  #navbar_desktop {
+    display: none;
+  }
+  #navbar_mobile {
+    display: block;
+    overflow: hidden;
+    background-color: #0c164f;
+    transition: 0.4s;
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    width: 99%;
+  }
+  #navbar_mobile a {
+    text-align: center;
+    display: block;
+    padding: 12px;
+    line-height: 25px;
+    text-decoration: none;
+  }
+  header a > #logo {
+    margin-left: -450px;
+  }
+  .icon {
+    display: block;
+    margin: 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  #menu {
+    display: none;
+  }
+  #menu_mobile {
+    display: none;
+  }
+}
