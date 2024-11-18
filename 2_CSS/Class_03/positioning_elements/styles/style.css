@@ -84,7 +84,8 @@ h2 {
 }
 
 /* 
-  ! Sticky positioning
+  ! Sticky positioning - fixes the element relative to its parrent
+  ! not to the <body> as position:fixed does
 */
 
 .sticky-container {
