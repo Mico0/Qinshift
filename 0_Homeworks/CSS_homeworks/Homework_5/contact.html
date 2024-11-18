@@ -11,19 +11,19 @@
       name="description"
       content="Join the Cosmeow Space Agency (CSA) in their mission to explore the cosmos with cat astronauts! Discover paw-some space adventures, browse our gallery, and connect with us to support the future of feline space exploration."
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+    <script
+      src="https://kit.fontawesome.com/47583484c7.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" type="text/css" href="./css/styles.css" />
     <script src="./scripts/script.js"></script>
     <title>Contact | Cosmeow Space Agency</title>
   </head>
   <body>
-    <header>
+    <header style="margin-bottom: 99px">
       <nav id="navbar_desktop">
         <a href="./index.html"
-          ><img src="./images/startup.png" id="logo" alt=""
+          ><img src="./images/logo.png" id="logo" alt=""
         /></a>
         <div id="menu">
           <a href="./about.html">About Us</a>
@@ -33,7 +33,7 @@
       </nav>
       <nav id="navbar_mobile">
         <a href="./index.html"
-          ><img src="./images/startup.png" id="logo" alt=""
+          ><img src="./images/logo.png" id="logo" alt=""
         /></a>
         <div id="menu_mobile">
           <a href="./about.html">About Us</a>
@@ -41,14 +41,51 @@
           <a href="./contact.html">Contact</a>
         </div>
         <a href="javascript:void(0);" class="icon" onclick="hamMenu()">
-          <i class="fa fa-bars"></i>
+          <i class="fa-solid fa-bars"></i>
         </a>
       </nav>
     </header>
-    <main>
-      <div id="footer">
-        <p><b>&#169; 2024 Cosmeow Space Agency (CSA) 🚀</b></p>
+    <main class="container" style="flex-direction: column">
+      <div id="entry-titleContact">
+        <div id="overlay">
+          <h1 style="margin: 30px; box-sizing: border-box"><em>Contact</em></h1>
+        </div>
       </div>
+      <div class="page_divider">
+        <img src="./images/wavy-steps.svg" alt="Page Divider" />
+      </div>
+      <section>
+        <form action="">
+          <fieldset>
+            <legend>Enter your contact details</legend>
+            <label for="name">Name: </label><br /><br />
+            <input type="text" name="name" id="name" /><br /><br />
+            <label for="surname">Surname: </label><br /><br />
+            <input type="text" name="surname" id="surname" /><br /><br />
+            <label for="e-mail">E-mail: </label><br /><br />
+            <input type="email" name="e-mail" id="e-mail" /><br /><br />
+            <label for="telephone">Telephone: </label><br /><br />
+            <input type="tel" name="telephone" id="telephone" />
+          </fieldset>
+          <fieldset>
+            <legend>Leave a comment:</legend>
+            <textarea type="text" name="comment" id="comment">
+Comment...</textarea
+            >
+          </fieldset>
+          <input type="submit" name="submit" id="submit" value="Send" />
+        </form>
+      </section>
+      <section style="margin-bottom: 15px">
+        <h2>Or find us on the following social networks:</h2>
+        <a style="text-decoration: none" href="#" target="_blank">
+          <img src="./images/icons8-facebook-48.svg" alt="Facebook" /></a
+        ><a style="text-decoration: none" href="#" target="_blank">
+          <img src="./images/icons8-instagram-48.svg" alt="Instagram" /> </a
+        ><a style="text-decoration: none" href="#" target="_blank"
+          ><img src="./images/icons8-tiktok-48.svg" alt="TikTok"
+        /></a>
+      </section>
     </main>
     <footer>
       <div id="footer">

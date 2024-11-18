@@ -2,6 +2,10 @@
   font-family: "Space Grotesk";
   src: url(../fonts/SpaceGrotesk-VariableFont_wght.ttf);
 }
+
+* {
+  box-sizing: border-box;
+}
 body {
   font-family: "Space Grotesk", serif;
   font-size: 18px;
@@ -13,6 +17,10 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 99px;
+}
+ul {
+  list-style: thumbs;
 }
 #navbar_desktop {
   display: flex;
@@ -20,10 +28,11 @@ header {
   align-items: center;
   overflow: hidden;
   background-color: #0c164f;
+  /* TODO: Learn more about CSS animation */
   transition: 0.4s;
   z-index: 99;
   position: fixed;
-  width: 99%;
+  width: 100%;
   top: 0;
 }
 #navbar_desktop a {
@@ -33,11 +42,31 @@ header {
   text-decoration: none;
   color: white;
 }
+#menu a:hover {
+  background-color: white;
+  border-radius: 30px;
+  color: #0c164f;
+}
+#navbar_desktop a:hover:first-child {
+  background-color: none !important;
+}
+#menu_mobile a {
+  text-align: center;
+  padding: 12px;
+  line-height: 25px;
+  text-decoration: none;
+  color: white;
+}
 #navbar_mobile {
   display: none;
 }
+#menu_mobile a:hover {
+  background-color: white;
+  border-radius: 30px;
+  color: #0c164f;
+}
 header a > #logo {
-  height: 60px;
+  height: 80px;
   margin-right: 30px;
 }
 .navbar_scroll {
@@ -46,14 +75,21 @@ header a > #logo {
   border: 7px solid #0c164f;
   background-color: white !important;
   border-radius: 30px;
+  top: 0;
 }
 .navbar_scroll a {
   color: #0c164f !important;
 }
+.navbar_scroll a:hover {
+  color: white !important;
+  background-color: #0c164f !important;
+}
 .container {
-  margin: 0 auto;
   /* width: 62.5rem; */
   display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   flex-wrap: wrap;
   color: #0c164f;
 }
@@ -61,24 +97,24 @@ header a > #logo {
   display: block;
   width: 100%;
   height: 6.25rem;
-  margin-bottom: 30px;
+  margin-bottom: 90px;
 }
 
 #entry-title {
-  margin-top: 80px;
+  /* margin-top: 80px; */
   padding: 50px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-image: url(../images/galactic_background.jpg);
-  background-position: bottom;
-  height: 20rem;
+  background-image: url(../images/thePawsenger.webp);
+  background-position: top;
+  background-size: cover;
+  height: 30em;
   color: white;
 }
 #entry-titleAbout {
-  margin-top: 80px;
   padding: 50px;
   display: flex;
   flex-wrap: wrap;
@@ -87,8 +123,23 @@ header a > #logo {
   text-align: center;
   background-image: url(../images/cattonaut.webp);
   background-position: center;
-  background-size: contain;
-  height: 20rem;
+  background-size: cover;
+  height: 30em;
+  color: white;
+}
+#entry-titleContact {
+  padding: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+  background-image: url(../images/cattonautPLatingFlag.webp);
+  background-position: center;
+  background-size: cover;
+  height: 30em;
+  width: 100%;
   color: white;
 }
 #overlay {
@@ -124,14 +175,84 @@ header a > #logo {
 
 #abtUs article {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
-  padding: 80px;
+  justify-content: center;
+  padding: 30px;
 }
 #abtUs article > img {
   height: 450px;
   margin-right: 60px;
+}
+form legend {
+  font-weight: bold;
+  font-size: 25px;
+}
+form fieldset {
+  border: 3px solid #0c164f;
+}
+form label {
+  font-weight: bold;
+}
+form input {
+  height: 3em;
+  width: 30em;
+  margin-bottom: 15px;
+}
+form textarea {
+  width: 100%;
+  height: 10em;
+  padding: 15px;
+  box-sizing: border-box;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  resize: none;
+}
+form input {
+  border: 3px solid #0c164f;
+}
+form input:focus {
+  border-bottom: 3px solid #0c164f;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+}
+
+form input[type="submit"] {
+  margin-top: 15px;
+  width: 20em;
+  height: 40px;
+  border: 3px solid #0c164f;
+  border-radius: 30px;
+  background-color: white;
+  color: #0c164f;
+  font-weight: bold;
+}
+form input[type="submit"]:hover {
+  border: 3px solid white;
+  background-color: #0c164f;
+  color: white;
+}
+li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+li::before {
+  content: "🚀";
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  margin-right: 1em;
+}
+.imageContainer img {
+  width: 500px;
+  height: 100%;
+  padding: 10px;
+}
+.imageContainer a {
+  width: 500px;
+  height: 100%;
 }
 
 #footer {
@@ -150,7 +271,7 @@ header a > #logo {
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
-    width: 100%;
+    /* width: 62.5; */
   }
   #entry-title {
     flex-direction: column;
@@ -163,8 +284,10 @@ header a > #logo {
   #navbar_desktop {
     display: none;
   }
+  .cta_box {
+    width: 18rem;
+  }
   #navbar_mobile {
-    margin: 0 auto;
     display: block;
     overflow: hidden;
     background-color: #0c164f;
@@ -172,6 +295,7 @@ header a > #logo {
     z-index: 99;
     position: fixed;
     top: 0;
+    /* right: 0; */
     width: 99%;
   }
   #navbar_mobile a {
@@ -182,7 +306,8 @@ header a > #logo {
     text-decoration: none;
   }
   header a > #logo {
-    /* float: left; */
+    float: left;
+    margin: 0;
     margin-bottom: 15px;
   }
   .icon {
@@ -201,5 +326,22 @@ header a > #logo {
   }
   #menu_mobile {
     display: none;
+    margin-top: 80px;
+    text-align: center;
+  }
+  #abtUs {
+    width: 100%;
+  }
+  #abtUs article {
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+  #abtUs article > img {
+    margin-right: 0;
+  }
+
+  footer {
+    width: 100%;
   }
 }

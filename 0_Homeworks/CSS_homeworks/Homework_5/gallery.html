@@ -11,10 +11,16 @@
       name="description"
       content="Join the Cosmeow Space Agency (CSA) in their mission to explore the cosmos with cat astronauts! Discover paw-some space adventures, browse our gallery, and connect with us to support the future of feline space exploration."
     />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"
     />
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/47583484c7.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" type="text/css" href="./css/styles.css" />
     <script src="./scripts/script.js"></script>
     <title>Gallery | Cosmeow Space Agency</title>
@@ -23,7 +29,7 @@
     <header>
       <nav id="navbar_desktop">
         <a href="./index.html"
-          ><img src="./images/startup.png" id="logo" alt=""
+          ><img src="./images/logo.png" id="logo" alt=""
         /></a>
         <div id="menu">
           <a href="./about.html">About Us</a>
@@ -33,7 +39,7 @@
       </nav>
       <nav id="navbar_mobile">
         <a href="./index.html"
-          ><img src="./images/startup.png" id="logo" alt=""
+          ><img src="./images/logo.png" id="logo" alt=""
         /></a>
         <div id="menu_mobile">
           <a href="./about.html">About Us</a>
@@ -41,11 +47,63 @@
           <a href="./contact.html">Contact</a>
         </div>
         <a href="javascript:void(0);" class="icon" onclick="hamMenu()">
-          <i class="fa fa-bars"></i>
+          <i class="fa-solid fa-bars"></i>
         </a>
       </nav>
     </header>
-    <main></main>
+    <main class="container">
+      <section>
+        <h1>Check out our gallery of our space ventures:</h1>
+        <p>
+          <b><em>Click on an image for a more immersive view</em></b>
+        </p>
+      </section>
+      <div class="imageContainer">
+        <a
+          href="./images/catOnTheMoon.webp"
+          data-fancybox="gallery"
+          data-caption="Caption #1"
+          ><img src="./images/catOnTheMoon.webp"
+        /></a>
+        <a
+          href="./images/cattonaut.webp"
+          data-fancybox="gallery"
+          data-caption="Caption #1"
+          ><img src="./images/cattonaut.webp"
+        /></a>
+
+        <a
+          href="./images/thePawsenger.webp"
+          data-fancybox="gallery"
+          data-caption="Caption #1"
+          ><img src="./images/thePawsenger.webp"
+        /></a>
+        <a
+          href="./images/TheBigBang.webp"
+          data-fancybox="gallery"
+          data-caption="Caption #1"
+          ><img src="./images/TheBigBang.webp"
+        /></a>
+        <a
+          href="./images/furball.webp"
+          data-fancybox="gallery"
+          data-caption="Caption #1"
+          ><img src="./images/furball.webp"
+        /></a>
+        <a
+          href="./images/cattonautPLatingFlag.webp"
+          data-fancybox="gallery"
+          data-caption="Caption #1"
+          ><img src="./images/cattonautPLatingFlag.webp"
+        /></a>
+        <a
+          href="./images/spacewalk.webp"
+          data-fancybox="gallery"
+          data-caption="Caption #1"
+          ><img src="./images/spacewalk.webp"
+        /></a>
+      </div>
+    </main>
     <footer>
       <div id="footer">
         <p><b>&#169; 2024 Cosmeow Space Agency (CSA) 🚀</b></p>

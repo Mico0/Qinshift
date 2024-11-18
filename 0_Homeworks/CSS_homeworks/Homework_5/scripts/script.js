@@ -10,7 +10,7 @@ function headerScroll() {
   if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
     navigation_desktop.classList.add("navbar_scroll");
     navigation_mobile.classList.add("navbar_scroll");
-    console.log("Scrolling");
+    // console.log("Scrolling");
   } else {
     navigation_desktop.classList.remove("navbar_scroll");
     navigation_mobile.classList.remove("navbar_scroll");
