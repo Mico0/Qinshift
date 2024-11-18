@@ -1,0 +1,22 @@
+a:link {
+  text-decoration: none;
+  color: red;
+}
+a:visited {
+  color: gold;
+}
+a:hover {
+  border: 2px solid red;
+  border-radius: 30px;
+  padding: 10px;
+  font-weight: bold;
+}
+a:focus {
+  text-decoration: underline black;
+  border-radius: 30px 20px;
+  color: purple;
+}
+a:active {
+  font-size: 32px;
+  transition: 1s;
+}
