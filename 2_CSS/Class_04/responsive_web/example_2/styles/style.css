@@ -1,0 +1,41 @@
+h1 {
+  background-color: crimson;
+  color: white;
+  text-align: center;
+}
+
+/* 
+
+    ! Mobile First - Design 
+    ! Meaning every CSS written above 
+    ! the media query
+    ! applies only to mobile devices
+    ! everything in the media query
+    ! applies to desktop screens
+
+*/
+
+@media screen and (min-width: 600px) {
+  h1 {
+    background-color: rebeccapurple;
+    color: gold;
+  }
+}
+
+/* 
+
+    ! Desktop First - Design
+    ! Meaning everything applied
+    ! above this media query will
+    ! apply to desktop screens
+    ! and everything in the media query
+    ! applies to mobile devices
+    
+*/
+
+@media screen and (max-width: 440px) {
+  body {
+    background-color: goldenrod;
+    color: blueviolet;
+  }
+}

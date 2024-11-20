@@ -1,0 +1,31 @@
+div {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 10px 30px;
+  color: white;
+  padding: 5px;
+}
+#first {
+  top: 0;
+  left: 0;
+  background-color: red;
+  z-index: 3;
+}
+#second {
+  top: 40px;
+  left: 40px;
+  background-color: brown;
+  z-index: 2;
+}
+#third {
+  top: 80px;
+  left: 80px;
+  background-color: gold;
+  z-index: 1;
+}
+#fourth {
+  background-color: crimson;
+  top: 120px;
+  left: 120px;
+}

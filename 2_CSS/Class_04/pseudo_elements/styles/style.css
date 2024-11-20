@@ -1,0 +1,40 @@
+p::first-line {
+  color: magenta;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#third-paragraph::first-letter {
+  color: crimson;
+  font-size: xx-large;
+  font-family: cursive;
+}
+
+#first-paragraph::selection {
+  background-color: coral;
+  color: White;
+}
+
+h2::before {
+  content: "Web development by ";
+  background-color: magenta;
+  /* padding-right: 50px; */
+  /* height: 30px;
+  display: block;
+  margin: 30px; */
+}
+
+h2::after {
+  content: " - G1";
+  background-color: crimson;
+}
+
+label::after {
+  content: " *";
+  color: red;
+}
+
+h1::after {
+  content: url(../like.png);
+  display: block;
+}
