@@ -311,6 +311,10 @@ li::before {
   .cta_box {
     width: 18rem;
   }
+  .page_divider {
+    margin-bottom: 0;
+    height: 100%;
+  }
   #navbar_mobile {
     display: block;
     overflow: hidden;
@@ -363,8 +367,14 @@ li::before {
   }
   #abtUs article > img {
     margin-right: 0;
+    height: 350px;
   }
-
+  .imageContainer img {
+    width: 300px;
+  }
+  iframe {
+    display: none;
+  }
   footer {
     width: 100%;
   }
