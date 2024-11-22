@@ -3,6 +3,32 @@ h1 {
   color: white;
   text-align: center;
 }
+.layout-example {
+  background-color: beige;
+  height: 600px;
+  margin-top: 40px;
+}
+.layout-example > div:nth-child(1) {
+  width: 40%;
+  background-color: aqua;
+  height: 50%;
+  float: left;
+  transition: 1s;
+}
+.layout-example > div:nth-child(2) {
+  width: 60%;
+  background-color: rgb(0, 145, 255);
+  height: 50%;
+  float: left;
+  transition: 1s;
+}
+.layout-example > div:nth-child(3) {
+  width: 100%;
+  background-color: rgb(0, 8, 255);
+  height: 50%;
+  clear: both;
+  transition: 1s;
+}
 
 /* 
 
@@ -20,6 +46,30 @@ h1 {
     background-color: rebeccapurple;
     color: gold;
   }
+  .layout-example {
+    background-color: beige;
+    height: 300px;
+    margin-top: 40px;
+  }
+  .layout-example > div:nth-child(1) {
+    width: 20%;
+    background-color: aqua;
+    height: 100%;
+    float: left;
+  }
+  .layout-example > div:nth-child(2) {
+    width: 20%;
+    background-color: rgb(0, 145, 255);
+    height: 100%;
+    float: left;
+  }
+  .layout-example > div:nth-child(3) {
+    width: 40%;
+    background-color: rgb(0, 8, 255);
+    height: 100%;
+    float: right;
+    clear: none;
+  }
 }
 
 /* 
@@ -33,9 +83,11 @@ h1 {
     
 */
 
+/* 
 @media screen and (max-width: 440px) {
   body {
     background-color: goldenrod;
     color: blueviolet;
   }
 }
+*/
