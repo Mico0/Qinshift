@@ -1,0 +1,168 @@
+html {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  max-width: 1200px;
+  padding: 20px;
+  margin: 0 auto;
+  overflow: auto;
+}
+::selection {
+  background-color: crimson;
+}
+.explanation {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: blanchedalmond;
+  border-radius: 4px;
+}
+.demo-section {
+  margin-bottom: 40px;
+  border: 3px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 20px;
+}
+.container {
+  background-color: #f3f4f6;
+  padding: 20px;
+  border-radius: 4px;
+  margin: 10px 0;
+}
+.ctonrols {
+  margin: 10px 0;
+}
+button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  margin: 4px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #2563eb;
+  font-weight: bold;
+}
+.flex-container {
+  display: flex;
+  background-color: #dbeafe;
+  padding: 15px;
+  border-radius: 4px;
+  margin: 10px 0;
+}
+.flex-item {
+  text-align: center;
+  background-color: crimson;
+  color: white;
+  padding: 15px;
+  margin: 5px;
+  border-radius: 4px;
+  min-width: 7em;
+}
+#direction-demo {
+  /* flex-direction: row; */
+  /* flex-direction: row-reverse; */
+  /* flex-direction: column; */
+  flex-direction: column-reverse;
+}
+#justify-demo {
+  /* justify-content: flex-start; */
+  /* ! Leaves eaven ammount of space between each item */
+  justify-content: space-between;
+}
+#justify-column {
+  flex-direction: column;
+  height: 480px;
+}
+#align-demo {
+  height: 200px;
+  /* align-items: flex-start; */
+  align-items: center;
+}
+#align-column-demo {
+  height: auto;
+  flex-direction: column;
+}
+
+#align-column-demo > .flex-item {
+  width: auto;
+}
+#gap-demo {
+  gap: 30px;
+  /* 
+  ! If flex-direction:row the gap is added horizontally between flex-items
+  ! If flex-direction:colum the gap is added vertically between flex-items 
+  */
+}
+#wrap-demo {
+  flex-wrap: wrap;
+  /* flex-wrap: wrap-reverse; */
+  width: 100%;
+}
+#wrap-demo .flex-item {
+  width: 100px;
+}
+#grow-demo > .grow-0 {
+  flex-grow: 0;
+}
+#grow-demo > .grow-1 {
+  flex-grow: 1;
+}
+#grow-demo > .grow-2 {
+  flex-grow: 2;
+}
+
+#shrink-demo {
+  min-width: 100%;
+}
+#shrink-demo .flex-item {
+  width: 200px;
+}
+#shrink-demo > .shrink-0 {
+  flex-shrink: 1;
+}
+#shrink-demo > .shrink-1 {
+  flex-shrink: 2;
+}
+#shrink-demo > .shrink-2 {
+  flex-shrink: 3;
+}
+#basis-demo .basis-auto {
+  flex-basis: auto;
+}
+#basis-demo .basis-100 {
+  flex-basis: 100px;
+}
+#basis-demo .basis-200 {
+  flex-basis: 200px;
+}
+#shorthand-demo {
+  flex-wrap: wrap;
+}
+#shorthand-demo .flex-1 {
+  flex: 1;
+  /* Grow 1, Shrink 1, Basis 0%  */
+}
+
+#shorthand-demo .flex-2 {
+  flex: 2;
+  /* Grow 2, Shrink 1, Basis 0%  */
+}
+#shorthand-demo .flex-initial {
+  flex: initial;
+  /* Grow 0, Shrink 1, Basis auto  */
+}
+#shorthand-demo .flex-none {
+  flex: none;
+  /* Grow 0, Shrink 0, Basis auto  */
+}
