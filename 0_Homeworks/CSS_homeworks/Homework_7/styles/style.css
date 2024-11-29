@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "Bungee Shade";
+  src: url(../fonts/BungeeShade-Regular.ttf);
+}
+@font-face {
+  font-family: "Nabla";
+  src: url(../fonts/Nabla-Regular-VariableFont_EDPT\EHLT.ttf);
+}
+@font-face {
+  font-family: "Parkinsans";
+  src: url(../fonts/Parkinsans-VariableFont_wght.ttf);
+}
+html {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
