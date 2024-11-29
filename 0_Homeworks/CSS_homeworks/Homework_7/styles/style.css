@@ -3,10 +3,6 @@
   src: url(../fonts/BungeeShade-Regular.ttf);
 }
 @font-face {
-  font-family: "Nabla";
-  src: url(../fonts/Nabla-Regular-VariableFont_EDPT\EHLT.ttf);
-}
-@font-face {
   font-family: "Parkinsans";
   src: url(../fonts/Parkinsans-VariableFont_wght.ttf);
 }
@@ -17,4 +13,88 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+}
+body,
+button {
+  font-family: "Parkinsans";
+  background-color: #f8f8f8;
+}
+p,
+a,
+h1,
+h2,
+h3,
+h4 {
+  color: #ffcb70;
+}
+
+.navbar {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #797d62;
+}
+
+.nav_title {
+  font-size: 1.5rem;
+}
+
+.nav_menu {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  & .menu_item {
+    list-style: none;
+    font-size: 1rem;
+  }
+  & a {
+    text-decoration: none;
+  }
+  & a:hover {
+    color: #9b9b7a;
+  }
+}
+
+.homepage_heroBanner {
+  display: flex;
+  padding: 1.5rem;
+  gap: 50px;
+  background-image: url(../images/movieCritics.webp);
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainTitle {
+  width: 50rem;
+  background-color: rgba(0, 0, 0, 0.63);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-items: space-evenly;
+  align-items: center;
+  gap: 20px;
+
+  & a {
+    padding: 1rem;
+    border-radius: 10px;
+    background: none;
+    text-decoration: none;
+    color: #ffcb70;
+    background-color: #797d62;
+    border: 3px solid #ffcb70;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: border 1s ease, background-color 0.5s ease;
+  }
+  & a:hover {
+    background: none;
+    border: 3px solid #797d62;
+    color: #797d62;
+    background-color: #ffcb70;
+  }
 }
