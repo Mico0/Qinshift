@@ -9,6 +9,7 @@
       src="https://kit.fontawesome.com/47583484c7.js"
       crossorigin="anonymous"
     ></script>
+    <script src="./scripts/script.js"></script>
   </head>
   <body>
     <nav class="navbar">
@@ -21,14 +22,19 @@
           alt=""
         />
       </a>
-      <ul class="nav_menu">
+      <ul class="nav_menu" id="menu_mobile">
         <li class="menu_item top_picks">
           <a href="#topPickAnchor">Top Picks</a>
         </li>
         <li class="menu_item reviews"><a href="./reviews.html">Reviews</a></li>
         <li class="menu_item contact"><a href="./contact.html">Contact</a></li>
       </ul>
-      <a href="javascript:void(0);" class="icon" onclick="hamMenu()">
+      <a
+        href="javascript:void(0);"
+        class="iconHam"
+        id="hamIcon"
+        onclick="hamMenu()"
+      >
         <i class="fa-solid fa-bars"></i>
       </a>
     </nav>

@@ -28,7 +28,7 @@ h3,
 h4 {
   color: #ffcb70;
 }
-.icon {
+.iconHam {
   display: none;
 }
 .navbar {
@@ -52,7 +52,6 @@ h4 {
   text-align: Center;
   margin: 30px 0;
 }
-
 .nav_menu {
   display: flex;
   gap: 15px;
@@ -185,8 +184,8 @@ h4 {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    width: 30rem;
-    height: 40rem;
+    width: 100%;
+    height: 100vh;
     text-align: center;
     border-radius: 30px;
 
@@ -242,47 +241,57 @@ h4 {
   flex-direction: column;
   align-items: center;
 }
-.reviewImage {
-  border-radius: 10px;
-  box-shadow: 0px 0px 5px 16px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 0px 0px 5px 16px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 0px 5px 16px rgba(0, 0, 0, 0.75);
-}
 .reviewContainer {
   display: grid;
-  width: 96%;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  justify-items: center;
-  align-items: center;
-  text-align: center;
-  grid-gap: 20px;
-  margin: 20px;
-  border: 3px solid #ffcb70;
+  width: 80%;
+  grid-template-areas:
+    "review-image review-title review-title"
+    "review-image genre        rating"
+    "review-image director     writers"
+    "review-image stars        stars"
+    "review-description review-description review-description"
+    "watch watch watch";
+  border: 5px solid #ffcb70;
+  box-shadow: rgba(121, 125, 98, 1) 6px 2px 16px 0px,
+    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
   border-radius: 20px;
   background-color: #9b9b7a;
   color: #ffcb70;
   margin: 30px 0;
-}
-.review {
+  padding: 5px;
   text-align: left;
-  overflow: auto;
-  height: 10rem;
-  width: 40rem;
 }
 .reviewImage {
-  grid-row: 1 / -1;
-  grid-column: 1;
-  width: 25rem;
+  grid-area: review-image;
+  background-size: cover;
+  max-width: 150px;
+  max-height: 150px;
 }
-.text {
-  grid-column: 2;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  gap: 30px;
-  padding: 5rem;
+.reviewTitle {
+  grid-area: review-title;
 }
+.genre {
+  grid-area: genre;
+}
+.rating {
+  grid-area: rating;
+}
+.director {
+  grid-area: director;
+}
+.writers {
+  grid-area: writers;
+}
+.stars {
+  grid-area: stars;
+}
+.reviewDescription {
+  grid-area: review-description;
+}
+.watch {
+  grid-area: watch;
+}
+
 .containerContact {
   width: 800px;
   margin: 30px auto;
@@ -370,8 +379,18 @@ footer {
   }
   .nav_menu {
     display: none;
+    background-color: #797d62;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    text-align: center;
+    right: 0;
+    z-index: 5;
+    & .menu_item {
+      padding: 0.5rem;
+    }
   }
-  .icon {
+  .iconHam {
     display: block;
   }
   .mainTitle {
@@ -381,10 +400,6 @@ footer {
     grid-template-columns: 1fr;
     & .sectionTitle {
       grid-column: 1;
-    }
-    & .topPickContainer {
-      width: 340px;
-      background-position: center;
     }
     & .topPickName,
     .topPickShortDesc {
@@ -398,9 +413,18 @@ footer {
     flex: 1 1;
     flex-direction: column;
     flex-wrap: wrap;
-    padding: 30px 0;
+
+    padding: 30px 15px;
     & .text {
       padding: 0;
+    }
+    & .reviewImage {
+      width: 15rem;
+    }
+    & .btn {
+      width: 15rem;
+      flex: 4;
+      margin: 0 auto;
     }
   }
   .containerContact {

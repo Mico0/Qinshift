@@ -9,6 +9,7 @@
       src="https://kit.fontawesome.com/47583484c7.js"
       crossorigin="anonymous"
     ></script>
+    <script src="./scripts/script.js"></script>
   </head>
   <body>
     <nav class="navbar">
@@ -21,15 +22,19 @@
           alt=""
         />
       </a>
-      <ul class="nav_menu">
+      <ul class="nav_menu" id="menu_mobile">
         <li class="menu_item top_picks">
-          <a href="./index.html#topPickAnchor">Top Picks</a>
+          <a href="#topPickAnchor">Top Picks</a>
         </li>
-
         <li class="menu_item reviews"><a href="./reviews.html">Reviews</a></li>
         <li class="menu_item contact"><a href="./contact.html">Contact</a></li>
       </ul>
-      <a href="javascript:void(0);" class="icon" onclick="hamMenu()">
+      <a
+        href="javascript:void(0);"
+        class="iconHam"
+        id="hamIcon"
+        onclick="hamMenu()"
+      >
         <i class="fa-solid fa-bars"></i>
       </a>
     </nav>
@@ -37,401 +42,22 @@
       <h2 class="sectionTitle">Read some of our reviews</h2>
       <section class="movieReviews">
         <!-- Review 1 -->
-        <div class="reviewContainer" id="lotr">
+        <div class="reviewContainer">
           <img
             src="./images/TheLordoftheRings.jpg"
-            alt="The Lord of the Rings: The Fellowship of the Ring"
+            alt="Lord of The Rings: The fellowship of the ring"
             class="reviewImage"
           />
-          <div class="text">
-            <h2 class="reviewTtitle">
-              The Lord of the Rings: The Fellowship of the Ring
-            </h2>
-            <h4 class="genre">
-              Action, Fantasy, Adventure, Science Fiction, Drama
-            </h4>
-            <div class="ratings">
-              <i class="fa fa-star" aria-hidden="true"></i> 8.9 /10
-            </div>
-            <div class="shortDetails">
-              <b>Director: </b>Peter Jackson <br /><br />
-              <b>Writers: </b>
-              J.R.R. Tolkien Fran Walsh Philippa Boyens
-              <br /><br />
-              <b>Stars: </b>
-              Elijah Wood Ian McKellen Orlando Bloom
-              <br /><br />
-            </div>
-            <p class="review">
-              It is with no surprise that Peter Jackson's The Fellowship of the
-              Ring film has received such mixed critics. Many viewers refer to
-              it as being childish, boring and uninteresting. Seems to me that
-              it is bound to the same fate of Tolkien's books, destined to be a
-              target for the same type of misunderstandings that keep attacking
-              this literary masterpiece many decades after it's first
-              publication. Having read the books several years ago, I went to
-              see this `impossible' film when it came out with many doubts on my
-              mind. I really liked it, but left the theater with as many doubts
-              as I had before. Was it perfect? Well, maybe not, but what an
-              achievement. After watching it a few times on DVD, and thinking
-              about it for some time now, I find myself loving this film more
-              and more. Let me tell you why... The Lord of the Rings is a
-              fairy-tale of myth and fantasy. Peter Jackson directed a film that
-              was considered, for a very long time, impossible to make, and not
-              only for technical reasons. The narrative roots are incredibly
-              long and detailed, and the storyline is deeply connected with the
-              creation of a fantastic continent from a time unknown called
-              `Middle Earth'. It's author, Tolkien, dedicated a considerable
-              part of his life developing this continent's background, it's
-              mythology and origins, it's different kinds of people, cultures
-              and languages, and therefore it's geographic references are
-              determinant to the unfolding of the story of the One Ring. Peter
-              Jackson went out to achieve the impossible and came out with a
-              recreation of the original that is pure and true to the story in
-              every detail. The first time the four hobbits meet a black rider
-              on the road, for example, is absolutely faithful to the feeling of
-              the book. The assault of the riders at Weathertop is another great
-              example, and it captures that feeling of danger, density and
-              atmosphere that are the main characteristics of the tale. Jackson
-              also took some liberties with the story, and made some right
-              choices along the way. If the so called `purists' may not approve
-              the removal of Tom Bombadil altogether, it should be
-              comprehensible that the travel from Hobbiton to Rivendel is a very
-              long and detailed one and could easily make a movie on it's own. I
-              felt more uneasy with how short the Council of Elrond was. In the
-              book, the council is where the whole story of the rings is first
-              explained, and many passages from the past ages of Middle Earth
-              are unveiled. It is a fascinating moment of the story, that had to
-              be shortened for obvious reasons. Still, after some consideration,
-              I now agree with the options made by Peter Jackson, and think that
-              the movie prologue narrated by Galadriel was the wisest choice.
-              The magic is all there when Gandalf shuts his eyes the moment
-              Frodo stands in the council and says `I will take the ring'. It is
-              there at Moria's Gate, and at the fall of Boromir. It is a
-              powerful film that doesn't fit the rhythm of the standard
-              Hollywood action movie. It is a film that breeds, that takes time
-              to unfold, it's tale branching in every direction. I could go on
-              and on, talking about all the different elements that bring this
-              film close to perfection, but I'll end saying that deep down, this
-              is not about action, beards and big monsters. The greatest thing
-              about this film, to me, is that it brought me back to a time when
-              I was in love with a different world where everything was
-              possible. Reading The Lord of the Rings night after night, I came
-              to understand what this thing of `mankind' really was all about.
-              The corruption of absolute power, the importance and value of
-              friendship, the inevitability of growing up, the strength of
-              hope... That this film could capture that magic, and be a new
-              bearer to it's message of humanism, is a statement to it's
-              greatness. Gandalf's words, that even the smallest person may
-              change the course of the world, and have a part to play in the
-              destiny of all, are immortal. In the end, this is a wonderful
-              film, but that doesn't mean you are going to like it. I cannot
-              tell you what it is like to see this film if you don't know or
-              love the book. But I hope it may plant a seed on your heart to
-              discover a great world of fantasy, beauty and humanity. I believe
-              Tolkien would have liked that.
-            </p>
-            <a
-              href="https://www.youtube.com/watch?v=V75dMMIW2B4"
-              target="_blank"
-              class="btn"
-              ><i class="fa fa-youtube-play"></i> Watch Trailer</a
-            >
-          </div>
-        </div>
-        <!-- review 2 -->
-        <div class="reviewContainer" id="harrypotter">
-          <img
-            src="./images/HarryPotterandthePhilosophersStone.jpg"
-            alt="Harry Potter and the Philosopher's Stone
-            "
-            class="reviewImage"
-          />
-          <div class="text">
-            <h2 class="reviewTtitle">
-              Harry Potter and the Philosopher's Stone
-            </h2>
-            <h4 class="genre">Teen, Fantasy, Adventure, Family</h4>
-
-            <div class="ratings">
-              <i class="fa fa-star" aria-hidden="true"></i> 7.7 /10
-            </div>
-            <div class="shortDetails">
-              <b>Director: </b> Chris Columbus <br /><br />
-
-              <b>Writers: </b>J.K. Rowling Steve Kloves <br /><br />
-              <b>Stars: </b>Daniel Radcliffe Rupert Grint Emma Watson
-              <br /><br />
-            </div>
-            <p class="review">
-              I watched this movie first time when I was left with no choice. My
-              expectations were extremely low as I always wondered if Harry
-              Potter books were over-hyped. How-ever after watching the movie it
-              did make me a Harry Potter movie fan. And needless to say - this
-              continues to remain my favourite of HP series. That brings to a
-              point here.... the effect of expectations over a movie. True,
-              expectations reduce joy. Without going into the story I would
-              certainly say Chris Columbus churns out a perfect pot-pourri of
-              emotions, suspense and magic, delivering something appealing to
-              all ages. Every character brought to life on screen has done
-              justice and leave an impression on you. Particularly notable
-              performances by Emma Watson and Alan Rickman. CGI are in plenty
-              and made good of. The Quedditch game is picturised amazingly. The
-              wizard's chess is treat to eyes. Let's hope that the forthcoming
-              HP series carries the similar magical touch.
-            </p>
-            <a
-              href="https://www.youtube.com/watch?v=VyHV0BRtdxo"
-              target="_blank"
-              class="btn"
-              ><i class="fa fa-youtube-play"></i> Watch Trailer</a
-            >
-          </div>
-        </div>
-        <!-- review 3 -->
-        <div class="reviewContainer" id="abronxtale">
-          <img
-            src="./images/aBronxTale.jpg"
-            alt="A Bronx Tale"
-            class="reviewImage"
-          />
-          <div class="text">
-            <h2 class="reviewTtitle">A Bronx Tale</h2>
-            <h4 class="genre">Period Drama, True Crime, Crime, Drama</h4>
-            <div class="ratings">
-              <i class="fa fa-star" aria-hidden="true"></i> 9 / 10
-            </div>
-            <div class="shortDetails">
-              <b>Director: </b>
-              Robert De Niro
-              <br /><br />
-              <b>Writers: </b>
-              Chazz Palminteri
-              <br /><br />
-              <b>Stars: </b>
-              Robert De Niro Chazz Palminteri Lillo Brancato
-              <br /><br />
-            </div>
-            <p class="review">
-              Robert De Niro's directorial debut is a criminally
-              underappreciated piece of cinema. A Bronx Tale may not contain the
-              same depth, intricacy and intensity of The Godfather or
-              Goodfellas, but it can certainly be considered one of the finest
-              gangster movies of the 20th century. Unlike many other films in
-              this genre which focus on the wider power dynamics within the
-              mafia, A Bronx Tale tells its story mainly through personal
-              relationships. There is a particular focus on Calogero's struggle
-              to please his loving father while being constantly seduced by the
-              alluring Sonny and the associated gang lifestyle. Lillo Broncato
-              is warm and likeable in the lead role and has a remarkably
-              authentic on-screen relationship with De Niro, which is enhanced
-              by the strong physical resemblance between the two. The
-              accomplished Chazz Palminteri shines as Sonny, turning in an
-              understated performance with a delicacy often missing from these
-              kind of characters. And then there is the music. As a lifelong fan
-              I am probably a little bit biased, but its hard to describe how
-              much I love this soundtrack, particularly The Complexions version
-              of 'I Only Have Eyes For You'. The sidewalk acapella groups
-              crooning under the streetlights make me nostalgic about memories I
-              don't even have. There isn't much to dislike about this film. Joe
-              Pesci's late cameo is unnecessary and a little glib, and the biker
-              gang that get beat up in the bar are almost like slapstick
-              characters. Aside from that, this is a truly magnificent film that
-              has never received the recognition it deserves.
-            </p>
-            <a
-              href="https://www.youtube.com/watch?v=z50PjmZYS4A"
-              target="_blank"
-              class="btn"
-              ><i class="fa fa-youtube-play"></i> Watch Trailer</a
-            >
-          </div>
-        </div>
-        <!-- review 4 -->
-        <div class="reviewContainer" id="Underworld">
-          <img src="./images/Underworld.jpg" alt="" class="reviewImage" />
-          <div class="text">
-            <h2 class="reviewTtitle">Underworld</h2>
-            <h4 class="genre">
-              Dark Fantasy, Supernatural Fantasy, Action, Fantasy, Thriller
-            </h4>
-            <div class="ratings">
-              <i class="fa fa-star" aria-hidden="true"></i> 7.0 / 10
-            </div>
-            <div class="shortDetails">
-              <b>Director: </b>
-              Len Wiseman
-              <br /><br />
-              <b>Writers: </b>
-              Kevin Grevioux Len Wiseman Danny McBride
-              <br /><br />
-              <b>Stars: </b>Kate Beckinsale Scott Speedman Shane Brolly
-              <br /><br />
-            </div>
-            <p class="review">
-              Everything you've heard from the critics, everything you know
-              about vampires and werewolves, everything that is standard in most
-              fantasy/action films. Then you'll enjoy this film. I, unlike a lot
-              of fans, will not claim that this is a move masterpiece, I will
-              not claim that this will change movie making history. I, however,
-              will go against the critics and say that this is a good film. Not
-              getting a chance to see this in the cinema, when it came out on
-              video I rented it out immediately. Now, at first, I could see what
-              the critics meant it wasn't how the trailers depicted it and the
-              script and acting in places was a bit rusty. I put it back and
-              gave no more thought to it. However I soon found myself thinking
-              about the film and the bits I'd enjoyed. I soon realised that this
-              was good because it wasn't conventional and I couldn't stop
-              thinking about it. There had been so many plot twists, so much to
-              take in that I knew I had to see it a second time. This time I
-              bought it, on DVD, and I found myself watching it again and again.
-              This film gives you wonderful villains and just when you start to
-              hate them something nastier comes along or they give you a motive
-              which makes you confused. In one film the world which you are
-              presented with at the beginning, Lycans (Werewolves) vrs.
-              Vampires, is thrown into doubt. There are no longer good and evil,
-              it is no longer this side versus this side and our hero Selene is
-              stuck in the middle. The thing is every villain in this film seems
-              to be fully justifiable in their actions yet completely nasty. I
-              was trying, after falling in love with this film, to work out
-              where it went wrong. I realised there was too much. You are thrown
-              into this world and you have to keep up, there is no chance to sit
-              down and work things out. That comes after seeing the film, this
-              world explains itself through the characters actions. It is as if
-              this world is real and we are meant to know about it already.
-              Their is a history, their is a false history, their are legendary
-              characters and not all of it is gone into in particular detail.
-              Pieces of the world's history are just thrown in by the
-              characters, as they would be in real life, with no long detailed
-              explanation. That mixed with the cliff hanger ending, the promise
-              of more characters from the past. MEans that even if you weren't
-              sure about this film, the sequel Underworld: Evolution looks like
-              it will be amazing.
-            </p>
-            <a
-              href="https://www.youtube.com/watch?v=2_IoL7g5Ub8"
-              target="_blank"
-              class="btn"
-              ><i class="fa fa-youtube-play"></i> Watch Trailer</a
-            >
-          </div>
-        </div>
-        <!-- review 5 -->
-        <div class="reviewContainer" id="Matrix">
-          <img
-            src="./images/TheMAtrix.jpg"
-            alt="The Matrix"
-            class="reviewImage"
-          />
-          <div class="text">
-            <h2 class="reviewTtitle">The Matrix</h2>
-            <h4 class="genre">
-              Action Epic, Artificial Intelligence, Cyberpunk, Dystopian Sci-fi,
-              Action
-            </h4>
-            <div class="ratings">
-              <i class="fa fa-star" aria-hidden="true"></i> 8.7 / 10
-            </div>
-            <div class="shortDetails">
-              <b>Director: </b>
-              Lana Wachowski Lilly Wachowski
-              <br /><br />
-              <b>Writers: </b>Lilly Wachowski Lana Wachowski <br /><br />
-              <b>Stars: </b>
-              Keanu Reeves Laurence Fishburne Carrie-Anne Moss
-              <br /><br />
-            </div>
-            <p class="review">
-              The Matrix...when I first heard about it, I expected just another
-              sci-fi action thriller. Good and filled with insane stunts, but
-              not terribly intelligent. Boy, was I wrong. Oh, the stunts are
-              there in spades, all right, and yes, they are awesome. And the
-              special effects are absolutely amazing (even if similar ones have
-              been used in other movies as a result- and not explained as well).
-              But the movie has plot as well. It has characters that I cared
-              about. From Keanu Reeves' excellent portrayal of Neo, the man
-              trying to come to grips with his own identity, to Lawrence
-              Fishburne's mysterious Morpheus, and even the creepy Agents,
-              everyone does a stellar job of making their characters more than
-              just the usual action "hero that kicks butt" and "cannon fodder"
-              roles. I cared about each and every one of the heroes, and hated
-              the villains with a passion. It has a plot, and it has a
-              meaning...and lo and behold, a plot does help the fight scenes!
-              Just try it, if you haven't seen the movie before. Watch one of
-              the fight scenes. Then watch the whole movie. There's a big
-              difference in the feeling and excitement of the scenes- sure,
-              they're great as standalones, but the whole thing put together is
-              an experience unlike just about everything else that's come to the
-              theaters. Think about it next time you're watching one of the more
-              brainless action flicks...think how much better it COULD be. All I
-              can say is WATCH THIS MOVIE. If you haven't, you're missing out on
-              one of the best films of all time. It isn't just special effects,
-              folks.
-            </p>
-            <a
-              href="https://www.youtube.com/watch?v=vKQi3bBA1y8"
-              target="_blank"
-              class="btn"
-              ><i class="fa fa-youtube-play"></i> Watch Trailer</a
-            >
-          </div>
-        </div>
-        <!-- review 6 -->
-        <div class="reviewContainer" id="Blade">
-          <img src="./images/Blade.jpg" alt="Blade" class="reviewImage" />
-          <div class="text">
-            <h2 class="reviewTtitle">Blade</h2>
-            <h4 class="genre">
-              Superhero, Supernatural Horror, Vampire Horror, Action, Horror
-            </h4>
-            <div class="ratings">
-              <i class="fa fa-star" aria-hidden="true"></i> 7.1 / 10
-            </div>
-            <div class="shortDetails">
-              <b>Director: </b>Stephen Norrington <br /><br />
-              <b>Writers: </b>David S. Goyer <br /><br />
-              <b>Stars: </b>
-              Wesley Snipes Stephen Dorff Kris Kristofferson
-              <br /><br />
-            </div>
-            <p class="review">
-              Say what you will about its CGI today, but if we didn't have
-              1998's Blade, we may have no Marvel Cinematic Universe. Let me
-              tell you, there was probably no cooler hero than Wesley Snipes at
-              this point in time. Ah, it's still pretty rad today. New Line
-              almost made this movie as a comedy, but after Snipes couldn't get
-              Black Panther made, he was able to get the main role in this one.
-              To me, the best part of the film is the relationship between
-              Whistler (Kris Kristofferson) and Blade, but I'd still be
-              interested to see what it would have been like if Patrick McGoohan
-              or Marc Singer had taken the role. As for the main bad guy, Deacon
-              Frost, Jet Li, Mark Wahlberg and Skeet Ulrich were all up for the
-              role, but it belongs to Stephen Dorff. You kind of have to respect
-              a bad guy so evil that he keeps the hero's mother a vampire for
-              decades. Actually, all of the vampires are great here, even in the
-              minor roles for Donal Logue, Udo Kier (who has been in the vampire
-              films Blood for Dracula, Spermula, Die Einsteiger, Modern
-              Vampires, Shadow of the Vampire, Dracula 3000 and Bloodrayne) and
-              Traci Lords. Director Stephen Norrington (The League of
-              Extraordinary Gentlemen) was supposed to play Morbius the Living
-              Vampire, but the part was cut. N'Bushe Wright also makes a great
-              partner for our hero as Dr. Karen Jenson, as she works to
-              determine a cure for Blade's vampirism. But hey - he's the
-              Daywalker. He pretty much will always be a vampire determined to
-              kill all the others. How cool is it that Marvel's first big movie
-              success came from a side character from the 1970's Marv Wolfman
-              and Gene Colan The Tomb of Dracula series? Sadly, while those
-              creators got a "based on characters created by" credit, they
-              didn't make any extra money. Such is how comics has always screwed
-              creators.
-            </p>
-            <a
-              href="https://www.youtube.com/watch?v=kaU2A7KyOu4"
-              target="_blank"
-              class="btn"
-              ><i class="fa fa-youtube-play"></i> Watch Trailer</a
-            >
-          </div>
+          <h2 class="reviewTitle">
+            The Lord of the Rings: The Fellowship of the Ring
+          </h2>
+          <p class="genre"></p>
+          <p class="rating"></p>
+          <p class="director"></p>
+          <p class="writers"></p>
+          <p class="stars"></p>
+          <p class="reviewDescription"></p>
+          <a href="" class="btn watch"></a>
         </div>
       </section>
     </main>
