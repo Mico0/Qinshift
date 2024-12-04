@@ -1,17 +1,31 @@
-let input = prompt(
-  "Please enter the year for which you want to calculate the Chinese Zodiac Sign: "
-);
+// let input = prompt(
+//   "Please enter the year for which you want to calculate the Chinese Zodiac Sign: "
+// );
 
-let inputValue = parseInt(input);
+// let inputValue = parseInt(input);
 
-let result = document.getElementById("result");
+// let result = document.getElementById("result");
 
-let zodiacMod = 0;
+// let zodiacMod = 0;
 
-if (isNaN(inputValue) || inputValue <= 0) {
-  location.reload();
-} else {
-  zodiacMod = (inputValue - 4) % 12;
+// if (isNaN(inputValue) || inputValue <= 0) {
+//   location.reload();
+// } else {
+//   zodiacMod = (inputValue - 4) % 12;
+// }
+
+function calculateZodiac() {
+  let year = parseInt(
+    prompt(
+      "Please enter the year for which you want to calculate the Chinese Zodiac Sign"
+    )
+  );
+
+  if (isNaN(year) || year === 0) {
+    alert("Please enter a valid year");
+    calculateZodiac();
+  }
+  let zodiacMod = (year - 4) % 12;
   if (zodiacMod === 0) {
     result.innerHTML = "0 - Rat";
   } else if (zodiacMod === 1) {
@@ -38,3 +52,5 @@ if (isNaN(inputValue) || inputValue <= 0) {
     result.innerHTML = "11 - Pig";
   }
 }
+
+calculateZodiac();
