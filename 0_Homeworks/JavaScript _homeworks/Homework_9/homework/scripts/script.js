@@ -1,5 +1,5 @@
 let input = prompt(
-  "Please enter the year for which you want to calculate the Chinese Zodiah sign: "
+  "Please enter the year for which you want to calculate the Chinese Zodiac Sign: "
 );
 
 let inputValue = parseInt(input);

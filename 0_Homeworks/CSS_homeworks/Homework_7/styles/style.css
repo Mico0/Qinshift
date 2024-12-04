@@ -132,9 +132,10 @@ h4 {
 
 .criticBox {
   width: 25rem;
-  height: 45rem;
+  height: 47rem;
   padding: 1rem;
   border-radius: 50px;
+  border: 5px solid #ffcb70;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background-color: #9b9b7a;
   display: flex;
@@ -406,9 +407,8 @@ h4 {
   background-image: url(../images/movieCritics.webp);
   background-size: cover;
   background-position: center;
-
-  width: 1500px;
-
+  max-width: 1500px;
+  width: 100%;
   border-radius: 10px;
 }
 
@@ -517,6 +517,9 @@ footer {
   .mainTitle {
     width: 100%;
   }
+  .criticImage:first {
+    margin-top: 20rem;
+  }
   .topPicks {
     grid-template-columns: 1fr;
     & .sectionTitle {
@@ -549,5 +552,14 @@ footer {
     & input {
       width: 100%;
     }
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"] {
+    height: 3em;
+    width: 100% !important;
+  }
+  input[type="submit"] {
+    width: 100% !important;
   }
 }
