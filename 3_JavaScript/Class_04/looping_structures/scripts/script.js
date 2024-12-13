@@ -43,17 +43,11 @@ while (count < max) {
 
 console.log(`Sum of all squares = ${result}`);
 
-let prompted = prompt("Enter a number");
-let parsedPrompt = parseInt(prompted);
-let ct = 0;
-let arrayDigits = [];
-let digit = 0;
-while (digit > 0) {
-  digit = parsedPrompt % 10;
-  arrayDigits.push(digit);
-  parsedPrompt /= 10;
-}
+let prompted = prompt("Enter a number to digitize");
 
-for (let i = 0; i < arrayDigits.length; i++) {
-  console.log(arrayDigits[i]);
+while (prompted !== 0) {
+  let digit = 0;
+  digit = prompted % 10;
+  console.log(`Digit = ${digit}`);
+  prompted = parseInt(prompted / 10);
 }
