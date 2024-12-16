@@ -64,14 +64,14 @@ console.log(negate(array4));
 console.log("======\n");
 
 function diffMaxMin(array) {
-  let difference,
-    min,
-    max = array[0];
+  let difference = 0;
+  min = array[0];
+  max = array[0];
   for (let i = 0; i < array.length; i++) {
     if (max < array[i]) {
       max = array[i];
     }
-    if (min > parseInt(array[i])) {
+    if (min > array[i]) {
       min = array[i];
     }
   }

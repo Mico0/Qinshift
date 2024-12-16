@@ -272,5 +272,5 @@ function printNumbers(n) {
     }
   }
 }
-printNumbers(15);
+printNumbers(100);
 console.log("=========\n");
