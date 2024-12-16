@@ -37,3 +37,28 @@ showWidth();
 screen.showWidth = showWidth;
 screen.showWidth();
 console.log(screen);
+
+function Car(model, color, year, fuel, fuelConsumption) {
+  this.model = model;
+  this.color = color;
+  this.year = year;
+  this.fuel = fuel;
+  this.fuelConsumption = fuelConsumption;
+
+  this.calculateDistance = function (distance) {
+    return distance * (this.fuelConsumption / 100);
+  };
+}
+
+let car = new Car("Lancia", "Brown", 2005, "Diesel", 5.6);
+console.log(car);
+console.log(car.calculateDistance(200));
+let car2 = new Car();
+
+car2.model = "Golf 2 - GTI";
+car2.color = "Red";
+car2.year = 2007;
+car2.fuel = "Petrolium";
+car2.fuelConsumption = 8;
+
+console.log("Car 2 needed fuel: ", car2.calculateDistance(250));
