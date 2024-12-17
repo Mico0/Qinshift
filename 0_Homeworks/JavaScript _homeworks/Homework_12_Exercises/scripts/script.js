@@ -84,3 +84,55 @@ let array5 = [10, 4, 1, 4, -10, -50, 32, 21];
 console.log("Difference\n");
 console.log(diffMaxMin(array5));
 console.log("======\n");
+
+function MultiplyByLength(array) {
+  let result = [];
+  for (number of array) {
+    result.push(number * array.length);
+  }
+  return result;
+}
+console.log("Multiply By Length\n");
+console.log(MultiplyByLength([2, 3, 1, 0]));
+console.log(MultiplyByLength([1, 0, 3, 3, 7, 2, 1]));
+console.log("======\n");
+
+function hurdleJump(array, jump) {
+  if (jump > array.length - 1 || array.length === 0) {
+    return true;
+  } else return false;
+}
+console.log("Hurdle Jump\n");
+console.log(hurdleJump([1, 2, 3, 4, 5], 5));
+console.log(hurdleJump([5, 5, 3, 4, 5], 3));
+console.log(hurdleJump([5, 4, 5, 6], 10));
+console.log("======\n");
+
+function finalCountdown(n) {
+  let result = [];
+  for (let i = n; i >= 0; i--) {
+    result.push(i);
+  }
+  return result;
+}
+console.log("It's the final coundtown - turururu\n");
+console.log(finalCountdown(5));
+console.log(finalCountdown(1));
+console.log("======\n");
+
+function transform(array) {
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] % 2 !== 0) {
+      array[i] += 1;
+    } else if (array[i] % 2 === 0) {
+      array[i] -= 1;
+    }
+  }
+  return array;
+}
+
+console.log("Transform\n");
+console.log(transform([1, 2, 3, 4, 5]));
+console.log(transform([3, 3, 4, 3]));
+console.log(transform([2, 2, 0, 8, 10]));
+console.log("======\n");
