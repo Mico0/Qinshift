@@ -24,3 +24,5 @@ textElement.innerText += " text";
 
 header1.innerText = "Changed text of header 1";
 header3.innerText = "Changed text of header 3";
+
+//TODO: Do the other exercises
