@@ -70,5 +70,4 @@ function academyPanel(person, name) {
 
 let person = prompt("Are you a student or a teacher?");
 let name = prompt("Enter your name");
-
 academyPanel(person, name);

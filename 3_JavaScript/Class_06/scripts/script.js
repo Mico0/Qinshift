@@ -86,8 +86,8 @@ console.log(mainHeader);
 
 let divMain = document.getElementById("main");
 console.log(divMain.innerHTML); //* returns the div's inner HTML as a string
-divMain.innerHTML = `<p id="firstParagraph">First HTML element added dynamically </p>`;
-divMain.innerHTML = ""; //! deletes the HTML in the DIV
+// divMain.innerHTML = `<p id="firstParagraph">First HTML element added dynamically </p>`;
+// divMain.innerHTML = ""; //! deletes the HTML in the DIV
 
 //! createElement()
 //! createTextNode()
@@ -97,3 +97,14 @@ divMain.innerHTML = ""; //! deletes the HTML in the DIV
 //! getAttribute()
 //! setAttribute()
 //! removeAttribute()
+
+//* changing style
+let divMainDiv = document.getElementById("main");
+// divMainDiv.style.color = "red";
+// divMainDiv.style.backgroundColor = "black";
+divMainDiv.style.textAlign = "center";
+// divMainDiv.style.display = "none";
+console.log(divMainDiv.style);
+
+divMainDiv.classList.add("bg-color");
+//! divMainDiv.classList.add("bg-color", "test","test-2") - adding multiple classes
