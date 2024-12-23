@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Listeners</title>
+  </head>
+  <body>
+    <button id="btn">Le click</button>
+    <br /><br />
+    <input type="text" id="mainInput" placeholder="Enter value here" />
+    <br /><br />
+    <button id="btn2" onclick="greetYoSelf()">Click</button>
+    <button id="btn3">Click</button>
+    <button id="btn4">Click</button>
+    <br /><br />
+    <button id="btnRemove">Remove event listener</button>
+    <hr />
+    <input type="text" id="textInput" />
+    <div id="content"></div>
+    <!-- <script src="./scripts/script.js"></script> -->
+    <hr />
+    <!-- EVENT PROPAGATION -->
+    <h3>Event Propagation</h3>
+    <div
+      id="mainDiv"
+      style="width: 500px; height: 500px; background-color: crimson"
+    >
+      <button id="button1">Click me 1</button>
+      <button id="button2">Click me 2</button>
+    </div>
+
+    <div
+      id="black"
+      style="width: 500px; height: 500px; background-color: black"
+    >
+      <div id="red" style="width: 450px; height: 450px; background-color: red">
+        <div
+          id="yellow"
+          style="width: 400px; height: 400px; background-color: yellow"
+        >
+          <div
+            id="blue"
+            style="width: 350px; height: 350px; background-color: blue"
+          ></div>
+        </div>
+      </div>
+    </div>
+    <script src="./scripts/propagation.js"></script>
+  </body>
+</html>
