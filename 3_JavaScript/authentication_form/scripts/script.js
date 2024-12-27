@@ -24,10 +24,10 @@ function checkRegisterFields() {
   let email = document.getElementById("email").value;
   let age = document.getElementById("age").value;
 
-  console.log("Username length", username.length);
-  console.log("Password", password);
-  console.log("Email", email);
-  console.log("Age", age);
+  // console.log("Username length", username.length);
+  // console.log("Password", password);
+  // console.log("Email", email);
+  // console.log("Age", age);
 
   if (username.length >= 25) {
     document.getElementById("validationMessage-1").style.display =
@@ -57,6 +57,7 @@ function checkRegisterFields() {
       password: password,
       age: age,
     });
+    showLoginForm();
   }
   console.log(results);
 }
@@ -65,6 +66,11 @@ function checkUser() {
   let usernameLogin = document.getElementById("usernameLogin").value;
   let passwordLogin = document.getElementById("passwordLogin").value;
   for (let i = 0; i < results.length; i++) {
+    console.log(
+      "Username: ",
+      results[i].username + "\nPassword:",
+      results[i].password
+    );
     if (
       usernameLogin === results[i].username &&
       passwordLogin === results[i].password
