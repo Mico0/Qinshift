@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Box</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <!-- Direction Demo -->
+    <div class="demo-section">
+      <h2>1. <u>Flex Direction</u></h2>
+      <div class="explanation">
+        Flex direction determines how the items are arranged: row (left to
+        right), row-reverse (right to left), column ( top to bottom ),
+        column-reverse (bottom to top).
+      </div>
+      <div class="controls">
+        <button
+          onclick="document.getElementById('direction-demo').style.flexDirection = 'row';"
+        >
+          Row
+        </button>
+        <button
+          onclick="document.getElementById('direction-demo').style.flexDirection = 'row-reverse';"
+        >
+          Row Reverse
+        </button>
+        <button
+          onclick="document.getElementById('direction-demo').style.flexDirection = 'column';"
+        >
+          Column
+        </button>
+        <button
+          onclick="document.getElementById('direction-demo').style.flexDirection = 'column-reverse';"
+        >
+          Column Reverse
+        </button>
+      </div>
+      <div id="direction-demo" class="flex-container">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+      </div>
+    </div>
+    <!-- Direction Demo End -->
+    <!-- Justify Content Demo (Row) -->
+    <div class="demo-section">
+      <h2>2. <u>Justify Content (Row)</u></h2>
+      <div class="explanation">
+        Justify Content controls alignment along the main axis (horizontally for
+        row, vertically for column)
+      </div>
+      <div class="controls">
+        <button
+          onclick="document.getElementById('justify-demo').style.justifyContent = 'flex-start'"
+        >
+          Flex Start
+        </button>
+        <button
+          onclick="document.getElementById('justify-demo').style.justifyContent = 'flex-end';"
+        >
+          Flex End
+        </button>
+        <button
+          onclick="document.getElementById('justify-demo').style.justifyContent = 'center';"
+        >
+          Flex Center
+        </button>
+        <button
+          onclick="document.getElementById('justify-demo').style.justifyContent = 'space-around';"
+        >
+          Space Around
+        </button>
+        <button
+          onclick="document.getElementById('justify-demo').style.justifyContent = 'space-between';"
+        >
+          Space Between
+        </button>
+      </div>
+      <div id="justify-demo" class="flex-container">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+      </div>
+    </div>
+    <!-- Justify Content End -->
+    <!-- Justify Content Demo (Row) -->
+    <div class="demo-section">
+      <h2>3. <u>Justify Content (Column)</u></h2>
+      <div class="explanation">
+        Justify Content controls alignment along the main axis (horizontally for
+        row, vertically for column)
+      </div>
+      <div class="controls">
+        <button
+          onclick="document.getElementById('justify-columnalign-demo').style.justifyContent = 'flex-start';"
+        >
+          Flex Start
+        </button>
+        <button
+          onclick="document.getElementById('justify-column').style.justifyContent = 'flex-end';"
+        >
+          Flex End
+        </button>
+        <button
+          onclick="document.getElementById('justify-column').style.justifyContent = 'center';"
+        >
+          Flex Center
+        </button>
+        <button
+          onclick="document.getElementById('justify-column').style.justifyContent = 'space-around';"
+        >
+          Space Around
+        </button>
+        <button
+          onclick="document.getElementById('justify-column').style.justifyContent = 'space-between';"
+        >
+          Space Between
+        </button>
+      </div>
+      <div id="justify-column" class="flex-container">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+      </div>
+    </div>
+    <!-- Justify Content (Column) End -->
+    <!-- Align Itemos Demo (Row) -->
+    <div class="demo-section">
+      <h2>4. Align Items ( Row Direction )</h2>
+      <div class="explanation">
+        Align-items controls alignment along the cross axis (vertically for row,
+        horisontally for colum)
+      </div>
+      <div class="controls">
+        <button
+          onclick="document.getElementById('align-demo').style.alignItems = 'flex-start';"
+        >
+          Flex Start
+        </button>
+        <button
+          onclick="document.getElementById('align-demo').style.alignItems = 'flex-end';"
+        >
+          Flex End
+        </button>
+        <button
+          onclick="document.getElementById('align-demo').style.alignItems = 'center';"
+        >
+          Flex Center
+        </button>
+        <button
+          onclick="document.getElementById('align-demo').style.alignItems = 'stretch';"
+        >
+          Stretch
+        </button>
+      </div>
+      <div id="align-demo" class="flex-container">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+      </div>
+    </div>
+    <!-- Align Itemos Demo (Row) END -->
+    <!-- Align Itemos Demo (Column) -->
+    <div class="demo-section">
+      <h2>4. Align Items ( Column Direction )</h2>
+      <div class="explanation">
+        Align-items controls alignment along the cross axis (vertically for row,
+        horisontally for colum)
+      </div>
+      <div class="controls">
+        <button
+          onclick="document.getElementById('align-column-demo').style.alignItems = 'flex-start';"
+        >
+          Flex Start
+        </button>
+        <button
+          onclick="document.getElementById('align-column-demo').style.alignItems = 'flex-end';"
+        >
+          Flex End
+        </button>
+        <button
+          onclick="document.getElementById('align-column-demo').style.alignItems = 'center';"
+        >
+          Flex Center
+        </button>
+        <button
+          onclick="document.getElementById('align-column-demo').style.alignItems = 'stretch';"
+        >
+          Stretch
+        </button>
+      </div>
+      <div id="align-column-demo" class="flex-container">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+      </div>
+    </div>
+    <!-- Align Itemos Demo (Column) END -->
+
+    <!-- Gap Demo -->
+    <div class="demo-section">
+      <h2>5. Gap</h2>
+      <div class="explanation">
+        Gap creates space between flex items without affecting outer margins.
+      </div>
+
+      <div id="gap-demo" class="flex-container">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+      </div>
+    </div>
+
+    <!-- Wrap Demo -->
+    <div class="demo-section">
+      <h2>6. Flex Wrap</h2>
+      <div class="explanation">
+        <b>flex-wrap</b> controls whether items should wrap to new lines when
+        there is not enough space on the screen
+      </div>
+      <div id="wrap-demo" class="flex-container">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+      </div>
+    </div>
+    <!-- Gap Demo End -->
+
+    <!-- Flex Grow Demo -->
+    <div class="demo-section">
+      <h2>6. Flex Grow</h2>
+      <div class="explanation">
+        <b>flex-grow</b> Controls how items expand to fill extra space. Default
+        is 0 (don't grow). Higher values mean the item grows more compared to
+        its siblings
+      </div>
+      <div id="grow-demo" class="flex-container">
+        <div class="flex-item grow-0">grow-1</div>
+        <div class="flex-item grow-1">grow-2</div>
+        <div class="flex-item grow-2">grow-3</div>
+      </div>
+    </div>
+    <!-- Flex Grow End  -->
+    <!-- Flex Shrink Demo -->
+    <div class="demo-section">
+      <h2>6. Flex Shrink</h2>
+      <div class="explanation">
+        <b>flex-shrink</b> determines how items shrink when there isn't enough
+        space. Default is 1. Higher values means the item shrinks more than its
+        siblings.
+      </div>
+      <div id="shrink-demo" class="flex-container">
+        <div class="flex-item shrink-0">shrink-0</div>
+        <div class="flex-item shrink-1">shrink-1</div>
+        <div class="flex-item shrink-2">shrink-2</div>
+      </div>
+    </div>
+    <!-- Flex Shrink End  -->
+    <!-- Flex Basis Demo -->
+    <div class="demo-section">
+      <h2>7. Flex Basis</h2>
+      <div class="explanation">
+        <b>flex-basis</b> sets the initial size of an item before the remaining
+        space is distributed. Can be a length (px, em) or auto(uses content
+        size).
+      </div>
+      <div id="basis-demo" class="flex-container">
+        <div class="flex-item basis-auto">basis-auto</div>
+        <div class="flex-item basis-100">100px</div>
+        <div class="flex-item basis-200">200px</div>
+      </div>
+    </div>
+    <!-- Flex Basis End  -->
+    <!-- Flex Shorthand -->
+    <div class="demo-section">
+      <h2>8. Flex Shorthand</h2>
+      <div class="explanation">
+        The flex property combines grow, shrink and basis in one declaration.
+        Common values: flex 1 ( grow and shrink equally), flex: 2 ( grow twice
+        as much ), flex: initial (don't grow), flex:none(fixed size).
+      </div>
+      <div id="shorthand-demo" class="flex-container">
+        <div class="flex-item flex-1">Flex 1</div>
+        <div class="flex-item flex-2">Flex 2</div>
+        <div class="flex-item flex-initial">Initial</div>
+        <div class="flex-item flex-none">None</div>
+      </div>
+    </div>
+  </body>
+</html>

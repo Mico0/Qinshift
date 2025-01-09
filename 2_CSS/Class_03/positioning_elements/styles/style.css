@@ -1,0 +1,106 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 20px;
+  padding: 0px;
+  box-sizing: border-box;
+  background-color: #f8f8f8;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+h2 {
+  margin-bottom: 10px;
+}
+.example {
+  background-color: white;
+  margin-bottom: 40px;
+  padding: 20px;
+  border: 3px dashed crimson;
+  border-radius: 5px;
+}
+
+/* Static positioning */
+.static-box {
+  /* position: static; - This is default behaviour */
+  text-align: center;
+  width: 200px;
+  height: 100px;
+  background-color: lightblue;
+  border: 3px solid blue;
+}
+
+/* 
+  ! Relative positioning  - positions the element 
+  ! relative to its normal position when placed
+*/
+.relative-box {
+  position: relative;
+  top: 20px;
+  left: 150px;
+  text-align: center;
+  width: 200px;
+  height: 100px;
+  background-color: greenyellow;
+  border: 3px solid green;
+}
+
+/* 
+  ! Absolute positioning -  parrent container must have
+  ! position: relative, because the element positions relative
+  ! to its parrent
+*/
+.absolute-container {
+  text-align: center;
+  width: 300px;
+  height: 100px;
+  background-color: gold;
+  border: 3px dashed orange;
+  position: relative;
+}
+.absolute-box {
+  width: 150px;
+  height: 60px;
+  background-color: coral;
+  border: 3px solid red;
+  position: absolute;
+  top: 20px;
+  right: 50px;
+}
+/* 
+  ! Fixed positioning - positions the element 
+  ! relative to the <body>, and stays fixed
+  ! no matter of the scroll
+*/
+.fixed-box {
+  width: 300px;
+  height: 50px;
+  background-color: aliceblue;
+  border: 3px solid royalblue;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+/* 
+  ! Sticky positioning - fixes the element relative to its parrent
+  ! not to the <body> as position:fixed does
+*/
+
+.sticky-container {
+  height: 200px;
+  padding: 10px;
+  background-color: lightgray;
+  border: 3px dotted gray;
+  overflow: auto;
+}
+
+.sticky-box {
+  width: 200px;
+  height: 100px;
+  background-color: lightcoral;
+  border: 3px solid crimson;
+  position: sticky;
+  top: 0;
+}

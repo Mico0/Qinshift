@@ -1,0 +1,40 @@
+html {
+  box-sizing: border-box;
+}
+* {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: grid;
+  height: 600px;
+  width: 600px;
+  background-color: blanchedalmond;
+  grid-template-columns: 1fr 2fr 1fr 2fr;
+  /* grid-template-columns: 25% 25%; */
+  /* grid-template-rows: 1fr 2fr 1fr 2fr; */
+  gap: 20px;
+}
+.child {
+  border: 3px solid sandybrown;
+}
+
+.container-inline {
+  display: inline-grid;
+}
+
+/* 
+! We should always consider the number of children elements to be 
+! compatible with the number of grid cells created 
+*/
+.container-repeat {
+  display: grid;
+  height: 300px;
+  width: 300px;
+  background-color: chartreuse;
+  /* Generates 3 columns each taking 1 fraction */
+  grid-template-columns: repeat(3, 1fr);
+  /* Generates 2 rows each taking 1 fraction */
+  grid-template-rows: repeat(2, 1fr);
+}

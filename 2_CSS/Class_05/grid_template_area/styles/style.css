@@ -1,0 +1,43 @@
+html {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+.item-1 {
+  /* 
+       ! Assign name to the grid item 
+       ! for the grid template 
+    */
+  grid-area: header;
+}
+.item-2 {
+  grid-area: menu;
+}
+.item-3 {
+  grid-area: main;
+}
+.item-4 {
+  grid-area: aside;
+}
+.item-5 {
+  grid-area: footer;
+}
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header header header header header"
+    "menu main main aside aside"
+    "menu footer footer footer footer";
+  gap: 10px;
+  padding: 10px;
+  background-color: blanchedalmond;
+  text-align: center;
+}
+.grid-container > div {
+  background-color: crimson;
+  padding: 20px 0;
+}

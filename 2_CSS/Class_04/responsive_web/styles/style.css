@@ -1,0 +1,39 @@
+body {
+  color: crimson;
+}
+.title {
+  font-size: 6rem;
+}
+.subtitle {
+  font-size: 4rem;
+}
+
+/* 
+    ! This style will apply only to screens
+    ! when the width of 
+    ! the screen equals 400px or below 
+*/
+@media screen and (max-width: 400px) {
+  body {
+    color: blue;
+  }
+  .title {
+    transform: rotate(90deg);
+    transition: 0.4s;
+  }
+}
+/* 
+    ! This will apply the styles 
+    ! when we print the page / content
+*/
+@media print {
+  body {
+    color: cyan;
+  }
+}
+
+@media (orientation: portrait) {
+  body {
+    background-color: lightcoral;
+  }
+}
