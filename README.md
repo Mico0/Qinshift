@@ -1,2 +1,3 @@
 # Qinshift
-Repository dedicated to the Full-Stack academy by Qinshift
+
+# Github page dedicated for the Qinshift full stack web development academy
