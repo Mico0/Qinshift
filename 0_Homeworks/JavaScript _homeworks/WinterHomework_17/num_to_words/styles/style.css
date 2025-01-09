@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0 auto;
+  width: 1000px;
+  text-align: center;
+  padding: 1em;
+}
+
+textarea {
+  margin: 2em 0.5em;
+  padding: 0.3em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+#error {
+  font-weight: 600;
+  color: crimson;
+}
