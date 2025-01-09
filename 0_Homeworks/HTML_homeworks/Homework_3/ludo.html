@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ludo</title>
+    <style>
+      body {
+        width: 1300px;
+        margin: 0 auto;
+        font-size: 22px;
+        text-align: center;
+      }
+      td {
+        width: 6.5rem;
+        height: 6.5rem;
+        border: 3px solid black;
+      }
+      .walkingTilesRed,
+      .walkingTilesBlue,
+      .walkingTilesYellow,
+      .walkingTilesGreen {
+        border-radius: 50%;
+        border: 3px solid black;
+        text-align: center;
+        font-weight: 700;
+        background-color: aliceblue;
+      }
+      .redTiles {
+        background-color: red;
+      }
+      .yellowTiles {
+        background-color: yellow;
+      }
+      .greenTiles {
+        background-color: chartreuse;
+      }
+      .blueTiles {
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Click on the dice to roll</h2>
+    <p id="info"></p>
+    <table border="3">
+      <!-- Row 1 -->
+      <tr>
+        <td class="redTiles"></td>
+        <td class="redTiles"></td>
+        <td colspan="2" rowspan="2"></td>
+        <td class="walkingTilesRed tile"></td>
+        <td class="walkingTilesBlue tile"></td>
+        <td class="walkingTilesBlue tile">Start</td>
+        <td colspan="2" rowspan="2"></td>
+        <td class="blueTiles"></td>
+        <td class="blueTiles"></td>
+      </tr>
+      <!-- Row 2 -->
+      <tr>
+        <td class="redTiles"></td>
+        <td class="redTiles"></td>
+        <td class="walkingTilesRed tile"></td>
+        <td class="blueTiles"></td>
+        <td class="walkingTilesBlue tile"></td>
+        <td class="blueTiles"></td>
+        <td class="blueTiles"></td>
+      </tr>
+      <!-- Row 3 -->
+      <tr>
+        <td colspan="4" rowspan="2"></td>
+        <td class="walkingTilesRed tile"></td>
+        <td class="blueTiles"></td>
+        <td class="walkingTilesBlue tile"></td>
+        <td colspan="4" rowspan="2"></td>
+      </tr>
+      <!-- Row 4 -->
+      <tr>
+        <td class="walkingTilesRed tile"></td>
+        <td class="blueTiles"></td>
+        <td class="walkingTilesBlue tile"></td>
+      </tr>
+      <!-- Row 5 -->
+      <tr>
+        <td class="walkingTilesRed tile">Start</td>
+        <td class="walkingTilesRed tile"></td>
+        <td class="walkingTilesRed tile"></td>
+        <td class="walkingTilesRed tile"></td>
+        <td class="walkingTilesRed tile"></td>
+        <td class="blueTiles"></td>
+        <td class="walkingTilesBlue tile"></td>
+        <td class="walkingTilesBlue tile"></td>
+        <td class="walkingTilesBlue tile"></td>
+        <td class="walkingTilesBlue tile"></td>
+        <td class="walkingTilesBlue tile"></td>
+      </tr>
+      <!-- Row 6 -->
+      <tr>
+        <td class="walkingTilesRed tile"></td>
+        <td class="redTiles"></td>
+        <td class="redTiles"></td>
+        <td class="redTiles"></td>
+        <td class="redTiles"></td>
+        <td style="background-color: blanchedalmond">
+          <img
+            onclick="RollTheDice"
+            src="./images/pngwing.com.png"
+            alt="Dice"
+            width="100"
+            id="dice"
+          />
+        </td>
+        <td class="greenTiles"></td>
+        <td class="greenTiles"></td>
+        <td class="greenTiles"></td>
+        <td class="greenTiles"></td>
+        <td class="walkingTilesGreen tile"></td>
+      </tr>
+      <!-- Row 7 -->
+      <tr>
+        <td class="walkingTilesYellow tile"></td>
+        <td class="walkingTilesYellow tile"></td>
+        <td class="walkingTilesYellow tile"></td>
+        <td class="walkingTilesYellow tile"></td>
+        <td class="walkingTilesYellow tile"></td>
+        <td class="yellowTiles"></td>
+        <td class="walkingTilesGreen tile"></td>
+        <td class="walkingTilesGreen tile"></td>
+        <td class="walkingTilesGreen tile"></td>
+        <td class="walkingTilesGreen tile"></td>
+        <td class="walkingTilesGreen tile">Start</td>
+      </tr>
+      <!-- Row 8 -->
+      <tr>
+        <td rowspan="2" colspan="4"></td>
+        <td class="walkingTilesYellow tile"></td>
+        <td class="yellowTiles"></td>
+        <td class="walkingTilesGreen tile"></td>
+        <td rowspan="2" colspan="4"></td>
+      </tr>
+      <!-- Row 9 -->
+      <tr>
+        <td class="walkingTilesYellow tile"></td>
+        <td class="yellowTiles"></td>
+        <td class="walkingTilesGreen tile"></td>
+      </tr>
+      <!-- Row 10 -->
+      <tr>
+        <td class="yellowTiles"></td>
+        <td class="yellowTiles"></td>
+        <td rowspan="2" colspan="2"></td>
+        <td class="walkingTilesYellow tile"></td>
+        <td class="yellowTiles"></td>
+        <td class="walkingTilesGreen tile"></td>
+        <td rowspan="2" colspan="2"></td>
+        <td class="greenTiles"></td>
+        <td class="greenTiles"></td>
+      </tr>
+      <!-- Row 11 -->
+      <tr>
+        <td class="yellowTiles"></td>
+        <td class="yellowTiles"></td>
+        <td class="walkingTilesYellow tile">Start</td>
+        <td class="walkingTilesYellow tile"></td>
+        <td class="walkingTilesGreen tile"></td>
+        <td class="greenTiles"></td>
+        <td class="greenTiles"></td>
+      </tr>
+    </table>
+    <script>
+      var total = document.getElementsByClassName("tile");
+      var dice = document.getElementById("dice");
+      var info = document.getElementById("info");
+      //console.log("total tiles = " + total.length);
+      var lastIndex = 0;
+
+      dice.onclick = function RollTheDice() {
+        var rndmNum = Math.floor(Math.random() * 6);
+        info.innerHTML = "<b>You rolled: " + rndmNum + "</b>";
+
+        for (var i = 0; i < rndmNum; i++) {
+          if (lastIndex >= total.length) {
+            info.innerHTML +=
+              "<br><b>All tiles are painted!<br> Game Over!</b>";
+            return;
+          }
+
+          var elClass = total[lastIndex].className;
+          //console.log("Class name is: " + elClass);
+          if (elClass == "walkingTilesRed tile") {
+            total[lastIndex].classList.add("redTiles");
+          } else if (elClass == "walkingTilesYellow tile") {
+            total[lastIndex].classList.add("yellowTiles");
+          } else if (elClass == "walkingTilesGreen tile") {
+            total[lastIndex].classList.add("greenTiles");
+          } else if (elClass == "walkingTilesBlue tile") {
+            total[lastIndex].classList.add("blueTiles");
+          }
+          //console.log("Last index: " + lastIndex);
+
+          lastIndex++;
+        }
+      };
+    </script>
+  </body>
+</html>
