@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Testform</title>
+  </head>
+  <body style="width: 500px; margin: 0 auto">
+    <form action="">
+      <fieldset style="background-color: lightgrey">
+        <p><b>Testform</b></p>
+      </fieldset>
+      <fieldset>
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name" />
+        <br /><br />
+
+        <label for="password">Password: </label>
+        <input type="password" name="password" id="password" />
+        <br /><br />
+
+        <label for="gender">Gender: </label><br />
+        <input type="radio" name="gender" id="male" value="Male" />
+        <label for="male">Male</label><br />
+        <input type="radio" name="gender" id="female" value="Female" />
+        <label for="female">Female</label>
+        <br /><br />
+
+        <label for="continent">Continent: </label>
+        <select type="text" name="continent" id="continent">
+          <option value="" disabled selected>Please select a value</option>
+          <option value="America">America</option>
+          <option value="Europe">Europe</option>
+          <option value="Africa">Africa</option>
+          <option value="Asia">Asia</option>
+        </select>
+        <br /><br />
+
+        <label for="meals">Meals</label><br />
+
+        <input type="checkbox" name="meals" id="breakfast" value="breakfast" />
+        <label for="breakfast">Breakfast</label><br />
+        <input type="checkbox" name="meals" id="lunch" value="lunch" />
+        <label for="lunch">Lunch</label><br />
+        <input type="checkbox" name="meals" id="dinner" value="dinner" />
+        <label for="dinner">Dinner</label>
+
+        <br /><br />
+        <label style="float: left" for="remark">Remark: </label><br />
+        <textarea
+          style="float: right"
+          name="remark"
+          id="remark"
+          cols="40"
+          rows="5"
+        ></textarea>
+      </fieldset>
+
+      <fieldset style="background-color: lightgrey; text-align: right">
+        <input type="submit" name="submit" id="submit" value="Send" />
+        <input type="reset" name="reset" id="reset" value="Cancel" />
+      </fieldset>
+    </form>
+  </body>
+</html>

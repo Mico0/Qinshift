@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+  </head>
+  <body>
+    <h1>Forms</h1>
+    <form action="">
+      <!-- Text input -->
+      <label for="username">Username: </label>
+      <input type="text" name="username" id="username" />
+      <br /><br />
+
+      <!-- Password input -->
+      <label for="password">Password: </label>
+      <input type="password" name="password" id="password" />
+      <br /><br />
+
+      <!-- Submit input -->
+      <input type="submit" value="Login" />
+    </form>
+
+    <br />
+    <hr />
+    <br />
+
+    <form action="">
+      <!-- Date input -->
+      <label for="date">Date: </label>
+      <input type="date" name="date" id="date" />
+      <br /><br />
+
+      <!-- 
+      Input type e-mail 
+      E-mail inputs have built in default validation 
+      -->
+      <label for="email">E-mail: </label>
+      <input type="email" name="email" id="email" />
+      <br /><br />
+
+      <!-- Textarea input -->
+      <label for="text">Comment: </label>
+      <textarea name="text" id="text" cols="15" rows="4"></textarea>
+    </form>
+
+    <br />
+    <hr />
+    <br />
+
+    <h3>Radio buttons</h3>
+    <form action="">
+      <p>Please select your favorite music genre:</p>
+
+      <input type="radio" name="music-genre" id="rock" valu="Rock" />
+      <label for="rock">Rock</label>
+
+      <input type="radio" name="music-genre" id="jazz" value="Jazz" />
+      <label for="jazz">Jazz</label>
+
+      <input type="radio" name="music-genre" id="hiphop" value="Hip Hop" />
+      <label for="hiphop">Hip Hop</label>
+    </form>
+
+    <h3>Check boxes</h3>
+    <form action="">
+      <p>Please select your favorite streaming platforms</p>
+
+      <input type="checkbox" name="streaming" id="netflix" value="Netflix" />
+      <label for="Netflix">Netflix</label>
+
+      <input
+        type="checkbox"
+        name="streaming"
+        id="spotify"
+        value="Spotify"
+        checked="true"
+      />
+      <label for="spotify">Spotify</label>
+
+      <input type="checkbox" name="streaming" id="deezzer" value="deezzer" />
+      <label for="deezzer">Deezzer</label>
+    </form>
+
+    <br />
+    <hr />
+    <br />
+
+    <!-- Select input -->
+    <form action="">
+      <label for="devices">What device do you listen to music on?</label>
+      <br /><br />
+      <select name="devices" id="devices">
+        <option value="" selected disabled>Please select your device</option>
+        <option value="Mobile">Mobile</option>
+        <option value="Computer">Computer</option>
+        <option value="Turntable">Turntable</option>
+      </select>
+    </form>
+
+    <br />
+    <hr />
+    <br />
+
+    <!-- Multi-select input -->
+    <form action="">
+      <label for="instruments">Do you play any of these instruments </label>
+      <br /><br />
+      <select name="instruments" id="instruments" multiple>
+        <option value="" selected disabled>Please select an instrument</option>
+        <option value="Guitar">Guitar</option>
+        <option value="Drums">Drums</option>
+        <option value="Bass Guitar">Bass Guitar</option>
+        <option value="Keyboard">Keyboard</option>
+      </select>
+    </form>
+
+    <br />
+    <hr />
+    <br />
+
+    <!-- File inputs -->
+    <form action="">
+      <label for="finput">Select your file: </label>
+      <input type="file" name="finput" id="finput" />
+    </form>
+
+    <br />
+    <hr />
+    <br />
+
+    <!-- Submit and reset buttons -->
+    <form action="">
+      <fieldset>
+        <legend>Submit and reset buttons</legend>
+        <label for="movie">Name your favourite movie</label>
+        <input type="text" name="movie" id="movie" required />
+
+        <br /><br />
+        <label for="actor">Name of your favorite actor</label>
+        <input type="text" name="author" id="author" required />
+
+        <br /><br />
+        <label for="producer">Name your favorite producer</label>
+        <input type="text" name="producer" id="producer" required />
+      </fieldset>
+
+      <fieldset>
+        <legend>Movie generes</legend>
+        <label for="movie-genres">Movie genres: </label>
+        <input type="text" name="movie-genres" id="movie-genres" />
+      </fieldset>
+
+      <br /><br />
+      <input type="submit" name="" id=" " value="Submit form" />
+      <input type="reset" name="" id="" value="Reset" />
+    </form>
+
+    <br />
+    <hr />
+    <br />
+
+    <!-- Form legend and fieldsets-->
+    <h3>Using fieldset to group form elements</h3>
+    <form action="">
+      <fieldset>
+        <legend>Contact details</legend>
+      </fieldset>
+    </form>
+
+    <br />
+    <hr />
+    <br />
+
+    <!-- Placeholders in inputs -->
+    <form action="">
+      <fieldset>
+        <legend>Placeholders</legend>
+        <label for="your-name">Your name</label>
+        <input
+          type="text"
+          name="your-name"
+          id="your-name"
+          placeholder="Ex.: Milan Ognjanoski"
+        />
+      </fieldset>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tables</title>
+  </head>
+  <body>
+    <table border="1" style="text-align: center">
+      <caption>
+        <b><u>Users and e-mails</u></b>
+      </caption>
+      <thead>
+        <th>Name and Surname</th>
+        <th>E-mail</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>John Smith</td>
+          <td>john.s@gmail.com</td>
+        </tr>
+        <tr>
+          <td>Clifford Doe</td>
+          <td>doe.clifford@yahoo.com</td>
+        </tr>
+      </tbody>
+    </table>
+    <br /><br />
+    <!-- Colspan example -->
+    <table border="1" style="text-align: center">
+      <caption>
+        <b><u>School schedule</u></b>
+      </caption>
+      <thead>
+        <th>Week day / Class</th>
+        <th>8 AM</th>
+        <th>9 AM</th>
+        <th>10 AM</th>
+        <th>11 AM</th>
+        <th>12 AM</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Monday</td>
+          <td colspan="2">Math</td>
+          <td>Biology</td>
+          <td colspan="2">Chemistry</td>
+        </tr>
+        <tr>
+          <td>Tuesday</td>
+          <td>English</td>
+          <td>Physics</td>
+          <td colspan="3">Gym</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- Colspan example end -->
+    <br /><br />
+    <!-- Rowspan example -->
+    <table border="1" style="text-align: center">
+      <caption>
+        <b><u>Daily Program</u></b>
+      </caption>
+      <thead>
+        <th>Hours / Program</th>
+        <th>HBO</th>
+        <th>Star Channel</th>
+        <th>Shutel</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>6 PM - 7 PM</td>
+          <td rowspan="2">Harry Potter</td>
+          <td>Bones</td>
+          <td>Vesti</td>
+        </tr>
+        <tr>
+          <td>7 PM - 8 PM</td>
+          <td>News</td>
+          <td>Vremenska Prognoza</td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- Rowspan example end -->
+    <br /><br />
+    <!-- Colspan and Rowspan example -->
+    <table border="1" style="text-align: center">
+      <caption>
+        <b><u>Colspan and rowspan together</u></b>
+      </caption>
+      <thead>
+        <th>Time</th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>8 AM - 9 AM</td>
+          <td rowspan="2" style="background-color: lavender">Mathematics</td>
+          <td colspan="2" rowspan="3" bgcolor="red" style="border-radius: 50%">
+            Science
+          </td>
+        </tr>
+        <tr>
+          <td>9 AM - 10 AM</td>
+        </tr>
+        <tr>
+          <td>10 AM - 11 AM</td>
+          <td>English</td>
+        </tr>
+        <tr>
+          <td rowspan="3" colspan="4">
+            <img src="/Class 03/images/1801287.svg" alt="" width="50" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- Colspan and Rowspan example -->
+  </body>
+</html>
