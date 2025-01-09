@@ -1,0 +1,565 @@
+@font-face {
+  font-family: "Bungee Shade";
+  src: url(../fonts/BungeeShade-Regular.ttf);
+}
+@font-face {
+  font-family: "Parkinsans";
+  src: url(../fonts/Parkinsans-VariableFont_wght.ttf);
+}
+html {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body,
+button {
+  font-family: "Parkinsans";
+  background-color: #f9f9f9;
+}
+p,
+a,
+h1,
+h2,
+h3,
+h4 {
+  color: #ffcb70;
+}
+.iconHam {
+  display: none;
+}
+#menu_mobile {
+  display: none;
+}
+.navbar {
+  display: flex;
+  padding: 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #797d62;
+}
+
+.nav_title {
+  font-size: 1.5rem;
+  font-family: "Bungee Shade";
+}
+.sectionTitle {
+  font-family: "Bungee Shade";
+  font-size: 2.5rem;
+  text-align: Center;
+  margin: 30px 0;
+}
+.nav_menu,
+#menu_desktop {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+}
+.menu_item {
+  display: block;
+  font-size: 1rem;
+  text-decoration: none;
+}
+.menu_item:hover {
+  color: #9b9b7a;
+}
+
+.homepage_heroBanner {
+  display: flex;
+  padding: 1.5rem;
+  gap: 50px;
+  background-image: url(../images/hero_image.webp);
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainTitle {
+  width: 50rem;
+  backdrop-filter: brightness(50%);
+  -webkit-backdrop-filter: brightness(50%);
+  padding: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.btn {
+  padding: 1rem;
+  border-radius: 10px;
+  background: none;
+  text-decoration: none;
+  color: #ffcb70;
+  background-color: #797d62;
+  border: 3px solid #ffcb70;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: border 1s ease, background-color 0.5s ease;
+}
+.btn:hover {
+  background: none;
+  border: 3px solid #797d62;
+  color: #797d62;
+  background-color: #ffcb70;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.movieCritics {
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f9f9f9;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1;
+  gap: 30px;
+  padding: 2rem;
+  margin-bottom: 30px;
+}
+
+.criticBox {
+  width: 25rem;
+  height: 47rem;
+  padding: 1rem;
+  border-radius: 50px;
+  border: 5px solid #ffcb70;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #9b9b7a;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+
+  & .criticImage {
+    height: 250px;
+    border-radius: 50px;
+    background-size: cover;
+  }
+  & .criticIntro {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    & p,
+    h4 {
+      padding-bottom: 1rem;
+      text-decoration: none;
+    }
+  }
+  .criticName {
+    text-align: center;
+  }
+}
+.topPicks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  grid-gap: 40px;
+  padding: 2rem;
+  justify-items: center;
+  align-items: Center;
+  background-color: #9b9b7a;
+  & .sectionTitle {
+    grid-column: 1/-1;
+  }
+  & .topPickName,
+  .topPickShortDesc {
+    display: none;
+  }
+  & .topPickContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 4rem;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: 700px;
+    max-height: 100%;
+    text-align: center;
+    border-radius: 30px;
+
+    & .btn {
+      width: 150px;
+    }
+  }
+}
+.topPickContainer:hover {
+  backdrop-filter: blur(80px);
+  & .topPickName,
+  .topPickShortDesc {
+    backdrop-filter: blur(50px);
+    display: block;
+    padding: 0.5rem;
+  }
+}
+
+.topPickContainer:nth-child(2) {
+  background-image: url(../images/TheLordoftheRings.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.topPickContainer:nth-child(3) {
+  background-image: url(../images/HarryPotterandthePhilosophersStone.jpg);
+
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.topPickContainer:nth-child(4) {
+  background-image: url(../images/aBronxTale.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.topPickContainer:nth-child(5) {
+  background-image: url(../images/Underworld.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.topPickContainer:nth-child(6) {
+  background-image: url(../images/TheMAtrix.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.topPickContainer:nth-child(7) {
+  background-image: url(../images/Blade.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.movieReviews {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.reviewContainer {
+  display: grid;
+  width: 80%;
+  grid-template-areas:
+    "review-image review-title"
+    "review-image genre"
+    "review-image rating"
+    "review-image director"
+    "review-image   writers"
+    "review-image stars"
+    "review-description review-description"
+    "watch watch";
+  grid-gap: 20px;
+  border: 5px solid #ffcb70;
+  box-shadow: rgba(121, 125, 98, 1) 6px 2px 16px 0px,
+    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+  border-radius: 20px;
+  background-color: #9b9b7a;
+
+  color: #ffcb70;
+  margin: 30px 0;
+  padding: 5px;
+  text-align: left;
+  justify-items: start;
+}
+.reviewImage {
+  grid-area: review-image;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  align-self: center;
+  justify-self: center;
+  border-radius: 10px;
+  margin: 5rem;
+  transition: transform 1s ease;
+}
+.reviewImage:hover {
+  transform: scale(1.5);
+  cursor: pointer;
+  z-index: 5;
+}
+#lotrIMG {
+  background-image: url("../images/TheLordoftheRings.jpg");
+  width: 100%;
+  height: 100%;
+}
+#harryPotterIMG {
+  background-image: url("../images/HarryPotterandthePhilosophersStone.jpg");
+  width: 100%;
+  height: 100%;
+}
+#bronxIMG {
+  background-image: url("../images/aBronxTale.jpg");
+  width: 100%;
+  height: 100%;
+}
+#underworldIMG {
+  background-image: url("../images/Underworld.jpg");
+  width: 100%;
+  height: 100%;
+}
+#matrixIMG {
+  background-image: url("../images/TheMAtrix.jpg");
+  width: 100%;
+  height: 100%;
+}
+#bladeIMG {
+  background-image: url("../images/Blade.jpg");
+  width: 100%;
+  height: 100%;
+}
+.reviewTitle {
+  grid-area: review-title;
+  & span {
+    font-weight: normal;
+  }
+}
+.genre {
+  grid-area: genre;
+}
+.rating {
+  grid-area: rating;
+}
+.director {
+  grid-area: director;
+}
+.writers {
+  grid-area: writers;
+}
+.stars {
+  grid-area: stars;
+}
+.reviewDescription {
+  grid-area: review-description;
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.watch {
+  grid-area: watch;
+  max-width: 15rem;
+  width: 100%;
+  margin: 0.5rem;
+  text-align: center;
+  justify-self: center;
+  & i {
+    font-size: 5rem;
+    transition: transform 0.5s ease;
+  }
+  & i:hover {
+    transform: scale(1.2);
+  }
+}
+.reviewerIcon {
+  height: 75px;
+  border-radius: 50px;
+}
+.reviewer {
+  display: flex;
+  align-items: center;
+  width: 95%;
+  gap: 20px;
+  margin: 1rem 0;
+  padding: 1.2rem;
+  border-radius: 10px;
+  border: 5px solid #ffcb70;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+.reviewText {
+  line-height: 1.5em;
+  position: relative;
+  border: 5px solid;
+  border-color: #ffcb70 #797d62 #ffcb70 #ffcb70;
+  padding: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  margin-bottom: 2rem;
+}
+.reviewText::after {
+  content: "";
+  color: #ffcb70;
+  position: absolute;
+  bottom: -33px;
+  left: 20px;
+  border-width: 30px 30px 0px 0px;
+  border-style: solid;
+  border-color: #ffcb70 transparent;
+  display: block;
+}
+
+.containerContact {
+  margin: 30px auto;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  background-image: url(../images/movieCritics.webp);
+  background-size: cover;
+  background-position: center;
+  max-width: 1500px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+form {
+  text-align: Center;
+  color: #ffcb70;
+  font-size: 1.5rem;
+  padding: 2rem;
+
+  backdrop-filter: blur(30px);
+  & fieldset {
+    padding: 2rem;
+  }
+  & legend {
+    text-align: left;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+  }
+  & input[type="text"],
+  input[type="email"],
+  input[type="tel"] {
+    height: 3em;
+    width: 30em;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 3px solid #ffcb70;
+    background: transparent;
+    margin-bottom: 15px;
+  }
+  input:focus {
+    border-bottom: 3px solid #ffcb70;
+    border-top: none !important;
+    border-left: 3px solid #ffcb70;
+    border-right: 3px solid #ffcb70;
+    border-radius: 5px;
+  }
+  & textarea {
+    width: 100%;
+    height: 10em;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    resize: none;
+  }
+  & input[type="submit"] {
+    padding: 1rem;
+    width: 20rem;
+    margin: 10px 0;
+    border-radius: 10px;
+    background: none;
+    text-decoration: none;
+    color: #ffcb70;
+    background-color: #797d62;
+    border: 3px solid #ffcb70;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: border 1s ease, background-color 0.5s ease;
+  }
+  & input[type="submit"]:hover {
+    background: none;
+    border: 3px solid #797d62;
+    color: #797d62;
+    background-color: #ffcb70;
+  }
+}
+footer {
+  display: flex;
+  justify-content: center;
+  background-color: #797d62;
+  color: #ffcb70;
+  gap: 30px;
+  padding: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    margin-right: 70px;
+  }
+  .nav_title {
+    display: none;
+  }
+  #menu_mobile {
+    display: none;
+    background-color: #797d62;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    text-align: center;
+    right: 0;
+    z-index: 5;
+    & .menu_item {
+      padding: 0.5rem;
+      & a {
+        display: block;
+      }
+    }
+  }
+  #menu_desktop {
+    display: none;
+  }
+  .iconHam {
+    display: block;
+  }
+  .mainTitle {
+    width: 100%;
+  }
+  .criticImage:first {
+    margin-top: 20rem;
+  }
+  .topPicks {
+    grid-template-columns: 1fr;
+    & .sectionTitle {
+      grid-column: 1;
+    }
+    & .topPickName,
+    .topPickShortDesc {
+      display: block;
+      backdrop-filter: blur(50px);
+      padding: 0.5rem;
+    }
+  }
+  .reviewContainer {
+    grid-template-areas:
+      "review-image "
+      "review-title"
+      "genre"
+      "rating"
+      "director"
+      "writers"
+      "stars"
+      "review-description"
+      "watch ";
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+  }
+  .containerContact {
+    width: 100%;
+    & input {
+      width: 100%;
+    }
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"] {
+    height: 3em;
+    width: 100% !important;
+  }
+  input[type="submit"] {
+    width: 100% !important;
+  }
+}

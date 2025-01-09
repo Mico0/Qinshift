@@ -1,0 +1,226 @@
+html {
+  box-sizing: border-box;
+}
+* {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  width: 800px;
+  margin: 0 auto;
+  display: block;
+}
+.mosaic-one {
+  width: 399px;
+  height: 559px;
+  margin: 30px auto;
+  position: relative;
+  border: 5px solid black;
+}
+
+.mosaic-one > div {
+  border: 5px solid black;
+  background-color: blanchedalmond;
+  position: absolute;
+}
+.mosaic-one > #one {
+  width: 150px;
+  height: 150px;
+  top: 0;
+}
+.mosaic-one > #two {
+  width: 150px;
+  height: 250px;
+  top: 150px;
+}
+.mosaic-one > #three {
+  width: 240px;
+  height: 400px;
+  background-color: crimson;
+  top: 0;
+  left: 150px;
+}
+.mosaic-one > #four {
+  width: 150px;
+  height: 150px;
+  background-color: rgb(0, 132, 255);
+  top: 400px;
+}
+.mosaic-one > #five {
+  width: 200px;
+  height: 150px;
+  top: 400px;
+  left: 150px;
+}
+.mosaic-one > #six {
+  width: 40px;
+  height: 75px;
+  top: 400px;
+  left: 350px;
+}
+.mosaic-one > #seven {
+  width: 40px;
+  height: 75px;
+  top: 475px;
+  left: 350px;
+  background-color: gold;
+}
+
+.mosaic-two {
+  width: 590px;
+  height: 610px;
+  margin: 30px auto;
+  position: relative;
+  /* border: 5px solid black; */
+}
+
+.mosaic-two > div {
+  border: 5px solid black;
+  background-color: gainsboro;
+  position: absolute;
+}
+.mosaic-two > #one {
+  width: 150px;
+  height: 70px;
+  border-top: none;
+  border-left: none;
+  top: 0;
+}
+.mosaic-two > #two {
+  width: 240px;
+  height: 70px;
+  border-top: none;
+  top: 0;
+  left: 150px;
+  background-color: blanchedalmond;
+}
+.mosaic-two > #three {
+  width: 140px;
+  height: 70px;
+  border-top: none;
+  top: 0;
+  left: 390px;
+  background-color: gold;
+}
+.mosaic-two > #four {
+  width: 60px;
+  height: 465px;
+  border-top: none;
+  border-right: none;
+  top: 0;
+  right: 0;
+  background-color: blanchedalmond;
+}
+.mosaic-two > #five {
+  width: 75px;
+  height: 140px;
+  border-left: none;
+  top: 70px;
+  background-color: blanchedalmond;
+}
+.mosaic-two > #six {
+  width: 75px;
+  height: 250px;
+  border-left: none;
+  top: 210px;
+}
+.mosaic-two > #seven {
+  width: 75px;
+  height: 140px;
+  border-left: none;
+  border-bottom: none;
+  top: 460px;
+  background-color: gold;
+}
+.mosaic-two #eight {
+  width: 315px;
+  height: 315px;
+  top: 70px;
+  left: 75px;
+  background-color: crimson;
+}
+.mosaic-two #nine {
+  width: 140px;
+  height: 140px;
+  top: 70px;
+  left: 390px;
+  background-color: gold;
+}
+.mosaic-two > #ten,
+#eleven {
+  width: 70px;
+  height: 175px;
+  top: 210px;
+}
+
+.mosaic-two #ten {
+  left: 390px;
+}
+.mosaic-two #eleven {
+  left: 460px;
+  background-color: blanchedalmond;
+}
+.mosaic-two #twelve {
+  width: 145px;
+  height: 145px;
+  top: 385px;
+  left: 75px;
+  background-color: rgba(0, 0, 0, 0.856);
+}
+.mosaic-two #thirteen {
+  height: 70px;
+  width: 145px;
+  border-bottom: none;
+  top: 530px;
+  left: 75px;
+}
+.mosaic-two #fourteen {
+  width: 170px;
+  height: 80px;
+  top: 385px;
+  left: 220px;
+}
+.mosaic-two #fifteen {
+  width: 170px;
+  height: 60px;
+  top: 465px;
+  left: 220px;
+  background-color: blanchedalmond;
+}
+.mosaic-two #sixteen {
+  width: 170px;
+  height: 40px;
+  top: 525px;
+  left: 220px;
+  background-color: rgba(0, 0, 0, 0.856);
+}
+.mosaic-two #seventeen {
+  width: 310px;
+  height: 35px;
+  border-bottom: none;
+  top: 565px;
+  left: 220px;
+}
+.mosaic-two #eighteen {
+  width: 140px;
+  height: 80px;
+  top: 385px;
+  left: 390px;
+}
+.mosaic-two #nineteen {
+  width: 140px;
+  height: 100px;
+  top: 465px;
+  left: 390px;
+  background-color: darkblue;
+}
+.mosaic-two #twenty {
+  width: 60px;
+  height: 135px;
+  border-right: none;
+  border-bottom: none;
+  top: 465px;
+  right: 0px;
+  background-color: crimson;
+}

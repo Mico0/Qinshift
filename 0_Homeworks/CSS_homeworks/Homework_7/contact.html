@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Purrfect Critics</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script
+      src="https://kit.fontawesome.com/47583484c7.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./scripts/script.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <h3 class="nav_title">Purrfect Critics</h3>
+      <a href="./index.html">
+        <img
+          class="logo"
+          width="75"
+          src="./images/logo-dzO2DrLh4-transformed.webp"
+          alt=""
+        />
+      </a>
+      <div class="nav_menu" id="menu_desktop">
+        <a class="menu_item" href="./index.html#topPickAnchor">Top Picks</a>
+        <a class="menu_item" href="./reviews.html">Reviews</a>
+        <a class="menu_item" href="./contact.html">Contact</a>
+      </div>
+      <div class="nav_menu" id="menu_mobile">
+        <a class="menu_item" href="./index.html#topPickAnchor">Top Picks</a>
+        <a class="menu_item" href="./reviews.html">Reviews</a>
+        <a class="menu_item" href="./contact.html">Contact</a>
+      </div>
+
+      <a
+        href="javascript:void(0);"
+        class="iconHam"
+        id="hamIcon"
+        onclick="hamMenu()"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </a>
+    </nav>
+    <main class="container">
+      <h2 class="sectionTitle">Contact Us:</h2>
+      <div class="containerContact">
+        <form action="">
+          <fieldset>
+            <legend>Enter your contact details</legend>
+            <label for="name">Name: </label><br /><br />
+            <input type="text" name="name" id="name" /><br /><br />
+            <label for="surname">Surname: </label><br /><br />
+            <input type="text" name="surname" id="surname" /><br /><br />
+            <label for="e-mail">E-mail: </label><br /><br />
+            <input type="email" name="e-mail" id="e-mail" /><br /><br />
+            <label for="telephone">Telephone: </label><br /><br />
+            <input type="tel" name="telephone" id="telephone" />
+          </fieldset>
+          <fieldset>
+            <legend>Leave a comment:</legend>
+            <textarea type="text" name="comment" id="comment">
+  Comment...</textarea
+            >
+          </fieldset>
+          <input type="submit" name="submit" id="submit" value="Send" />
+        </form>
+      </div>
+    </main>
+    <footer>
+      © 2024 Purrfect Critics. All Rights Reserved.
+      <a href="#"> <i class="fa-brands fa-facebook"></i></a>
+      <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#"> <i class="fa-brands fa-instagram"></i></a>
+    </footer>
+  </body>
+</html>

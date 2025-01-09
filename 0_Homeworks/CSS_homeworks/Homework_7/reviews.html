@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Purrfect Critics</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script
+      src="https://kit.fontawesome.com/47583484c7.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./scripts/script.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <h3 class="nav_title">Purrfect Critics</h3>
+      <a href="./index.html">
+        <img
+          class="logo"
+          width="75"
+          src="./images/logo-dzO2DrLh4-transformed.webp"
+          alt=""
+        />
+      </a>
+      <div class="nav_menu" id="menu_desktop">
+        <a class="menu_item" href="./index.html#topPickAnchor">Top Picks</a>
+        <a class="menu_item" href="./reviews.html">Reviews</a>
+        <a class="menu_item" href="./contact.html">Contact</a>
+      </div>
+      <div class="nav_menu" id="menu_mobile">
+        <a class="menu_item" href="./index.html#topPickAnchor">Top Picks</a>
+        <a class="menu_item" href="./reviews.html">Reviews</a>
+        <a class="menu_item" href="./contact.html">Contact</a>
+      </div>
+
+      <a
+        href="javascript:void(0);"
+        class="iconHam"
+        id="hamIcon"
+        onclick="hamMenu()"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </a>
+    </nav>
+    <main class="container">
+      <h2 class="sectionTitle">Read some of our reviews</h2>
+      <section class="movieReviews">
+        <!-- Review 1 -->
+        <div class="reviewContainer">
+          <div class="reviewImage" id="lotrIMG"></div>
+          <h2 class="reviewTitle">
+            The Lord of the Rings: The Fellowship of the Ring <br /><br />
+            <span><b>Released:</b> Dec 13, 2001</span>
+          </h2>
+          <p class="genre">
+            <b>Genre: </b><span>Fantasy, </span><span>Adventure</span>
+          </p>
+          <p class="rating">
+            <i class="fa fa-star" aria-hidden="true"></i> 9.6 / 10
+          </p>
+          <p class="director"><b>Director:</b> Peter Jackson</p>
+          <p class="writers">
+            <b>Writers: </b>Philippa Boyens, Peter Jackson, J.R.R. Tolkien
+          </p>
+          <p class="stars">
+            <b>Stars: </b>Sean Astin, Sean Bean, Cate Blanchett...
+          </p>
+          <div class="reviewDescription">
+            <div class="reviewer">
+              <img
+                src="./images/SirPawsington.webp"
+                alt="Sir Pawsington McWhiskers - Icon"
+                class="reviewerIcon"
+              />
+              <p class="reviewText">
+                A tale as timeless as the Shire itself! Jackson's adaptation of
+                Tolkien’s magnum opus captures the essence of camaraderie and
+                the weight of destiny. The cinematography is as sweeping as
+                Middle-earth’s landscapes, and the performances, particularly by
+                Sir Ian McKellen, are nothing short of masterful. A purr-fect
+                balance of wonder and gravitas.
+              </p>
+            </div>
+            <div class="reviewer">
+              <img
+                src="./images/SmokeyClawford.webp"
+                alt="Smokey Clawford - Icon"
+                class="reviewerIcon"
+              />
+              <p class="reviewText">
+                An epic adventure with swords, wizards, and creepy rings? Count
+                me in! This flick is a visual feast, but let’s talk about the
+                real MVP: Gollum’s dual-personality chaos. I can see why Frodo
+                hesitates, though—carrying a cursed ring sounds worse than
+                babysitting a litter of kittens!
+              </p>
+            </div>
+            <div class="reviewer">
+              <img
+                src="./images/FelicityFurrow.webp"
+                alt="Lady Felicity Furrow - Icon"
+                class="reviewerIcon"
+              />
+              <p class="reviewText">
+                A hauntingly beautiful exploration of power and sacrifice. The
+                film’s ethereal glow mirrors the struggle of light against
+                encroaching darkness. I was particularly entranced by the
+                melancholic beauty of Rivendell. A masterstroke of cinematic
+                artistry.
+              </p>
+            </div>
+          </div>
+          <a
+            target="_blank"
+            href="https://www.youtube.com/watch?v=V75dMMIW2B4"
+            class="watch"
+            ><i class="fa fa-youtube-play" aria-hidden="true"></i>
+          </a>
+        </div>
+        <!-- Review 2  -->
+        <div class="reviewContainer" id-="harrypotter">
+          <div class="reviewImage" id="harryPotterIMG"></div>
+          <h2 class="reviewTitle">
+            Harry Potter and the Philosopher's Stone
+            <br /><br />
+            <span><b>Released:</b>November 16, 2001</span>
+          </h2>
+          <p class="genre">
+            <b>Genre: </b><span>Kids & Family, </span><span>Fantasy, </span
+            ><span>Adventure</span>
+          </p>
+          <p class="rating">
+            <i class="fa fa-star" aria-hidden="true"></i> 7.7 / 10
+          </p>
+          <p class="director"><b>Director:</b> Chris Columbus</p>
+          <p class="writers">
+            <b>Writers: </b>
+            J.K. Rowling, Steve Kloves
+          </p>
+          <p class="stars">
+            <b>Stars: </b>
+            Daniel Radcliffe, Rupert Grint, Emma Watson...
+          </p>
+          <div class="reviewDescription">
+            <div class="reviewer">
+              <img
+                src="./images/SirPawsington.webp"
+                alt="Sir Pawsington McWhiskers - Icon"
+                class="reviewerIcon"
+              />
+              <p class="reviewText">
+                A spellbinding introduction to Rowling's wizarding world.
+                Hogwarts brims with charm, and the young cast delivers
+                performances as enchanting as a levitation spell. A commendable
+                start to a franchise destined for greatness.
+              </p>
+            </div>
+            <div class="reviewer">
+              <img
+                src="./images/SmokeyClawford.webp"
+                alt="Smokey Clawford - Icon"
+                class="reviewerIcon"
+              />
+              <p class="reviewText">
+                A school where kids ride broomsticks and battle trolls? Talk
+                about extracurricular activities! The trio of Harry, Ron, and
+                Hermione are an adorable team, but let’s face it—Snape’s sarcasm
+                is the real magic here.
+              </p>
+            </div>
+            <div class="reviewer">
+              <img
+                src="./images/FelicityFurrow.webp"
+                alt="Lady Felicity Furrow - Icon"
+                class="reviewerIcon"
+              />
+              <p class="reviewText">
+                A whimsical journey into a world of wonder. The film’s
+                sepia-toned flashbacks and the bittersweet music tug at the
+                heartstrings. It beautifully captures the essence of innocence
+                lost and courage found.
+              </p>
+            </div>
+          </div>
+          <a
+            target="_blank"
+            href="https://www.youtube.com/watch?v=VyHV0BRtdxo"
+            class="watch"
+            ><i class="fa fa-youtube-play" aria-hidden="true"></i>
+          </a>
+        </div>
+        <!-- Review 3  -->
+        <div class="reviewContainer" id="abronxtale">
+          <div class="reviewImage" id="bronxIMG"></div>
+          <h2 class="reviewTitle">
+            A Bronx Tale
+            <br /><br />
+            <span><b>Released:</b>September 29, 1993</span>
+          </h2>
+          <p class="genre"><b>Genre: </b><span> Crime/Drama</span></p>
+          <p class="rating">
+            <i class="fa fa-star" aria-hidden="true"></i> 7.8 / 10
+          </p>
+          <p class="director"><b>Director:</b> Robert De Niro</p>
+          <p class="writers">
+            <b>Writers: </b>
+            Chazz Palminteri
+          </p>
+          <p class="stars">
+            <b>Stars: </b>
+            Robert De Niro, Chazz Palminteri, Lillo Brancato...
+          </p>
+          <div class="reviewDescription">
+            <div class="reviewer">
+              <img
+                src="./images/SirPawsington.webp"
+                alt="Sir Pawsington McWhiskers - Icon"
+                class="reviewerIcon"
+              />
+              <p class="reviewText">
+                A compelling narrative of choices and consequences. De Niro and
+                Palminteri deliver layered performances in this gritty yet
+                heartfelt coming-of-age tale. A true testament to the
+                complexities of loyalty and morality.
+              </p>
+            </div>
+            <div class="reviewer">
+              <img
+                src="./images/SmokeyClawford.webp"
+                alt="Smokey Clawford - Icon"
+                class="reviewerIcon"
+              />
+              <p class="reviewText">
+                Life lessons with mobsters? This movie’s got heart and muscle.
+                The young kid learning the ropes of the streets hits close to
+                home, but it’s Sonny’s cool demeanor that steals the show. It’s
+                like a game of cat and... well, other cats!
+              </p>
+            </div>
+            <div class="reviewer">
+              <img
+                src="./images/FelicityFurrow.webp"
+                alt="Lady Felicity Furrow - Icon"
+                class="reviewerIcon"
+              />
+              <p class="reviewText">
+                A poignant mosaic of familial bonds and street justice. The
+                narrative walks the fine line between love and betrayal with an
+                elegance reminiscent of a Shakespearean tragedy. The final act
+                left me in pensive silence.
+              </p>
+            </div>
+          </div>
+          <a
+            target="_blank"
+            href="https://www.youtube.com/watch?v=v77Dj4FhIA8"
+            class="watch"
+            ><i class="fa fa-youtube-play" aria-hidden="true"></i>
+          </a>
+        </div>
+        <!-- Review 4 -->
+        <div class="reviewContainer" id="Underworld">
+          <div class="reviewImage" id="underworldIMG"></div>
+          <h2 class="reviewTitle">
+            Underworld
+            <br /><br />
+            <span><b>Released:</b>Sep 19, 2003</span>
+          </h2>
+          <p class="genre">
+            <b>Genre: </b><span> Fantasy,</span><span> Action,</span
+            ><span> Horror</span>
+          </p>
+          <p class="rating">
+            <i class="fa fa-star" aria-hidden="true"></i> 7.0 / 10
+          </p>
+          <p class="director"><b>Director:</b> Len Wiseman</p>
+          <p class="writers">
+            <b>Writers: </b>
+            Kevin Grevioux, Len Wiseman, Danny McBride
+          </p>
+          <p class="stars">
+            <b>Stars: </b>
+            Kate Beckinsale, Scott Speedman, Shane Brolly...
+          </p>
+          <div class="reviewDescription">
+            <div class="reviewer">
+              <img
+                src="./images/SirPawsington.webp"
+                alt="Sir Pawsington McWhiskers - Icon"
+                class="reviewerIcon"
+              />
+              <p class="reviewText">
+                A gothic thriller dripping with style and ferocity. Kate
+                Beckinsale’s Selene is a revelation, blending poise and peril
+                effortlessly. The lore is rich, though perhaps overly ambitious
+                at times. Nonetheless, a must-watch for fans of the
+                supernatural.
+              </p>
+            </div>
+            <div class="reviewer">
+              <img
+                src="./images/SmokeyClawford.webp"
+                alt="Smokey Clawford - Icon"
+                class="reviewerIcon"
+              />
+              <p class="reviewText">
+                Vampires versus werewolves in trench coats? This is like a
+                high-stakes alley brawl but with fangs and fur! The action
+                sequences are slick, though I’d hate to clean up after that
+                werewolf mess.
+              </p>
+            </div>
+            <div class="reviewer">
+              <img
+                src="./images/FelicityFurrow.webp"
+                alt="Lady Felicity Furrow - Icon"
+                class="reviewerIcon"
+              />
+              <p class="reviewText">
+                A visual poem painted in shades of moonlight and blood. The
+                cinematography whispers of gothic cathedrals and ancient
+                rivalries. Selene’s silent resilience is poetry in motion,
+                though the film’s relentless pace can be dizzying.
+              </p>
+            </div>
+          </div>
+          <a
+            target="_blank"
+            href="https://www.youtube.com/watch?v=2_IoL7g5Ub8"
+            class="watch"
+            ><i class="fa fa-youtube-play" aria-hidden="true"></i>
+          </a>
+        </div>
+        <!-- Review 5  -->
+        <div class="reviewContainer" id="Matrix">
+          <div class="reviewImage" id="matrixIMG"></div>
+          <h2 class="reviewTitle">
+            The Matrix
+            <br /><br />
+            <span><b>Released:</b>March 31, 1999</span>
+          </h2>
+          <p class="genre">
+            <b>Genre: </b><span> Sci-Fi, </span><span>Action, </span>Mystery &
+            Thriller
+          </p>
+          <p class="rating">
+            <i class="fa fa-star" aria-hidden="true"></i> 8.7 / 10
+          </p>
+          <p class="director">
+            <b>Director:</b> Lana Wachowski, Lilly Wachowski
+          </p>
+          <p class="writers">
+            <b>Writers: </b>
+
+            Lilly Wachowski, Lana Wachowski
+          </p>
+          <p class="stars">
+            <b>Stars: </b>
+            Keanu Reeves Laurence Fishburne Carrie-Anne Moss...
+          </p>
+          <div class="reviewDescription">
+            <div class="reviewer">
+              <img
+                src="./images/SirPawsington.webp"
+                alt="Sir Pawsington McWhiskers - Icon"
+                class="reviewerIcon"
+              />
+              <p class="reviewText">
+                A genre-defining masterpiece. The Wachowskis craft a narrative
+                that is as thought-provoking as it is visually groundbreaking.
+                Reeves, Fishburne, and Moss deliver performances that elevate
+                the material to legendary status. Truly revolutionary.
+              </p>
+            </div>
+            <div class="reviewer">
+              <img
+                src="./images/SmokeyClawford.webp"
+                alt="Smokey Clawford - Icon"
+                class="reviewerIcon"
+              />
+              <p class="reviewText">
+                Do you take the blue pill or the red pill? Either way, this
+                movie is a mind-bender! Neo dodging bullets? Iconic. Though I
+                wouldn’t trade my cozy nap spot for life in that dystopian
+                wasteland.
+              </p>
+            </div>
+            <div class="reviewer">
+              <img
+                src="./images/FelicityFurrow.webp"
+                alt="Lady Felicity Furrow - Icon"
+                class="reviewerIcon"
+              />
+              <p class="reviewText">
+                A cyberpunk odyssey that delves into the nature of reality and
+                self-awareness. The green-tinted frames echo a world teetering
+                on the edge of revelation. Morpheus’s monologues are as
+                enigmatic as moonlit poetry.
+              </p>
+            </div>
+          </div>
+          <a
+            target="_blank"
+            href="https://www.youtube.com/watch?v=vKQi3bBA1y8"
+            class="watch"
+            ><i class="fa fa-youtube-play" aria-hidden="true"></i>
+          </a>
+        </div>
+        <!-- Review 6  -->
+        <div class="reviewContainer" id="Blade">
+          <div class="reviewImage" id="bladeIMG"></div>
+          <h2 class="reviewTitle">
+            Blade
+            <br /><br />
+            <span><b>Released:</b>Aug 21, 1998</span>
+          </h2>
+          <p class="genre">
+            <b>Genre: </b><span> Horror, </span><span>Action, </span
+            ><span>Fantasy, </span><span>Adventure</span>
+          </p>
+          <p class="rating">
+            <i class="fa fa-star" aria-hidden="true"></i> 7.1 / 10
+          </p>
+          <p class="director"><b>Director:</b> Stephen Norrington</p>
+          <p class="writers">
+            <b>Writers: </b>
+
+            David S. Goyer
+          </p>
+          <p class="stars">
+            <b>Stars: </b>
+            Wesley Snipes Stephen Dorff Kris Kristofferson...
+          </p>
+          <div class="reviewDescription">
+            <div class="reviewer">
+              <img
+                src="./images/SirPawsington.webp"
+                alt="Sir Pawsington McWhiskers - Icon"
+                class="reviewerIcon"
+              />
+              <p class="reviewText">
+                A sleek and stylish vampire romp. Wesley Snipes brings charisma
+                and ferocity to the titular role, elevating this comic book
+                adaptation into a genre classic. The action sequences are a
+                feline feast for the eyes.
+              </p>
+            </div>
+            <div class="reviewer">
+              <img
+                src="./images/SmokeyClawford.webp"
+                alt="Smokey Clawford - Icon"
+                class="reviewerIcon"
+              />
+              <p class="reviewText">
+                Vampires beware—Blade’s coming for you! This flick is packed
+                with high-octane action, snappy one-liners, and enough edge to
+                rival my scratching post. A fang-tastic watch!
+              </p>
+            </div>
+            <div class="reviewer">
+              <img
+                src="./images/FelicityFurrow.webp"
+                alt="Lady Felicity Furrow - Icon"
+                class="reviewerIcon"
+              />
+              <p class="reviewText">
+                A moody, brooding exploration of identity and vengeance. The
+                film’s interplay of light and shadow creates a haunting backdrop
+                for Blade’s personal journey. Its relentless rhythm captivates,
+                much like the pulse of an eternal night.
+              </p>
+            </div>
+          </div>
+          <a
+            target="_blank"
+            href="https://www.youtube.com/watch?v=kaU2A7KyOu4"
+            class="watch"
+            ><i class="fa fa-youtube-play" aria-hidden="true"></i>
+          </a>
+        </div>
+      </section>
+    </main>
+    <footer>
+      © 2024 Purrfect Critics. All Rights Reserved.
+      <a href="#"> <i class="fa-brands fa-facebook"></i></a>
+      <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#"> <i class="fa-brands fa-instagram"></i></a>
+    </footer>
+  </body>
+</html>

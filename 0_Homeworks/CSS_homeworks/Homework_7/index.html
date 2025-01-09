@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Purrfect Critics</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script
+      src="https://kit.fontawesome.com/47583484c7.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./scripts/script.js"></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <h3 class="nav_title">Purrfect Critics</h3>
+      <a href="./index.html">
+        <img
+          class="logo"
+          width="75"
+          src="./images/logo-dzO2DrLh4-transformed.webp"
+          alt=""
+        />
+      </a>
+      <div class="nav_menu" id="menu_desktop">
+        <a class="menu_item" href="./index.html#topPickAnchor">Top Picks</a>
+        <a class="menu_item" href="./reviews.html">Reviews</a>
+        <a class="menu_item" href="./contact.html">Contact</a>
+      </div>
+      <div class="nav_menu" id="menu_mobile">
+        <a class="menu_item" href="./index.html#topPickAnchor">Top Picks</a>
+        <a class="menu_item" href="./reviews.html">Reviews</a>
+        <a class="menu_item" href="./contact.html">Contact</a>
+      </div>
+
+      <a
+        href="javascript:void(0);"
+        class="iconHam"
+        id="hamIcon"
+        onclick="hamMenu()"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </a>
+    </nav>
+    <main class="container">
+      <section class="homepage_heroBanner">
+        <div class="mainTitle">
+          <h1>
+            "Meet the most discerning movie critics this side of the silver
+            screen. Sir Pawsington, Smokey, and Lady Felicity bring their sharp
+            claws and sharper wits to every review!"
+          </h1>
+          <a class="btn" href="#theCritics">Discover your Purrfect Critics</a>
+        </div>
+      </section>
+      <h2 class="sectionTitle">Meet your Critics</h2>
+      <section class="movieCritics" id="theCritics">
+        <!-- Critic #1 -->
+        <div class="criticBox">
+          <img
+            src="./images/SirPawsington.webp"
+            alt="Sir Pawsington"
+            class="criticImage"
+          />
+          <div class="criticIntro">
+            <h4 class="criticName">Sir Pawsington McWhiskers</h4>
+            <p class="criticDescription">
+              Formerly a film historian at the "Cat Film Academy." Renowned for
+              his love of period dramas and classic cinema. Distinguished in
+              feline film circles, Sir Pawsington has been writing critiques for
+              "Cat Academy Weekly" for over a decade. He specializes in
+              analyzing storytelling and character development in classics.
+            </p>
+            <h4 class="criticStyle">Style: Analytical and verbose reviews.</h4>
+            <h4 class="criticGenre">
+              Favorite Genres: Period dramas and epic tales.
+            </h4>
+          </div>
+        </div>
+        <!-- Critic #2 -->
+        <div class="criticBox">
+          <img
+            src="./images/SmokeyClawford.webp"
+            alt="Smokey Clawford"
+            class="criticImage"
+          />
+          <div class="criticIntro">
+            <h4 class="criticName">Whisker "Smokey" Clawford</h4>
+            <p class="criticDescription">
+              Self-proclaimed "Voice of the Alley." He critiques from the
+              perspective of the everyday feline. With a sharp tongue and wit,
+              Smokey built his reputation reviewing blockbusters on
+              "FelineTube." He’s adored for his humorous takes and accessible
+              critiques.
+            </p>
+            <h4 class="criticStyle">Style: Witty and humorous reviews.</h4>
+            <h4 class="criticGenre">Favorite Genres: Action and thrillers.</h4>
+          </div>
+        </div>
+        <!-- Critic #3 -->
+        <div class="criticBox">
+          <img
+            src="./images/FelicityFurrow.webp"
+            alt="Felicity Furrow"
+            class="criticImage"
+          />
+          <div class="criticIntro">
+            <h4 class="criticName">Lady Felicity Furrow</h4>
+            <p class="criticDescription">
+              An indie film enthusiast, with expertise in noir and experimental
+              cinema.Known for her poetic reviews, Lady Felicity earned her fame
+              critiquing arthouse films and mysteries. Her enigmatic style keeps
+              readers intrigued.
+            </p>
+            <h4 class="criticStyle">Style: Poetic and cryptic critiques.</h4>
+            <h4 class="criticGenre">
+              Favorite Genres: Noir and experimental cinema.
+            </h4>
+          </div>
+        </div>
+      </section>
+
+      <section class="topPicks" id="topPickAnchor">
+        <h2 class="sectionTitle">Our top picks</h2>
+        <!-- Top Pick 1 -->
+        <div class="topPickContainer">
+          <h4 class="topPickName">
+            Lord of the Rings: The Fellowship of the Ring
+          </h4>
+          <p class="topPickShortDesc">
+            A meek Hobbit from the Shire and eight companions set out on a
+            journey to destroy the powerful One Ring and save Middle-earth from
+            the Dark Lord Sauron.
+          </p>
+          <a class="btn" href="./reviews.html#lotr">View</a>
+        </div>
+        <!-- Top Pick 2 -->
+        <div class="topPickContainer">
+          <h4 class="topPickName">Harry Potter and the Philosopher's Stone</h4>
+          <p class="topPickShortDesc">
+            An orphaned boy enrolls in a school of wizardry, where he learns the
+            truth about himself, his family and the terrible evil that haunts
+            the magical world.
+          </p>
+          <a class="btn" href="./reviews.html#harrypotter">View</a>
+        </div>
+        <!-- Top Pick 3 -->
+        <div class="topPickContainer">
+          <h4 class="topPickName">A Bronx Tale</h4>
+          <p class="topPickShortDesc">
+            An intense drama about a boy torn between his tough, hard-working
+            father and a violent yet charismatic crime boss.
+          </p>
+          <a class="btn" href="./reviews.html#abronxtale">View</a>
+        </div>
+        <!-- Top Pick 4 -->
+
+        <div class="topPickContainer">
+          <h4 class="topPickName">Underworld</h4>
+          <p class="topPickShortDesc">
+            Selene, a vampire warrior, is entrenched in a conflict between
+            vampires and werewolves, while falling in love with Michael, a human
+            who is sought by werewolves for unknown reasons.
+          </p>
+          <a class="btn" href="./reviews.html#Underworld">View</a>
+        </div>
+        <!-- Top Pick 5 -->
+        <div class="topPickContainer">
+          <h4 class="topPickName">The Matrix</h4>
+          <p class="topPickShortDesc">
+            When a beautiful stranger leads computer hacker Neo to a forbidding
+            underworld, he discovers the shocking truth--the life he knows is
+            the elaborate deception of an evil cyber-intelligence.
+          </p>
+          <a class="btn" href="./reviews.html#Matrix">View</a>
+        </div>
+        <!-- Top Pick 6 -->
+        <div class="topPickContainer">
+          <h4 class="topPickName">Blade</h4>
+          <p class="topPickShortDesc">
+            A half-vampire, half-mortal man becomes a protector of the mortal
+            race, while slaying evil vampires.
+          </p>
+          <a class="btn" href="./reviews.html#Blade">View</a>
+        </div>
+      </section>
+    </main>
+    <footer>
+      © 2024 Purrfect Critics. All Rights Reserved.
+      <a href="#"> <i class="fa-brands fa-facebook"></i></a>
+      <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#"> <i class="fa-brands fa-instagram"></i></a>
+    </footer>
+  </body>
+</html>
