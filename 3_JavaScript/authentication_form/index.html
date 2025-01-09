@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Authentication Form</title>
+    <style>
+      html {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .active {
+        display: flex !important;
+      }
+      .validationMessage-1,
+      .validationMessage-2,
+      .validationMessage-3,
+      .validationMessage-4,
+      .validationMessage-5,
+      .validationMessage-6 {
+        display: none;
+        font-weight: bold !important;
+        color: red !important;
+      }
+      .register-form,
+      .login-form {
+        border: 3px solid crimson;
+        width: 800px;
+        margin: 20px auto;
+        display: none;
+        flex-direction: column;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Authentication Form</h1>
+    <button id="login">Log In</button>
+    <button id="register">Register</button>
+    <br />
+    <div class="register-form">
+      <label for="username">Username: </label>
+      <input type="text" name="username" id="username" placeholder="Username" />
+      <p id="validationMessage-1"></p>
+      <br />
+      <label for="email">E-mail: </label>
+      <input type="email" name="email" id="email" />
+      <p id="validationMessage-2"></p>
+      <br />
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password" />
+      <p id="validationMessage-3"></p>
+      <br />
+      <label for="age">Age: </label>
+      <input type="text" name="age" id="age" />
+      <p id="validationMessage-4"></p>
+      <br />
+      <button id="registerRedirect">Register</button>
+    </div>
+
+    <div class="login-form">
+      <label for="usernameLogin">Username: </label>
+      <input
+        type="text"
+        name="usernameLogin"
+        id="usernameLogin"
+        placeholder="Username"
+      />
+      <p class="validationMessage-5"></p>
+      <br />
+      <label for="passwordLogin">Password:</label>
+      <input type="password" name="passwordLogin" id="passwordLogin" />
+      <br />
+      <button id="loginCheck">Login</button>
+      <p id="validationMessage-6"></p>
+    </div>
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>
