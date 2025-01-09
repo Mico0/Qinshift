@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hangman</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <h1>Hangman</h1>
+    <h3>
+      Use the alphabet below to guess the word, or click hint to get a clue.
+    </h3>
+    <div class="buttons">
+      <div class="btn letter">a</div>
+      <div class="btn letter">b</div>
+      <div class="btn letter">c</div>
+      <div class="btn letter">d</div>
+      <div class="btn letter">e</div>
+      <div class="btn letter">f</div>
+      <div class="btn letter">g</div>
+      <div class="btn letter">h</div>
+      <div class="btn letter">i</div>
+      <div class="btn letter">j</div>
+      <div class="btn letter">k</div>
+      <div class="btn letter">l</div>
+      <div class="btn letter">m</div>
+      <div class="btn letter">n</div>
+      <div class="btn letter">o</div>
+      <div class="btn letter">p</div>
+      <div class="btn letter">q</div>
+      <div class="btn letter">r</div>
+      <div class="btn letter">s</div>
+      <div class="btn letter">t</div>
+      <div class="btn letter">u</div>
+      <div class="btn letter">v</div>
+      <div class="btn letter">w</div>
+      <div class="btn letter">x</div>
+      <div class="btn letter">y</div>
+      <div class="btn letter">z</div>
+    </div>
+    <div class="guessingArea">
+      <h4 id="chosenCategory">The Chosen Category is</h4>
+      <div class="word"></div>
+      <h4>You have 10 lives</h4>
+      <h4>Clue -</h4>
+      <div class="hangmanBox"></div>
+    </div>
+    <div class="gameButtons">
+      <button class="btn" id="hint">Hint</button>
+      <button class="btn" id="newGame">Play again</button>
+    </div>
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>
