@@ -1,0 +1,457 @@
+[
+  {
+    "word": "apple",
+    "word-category": "Fruits",
+    "word-length": 5
+  },
+  {
+    "word": "banana",
+    "word-category": "Fruits",
+    "word-length": 6
+  },
+  {
+    "word": "cat",
+    "word-category": "Animals",
+    "word-length": 3
+  },
+  {
+    "word": "dog",
+    "word-category": "Animals",
+    "word-length": 3
+  },
+  {
+    "word": "elephant",
+    "word-category": "Animals",
+    "word-length": 8
+  },
+  {
+    "word": "flower",
+    "word-category": "Plants",
+    "word-length": 6
+  },
+  {
+    "word": "grape",
+    "word-category": "Fruits",
+    "word-length": 5
+  },
+  {
+    "word": "house",
+    "word-category": "Architecture",
+    "word-length": 5
+  },
+  {
+    "word": "island",
+    "word-category": "Geography",
+    "word-length": 6
+  },
+  {
+    "word": "jungle",
+    "word-category": "Geography",
+    "word-length": 6
+  },
+  {
+    "word": "kite",
+    "word-category": "Toys",
+    "word-length": 4
+  },
+  {
+    "word": "lemon",
+    "word-category": "Fruits",
+    "word-length": 5
+  },
+  {
+    "word": "mountain",
+    "word-category": "Geography",
+    "word-length": 8
+  },
+  {
+    "word": "notebook",
+    "word-category": "Stationery",
+    "word-length": 8
+  },
+  {
+    "word": "orange",
+    "word-category": "Fruits",
+    "word-length": 6
+  },
+  {
+    "word": "pencil",
+    "word-category": "Stationery",
+    "word-length": 6
+  },
+  {
+    "word": "queen",
+    "word-category": "Royalty",
+    "word-length": 5
+  },
+  {
+    "word": "river",
+    "word-category": "Geography",
+    "word-length": 5
+  },
+  {
+    "word": "sun",
+    "word-category": "Astronomy",
+    "word-length": 3
+  },
+  {
+    "word": "tree",
+    "word-category": "Plants",
+    "word-length": 4
+  },
+  {
+    "word": "umbrella",
+    "word-category": "Accessories",
+    "word-length": 8
+  },
+  {
+    "word": "village",
+    "word-category": "Geography",
+    "word-length": 7
+  },
+  {
+    "word": "watermelon",
+    "word-category": "Fruits",
+    "word-length": 10
+  },
+  {
+    "word": "xylophone",
+    "word-category": "Musical Instruments",
+    "word-length": 9
+  },
+  {
+    "word": "yacht",
+    "word-category": "Transport",
+    "word-length": 5
+  },
+  {
+    "word": "zebra",
+    "word-category": "Animals",
+    "word-length": 5
+  },
+  {
+    "word": "book",
+    "word-category": "Literature",
+    "word-length": 4
+  },
+  {
+    "word": "car",
+    "word-category": "Transport",
+    "word-length": 3
+  },
+  {
+    "word": "dance",
+    "word-category": "Art",
+    "word-length": 5
+  },
+  {
+    "word": "energy",
+    "word-category": "Science",
+    "word-length": 6
+  },
+  {
+    "word": "forest",
+    "word-category": "Plants",
+    "word-length": 6
+  },
+  {
+    "word": "garden",
+    "word-category": "Plants",
+    "word-length": 6
+  },
+  {
+    "word": "honey",
+    "word-category": "Food",
+    "word-length": 5
+  },
+  {
+    "word": "ice",
+    "word-category": "Food",
+    "word-length": 3
+  },
+  {
+    "word": "jacket",
+    "word-category": "Clothing",
+    "word-length": 6
+  },
+  {
+    "word": "king",
+    "word-category": "Royalty",
+    "word-length": 4
+  },
+  {
+    "word": "lion",
+    "word-category": "Animals",
+    "word-length": 4
+  },
+  {
+    "word": "moon",
+    "word-category": "Astronomy",
+    "word-length": 4
+  },
+  {
+    "word": "nest",
+    "word-category": "Animals",
+    "word-length": 4
+  },
+  {
+    "word": "ocean",
+    "word-category": "Geography",
+    "word-length": 5
+  },
+  {
+    "word": "pearl",
+    "word-category": "Jewelry",
+    "word-length": 5
+  },
+  {
+    "word": "quilt",
+    "word-category": "Crafts",
+    "word-length": 5
+  },
+  {
+    "word": "rose",
+    "word-category": "Plants",
+    "word-length": 4
+  },
+  {
+    "word": "sand",
+    "word-category": "Geography",
+    "word-length": 4
+  },
+  {
+    "word": "tiger",
+    "word-category": "Animals",
+    "word-length": 5
+  },
+  {
+    "word": "umbrella",
+    "word-category": "Accessories",
+    "word-length": 8
+  },
+  {
+    "word": "violet",
+    "word-category": "Plants",
+    "word-length": 6
+  },
+  {
+    "word": "whale",
+    "word-category": "Animals",
+    "word-length": 5
+  },
+  {
+    "word": "x-ray",
+    "word-category": "Science",
+    "word-length": 5
+  },
+  {
+    "word": "yard",
+    "word-category": "Outdoor",
+    "word-length": 4
+  },
+  {
+    "word": "zoo",
+    "word-category": "Animals",
+    "word-length": 3
+  },
+  {
+    "word": "alphabet",
+    "word-category": "Education",
+    "word-length": 8
+  },
+  {
+    "word": "butterfly",
+    "word-category": "Insects",
+    "word-length": 9
+  },
+  {
+    "word": "cloud",
+    "word-category": "Weather",
+    "word-length": 5
+  },
+  {
+    "word": "dolphin",
+    "word-category": "Animals",
+    "word-length": 7
+  },
+  {
+    "word": "earth",
+    "word-category": "Geography",
+    "word-length": 5
+  },
+  {
+    "word": "fire",
+    "word-category": "Nature",
+    "word-length": 4
+  },
+  {
+    "word": "gold",
+    "word-category": "Metals",
+    "word-length": 4
+  },
+  {
+    "word": "heart",
+    "word-category": "Body",
+    "word-length": 5
+  },
+  {
+    "word": "igloo",
+    "word-category": "Architecture",
+    "word-length": 5
+  },
+  {
+    "word": "jewel",
+    "word-category": "Jewelry",
+    "word-length": 5
+  },
+  {
+    "word": "kangaroo",
+    "word-category": "Animals",
+    "word-length": 8
+  },
+  {
+    "word": "ladder",
+    "word-category": "Tools",
+    "word-length": 6
+  },
+  {
+    "word": "mirror",
+    "word-category": "Furniture",
+    "word-length": 6
+  },
+  {
+    "word": "nectar",
+    "word-category": "Food",
+    "word-length": 6
+  },
+  {
+    "word": "owl",
+    "word-category": "Animals",
+    "word-length": 3
+  },
+  {
+    "word": "planet",
+    "word-category": "Astronomy",
+    "word-length": 6
+  },
+  {
+    "word": "quasar",
+    "word-category": "Astronomy",
+    "word-length": 6
+  },
+  {
+    "word": "rainbow",
+    "word-category": "Weather",
+    "word-length": 7
+  },
+  {
+    "word": "ship",
+    "word-category": "Transport",
+    "word-length": 4
+  },
+  {
+    "word": "train",
+    "word-category": "Transport",
+    "word-length": 5
+  },
+  {
+    "word": "unicorn",
+    "word-category": "Mythology",
+    "word-length": 7
+  },
+  {
+    "word": "violin",
+    "word-category": "Musical Instruments",
+    "word-length": 6
+  },
+  {
+    "word": "window",
+    "word-category": "Architecture",
+    "word-length": 6
+  },
+  {
+    "word": "xylophone",
+    "word-category": "Musical Instruments",
+    "word-length": 9
+  },
+  {
+    "word": "yogurt",
+    "word-category": "Food",
+    "word-length": 6
+  },
+  {
+    "word": "zucchini",
+    "word-category": "Food",
+    "word-length": 8
+  },
+  {
+    "word": "arrow",
+    "word-category": "Weapons",
+    "word-length": 5
+  },
+  {
+    "word": "bridge",
+    "word-category": "Architecture",
+    "word-length": 6
+  },
+  {
+    "word": "circle",
+    "word-category": "Shapes",
+    "word-length": 6
+  },
+  {
+    "word": "dragon",
+    "word-category": "Mythology",
+    "word-length": 6
+  },
+  {
+    "word": "eagle",
+    "word-category": "Animals",
+    "word-length": 5
+  },
+  {
+    "word": "feather",
+    "word-category": "Animals",
+    "word-length": 7
+  },
+  {
+    "word": "garden",
+    "word-category": "Plants",
+    "word-length": 6
+  },
+  {
+    "word": "horizon",
+    "word-category": "Nature",
+    "word-length": 7
+  },
+  {
+    "word": "igloo",
+    "word-category": "Architecture",
+    "word-length": 5
+  },
+  {
+    "word": "jigsaw",
+    "word-category": "Toys",
+    "word-length": 6
+  },
+  {
+    "word": "kettle",
+    "word-category": "Kitchenware",
+    "word-length": 6
+  },
+  {
+    "word": "lamp",
+    "word-category": "Furniture",
+    "word-length": 4
+  },
+  {
+    "word": "mountain",
+    "word-category": "Geography",
+    "word-length": 8
+  },
+  {
+    "word": "needle",
+    "word-category": "Tools",
+    "word-length": 6
+  }
+]

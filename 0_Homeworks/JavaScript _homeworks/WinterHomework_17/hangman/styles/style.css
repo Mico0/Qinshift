@@ -14,6 +14,7 @@ body {
   background-color: crimson;
   color: white;
   padding: 1.5em;
+  height: 100vh;
 }
 
 h2,
@@ -52,12 +53,122 @@ h4 {
   margin-top: 1em;
   justify-items: center;
 }
+
+/* Draw the Hangman Box and the Hangman */
+
 .hangmanBox {
   margin-top: 1em;
   width: 30rem;
   height: 20rem;
   border: 3px dotted white;
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
+.base,
+.pole,
+.top-beam,
+.rope,
+.head,
+.body,
+.left-arm,
+.right-arm,
+.left-leg,
+.right-leg {
+  display: none; /* Initially hidden */
+  position: absolute;
+}
+
+.base {
+  width: 200px;
+  height: 10px;
+  background: white;
+  bottom: 0;
+  left: 29%;
+}
+
+.pole {
+  width: 10px;
+  height: 250px;
+  background: white;
+  bottom: 10px;
+  left: 138px;
+}
+
+.top-beam {
+  width: 100px;
+  height: 10px;
+  background: white;
+  top: 45px;
+  left: 138px;
+}
+
+.rope {
+  width: 2px;
+  height: 50px;
+  background: white;
+  top: 55px;
+  left: 230px;
+}
+
+.head {
+  width: 40px;
+  height: 40px;
+  border: 2px solid white;
+  border-radius: 50%;
+  top: 105px;
+  left: 211px;
+}
+
+.body {
+  width: 2px;
+  height: 70px;
+  background: white;
+  top: 145px;
+  left: 230px;
+}
+
+.left-arm,
+.right-arm {
+  width: 50px;
+  height: 2px;
+  background: white;
+  top: 155px;
+}
+
+.left-arm {
+  left: 186px;
+  transform: rotate(45deg);
+}
+
+.right-arm {
+  left: 226px;
+  transform: rotate(-45deg);
+}
+
+.left-leg,
+.right-leg {
+  width: 50px;
+  height: 2px;
+  background: white;
+  top: 230px;
+}
+
+.left-leg {
+  left: 186px;
+  transform: rotate(-45deg);
+}
+
+.right-leg {
+  left: 226px;
+  transform: rotate(45deg);
+}
+
+.controls {
+  margin-top: 20px;
+}
+
+/* Draw the Hagnman Box and the Hagnman end */
 .gameButtons {
   margin-top: 1em;
 }
@@ -71,6 +182,22 @@ h4 {
   border: 3px solid white;
   width: 10em;
 }
+.gameButtons .btn span {
+  position: relative;
+}
+.gameButtons .btn span::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background-color: white;
+  transition: width 0.2s ease-in-out;
+}
+.gameButtons .btn span:hover::after {
+  width: 100%;
+}
 
 @media only screen and (max-width: 768px) {
   .hangmanBox {
@@ -79,5 +206,25 @@ h4 {
   }
   body {
     padding: 0.5em;
+  }
+  .base,
+  .pole,
+  .top-beam {
+    left: 20%;
+  }
+  .rope,
+  .body {
+    left: 47%;
+  }
+  .head {
+    left: 41%;
+  }
+  .left-arm,
+  .left-leg {
+    left: 34%;
+  }
+  .right-arm,
+  .right-leg {
+    left: 45%;
   }
 }

@@ -44,11 +44,25 @@
       <div class="word"></div>
       <h4>You have 10 lives</h4>
       <h4>Clue -</h4>
-      <div class="hangmanBox"></div>
+      <div class="hangmanBox">
+        <div class="base"></div>
+        <div class="pole"></div>
+        <div class="top-beam"></div>
+        <div class="rope"></div>
+        <div class="head"></div>
+        <div class="body"></div>
+        <div class="left-arm"></div>
+        <div class="right-arm"></div>
+        <div class="left-leg"></div>
+        <div class="right-leg"></div>
+        <!-- <div class="controls">
+          <button onclick="drawHangman()">Draw Next Part</button>
+        </div> -->
+      </div>
     </div>
     <div class="gameButtons">
-      <button class="btn" id="hint">Hint</button>
-      <button class="btn" id="newGame">Play again</button>
+      <button class="btn" id="hint"><span>Hint</span></button>
+      <button class="btn" id="newGame"><span>Play again</span></button>
     </div>
     <script src="./scripts/script.js"></script>
   </body>
