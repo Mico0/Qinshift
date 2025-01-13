@@ -10,7 +10,7 @@ html {
 body {
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.2rem;
   background-color: crimson;
   color: white;
   padding: 1.5em;
@@ -46,7 +46,8 @@ h4 {
 #clueMessage,
 #clue,
 .lives {
-  margin: 0.2em;
+  font-size: 1.5rem;
+  margin: 0.4em;
 }
 
 .btn:hover {
@@ -65,8 +66,8 @@ h4 {
 .guessed_letter {
   border-bottom: 3px solid white;
   margin-right: 20px;
-  font-size: 4rem;
-  width: 0.5em;
+  font-size: 3rem;
+  width: 1em;
   display: block;
 }
 
@@ -197,6 +198,7 @@ h4 {
   border-radius: 0.2em;
   border: 3px solid white;
   width: 10em;
+  cursor: pointer;
 }
 .gameButtons .btn span {
   position: relative;

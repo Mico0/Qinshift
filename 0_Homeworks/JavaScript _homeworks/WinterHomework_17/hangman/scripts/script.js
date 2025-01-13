@@ -10,8 +10,17 @@ let parts = [
   "left-leg",
   "right-leg",
 ];
+
+let slicedWord = [];
+let guessedLetters = [];
+let tmp = [];
+let correctGuesses = [];
+
 let hangmanStep = 0;
 let guesses = 0;
+let numberOfHints = 3;
+let gameOver = false;
+
 let letters = document.querySelector(".buttons");
 let hintBtn = document.querySelector("#hint");
 let newGameBtn = document.querySelector("#newGame");
@@ -21,13 +30,8 @@ let lives = document.querySelector(".lives");
 let message = document.getElementById("message");
 let clueMessage = document.getElementById("clueMessage");
 let clueHeading = document.getElementById("clue");
-let jsonFile = `./files/words.json`;
-let gameOver = false;
 
-let slicedWord = [];
-let correctGuesses = 0;
-let numberOfHints = 3;
-let tmp = [];
+let jsonFile = `./files/words.json`;
 
 function drawHangman() {
   if (hangmanStep < parts.length) {
@@ -36,11 +40,39 @@ function drawHangman() {
   }
 }
 
+function mapWords(data) {
+  let words = [];
+  for (let entry of data) {
+    let wordObj = new Words(
+      entry.word,
+      entry["word-category"],
+      entry["word-length"]
+    );
+    words.push(wordObj);
+  }
+  return words;
+}
+
+function removeDuplicates(array) {
+  let newArray = [];
+  for (let i = 0; i < array.length; i++) {
+    let isUnique = true;
+    for (let j = 0; j < newArray.length; j++) {
+      if (array[i] === newArray[j]) {
+        isUnique = false;
+        break;
+      }
+    }
+    if (isUnique) {
+      newArray.push(array[i]);
+    }
+  }
+  return newArray;
+}
+
 function pickRandomWords(words) {
   let wordsLength = words.length;
-  //   console.log(length);
   let randomIndex = Math.floor(Math.random() * wordsLength - 1);
-  //   console.log(randomIndex);
   let randomWord = words[randomIndex];
   return randomWord;
 }
@@ -49,39 +81,50 @@ function newGame(word) {
   slicedWord = word.word.split("");
   guesses = 10;
   hangmanStep = 0;
-  correctGuesses = 0;
   gameOver = false;
   numberOfHints = 3;
+  message.innerText = "";
   clueHeading.innerText = "";
   clueMessage.innerText = "";
   shownLetters = [];
-  tmp = [...slicedWord];
+  guessedLetters = [];
+  correctGuesses = [];
+  tmp = [...removeDuplicates(slicedWord)];
 
+  category.innerHTML = `The Chosen Category is: <u> ${word.wordCategory} </u>`;
+  lives.innerText = `You have ${guesses} guesses left`;
   wordDiv.innerHTML = "";
+
   for (let part of parts) {
-    // console.log(part);
     let currentPart = document.querySelector(`.${part}`);
     currentPart.style.display = "none";
   }
-  category.innerText = `The Chosen Category is: ${word.wordCategory}`;
-  lives.innerText = `You have ${guesses} guesses left`;
+
   for (let i = 0; i < word.word.length; i++) {
     wordDiv.innerHTML += `<p class="guessed_letter"> </p>`;
   }
-  //   console.log("Sliced Word Array" + slicedWord);
 }
 
 letters.addEventListener("click", function (event) {
-  //   console.log(event.target.innerText);
-  var letter = event.target.innerText;
+  let letter = event.target.innerText;
+
   if (gameOver) {
     return;
   }
+
   let isCorrect = false;
+
+  if (guessedLetters.includes(letter)) {
+    message.innerText = `You have already guessed that letter`;
+    return;
+  }
+
+  guessedLetters.push(letter);
+
   for (let i = 0; i < slicedWord.length; i++) {
     if (letter === slicedWord[i]) {
       wordDiv.childNodes[i].innerText = letter.toUpperCase();
-      correctGuesses++;
+      correctGuesses.push(letter);
       isCorrect = true;
     }
   }
@@ -92,32 +135,32 @@ letters.addEventListener("click", function (event) {
   }
 
   if (guesses === 0) {
-    gameOver = true;
     message.innerText = `Game over try again`;
-    letters.removeEventListener("click", function () {});
-  }
-  if (correctGuesses === slicedWord.length) {
     gameOver = true;
+  }
+
+  if (correctGuesses.length === slicedWord.length) {
     message.innerText = `Congratulations you guessed the word correctly`;
-    hintBtn.removeEventListener("click", function () {});
+    gameOver = true;
   }
 });
 
 hintBtn.addEventListener("click", function () {
-  if (numberOfHints > 0 && tmp.length > 0) {
-    let randomLetterIndex = Math.floor(Math.random() * tmp.length);
-    let hint = tmp[randomLetterIndex].toUpperCase();
+  if (!gameOver) {
+    if (numberOfHints > 0 && tmp.length > 0) {
+      let randomLetterIndex = Math.floor(Math.random() * tmp.length);
+      let hint = tmp[randomLetterIndex].toUpperCase();
 
-    clueHeading.innerText = `${hint}`;
-    numberOfHints--;
-    tmp.splice(randomLetterIndex, 1);
+      clueHeading.innerText = `Clue: ${hint}`;
+      numberOfHints--;
 
-    clueMessage.innerText = `You have ${numberOfHints} hints left.`;
-    console.log(tmp);
-  } else if (numberOfHints === 0) {
-    clueMessage.innerText = `You have no hints left to show.`;
-  } else {
-    clueMessage.innerText = `All letters have been revealed.`;
+      tmp.splice(randomLetterIndex, 1);
+      clueMessage.innerText = `You have ${numberOfHints} hints left.`;
+    } else if (numberOfHints === 0) {
+      clueMessage.innerText = `You have no hints left to show.`;
+    } else {
+      clueMessage.innerText = `All letters have been revealed.`;
+    }
   }
 });
 
@@ -127,11 +170,8 @@ newGameBtn.addEventListener("click", function () {
       return response.json();
     })
     .then(function (response) {
-      //   console.log(response);
       let words = mapWords(response);
-      //   console.log(words);
       let randomWord = pickRandomWords(words);
-      //   console.log(randomWord);
       newGame(randomWord);
     })
     .catch(function (error) {
@@ -149,17 +189,4 @@ function Words(word, wordCategory, wordLength) {
   this.word = word;
   this.wordCategory = wordCategory;
   this.wordLength = wordLength;
-}
-
-function mapWords(data) {
-  let words = [];
-  for (let entry of data) {
-    let wordObj = new Words(
-      entry.word,
-      entry["word-category"],
-      entry["word-length"]
-    );
-    words.push(wordObj);
-  }
-  return words;
 }
