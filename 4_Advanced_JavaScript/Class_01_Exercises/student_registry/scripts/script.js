@@ -9,18 +9,37 @@ function Student(firstName, lastName, age, email) {
 }
 
 function populateDB() {
-  let firstName = document.getElementById("firstName").value;
-  let lastName = document.getElementById("lastName").value;
-  let age = document.getElementById("age").value;
-  let email = document.getElementById("email").value;
-  if (firstName === "" || lastName === "" || age === 0 || email === "") {
-    console.log("Please fill all fields");
-    return;
-  }
-  let databaseObj = new Student(firstName, lastName, age, email);
-  database.push(databaseObj);
+  let firstNameField = document.getElementById("firstName");
+  let lastNameField = document.getElementById("lastName");
+  let ageField = document.getElementById("age");
+  let emailField = document.getElementById("email");
 
-  console.log(database);
+  let firstName = firstNameField.value.trim();
+  let lastName = lastNameField.value.trim();
+  let age = ageField.value.trim();
+  let ageValue = parseInt(age);
+  let email = emailField.value.trim();
+
+  if (
+    firstName === "" ||
+    lastName === "" ||
+    ageValue === 0 ||
+    isNaN(ageValue) ||
+    email === ""
+  ) {
+    alert("Please fill all fields properly");
+    return;
+  } else {
+    let databaseObj = new Student(firstName, lastName, ageValue, email);
+    database.push(databaseObj);
+
+    // console.log(database)
+    console.table(database);
+    firstNameField.value = "";
+    lastNameField.value = "";
+    ageField.value = "";
+    emailField.value = "";
+  }
 }
 
 btn.addEventListener("click", populateDB);
