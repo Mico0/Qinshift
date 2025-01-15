@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do App</title>
+    <style>
+      body {
+        padding: 1em;
+        width: 800px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        font-weight: 600;
+        align-items: center;
+      }
+      #add-todo-form {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <button type="button" id="add-todo">Add To-Do</button>
+      <button type="button" id="show-todo">Show To-Do</button>
+    </div>
+    <br /><br />
+    <div id="add-todo-form">
+      <input
+        type="text"
+        name="title"
+        id="title"
+        placeholder="Enter the To-Do title"
+      />
+      <br /><br />
+      <input
+        type="text"
+        name="description"
+        id="description"
+        placeholder="Enter the To-Do description"
+      />
+      <br /><br />
+      <button type="button" id="save-todo">Save</button>
+      <button type="button" id="reset">Reset</button>
+    </div>
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>
