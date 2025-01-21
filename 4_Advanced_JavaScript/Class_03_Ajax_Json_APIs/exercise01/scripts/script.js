@@ -27,7 +27,7 @@ document.getElementById("content").addEventListener(
 function showSwapiPeople(people) {
   let content = document.getElementById("done_content");
   let html = "<ol>";
-  for (person of people) {
+  for (let person of people) {
     let li = `
         <li>
         ${person.name} has appeared in ${person.films.length} movies <button value="${person.url}">More details</button>
