@@ -5,24 +5,24 @@ btn.addEventListener("click", function () {
   getSwapiPeople(swapi);
 });
 
-document.getElementById("previous").addEventListener("click", function (event) {
-  getSwapiPeople(event.target.value);
-});
-
-document.getElementById("next").addEventListener("click", function (event) {
-  getSwapiPeople(event.target.value);
-});
-
-document.getElementById("content").addEventListener("click", function (event) {
-  if (event.target.tagName === "BUTTON") {
-    if (event.target.id === "previous") {
-      getSwapiPeople(event.target.value);
-    }
-    if (event.target.id === "next") {
-      getSwapiPeople(event.target.value);
+document.getElementById("content").addEventListener(
+  "click",
+  function (event) {
+    event.stopPropagation();
+    if (event.target.tagName === "BUTTON") {
+      if (event.target.id === "previous") {
+        getSwapiPeople(event.target.value);
+      }
+      if (event.target.id === "next") {
+        getSwapiPeople(event.target.value);
+      }
+      if (event.target.innerText === "More details") {
+        showMoreDetails(event.target.value);
+      }
     }
   }
-});
+  // false
+);
 
 function showSwapiPeople(people) {
   let content = document.getElementById("done_content");
@@ -30,7 +30,7 @@ function showSwapiPeople(people) {
   for (person of people) {
     let li = `
         <li>
-        ${person.name} has appeared in ${person.films.length} movies <button value="">More details</button>
+        ${person.name} has appeared in ${person.films.length} movies <button value="${person.url}">More details</button>
         </li>
     `;
     html += li;
@@ -38,8 +38,6 @@ function showSwapiPeople(people) {
   html += "</ol>";
   content.innerHTML = html;
 }
-
-function showMoreDetails(person) {}
 
 function showNextPageBtn(data) {
   let next = document.getElementById("next");
@@ -67,6 +65,7 @@ function getSwapiPeople(url) {
       return response.json();
     })
     .then(function (data) {
+      // debugger;
       console.log(data);
       showSwapiPeople(data.results);
       showNextPageBtn(data);
@@ -75,3 +74,19 @@ function getSwapiPeople(url) {
       console.log(error);
     });
 }
+
+function showMoreDetails(url) {
+  let details = document.getElementById("details");
+  fetch(url)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      details.innerHTML = `Showing details for <b>${data.name}</b> who is born in ${data.birth_year} and is ${data.height}cm high and weighs ${data.mass}kgs, ${data.name} stars in ${data.films.length} movies`;
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+}
+
+// TODO: Ask how to save the person.url and create a function based on that without using fetch()
