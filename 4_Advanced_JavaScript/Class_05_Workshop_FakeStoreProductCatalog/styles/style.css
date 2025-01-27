@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+#products .card {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) !important;
+  grid-gap: 20px;
+}
+
+.card .card-body {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
