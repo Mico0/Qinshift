@@ -7,8 +7,24 @@ html {
   padding: 0;
   box-sizing: inherit;
 }
+#products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+.card {
+  width: auto;
+}
+.card-body {
+  align-content: space-evenly;
+  justify-items: center;
+}
 
-#products .card {
+.card-img-top {
+  height: 250px;
+  width: 250px !important;
+}
+/* #products .card {
   display: grid;
   grid-template-columns: repeat(4, 1fr) !important;
   grid-gap: 20px;
@@ -18,4 +34,4 @@ html {
   display: flex;
   flex-direction: column;
   text-align: center;
-}
+} */

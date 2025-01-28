@@ -66,19 +66,21 @@ function showCategoriesDropDown(data) {
 }
 
 function showCategoryProducts(data) {
-  let html = `<div class="card" style="width: 100%;">`;
+  let html = "";
   for (product of data) {
+    html += `<div class="card" style="">`;
     let card = `<div class="card-body">`;
     card += `
-            <img src="${product.image}" class="card-img-top" height="300px" alt="...">
+            <img src="${product.image}" class="card-img-top" alt="...">
             <h5 class="card-title">${product.title}</h5>
             <p class="card-text">${product.price} $</p>
             <a href="#"  class="btn btn-primary cart" data-product-id="${product.id}">Add to cart</a>
     `;
     card += `</div>`;
     html += `${card}`;
+    html += `</div>`;
   }
-  html += `</div>`;
+
   //   console.log(html);
   productDiv.innerHTML = html;
   addToCartEventListeners();
