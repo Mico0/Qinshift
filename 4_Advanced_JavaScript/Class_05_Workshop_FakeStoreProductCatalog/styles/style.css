@@ -10,9 +10,22 @@ html {
 body {
   background-color: #f4f4f4 !important;
 }
-nav {
+nav,
+footer {
   margin: 1em;
   border-radius: 0.7em;
+}
+footer div {
+  margin: 16px;
+  border-radius: 0.7em;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 0.7em;
+  color: white;
+  font-weight: 600;
+}
+footer div p {
+  margin: 0;
 }
 .navbar-nav {
   justify-content: space-between;
