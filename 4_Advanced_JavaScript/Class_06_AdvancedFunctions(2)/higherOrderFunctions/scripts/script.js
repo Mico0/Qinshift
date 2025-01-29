@@ -278,3 +278,10 @@ let arrays = [
 ];
 let flattened = arrays.reduce((acc, current) => acc.concat(current), []);
 console.log(flattened); // [1, 2, 3, 4, 5, 6]
+
+let studentNames = studentsDatabase.reduce(
+  (acc, current) => (acc += current.firstName + " ,"),
+  ""
+);
+
+console.log(studentNames);
