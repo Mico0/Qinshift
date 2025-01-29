@@ -7,6 +7,26 @@ html {
   padding: 0;
   box-sizing: inherit;
 }
+body {
+  background-color: #f4f4f4 !important;
+}
+nav {
+  margin: 1em;
+  border-radius: 0.7em;
+}
+.navbar-nav {
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  margin-left: 0.7em;
+}
+
+.navbar a,
+button {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
 #products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -26,20 +46,17 @@ html {
   width: 250px !important;
 }
 #category-filter {
-  margin: 1em;
+  margin: 1em auto;
+  padding: 0.2em;
 }
-#category-heading {
+#category-show {
   text-transform: capitalize;
-  margin: 0.5em;
+  margin: 1em auto;
+  padding: 0.2em;
 }
-/* #products .card {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr) !important;
-  grid-gap: 20px;
-}
-
-.card .card-body {
-  display: flex;
-  flex-direction: column;
+#filters {
   text-align: center;
-} */
+}
+#cart {
+  margin-right: 1.5em;
+}

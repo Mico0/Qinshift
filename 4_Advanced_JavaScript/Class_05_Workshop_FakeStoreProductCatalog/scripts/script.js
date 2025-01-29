@@ -51,8 +51,8 @@ function addToCartEventListeners() {
 getAllCategories();
 
 function showCategoriesDropDown(data) {
-  let btn = `<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Categories </button>`;
+  let btn = `<button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <b>Categories</b> </button>`;
   let ul = ` <ul class="dropdown-menu">`;
   for (let category of data) {
     let li = `<li><button class="dropdown-item" value="${category}">${category}</button></li>`;
@@ -73,7 +73,7 @@ function showCategoryProducts(data) {
     card += `
             <img src="${product.image}" class="card-img-top" alt="...">
             <h5 class="card-title">${product.title}</h5>
-            <p class="card-text">${product.price} $</p>
+            <p class="card-text">${product.price}<b>$</b></p>
             <a href="#"  class="btn btn-primary cart" data-product-id="${product.id}">Add to cart</a>
     `;
     card += `</div>`;
