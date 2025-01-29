@@ -285,3 +285,11 @@ let studentNames = studentsDatabase.reduce(
 );
 
 console.log(studentNames);
+
+let studentWithGradesOver3 = studentsDatabase
+  .filter((x) => x.grade >= 3)
+  .filter((x) => x.age >= 17)
+  .map((x) => `${x.firstName} ${x.lastName}`)
+  .reduce((acc, current) => (acc += current + " "), " ");
+
+console.log(studentWithGradesOver3);
