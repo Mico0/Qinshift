@@ -1,4 +1,5 @@
-let path = "./homework/students.json";
+let path =
+  "https://raw.githubusercontent.com/sedc-codecademy/skwd9-04-ajs/main/Samples/students_v2.json";
 
 let getJSON = (path) => {
   fetch(path)

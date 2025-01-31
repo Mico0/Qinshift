@@ -24,6 +24,7 @@ document.addEventListener("click", function (event) {
 });
 
 let generateData = (data) => {
+  document.getElementsByTagName("table")[0].style.display = "inline-block";
   let body = document.getElementsByTagName("tbody")[0];
   let html = "";
   //   console.log(data.results.length);
