@@ -6,13 +6,38 @@
     <title>Bonus Exercise</title>
   </head>
   <body>
-    <label for="email">E-mail: </label>
-    <input type="text" name="email" id="email" />
-    <br /><br />
-    <label for="password">Password:</label>
-    <input type="text" name="password" id="password" />
-    <br /><br />
-    <button id="login">Login</button>
+    <div id="content">
+      <div id="contentLogin">
+        <label for="email">E-mail: </label>
+        <input type="text" name="email" id="email" />
+        <br /><br />
+        <label for="password">Password:</label>
+        <input type="text" name="password" id="password" />
+        <br /><br />
+        <button id="login">Login</button>
+        <br /><br />
+        <label for="register">Don't have an account? </label>
+        <button id="register">Register Here</button>
+      </div>
+      <div id="contentRegister" style="display: none">
+        <label for="registerFirstName">First Name</label>
+        <input type="text" name="registerFirstName" id="registerFirstName" />
+        <br /><br />
+        <label for="registerLastName">Last Name</label>
+        <input type="text" name="registerLastName" id="registerLastName" />
+        <br /><br />
+        <label for="registerEmail">Email</label>
+        <input type="text" name="registerEmail" id="registerEmail" />
+        <br /><br />
+        <label for="registerPassword">Password</label>
+        <input type="text" name="registerPassword" id="registerPassword" />
+        <br /><br />
+        <button id="registerAcc">Register</button>
+      </div>
+      <div id="contentLogout">
+        <button id="logout" style="display: none">Logout</button>
+      </div>
+    </div>
     <script src="./scripts/script.js"></script>
   </body>
 </html>
