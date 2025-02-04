@@ -36,3 +36,5 @@ async function getDataAsync() {
 
 btn.addEventListener("click", getData);
 btn.addEventListener("click", getDataAsync);
+
+//TODO: Prasaj na cas za kako moze da se resi ova so koristenje na .MAP i promise.all pristap da se doobjasni
