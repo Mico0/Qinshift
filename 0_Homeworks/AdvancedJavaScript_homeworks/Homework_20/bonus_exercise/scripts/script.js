@@ -5,7 +5,6 @@ const registerBtn = document.getElementById("registerAcc");
 const loginDiv = document.getElementById("contentLogin");
 const logoutDiv = document.getElementById("contentLogout");
 const registerDiv = document.getElementById("contentRegister");
-const content = document.getElementById("content");
 let arrayOfUsers = [];
 
 getID = (function () {
@@ -23,27 +22,10 @@ function User(email, firstName, lastName, password) {
   this.id = getID();
 }
 
-function loginDisplay(message) {
-  loginDiv.style.display = "none";
-  logoutDiv.style.display = "block";
-  logout.style.display = "block";
-  registerDiv.style.display = "none";
-  header = document.createElement("h2");
-  header.innerText = message;
-  logoutDiv.prepend(header);
-}
-
-function logoutDisplay() {
-  loginDiv.style.display = "block";
-  logoutDiv.style.display = "none";
-  registerDiv.style.display = "none";
-  document.getElementsByTagName("h2")[0].remove();
-}
-
-function registerDisplay() {
-  registerDiv.style.display = "block";
-  loginDiv.style.display = "none";
-  logoutDiv.style.display = "none";
+function toggleDisplay(showDiv) {
+  loginDiv.style.display = showDiv === "login" ? "block" : "none";
+  logoutDiv.style.display = showDiv === "logout" ? "block" : "none";
+  registerDiv.style.display = showDiv === "register" ? "block" : "none";
 }
 
 arrayOfUsers = [
@@ -74,17 +56,6 @@ function checkCredentials(username, password) {
     }, 2000);
   });
 }
-
-login.addEventListener("click", function () {
-  const email = document.getElementById("email");
-  const password = document.getElementById("password");
-  checkCredentials(email.value, password.value)
-    .then((message) => {
-      console.log(message);
-      loginDisplay(message);
-    })
-    .catch((error) => console.log(error));
-});
 
 function registerAccount() {
   const registerFirstName = document.getElementById("registerFirstName");
@@ -122,17 +93,32 @@ function registerAccount() {
   });
 }
 
-registerBtn.addEventListener("click", function () {
-  registerAccount()
-    .then((response) => {
-      arrayOfUsers.push(response);
-      loginDiv.style.display = "block";
-      registerDiv.style.display = "none";
-      console.log(arrayOfUsers);
+login.addEventListener("click", function () {
+  const email = document.getElementById("email");
+  const password = document.getElementById("password");
+  checkCredentials(email.value, password.value)
+    .then((message) => {
+      // console.log(message);
+      toggleDisplay("logout");
+      header = document.createElement("h2");
+      header.innerText = `${message}`;
+      logoutDiv.prepend(header);
     })
     .catch((error) => console.log(error));
 });
 
-register.addEventListener("click", registerDisplay);
+registerBtn.addEventListener("click", function () {
+  registerAccount()
+    .then((response) => {
+      arrayOfUsers.push(response);
+      toggleDisplay("login");
+      console.log("User created", response);
+    })
+    .catch((error) => console.log(error));
+});
 
-logout.addEventListener("click", logoutDisplay);
+register.addEventListener("click", () => {
+  toggleDisplay("register");
+});
+
+logout.addEventListener("click", () => toggleDisplay("login"));
