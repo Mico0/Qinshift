@@ -6,6 +6,18 @@ const urls = {
 let productDiv = document.getElementById("products");
 let categoryHeader = document.getElementById("category-heading");
 let filters = document.getElementById("filters");
+const select = document.getElementById("pageSize");
+const pages = document.getElementById("pages");
+
+let currentPage = document.getElementById("currentPage");
+let totalPages = document.getElementById("totalPages");
+currentPage.innerText = 1;
+totalPages.innerText = 0;
+
+let pageSizes = [3, 6, 9];
+let pageSize = 6;
+let currentPageCount = 0;
+let totalPagesCount = 0;
 
 function getAllCategories() {
   fetch(urls.category)
@@ -17,12 +29,18 @@ function getAllCategories() {
     .catch((error) => console.log(error));
 }
 
-function getAllProducts() {
+function getAllProducts(page, pageSize) {
   fetch(urls.allProducts)
     .then((res) => res.json())
     .then((products) => {
       console.log(products);
-      showCategoryProducts(products);
+      productLength = products.length;
+      let slicedProducts = products.splice(page * pageSize, pageSize);
+
+      totalPagesCount = Math.ceil(productLength / pageSize);
+      totalPages.innerText = totalPagesCount;
+
+      showCategoryProducts(slicedProducts);
     })
     .catch((error) => console.log(error));
 }
@@ -35,6 +53,34 @@ function getProductsByCategory(category) {
       showCategoryProducts(json);
     })
     .catch((error) => console.log(error));
+}
+
+function generateDropdown() {
+  for (let page of pageSizes) {
+    if (page === pageSize) {
+      select.innerHTML += `<option selected value="${page}">${page}</option>`;
+    } else {
+      select.innerHTML += `<option value="${page}">${page}</option>`;
+    }
+  }
+  select.style.display = "block";
+  pages.style.display = "flex";
+}
+
+function generateButtons() {
+  const previous = document.createElement("button");
+  const next = document.createElement("button");
+
+  previous.innerText = "Previous";
+  previous.id = "previousBtn";
+  previous.className += "btn btn-primary";
+
+  next.innerText = "Next";
+  next.id = "nextBtn";
+  next.className += "btn btn-primary";
+
+  pages.appendChild(previous);
+  pages.appendChild(next);
 }
 
 function addToCartEventListeners() {
@@ -100,5 +146,38 @@ document.getElementById("filters").addEventListener("click", (event) => {
 document.getElementById("products-nav").addEventListener("click", () => {
   categoryHeader.innerText = "All products";
   filters.style.display = "block";
-  getAllProducts();
+  generateDropdown();
+  generateButtons();
+  getAllProducts(currentPageCount, pageSize);
 });
+
+select.addEventListener("change", (e) => {
+  if (e.target.value) {
+    pageSize = e.target.value;
+  }
+  getAllProducts(currentPageCount, pageSize);
+});
+
+pages.addEventListener("click", (event) => {
+  if (event.target.id === "nextBtn") {
+    if (currentPageCount + 1 === totalPagesCount) {
+      return;
+    } else {
+      ++currentPageCount;
+      getAllProducts(currentPageCount, pageSize);
+      console.log("Current page: ", currentPageCount);
+      currentPage.innerText = currentPageCount + 1;
+    }
+  } else if (event.target.id === "previousBtn") {
+    if (currentPageCount === 0) {
+      return;
+    } else {
+      currentPageCount -= 1;
+      getAllProducts(currentPageCount, pageSize);
+      console.log("Current page: ", currentPageCount);
+      currentPage.innerText = currentPageCount + 1;
+    }
+  }
+});
+
+//TODO: Get products by category with number filters
