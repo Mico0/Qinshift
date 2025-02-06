@@ -3,6 +3,7 @@ const urls = {
   allProducts: "https://fakestoreapi.com/products",
   productsByCategory: "https://fakestoreapi.com/products/category/",
 };
+
 let productDiv = document.getElementById("products");
 let categoryHeader = document.getElementById("category-heading");
 let filters = document.getElementById("filters");
@@ -11,11 +12,11 @@ const pages = document.getElementById("pages");
 
 let currentPage = document.getElementById("currentPage");
 let totalPages = document.getElementById("totalPages");
-currentPage.innerText = 1;
+currentPage.innerText = 0;
 totalPages.innerText = 0;
 
-let pageSizes = [3, 6, 9];
-let pageSize = 6;
+let pageSizes = [2, 4, 6];
+let pageSize = 4;
 let currentPageCount = 0;
 let totalPagesCount = 0;
 
@@ -23,7 +24,6 @@ function getAllCategories() {
   fetch(urls.category)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       showCategoriesDropDown(data);
     })
     .catch((error) => console.log(error));
@@ -33,11 +33,11 @@ function getAllProducts(page, pageSize) {
   fetch(urls.allProducts)
     .then((res) => res.json())
     .then((products) => {
-      console.log(products);
       productLength = products.length;
-      let slicedProducts = products.splice(page * pageSize, pageSize);
 
+      let slicedProducts = products.splice(page * pageSize, pageSize);
       totalPagesCount = Math.ceil(productLength / pageSize);
+
       totalPages.innerText = totalPagesCount;
 
       showCategoryProducts(slicedProducts);
@@ -45,14 +45,30 @@ function getAllProducts(page, pageSize) {
     .catch((error) => console.log(error));
 }
 
-function getProductsByCategory(category) {
+function getProductsByCategory(category, page, pageSize) {
   fetch(`${urls.productsByCategory}${category}`)
     .then((res) => res.json())
     .then((json) => {
-      console.log(json);
-      showCategoryProducts(json);
+      productLength = json.length;
+      let splicedProducts = json.splice(page * pageSize, pageSize);
+      totalPagesCount = Math.ceil(productLength / pageSize);
+      totalPages.innerText = totalPagesCount;
+      // console.log(json);
+      showCategoryProducts(splicedProducts);
     })
     .catch((error) => console.log(error));
+}
+
+function getCategoryHelper() {
+  if (categoryHeader.innerText.toLowerCase() === "all products") {
+    return getAllProducts(currentPageCount, pageSize);
+  } else {
+    return getProductsByCategory(
+      categoryHeader.innerText.toLowerCase(),
+      currentPageCount,
+      pageSize
+    );
+  }
 }
 
 function generateDropdown() {
@@ -73,11 +89,11 @@ function generateButtons() {
 
   previous.innerText = "Previous";
   previous.id = "previousBtn";
-  previous.className += "btn btn-primary";
+  previous.className += "btn btn-secondary";
 
   next.innerText = "Next";
   next.id = "nextBtn";
-  next.className += "btn btn-primary";
+  next.className += "btn btn-secondary";
 
   pages.appendChild(previous);
   pages.appendChild(next);
@@ -95,6 +111,8 @@ function addToCartEventListeners() {
 // getAllProducts();
 
 getAllCategories();
+generateDropdown();
+generateButtons();
 
 function showCategoriesDropDown(data) {
   let btn = `<button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -137,35 +155,37 @@ document.getElementById("filters").addEventListener("click", (event) => {
     event.target.tagName === "BUTTON" &&
     event.target.className === "dropdown-item"
   ) {
-    // console.log(event.target);
+    // console.log(event.target.value);
     categoryHeader.innerText = event.target.value;
-    getProductsByCategory(event.target.value);
+    getProductsByCategory(event.target.value, currentPageCount, pageSize);
   }
 });
 
 document.getElementById("products-nav").addEventListener("click", () => {
   categoryHeader.innerText = "All products";
   filters.style.display = "block";
-  generateDropdown();
-  generateButtons();
-  getAllProducts(currentPageCount, pageSize);
+
+  getAllProducts(0, pageSize);
+  currentPageCount = 0;
+  currentPage.innerText = currentPageCount + 1;
 });
 
 select.addEventListener("change", (e) => {
   if (e.target.value) {
     pageSize = e.target.value;
   }
-  getAllProducts(currentPageCount, pageSize);
+  getCategoryHelper();
 });
 
 pages.addEventListener("click", (event) => {
   if (event.target.id === "nextBtn") {
-    if (currentPageCount + 1 === totalPagesCount) {
+    if (currentPageCount + 1 === totalPagesCount || totalPagesCount === 0) {
       return;
     } else {
       ++currentPageCount;
-      getAllProducts(currentPageCount, pageSize);
-      console.log("Current page: ", currentPageCount);
+      console.log(totalPagesCount);
+      getCategoryHelper();
+      // console.log("Current page: ", currentPageCount);
       currentPage.innerText = currentPageCount + 1;
     }
   } else if (event.target.id === "previousBtn") {
@@ -173,7 +193,7 @@ pages.addEventListener("click", (event) => {
       return;
     } else {
       currentPageCount -= 1;
-      getAllProducts(currentPageCount, pageSize);
+      getCategoryHelper();
       console.log("Current page: ", currentPageCount);
       currentPage.innerText = currentPageCount + 1;
     }

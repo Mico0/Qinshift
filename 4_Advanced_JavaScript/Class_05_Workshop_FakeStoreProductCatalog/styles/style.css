@@ -32,9 +32,21 @@ footer div p {
 
 #pages {
   width: 50%;
-  margin: 0 auto;
+  margin: 0.5em auto;
   display: flex;
   justify-content: center;
+}
+
+#pages button {
+  margin: 0 1em;
+  font-weight: bold;
+}
+
+select {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1rem !important;
+  width: 5em;
 }
 
 .navbar-nav {
