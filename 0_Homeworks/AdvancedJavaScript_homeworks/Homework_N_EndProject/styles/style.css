@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-size: 24px;
+}
+
+.container {
+  padding: 1rem;
+}
+
+th {
+  font-size: 0.8rem;
+}
+#filterContainer {
+  display: flex;
+  justify-content: space-between;
+}
+#warning svg {
+  height: 30px;
+}
+#warning {
+  justify-content: center;
+  display: flex;
+}
+.warningNone {
+  display: none !important;
+}
+#searchButton {
+  font-size: 0.7rem;
+}
