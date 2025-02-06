@@ -3,8 +3,11 @@ const url =
 
 const typeSelect = document.getElementById("typeSelect");
 const brandSelect = document.getElementById("brandSelect");
+const gasType = document.getElementById("gasSelect");
+const colorSelect = document.getElementById("colorSelect");
 const search = document.getElementById("searchButton");
 const tableContainer = document.getElementById("tableContainer");
+const tbody = document.getElementsByTagName("tbody")[0];
 
 async function getCars(url) {
   try {
@@ -33,13 +36,17 @@ async function getCars(url) {
         filteredCars = filteredCars.filter(
           (x) => x.type.toLowerCase() === selectedType
         );
+        tbody.innerHTML = "";
         generateTable(filteredCars);
+        alertDiv.style.display = "none";
       }
       if (selectedBrand !== "car brand") {
         filteredCars = filteredCars.filter(
           (x) => x.brand.toLowerCase() === selectedBrand
         );
+        tbody.innerHTML = "";
         generateTable(filteredCars);
+        alertDiv.style.display = "none";
       }
 
       console.log(filteredCars);
@@ -53,8 +60,12 @@ async function getCars(url) {
 async function fillInputs() {
   typeSelect.innerHTML += `<option selected value="Car type">Car Type:</option>`;
   brandSelect.innerHTML += `<option selected value="Car brand">Car Brand:</option>`;
+  gasType.innerHTML += `<option selected value="Gas type">Gas Type:</option>`;
+  colorSelect.innerHTML += `<option selected value="Color">Golor:</option>`;
   let types = [];
   let brands = [];
+  let gas = [];
+  let colors = [];
   let data = await getCars(url);
   for (let car of data) {
     if (!types.includes(car.type)) {
@@ -62,6 +73,12 @@ async function fillInputs() {
     }
     if (!brands.includes(car.brand)) {
       brands.push(car.brand);
+    }
+    if (!gas.includes(car.gasType)) {
+      gas.push(car.gasType);
+    }
+    if (!colors.includes(car.color)) {
+      colors.push(car.color);
     }
   }
 
@@ -71,13 +88,17 @@ async function fillInputs() {
   for (let brand of brands) {
     brandSelect.innerHTML += `<option value="${brand.toLowerCase()}">${brand}</option>`;
   }
+  gas.forEach((el) => {
+    gasType.innerHTML += `<option value="${el.toLowerCase()}">${el}</option>`;
+  });
+  colors.forEach((color) => {
+    colorSelect.innerHTML += `<option value="${color.toLowerCase()}">${color}</option>`;
+  });
 }
 
 fillInputs();
 
 function generateTable(data) {
-  const tbody = document.getElementsByTagName("tbody")[0];
-
   for (car of data) {
     tbody.innerHTML += `
       <tr>
