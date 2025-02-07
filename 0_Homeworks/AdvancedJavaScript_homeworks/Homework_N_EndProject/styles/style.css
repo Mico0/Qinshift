@@ -34,8 +34,8 @@ th {
 #inputContainer2 label {
   margin-right: 1rem;
 }
-#warning svg {
-  height: 30px;
+svg {
+  font-size: 2rem;
 }
 #warning {
   justify-content: center;
@@ -45,5 +45,5 @@ th {
   display: none !important;
 }
 #searchButton {
-  font-size: 0.7rem;
+  margin-right: 1rem;
 }
