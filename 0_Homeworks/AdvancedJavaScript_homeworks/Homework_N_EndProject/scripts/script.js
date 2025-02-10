@@ -140,7 +140,8 @@ function filterTable(data) {
       !selectedColor &&
       !selectedGas &&
       doorNumber === 0 &&
-      horsepowerNumber === 0;
+      horsepowerNumber === 0 &&
+      anyFilter.checked;
 
     if (noFiltersSelected) {
       warning.style.display = "flex";
@@ -148,6 +149,7 @@ function filterTable(data) {
         "You must select a car type or a car brand before searching!";
       return;
     } else {
+      console.log(!anyFilter.checked);
       let filteredCars = data;
       if (selectedType !== "car type") {
         filteredCars = filteredCars.filter(
