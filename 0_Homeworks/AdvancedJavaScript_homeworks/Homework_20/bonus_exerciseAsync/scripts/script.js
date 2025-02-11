@@ -35,3 +35,25 @@ function toggleDisplay(showDiv) {
 
 register.addEventListener("click", () => toggleDisplay("register"));
 logout.addEventListener("click", () => toggleDisplay("login"));
+
+function checkCredentials(username, password) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      try {
+        let isFound = false;
+        for (let user of arrayOfUsers) {
+          if (username === user.username && password === user.password) {
+            isFound = true;
+            resolve(`Welcome back ${user.firstName} ${user.lastName}`);
+            break;
+          }
+        }
+        if (!isFound) {
+          reject("You have entered the WRONG login details");
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }, 2000);
+  });
+}
