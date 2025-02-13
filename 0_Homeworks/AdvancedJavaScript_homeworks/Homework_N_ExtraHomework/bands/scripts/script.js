@@ -26,10 +26,7 @@ async function generateTable() {
             <td>${data[i].active}</td>
             <td>${data[i].tags.toString()}</td>
             <td>
-             ${data[i].members.forEach((element) => {
-               console.log(element.name);
-               return element.name;
-             })}
+             ${Object.values(data[i].members)}
             </td>
              <td>${data[i].albums.length}</td>
         </tr>
