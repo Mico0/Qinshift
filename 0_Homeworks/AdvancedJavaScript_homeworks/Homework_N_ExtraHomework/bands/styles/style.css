@@ -31,3 +31,22 @@ thead {
 #numberAlbumsHeader {
   cursor: pointer;
 }
+#table_controls {
+  margin: 1rem 0;
+}
+#table_nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.7rem 0;
+}
+#filter_controls > .input-group > * {
+  padding-right: 1rem;
+}
+.input-group > #btncheck1 label {
+  padding-left: 1rem;
+}
+#table_nav .input-group,
+.pagination {
+  margin: 0;
+}

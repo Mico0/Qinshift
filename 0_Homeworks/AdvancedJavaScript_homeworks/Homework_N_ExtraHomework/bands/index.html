@@ -14,6 +14,83 @@
   </head>
   <body>
     <div class="container">
+      <div class="container" id="table_nav">
+        <div
+          role="toolbar"
+          aria-label="Toolbar with button groups"
+          id="filter_controls"
+        >
+          <div
+            class="input-group"
+            role="group"
+            aria-label="table_controls"
+            id="table_controls"
+          >
+            <div class="dropdown">
+              <button
+                class="btn btn-dark dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dropdown button
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+              </ul>
+            </div>
+            <span class="input-group-text" id="addon-wrapping">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                class="bi bi-search"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+                />
+              </svg>
+            </span>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Search"
+              aria-label="search"
+              aria-describedby="addon-wrapping"
+            />
+            <input
+              type="checkbox"
+              class="btn-check"
+              id="btncheck1"
+              autocomplete="off"
+            />
+            <label class="btn btn-outline-dark" for="btncheck1"
+              >Show active</label
+            >
+          </div>
+        </div>
+        <div id="paging_controls">
+          <nav aria-label="table navigation">
+            <ul class="pagination justify-content-end">
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
       <table id="bandTable" class="table table-dark table-striped">
         <thead>
           <tr>
@@ -102,6 +179,83 @@
         </thead>
         <tbody class="table-group-divider"></tbody>
       </table>
+      <div class="container" id="table_nav">
+        <div
+          role="toolbar"
+          aria-label="Toolbar with button groups"
+          id="filter_controls"
+        >
+          <div
+            class="input-group"
+            role="group"
+            aria-label="table_controls"
+            id="table_controls"
+          >
+            <div class="dropdown">
+              <button
+                class="btn btn-dark dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dropdown button
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+              </ul>
+            </div>
+            <span class="input-group-text" id="addon-wrapping">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                class="bi bi-search"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+                />
+              </svg>
+            </span>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Search"
+              aria-label="search"
+              aria-describedby="addon-wrapping"
+            />
+            <input
+              type="checkbox"
+              class="btn-check"
+              id="btncheck1"
+              autocomplete="off"
+            />
+            <label class="btn btn-outline-dark" for="btncheck1"
+              >Show active</label
+            >
+          </div>
+        </div>
+        <div id="paging_controls">
+          <nav aria-label="table navigation">
+            <ul class="pagination justify-content-end">
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
