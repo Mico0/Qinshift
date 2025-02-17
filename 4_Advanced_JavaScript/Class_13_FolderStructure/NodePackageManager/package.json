@@ -1,0 +1,24 @@
+{
+  "name": "nodepackagemanager",
+  "version": "1.0.0",
+  "description": "NPM demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "demo",
+    "npm",
+    "node",
+    "package",
+    "manager"
+  ],
+  "author": "Milan O.",
+  "license": "ISC",
+  "dependencies": {
+    "array-includes": "^3.1.8",
+    "bootstrap": "^5.3.3",
+    "devextreme": "^24.2.3",
+    "jquery": "^3.7.1"
+  }
+}
