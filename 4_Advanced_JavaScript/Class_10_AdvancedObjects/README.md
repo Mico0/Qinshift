@@ -9,8 +9,8 @@ entities such as users or products, we use objects. Objects are used to encapsul
 business logic, group different features as modules, and even used as modules for organizing functions and values.
 Objects can hold two types of data:
 
-- Properties - Simple or complex values (ex: string, number, array, another object)
-- Methods - Functions
+* Properties - Simple or complex values (ex: string, number, array, another object)
+* Methods - Functions
 
 ### Everything is an object
 
@@ -18,17 +18,17 @@ In JavaScript, everything is an object. All the functions and values that are na
 another object or connected to some object. If we look at the DOM or **document** we can see that it's not some special
 type of entity. It's actually an object. All methods like **getElementById** and **querySelector** are actually methods
 of the object document. We also know the **window**, the representation of our browser window. From that object, we
-access all sorts of features such as **console** which is an object as well and has a method called **log**. Every \*
-\*array** is actually an object, **length** is a property of that array object, and **push** and **pop\*\* are methods
+access all sorts of features such as **console** which is an object as well and has a method called **log**. Every *
+*array** is actually an object, **length** is a property of that array object, and **push** and **pop** are methods
 
 ```javascript
-typeof document; // object
-typeof document.getElementById; // function
-typeof []; // object
-typeof [].push; // function
-typeof console; // object
-typeof console.log; // function
-typeof window; // object
+typeof (document) // object
+typeof (document.getElementById) // function 
+typeof ([]) // object
+typeof ([].push) // function 
+typeof (console) // object
+typeof (console.log) // function 
+typeof (window) // object
 ```
 
 Since everything comes from the window object, the window object is left out and we don't have to write it. But make no
@@ -82,13 +82,10 @@ function Dog(name, color, age, favoriteFood) {
     console.log("BARK BARK BARK");
   };
   this.eat = function (food) {
-    dog.favoriteFood.forEach((fav) =>
-      fav.toLowerCase() === food.toLowerCase()
-        ? console.log("*My favorite!*")
-        : ""
-    );
+    dog.favoriteFood.forEach(fav =>
+        fav.toLowerCase() === food.toLowerCase() ? console.log("*My favorite!*") : "");
     console.log("NOM NOM NOM");
-  };
+  }
 }
 
 let sparky = new Dog("Sparky", "Brown", 1, ["Chicken", "Cucumber"]);
@@ -127,8 +124,8 @@ window object. We are still in the same execution context
 
 ```javascript
 let thisObj = {
-  whatsThis: this,
-};
+  whatsThis: this
+}
 console.log(thisObj.whatsThis);
 ```
 
@@ -142,8 +139,8 @@ let thisObj = {
   whatsThis: this,
   whatsThisMethod: function () {
     console.log(this);
-  },
-};
+  }
+}
 console.log(thisObj.whatsThis); // window
 thisObj.whatsThisMethod(); // thisObj
 ```
@@ -162,7 +159,7 @@ function thisTemplate(description) {
   this.description = description;
   this.whatsThis = this;
   this.whatsThisFunc = function () {
-    console.log(this);
+    console.log(this)
   };
 }
 
@@ -184,15 +181,15 @@ for destructuring an object it will look something like this:
 let dog = {
   dogName: "Bugsy",
   dogColor: "Black",
-  dogAge: 4,
-};
+  dogAge: 4
+}
 //If we want to console our dog's object proerties we can do this:
 console.log(dog.dogName); //Bugsy
 console.log(dog.dogColor); //Black
 console.log(dog.dogAge); //4
 
 //If we use destructuring on our object it will look like:
-const { name, color, age } = dog;
+const {name, color, age} = dog;
 console.log(name); //Bugsy
 console.log(color); //Black
 console.log(age); //4
@@ -211,21 +208,21 @@ displlaySymmary function that accepts one input parameter that should be a stude
 
 ```javascript
 const student = {
-  name: "John Doe",
+  name: 'John Doe',
   age: 19,
   scores: {
     JavaScript: 74,
     AdvancedJS: 63,
-    CSharp: 85,
-  },
+    CSharp: 85
+  }
 };
 
 // A function that just displays some info about the student object for us.
 function displaySummary(student) {
-  console.log("Hello, " + student.name);
-  console.log("Your JavaScript score is " + (student.scores.JavaScript || 0));
-  console.log("Your AdvancedJS score is " + (student.scores.AdvancedJS || 0));
-  console.log("Your CSharp score is " + (student.scores.CSharp || 0));
+  console.log('Hello, ' + student.name);
+  console.log('Your JavaScript score is ' + (student.scores.JavaScript || 0));
+  console.log('Your AdvancedJS score is ' + (student.scores.AdvancedJS || 0));
+  console.log('Your CSharp score is ' + (student.scores.CSharp || 0));
 }
 
 displaySummary(student);
@@ -248,46 +245,43 @@ displaySummary()
 
 ```javascript
 //By using destructuring
-function displaySummary({
-  name,
-  scores: { JavaScript = 0, AdvancedJS = 0, CSharp = 0 },
-}) {
-  console.log("Hello, " + name);
-  console.log("Your JavaScript score is " + JavaScript);
-  console.log("Your AdvancedJS score is " + AdvancedJS);
-  console.log("Your CSharp score is " + CSharp);
+function displaySummary({name, scores: {JavaScript = 0, AdvancedJS = 0, CSharp = 0}}) {
+  console.log('Hello, ' + name);
+  console.log('Your JavaScript score is ' + JavaScript);
+  console.log('Your AdvancedJS score is ' + AdvancedJS);
+  console.log('Your CSharp score is ' + CSharp);
 }
 
-displaySummary(student);
+displaySummary(student)
 
 //Compared to the previous one, that does not use destructuring
 
 function displaySummary(student) {
-  console.log("Hello, " + student.name);
-  console.log("Your JavaScript score is " + (student.scores.JavaScript || 0));
-  console.log("Your AdvancedJS score is " + (student.scores.AdvancedJS || 0));
-  console.log("Your CSharp score is " + (student.scores.CSharp || 0));
+  console.log('Hello, ' + student.name);
+  console.log('Your JavaScript score is ' + (student.scores.JavaScript || 0));
+  console.log('Your AdvancedJS score is ' + (student.scores.AdvancedJS || 0));
+  console.log('Your CSharp score is ' + (student.scores.CSharp || 0));
 }
 
-displaySummary(student);
+displaySummary(student)
 ```
 
 From the comparison, we can see that the function declaration with destructuring is more clear, and simple
 
 ### Default Values
 
-Trying to assign a variable corresponding to a key that does not exist on the destructured object will cause the value \*
-\*undefined\*\* to be assigned instead. You can pass default values that will be assigned to such variables instead of
+Trying to assign a variable corresponding to a key that does not exist on the destructured object will cause the value *
+*undefined** to be assigned instead. You can pass default values that will be assigned to such variables instead of
 undefined. Here is a simple example
 
 ```javascript
 let person = {
-  name: "John Doe",
-  country: "Canada",
+  name: 'John Doe',
+  country: 'Canada'
 };
 
 // Assign default value of 25 to age if undefined
-const { name, country, age = 25 } = person;
+const {name, country, age = 25} = person;
 
 // Here I am using ES6 template literals
 console.log(`I am ${name} from ${country} and I am ${age} years old.`);
@@ -314,8 +308,8 @@ console.log(`R: ${red}, G: ${green}, B: ${blue}`); // R: 255, G: 200, B: 0
 
 Also destructuring can be used to a nested arrays:
 
-```javascript
-const color = ["#FF00FF", [255, 0, 255], "rgb(255, 0, 255)"];
+ ```javascript
+const color = ['#FF00FF', [255, 0, 255], 'rgb(255, 0, 255)'];
 
 // Use nested destructuring to assign red, green and blue
 const [hex, [red, green, blue]] = color;
@@ -362,9 +356,9 @@ the object passed as the argument.
 let dog = {
   isHappy: true,
   bark: function () {
-    console.log("BARK BARK BARK!");
-  },
-};
+    console.log("BARK BARK BARK!")
+  }
+}
 
 let barnie = Object.create(dog); // barnie has everything dog has
 barnie.name = "Barnie";
@@ -373,7 +367,7 @@ barnie.age = 2;
 barnie.happyBirthday = function () {
   console.log("Happy birthday Barnie!");
   this.age++;
-};
+}
 
 let barnieTwinBrother = Object.create(barnie); // the twin has everything barnie has
 barnieTwinBrother.name = "Booch"; // This name is added on the twin
@@ -388,16 +382,16 @@ the first one
 let addressInfo = {
   street: "Dogge Street",
   streetNumber: 24,
-  contactPerson: "0703452323",
-};
+  contactPerson: "0703452323"
+}
 
 let barnieChip = Object.assign(barnie, addressInfo); // copies from address to barnie
 
 let anotherAddress = {
   street: "Other Street",
   streetNumber: 12,
-  contactPerson: "072990002",
-};
+  contactPerson: "072990002"
+}
 
 let barnieChipUpdate = Object.assign(barnieChip, anotherAddress); // overrides address values
 let barnieChipUpdateReversed = Object.assign(anotherAddress, barnieChip); // we have barnie without the changed address
@@ -421,9 +415,9 @@ let dog = {
     console.log("BARK BARK BARK");
   },
   printProperties: function () {
-    Object.keys(this).forEach((key) => console.log(key));
-  },
-};
+    Object.keys(this).forEach(key => console.log(key));
+  }
+}
 ```
 
 #### values
@@ -447,12 +441,10 @@ have a key and value pair. Basically, it returns the keys and the values in smal
 element is always the key and the second is always the value
 
 ```javascript
-console.log(Object.entries(barnie));
+console.log(Object.entries(barnie))
 dog.printOnlyProperties = function () {
-  Object.entries(barnie).forEach((pair) =>
-    typeof pair[1] === "function" ? "" : console.log(pair)
-  );
-};
+  Object.entries(barnie).forEach(pair => typeof (pair[1]) === "function" ? "" : console.log(pair));
+}
 ```
 
 #### dynamically create properties and values
@@ -467,7 +459,7 @@ let nameProperty = "dogName";
 newDog[nameProperty] = "Sniffy"; // will have dogName: Sniffy property
 
 let food = ["bacon", "cucumber"];
-food.forEach((food) => (newDog[food] = true));
+food.forEach(food => newDog[food] = true);
 console.log(newDog); // will have dogName, bacon and cucumber properties
 ```
 
@@ -511,8 +503,8 @@ console.log(Object.isFrozen(dog)); // false
 
 ## Extra materials 📘
 
-- [Introduction and using objects](https://codetheweb.blog/2018/06/09/javascript-objects/)
-- [What is THIS in javascript](https://blog.bitsrc.io/what-is-this-in-javascript-3b03480514a7)
-- [Object methods](https://www.digitalocean.com/community/tutorials/how-to-use-object-methods-in-javascript)
-- [How to use spread syntax](https://codeburst.io/javascript-es6-the-spread-syntax-f5c35525f754)
-- [How To Use Object Destructuring in Modern Javascript](https://itnext.io/how-to-use-object-destructuring-in-modern-javascript-59758ebfb778)
+* [Introduction and using objects](https://codetheweb.blog/2018/06/09/javascript-objects/)
+* [What is THIS in javascript](https://blog.bitsrc.io/what-is-this-in-javascript-3b03480514a7)
+* [Object methods](https://www.digitalocean.com/community/tutorials/how-to-use-object-methods-in-javascript)
+* [How to use spread syntax](https://codeburst.io/javascript-es6-the-spread-syntax-f5c35525f754)
+* [How To Use Object Destructuring in Modern Javascript](https://itnext.io/how-to-use-object-destructuring-in-modern-javascript-59758ebfb778)
