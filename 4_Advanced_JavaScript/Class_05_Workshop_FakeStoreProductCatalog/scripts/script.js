@@ -20,6 +20,11 @@ let pageSize = 4;
 let currentPageCount = 0;
 let totalPagesCount = 0;
 
+const cartBtn = document.getElementById("addToCart");
+const viewCart = document.getElementById("cart");
+const cartDiv = document.getElementById("cartDiv");
+let productIDS = [];
+
 function getAllCategories() {
   fetch(urls.category)
     .then((response) => response.json())
@@ -101,12 +106,47 @@ function generateButtons() {
 
 function addToCartEventListeners() {
   let btns = document.getElementsByClassName("cart");
+
   for (let btn of btns) {
     btn.addEventListener("click", (event) => {
-      console.log(event.target);
+      let productId = event.target.getAttribute("data-product-id");
+      productIDS.push(Number(productId));
+      console.log(productIDS);
     });
   }
 }
+
+viewCart.addEventListener("click", async function () {
+  const firstContainer = document.querySelectorAll(".container")[1];
+  let quantity = 1;
+  // debugger;
+  let html = `<ol>`;
+
+  cartDiv.classList.add("container");
+
+  for (id of productIDS) {
+    let response = await fetch(`https://fakestoreapi.com/products/${id}`);
+    let data = await response.json();
+
+    html += `
+          <li><img width="25" height="25" src="${data.image}"> ${data.title}, ${data.price}, ${quantity}, <button id="removeButton" data-product-id="${id}" >Remove</button></li>
+
+        `;
+  }
+  html += "</ol>";
+  cartDiv.innerHTML = html;
+});
+
+cartDiv.addEventListener("click", function (e) {
+  if (e.target.id === "removeButton") {
+    e.target.parentElement.remove();
+    console.log(productIDS);
+    let index = productIDS.indexOf(
+      Number(e.target.getAttribute("data-product-id"))
+    );
+    productIDS.splice(index, 1);
+  }
+});
 
 // getAllProducts();
 
@@ -138,7 +178,7 @@ function showCategoryProducts(data) {
             <img src="${product.image}" class="card-img-top" alt="...">
             <h5 class="card-title">${product.title}</h5>
             <p class="card-text">${product.price}<b>$</b></p>
-            <a href="#"  class="btn btn-primary cart" data-product-id="${product.id}">Add to cart</a>
+            <a href="#" id="addToCart"  class="btn btn-primary cart" data-product-id="${product.id}">Add to cart</a>
     `;
     card += `</div>`;
     html += `${card}`;
@@ -199,5 +239,3 @@ pages.addEventListener("click", (event) => {
     }
   }
 });
-
-//TODO: Get products by category with number filters
