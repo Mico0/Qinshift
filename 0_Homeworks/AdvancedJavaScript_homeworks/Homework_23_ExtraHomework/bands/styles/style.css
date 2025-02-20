@@ -40,11 +40,14 @@ thead {
   align-items: center;
   margin: 0.7rem 0;
 }
-#filter_controls > .input-group > * {
-  padding-right: 1rem;
+#filter_controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.input-group > #btncheck1 label {
-  padding-left: 1rem;
+
+#filter_controls > * {
+  margin-left: 1rem !important;
 }
 #table_nav .input-group,
 .pagination {

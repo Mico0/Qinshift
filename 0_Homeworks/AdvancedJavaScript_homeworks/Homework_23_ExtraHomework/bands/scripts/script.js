@@ -1,5 +1,5 @@
 const url =
-  "https://raw.githubusercontent.com/Mico0/Qinshift/refs/heads/main/0_Homeworks/AdvancedJavaScript_homeworks/Homework_N_ExtraHomework/bands/bands.json";
+  "https://raw.githubusercontent.com/Mico0/Qinshift/refs/heads/main/0_Homeworks/AdvancedJavaScript_homeworks/Homework_23_ExtraHomework/bands/bands.json";
 let isNameSortedAscending = true;
 let isNumberSortedAscending = true;
 
@@ -81,4 +81,18 @@ async function sortTable() {
   }
 }
 
+async function searchTable(text) {
+  try {
+    const data = await fetchData(url);
+    let searchedData = data;
+    searchedData = searchedData.filter((el) =>
+      el.name.toLowerCase().includes(text.toLowerCase())
+    );
+    console.log(searchedData);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+searchTable("st");
 sortTable();
