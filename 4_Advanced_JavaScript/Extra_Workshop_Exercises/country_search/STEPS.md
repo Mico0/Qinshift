@@ -1,0 +1,13 @@
+- Create HTML file
+  - add serach input
+  - add all buttons
+  - add containers for the cards
+  - set classes and id's
+- Create JS file
+  - create getAllCountries function that will fetch data from the api to get all countries
+  - create getSpecificCountry function that will fetch data from the api to get a specific country
+  - create searchCountriesByName function that will return filtered countries by name
+  - create renderCard function
+  - get html elements
+  - attach apropriate event listeners
+- Play with CSS
