@@ -13,12 +13,12 @@ async function fetchData(url) {
   }
 }
 
-async function generateTable(data) {
+async function generateTable(data, length = 10) {
   try {
     const bandTable = document.getElementById("bandTable");
     const tbody = bandTable.getElementsByTagName("tbody")[0];
     let html = "";
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < length; i++) {
       html += `
           <tr>
               <td>${i + 1}</td>
@@ -55,6 +55,7 @@ async function sortTable() {
     const data = await fetchData(url);
     const bandHeader = document.getElementById("bandNameHeader");
     const numberHeader = document.getElementById("numberAlbumsHeader");
+
     generateTable(data);
     let sortedData = null;
     bandHeader.addEventListener("click", () => {
@@ -63,6 +64,13 @@ async function sortTable() {
           ? a.name.toLowerCase().localeCompare(b.name.toLowerCase())
           : b.name.toLowerCase().localeCompare(a.name.toLowerCase())
       );
+      if (isNameSortedAscending) {
+        document.getElementById("ascendingName").style.display = "block";
+        document.getElementById("descendingName").style.display = "none";
+      } else {
+        document.getElementById("ascendingName").style.display = "none";
+        document.getElementById("descendingName").style.display = "block";
+      }
       isNameSortedAscending = !isNameSortedAscending;
       generateTable(sortedData);
     });
@@ -75,6 +83,13 @@ async function sortTable() {
       );
       isNumberSortedAscending = !isNumberSortedAscending;
       generateTable(sortedData);
+      if (isNumberSortedAscending) {
+        document.getElementById("ascendingAlbums").style.display = "block";
+        document.getElementById("descendingAlbums").style.display = "none";
+      } else {
+        document.getElementById("ascendingAlbums").style.display = "none";
+        document.getElementById("descendingAlbums").style.display = "block";
+      }
     });
   } catch (error) {
     console.log(error);
@@ -88,11 +103,36 @@ async function searchTable(text) {
     searchedData = searchedData.filter((el) =>
       el.name.toLowerCase().includes(text.toLowerCase())
     );
-    console.log(searchedData);
+    return searchedData;
   } catch (error) {
     console.log(error);
   }
 }
+let isActive = false;
+document
+  .getElementById("btncheck1")
+  .addEventListener("click", async function () {
+    // debugger;
+    let data = await fetchData(url);
+    let filteredData = data;
+    if (!isActive) {
+      filteredData = filteredData.filter((el) => el.active === true);
+      generateTable(filteredData);
+      isActive = true;
+    } else {
+      generateTable(data);
+      isActive = false;
+    }
+  });
 
-searchTable("st");
+document
+  .getElementById("search")
+  .addEventListener("keypress", async function (e) {
+    if (e.key === "Enter") {
+      let value = await searchTable(e.target.value);
+
+      generateTable(value, value.length);
+    }
+  });
+
 sortTable();

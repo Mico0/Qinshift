@@ -25,11 +25,15 @@ thead {
 #ascendingAlbums,
 #descendingAlbums {
   display: none;
+  margin-left: 0.4rem;
 }
 
 #bandNameHeader,
 #numberAlbumsHeader {
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  border-bottom: none;
 }
 #table_controls {
   margin: 1rem 0;
