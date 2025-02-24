@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <title>Fake shop</title>
+</head>
+
+<body>
+    <div class="container mt-3">
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand btn" id="home">FakeShop :)</a>
+                <a class="navbar-brand btn" id="browse-products">Browse Products</a>
+                <a class="navbar-brand btn" id="browse-cart">Cart</a>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="button">Search</button>
+                </form>
+            </div>
+        </nav>
+        <div class="container" id="shop" style="display: none;">
+            <div class="row mt-3">
+                <div class="col-md-5">
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="categories">Categories</label>
+                        <select class="form-select" id="categories">
+                            <option value='0' name='All categories' selected>All categories</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="text-center">
+                        <h2 id="category-title">All categories</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="products">
+            </div>
+            <div class="row">
+                <div class="col-md-5 mt-4">
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="page-sizes">Products per page</label>
+                        <select class="form-select" id="page-sizes">
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="d-flex justify-content-end">
+                        <!-- <div class="col-md-1">
+                            <span class="fw-bold">6 / 7</span>
+                        </div> -->
+                        <div class="col-md-3">
+                            <button type="button" class="btn btn-outline-dark" id="prev">Previous</button>
+                            <button type="button" class="btn btn-outline-dark" id="next">Next</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div id="cart">
+
+            </div>
+        </div>
+        <div class="container">
+            <div id="notification">
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./src/scripts/app.js"></script>
+</body>
+
+</html>
