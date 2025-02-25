@@ -12,70 +12,84 @@ export default class NavigationComponent {
     this.bandService.getAllBands().then((response) => {
       const mainContainer = document.getElementById("mainContainer");
 
-      mainContainer.append(
-        HTMLHelpers.generatePagination(response.totalPages, this.page)
+      const topNav = HTMLHelpers.generatePagination(
+        response.totalPages,
+        this.page
       );
-      mainContainer.prepend(
-        HTMLHelpers.generatePagination(response.totalPages, this.page)
+      const bottomNav = HTMLHelpers.generatePagination(
+        response.totalPages,
+        this.page
       );
 
-      const next = document.getElementById("next");
-      const prev = document.getElementById("prev");
-      //   console.log(pageNumbers);
+      mainContainer.append(bottomNav);
+      mainContainer.prepend(topNav);
 
-      //* Next and prev pagination
-      if (next && prev) {
-        this.updateActivePage();
-        prev.classList.add("disabled");
-        next.addEventListener("click", () => {
-          if (this.page < response.totalPages) {
-            this.page++;
-            this.updateActivePage();
-            this.bandComponent.page = this.page;
-            this.bandComponent.fillTable(this.page);
-          }
-          if (this.page === response.totalPages) {
-            next.classList.add("disabled");
-          } else {
-            next.classList.remove("disabled");
-          }
-          if (this.page > 1) {
-            prev.classList.remove("disabled");
-          }
-        });
+      //* Attach the listeners
+      this.attachPageListeners(topNav);
+      this.attachPageListeners(bottomNav);
 
-        prev.addEventListener("click", () => {
-          if (this.page > 1) {
-            this.page--;
-            this.updateActivePage();
-            this.bandComponent.page = this.page;
-            this.bandComponent.fillTable(this.page);
-          }
-          if (this.page === 1) {
-            prev.classList.add("disabled");
-          } else {
-            prev.classList.remove("disabled");
-          }
-          if (this.page < response.totalPages) {
-            next.classList.remove("disabled");
-          }
-        });
-
-        //* Page number clicks
-        const pageNumbers = document.querySelectorAll(".page-number a");
-        pageNumbers.forEach((page) => {
-          page.addEventListener("click", (event) => {
-            event.preventDefault(); // Prevent page reload
-            this.page = parseInt(event.target.innerText);
-            this.updateActivePage();
-            this.bandComponent.page = this.page;
-            this.bandComponent.fillTable();
-          });
-        });
-
-        this.updateActivePage(response.totalPages);
-      }
+      //* Handle the clicks
+      this.handleNextAndPrev(response);
     });
+  }
+
+  attachPageListeners(element) {
+    //* Page number clicks
+    const pageNumbers = element.querySelectorAll(".page-number a");
+    pageNumbers.forEach((page) => {
+      page.addEventListener("click", (event) => {
+        event.preventDefault();
+        //* Used to prevent default element behaviour
+        this.page = parseInt(event.target.innerText);
+        this.updateActivePage();
+        this.bandComponent.page = this.page;
+        this.bandComponent.fillTable(this.page);
+      });
+    });
+  }
+  handleNextAndPrev(response) {
+    const next = document.getElementById("next");
+    const prev = document.getElementById("prev");
+    //   console.log(pageNumbers);
+
+    //* Next and prev pagination
+    if (next && prev) {
+      this.updateActivePage();
+      prev.classList.add("disabled");
+      next.addEventListener("click", () => {
+        if (this.page < response.totalPages) {
+          this.page++;
+          this.updateActivePage();
+          this.bandComponent.page = this.page;
+          this.bandComponent.fillTable(this.page);
+        }
+        if (this.page === response.totalPages) {
+          next.classList.add("disabled");
+        } else {
+          next.classList.remove("disabled");
+        }
+        if (this.page > 1) {
+          prev.classList.remove("disabled");
+        }
+      });
+
+      prev.addEventListener("click", () => {
+        if (this.page > 1) {
+          this.page--;
+          this.updateActivePage();
+          this.bandComponent.page = this.page;
+          this.bandComponent.fillTable(this.page);
+        }
+        if (this.page === 1) {
+          prev.classList.add("disabled");
+        } else {
+          prev.classList.remove("disabled");
+        }
+        if (this.page < response.totalPages) {
+          next.classList.remove("disabled");
+        }
+      });
+    }
   }
   updateActivePage() {
     document.querySelectorAll(".page-number").forEach((el) => {
