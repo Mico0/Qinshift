@@ -8,8 +8,10 @@ export default class BandComponent {
     this.rowNumber = 1;
   }
 
-  fillTable() {
-    this.bandService.getAllBands().then((response) => {
+  fillTable(page = 1) {
+    const pageSize = 10;
+    this.rowNumber = (this.page - 1) * pageSize + 1;
+    this.bandService.getAllBands(null, this.page).then((response) => {
       let html = "";
       for (let band of response.bands) {
         html += HTMLHelpers.generateRowData(
@@ -19,19 +21,12 @@ export default class BandComponent {
           band.tags.join(", "),
           Object.values(band.bandMembers)
             .map((member) => member.name)
-            .join(`<p> </p>`),
+            .join(`</br>`),
           band.albumsNum
         );
       }
       //   console.log(html);
       document.getElementById("tableBody").innerHTML = html;
-
-      document
-        .getElementById("mainContainer")
-        .append(HTMLHelpers.generatePagination(response.totalPages));
-      document
-        .getElementById("mainContainer")
-        .prepend(HTMLHelpers.generatePagination(response.totalPages));
     });
   }
 }

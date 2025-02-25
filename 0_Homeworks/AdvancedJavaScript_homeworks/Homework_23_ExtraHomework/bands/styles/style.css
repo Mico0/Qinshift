@@ -57,3 +57,14 @@ thead {
 .pagination {
   margin: 0;
 }
+#pagination-controls {
+  margin: 1rem;
+}
+.page-item a {
+  color: crimson !important;
+}
+
+.active > .page-link,
+.page-link.active {
+  background-color: rgb(141, 3, 31) !important;
+}
