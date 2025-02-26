@@ -7,9 +7,3 @@ export default class Band {
     this.albumsNum = albumsNum;
   }
 }
-
-export class Tags {
-  constructor(tagName) {
-    this.tagName = tagName;
-  }
-}

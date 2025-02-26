@@ -48,46 +48,58 @@ export default class NavigationComponent {
     });
   }
   handleNextAndPrev(response) {
-    const next = document.getElementById("next");
-    const prev = document.getElementById("prev");
-    //   console.log(pageNumbers);
+    const next = document.querySelectorAll(".next");
+    const prev = document.querySelectorAll(".previous");
+
+    // console.log(next, prev);
 
     //* Next and prev pagination
     if (next && prev) {
       this.updateActivePage();
-      prev.classList.add("disabled");
-      next.addEventListener("click", () => {
-        if (this.page < response.totalPages) {
-          this.page++;
-          this.updateActivePage();
-          this.bandComponent.page = this.page;
-          this.bandComponent.fillTable(this.page);
-        }
-        if (this.page === response.totalPages) {
-          next.classList.add("disabled");
-        } else {
-          next.classList.remove("disabled");
-        }
-        if (this.page > 1) {
-          prev.classList.remove("disabled");
-        }
+      prev[0].classList.add("disabled");
+      prev[1].classList.add("disabled");
+      next.forEach((element) => {
+        element.addEventListener("click", () => {
+          if (this.page < response.totalPages) {
+            this.page++;
+            this.updateActivePage();
+            this.bandComponent.page = this.page;
+            this.bandComponent.fillTable(this.page);
+          }
+          if (this.page === response.totalPages) {
+            next[0].classList.add("disabled");
+            next[1].classList.add("disabled");
+          } else {
+            next[0].classList.remove("disabled");
+            next[1].classList.remove("disabled");
+          }
+          if (this.page > 1) {
+            prev[0].classList.remove("disabled");
+            prev[1].classList.remove("disabled");
+          }
+        });
       });
 
-      prev.addEventListener("click", () => {
-        if (this.page > 1) {
-          this.page--;
-          this.updateActivePage();
-          this.bandComponent.page = this.page;
-          this.bandComponent.fillTable(this.page);
-        }
-        if (this.page === 1) {
-          prev.classList.add("disabled");
-        } else {
-          prev.classList.remove("disabled");
-        }
-        if (this.page < response.totalPages) {
-          next.classList.remove("disabled");
-        }
+      prev.forEach((el) => {
+        el.addEventListener("click", () => {
+          if (this.page > 1) {
+            this.page--;
+            this.updateActivePage();
+            this.bandComponent.page = this.page;
+            this.bandComponent.fillTable(this.page);
+          }
+          if (this.page === 1) {
+            prev[0].classList.add("disabled");
+            prev[1].classList.add("disabled");
+          } else {
+            prev[0].classList.remove("disabled");
+            prev[1].classList.remove("disabled");
+          }
+          if (this.page < response.totalPages) {
+            next[0].classList.remove("disabled");
+            next[1].classList.remove("disabled");
+          }
+        });
       });
     }
   }
@@ -95,9 +107,11 @@ export default class NavigationComponent {
     document.querySelectorAll(".page-number").forEach((el) => {
       el.classList.remove("active");
     });
-    const activePageEl = document.querySelector(`.li${this.page}`);
+    const activePageEl = document.querySelectorAll(`.li${this.page}`);
     if (activePageEl) {
-      activePageEl.classList.add("active");
+      activePageEl.forEach((element) => {
+        element.classList.add("active");
+      });
     }
   }
 }

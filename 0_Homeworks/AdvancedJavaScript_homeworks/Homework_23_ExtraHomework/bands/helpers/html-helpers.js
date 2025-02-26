@@ -22,13 +22,13 @@ export default class HTMLHelpers {
     nav.append(ul);
 
     let html = ``;
-    html += `<li class="page-item" id="prev"><a class="page-link" href="#">Previous</a></li>`;
+    html += `<li class="page-item previous" id="prev"><a class="page-link" href="#">Previous</a></li>`;
     for (let i = 1; i <= totalPages; i++) {
       html += `
         <li class="page-item page-number li${i}"><a class="page-link" href="#">${i}</a></li>    
         `;
     }
-    html += `<li class="page-item" id="next"><a class="page-link" href="#">Next</a></li>`;
+    html += `<li class="page-item next" id="next"><a class="page-link" href="#">Next</a></li>`;
 
     ul.innerHTML = html;
 
