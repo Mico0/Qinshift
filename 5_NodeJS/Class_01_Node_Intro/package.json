@@ -1,0 +1,12 @@
+{
+  "name": "class_01_node_intro",
+  "version": "1.0.0",
+  "description": "Introduction to the Node.js class",
+  "main": "./scripts/script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./scripts/script.js"
+  },
+  "author": "Milan",
+  "license": "ISC"
+}
