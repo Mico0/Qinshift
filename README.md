@@ -1,7 +1,3 @@
-You're right! Some Markdown parsers don't support inline HTML, so let's use a reliable approach that works well in GitHub Markdown by directly embedding image URLs. Here’s the corrected version with properly displayed language icons:
-
----
-
 # 🚀 Qinshift Full Stack Web Development Academy
 
 ## 📌 About This Repository
@@ -56,8 +52,6 @@ Below are the core technologies you'll learn, along with their respective icons 
     ```sh
     cd fullstack-web-dev
 
-    ```
-
-3.  **Follow the learning materials** for each section and complete the exercises.
+    ```
 
 🔗 Practice makes it perfect 🎉
