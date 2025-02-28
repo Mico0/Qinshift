@@ -18,6 +18,7 @@ export default class BandService {
     // console.log(this.bandTags);
     // debugger;
     // console.table(mappedBands);
+
     let startIndex = (page - 1) * pageSize;
     let slicedBands = mappedBands.slice(startIndex, startIndex + pageSize);
     let totalPages = Math.ceil(data.length / pageSize);

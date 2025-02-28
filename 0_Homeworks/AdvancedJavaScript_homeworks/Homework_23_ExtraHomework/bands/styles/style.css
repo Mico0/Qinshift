@@ -59,6 +59,8 @@ thead {
 }
 #pagination-controls {
   margin: 1rem;
+  display: flex;
+  justify-content: center;
 }
 .page-item a {
   color: crimson !important;
@@ -67,4 +69,17 @@ thead {
 .active > .page-link,
 .page-link.active {
   background-color: rgb(141, 3, 31) !important;
+}
+
+#table-filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem;
+}
+
+#table-filters > .input-group,
+.form-floating {
+  width: 40%;
+  margin: 0 !important;
 }
