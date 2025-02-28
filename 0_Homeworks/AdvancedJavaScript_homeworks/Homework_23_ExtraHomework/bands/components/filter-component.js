@@ -1,11 +1,12 @@
+import FilterService from "../services/filter-service.js";
 import BandService from "../services/band-service.js";
 import BandComponent from "./band-component.js";
 import HTMLHelpers from "../helpers/html-helpers.js";
 
 export default class FilterComponent {
   constructor() {
-    this.bandService = new BandService();
     this.bandComponent = new BandComponent();
+    this.bandService = new BandService();
   }
 
   //! Generate and fill filters
@@ -36,11 +37,12 @@ export default class FilterComponent {
   //! Filter functionalities
   async showOnlyActive() {
     const active = document.getElementById("btncheck1");
-    let data = await this.bandService.getAllBands();
+    let data = await FilterService.filterActive();
     if (active) {
-      active.addEventListener("click", function () {
+      active.addEventListener("click", async () => {
         if (active.checked) {
           console.log(data);
+          this.bandComponent.fillTable(data);
         }
       });
     }
