@@ -1,0 +1,4 @@
+Mon Mar 03 2025 14:43:50 GMT+0100 (Central European Standard Time) Action performed: ADD_USER, The user added is {"id":27,"name":"Bob","username":"bobbobsky","email":"bob@email.com"} 
+Mon Mar 03 2025 14:43:50 GMT+0100 (Central European Standard Time) Action performed: EDIT_USER, The user you have edited is {"id":1,"name":"Milan Ognjanoski","username":"m1c00","email":"Sincere@april.biz","password":"test1234;"} 
+Mon Mar 03 2025 14:43:50 GMT+0100 (Central European Standard Time) Action performed: DELETE_USER, The user deleted is {"id":25,"name":"Bob","username":"bobbobsky","email":"bob@email.com"} 
+Mon Mar 03 2025 14:43:50 GMT+0100 (Central European Standard Time) Action performed: GET_USER_BY_ID, The user found is {"id":3,"name":"Clementine Bauch","username":"Samantha","email":"Nathan@yesenia.net"} 
