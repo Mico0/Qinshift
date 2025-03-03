@@ -1,0 +1,6 @@
+Warning event triggered!
+Info event triggered!
+Error event triggered!
+Warning event triggered!
+Info event triggered!
+Error event triggered!

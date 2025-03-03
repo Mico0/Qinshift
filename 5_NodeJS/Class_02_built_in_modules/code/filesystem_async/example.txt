@@ -1,0 +1,2 @@
+Writing in the file
+Appending text in file 
