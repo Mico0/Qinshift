@@ -21,10 +21,15 @@ const getUserById = (userId) => {
   //   return foundUser;
 
   //   return foundUser ? foundUser : {}; // ternary operator
-  logToFile(
-    `GET_USER_BY_ID`,
-    `The user found is ${JSON.stringify(foundUser)} \n`
-  );
+  if (foundUser) {
+    logToFile(
+      `GET_USER_BY_ID`,
+      `The user found is ${JSON.stringify(foundUser)} \n`
+    );
+  } else {
+    logToFile(`GET_USER_BY_ID`, `No user with this ID \n`);
+  }
+
   return foundUser ?? {}; // nullish coalescing operator
 };
 

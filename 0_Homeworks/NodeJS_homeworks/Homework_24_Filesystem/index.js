@@ -40,7 +40,7 @@ if (!fs.existsSync(filePath)) {
   console.log("Txt file already exists");
 }
 
-const string = "\nFINISHED!";
+const string = "FINISHED!";
 try {
   fs.appendFileSync(filePath, string);
   console.log(`The string: ${string} was appended to the file`);
@@ -63,8 +63,8 @@ userService.editUser(1, {
   username: "m1c00",
   password: "test1234;",
 });
-userService.deleteUser(25);
+// userService.deleteUser(25);
 //userService.deleteAll();
-userService.getUserById(3);
+userService.getUserById(300);
 
 export { logToFile };
