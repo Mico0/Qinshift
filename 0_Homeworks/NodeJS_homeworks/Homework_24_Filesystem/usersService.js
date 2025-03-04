@@ -1,6 +1,6 @@
 import { error } from "console";
 import fs from "fs";
-import { logToFile } from "./index.js";
+import logToFile from "./logger.js";
 
 // Function to read existing users from users.json file
 // try {

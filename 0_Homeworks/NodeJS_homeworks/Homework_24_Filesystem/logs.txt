@@ -1,3 +1,4 @@
-Mon Mar 03 2025 15:30:36 GMT+0100 (Central European Standard Time) Action performed: ADD_USER, The user added is {"id":29,"name":"Bob","username":"bobbobsky","email":"bob@email.com"} 
-Mon Mar 03 2025 15:30:36 GMT+0100 (Central European Standard Time) Action performed: EDIT_USER, The user you have edited is {"id":1,"name":"Milan Ognjanoski","username":"m1c00","email":"Sincere@april.biz","password":"test1234;"} 
-Mon Mar 03 2025 15:30:36 GMT+0100 (Central European Standard Time) Action performed: GET_USER_BY_ID, No user with this ID 
+Tue Mar 04 2025 10:24:17 GMT+0100 (Central European Standard Time) Action performed: GET_USER_BY_ID, No user with this ID 
+Tue Mar 04 2025 10:24:17 GMT+0100 (Central European Standard Time) Action performed: ADD_USER, The user added is {"id":33,"name":"Bob","username":"bobbobsky","email":"bob@email.com"} 
+Tue Mar 04 2025 10:24:17 GMT+0100 (Central European Standard Time) Action performed: EDIT_USER, The user you have edited is {"id":1,"name":"Milan Ognjanoski","username":"m1c00","email":"Sincere@april.biz","password":"test1234;"} 
+Tue Mar 04 2025 10:24:17 GMT+0100 (Central European Standard Time) Action performed: GET_USER_BY_ID, No user with this ID 
