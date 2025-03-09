@@ -116,20 +116,16 @@ const server = http.createServer((req, res) => {
   } else if (url.pathname === "/all_students" && req.method === "POST") {
     // console.log(url.pathname);
     // console.log(url.searchParams);
-    const name = url.searchParams.get("name") || "Guest";
     let body = "";
-    emitter.on("studentAdded", () => {
-      req.on("data", (chunk) => {
-        console.log(chunk);
-        body += chunk.toString();
-        console.log(body);
-      });
-      req.on("end", () => {
-        res.writeHead(200, { "content-type": "text/plain" });
-        res.end(logText(body));
-      });
+    req.on("data", (chunk) => {
+      body += chunk.toString();
+      // console.log("Body:", body);
     });
-    emitter.emit("studentAdded");
+
+    req.on("end", () => {
+      const studentName = new URLSearchParams(body).get("name") || "Student";
+      emitter.emit("studentAdded", studentName, res);
+    });
   } else {
     res.writeHead(404, { "content-type": "text/html" });
     res.end(`
@@ -160,6 +156,12 @@ const server = http.createServer((req, res) => {
   }
 });
 
-server.listen(3000, () => {
-  console.log("Server is running on localhost:3000");
+emitter.on("studentAdded", (studentName, res) => {
+  logText(`${studentName}`);
+  res.writeHead(200, { "content-type": "text/plain" });
+  res.end(`Student with the name ${studentName} is added.`);
+});
+
+server.listen(3001, () => {
+  console.log("Server is running on localhost:3001");
 });
