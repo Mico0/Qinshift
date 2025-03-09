@@ -9,7 +9,9 @@ export default class NavigationComponent {
     this.page = 1;
   }
   createNavigation() {
-    this.bandService.getAllBands().then((response) => {
+    this.bandService.getAllBands(this.page).then((response) => {
+      // console.log(response);
+
       const mainContainer = document.getElementById("mainContainer");
 
       const topNav = HTMLHelpers.generatePagination(
@@ -35,6 +37,7 @@ export default class NavigationComponent {
 
   attachPageListeners(element) {
     //* Page number clicks
+
     const pageNumbers = element.querySelectorAll(".page-number a");
     pageNumbers.forEach((page) => {
       page.addEventListener("click", (event) => {
@@ -42,8 +45,7 @@ export default class NavigationComponent {
         //* Used to prevent default element behaviour
         this.page = parseInt(event.target.innerText);
         this.updateActivePage();
-        this.bandComponent.page = this.page;
-        this.bandComponent.fillTable(this.page);
+        this.updateBandsData();
       });
     });
   }
@@ -63,8 +65,7 @@ export default class NavigationComponent {
           if (this.page < response.totalPages) {
             this.page++;
             this.updateActivePage();
-            this.bandComponent.page = this.page;
-            this.bandComponent.fillTable(this.page);
+            this.updateBandsData();
           }
           if (this.page === response.totalPages) {
             next[0].classList.add("disabled");
@@ -85,8 +86,7 @@ export default class NavigationComponent {
           if (this.page > 1) {
             this.page--;
             this.updateActivePage();
-            this.bandComponent.page = this.page;
-            this.bandComponent.fillTable(this.page);
+            this.updateBandsData();
           }
           if (this.page === 1) {
             prev[0].classList.add("disabled");
@@ -114,4 +114,10 @@ export default class NavigationComponent {
       });
     }
   }
+  updateBandsData() {
+    this.bandService.getAllBands(this.page).then((response) => {
+      this.bandComponent.fillTable(response.bands, this.page);
+    });
+  }
+  //TODO: Make this is a helper function where you will either use the filter all bands or get all bands
 }

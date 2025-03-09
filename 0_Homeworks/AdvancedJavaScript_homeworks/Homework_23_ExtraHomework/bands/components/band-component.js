@@ -8,25 +8,30 @@ export default class BandComponent {
     this.rowNumber = 1;
   }
 
-  fillTable(page = 1) {
+  async fillTable(data, page = 1) {
+    if (!data) {
+      console.error("fillTable: Invalid data received", data);
+      return;
+    }
+
+    // console.log("Bands", data);
     const pageSize = 10;
-    this.rowNumber = (this.page - 1) * pageSize + 1;
-    this.bandService.getAllBands(null, this.page).then((response) => {
-      let html = "";
-      for (let band of response.bands) {
-        html += HTMLHelpers.generateRowData(
-          this.rowNumber++,
-          band.name,
-          band.isActive === true ? "active" : "inactive",
-          band.tags.join(", "),
-          Object.values(band.bandMembers)
-            .map((member) => member.name)
-            .join(`</br>`),
-          band.albumsNum
-        );
-      }
-      //   console.log(html);
-      document.getElementById("tableBody").innerHTML = html;
-    });
+    this.rowNumber = (page - 1) * pageSize + 1;
+
+    let html = "";
+    for (let band of data) {
+      html += HTMLHelpers.generateRowData(
+        this.rowNumber++,
+        band.name,
+        band.isActive === true ? "active" : "inactive",
+        band.tags.join(", "),
+        Object.values(band.bandMembers)
+          .map((member) => member.name)
+          .join(`</br>`),
+        band.albumsNum
+      );
+    }
+    //   console.log(html);
+    document.getElementById("tableBody").innerHTML = html;
   }
 }

@@ -7,7 +7,7 @@ export default class BandService {
       "https://raw.githubusercontent.com/Mico0/Qinshift/refs/heads/main/0_Homeworks/AdvancedJavaScript_homeworks/Homework_23_ExtraHomework/bands/bands.json";
     this.bandTags = null;
   }
-  async getAllBands(tag, page = 0, pageSize = 10) {
+  async getAllBands(page = 1, pageSize = 10) {
     let response = await fetch(this.baseUrl);
     let data = await response.json();
 
@@ -23,6 +23,7 @@ export default class BandService {
     let slicedBands = mappedBands.slice(startIndex, startIndex + pageSize);
     let totalPages = Math.ceil(data.length / pageSize);
 
+    // console.log(slicedBands);
     return {
       bands: slicedBands,
       totalPages: totalPages,

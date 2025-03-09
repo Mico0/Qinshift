@@ -7,10 +7,13 @@ const filterComponent = new FilterComponent();
 const navComponent = new NavigationComponent();
 // debugger;
 // navComponent.bandComponent = bandComponent;
-bandComponent.fillTable();
-setTimeout(() => {
+bandComponent.bandService.getAllBands().then((response) => {
+  bandComponent.fillTable(response.bands, 1);
+
+  // Now initialize filters after data is ready
   filterComponent.createFilters();
   filterComponent.fillSelect();
   filterComponent.showOnlyActive();
-}, 100);
-navComponent.createNavigation();
+
+  navComponent.createNavigation();
+});
