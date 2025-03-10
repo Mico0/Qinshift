@@ -1,11 +1,14 @@
 import BandService from "../services/band-service.js";
 import BandComponent from "./band-component.js";
+import FilterService from "../services/filter-service.js";
+import FilterComponent from "../components/filter-component.js";
 import HTMLHelpers from "../helpers/html-helpers.js";
 
 export default class NavigationComponent {
-  constructor() {
+  constructor(bandComponent) {
+    this.bandComponent = bandComponent;
     this.bandService = new BandService();
-    this.bandComponent = new BandComponent();
+    this.filterComponent = new FilterComponent();
     this.page = 1;
   }
   createNavigation() {
@@ -115,9 +118,18 @@ export default class NavigationComponent {
     }
   }
   updateBandsData() {
-    this.bandService.getAllBands(this.page).then((response) => {
-      this.bandComponent.fillTable(response.bands, this.page);
-    });
+    let active = document.querySelectorAll(".btn-check");
+    if (active[0].checked || active[1].checked) {
+      FilterService.filterActive(this.page).then((response) => {
+        console.log(response);
+        this.bandComponent.fillTable(response, this.page);
+      });
+    } else {
+      this.bandService.getAllBands(this.page).then((response) => {
+        this.bandComponent.fillTable(response.bands, this.page);
+      });
+    }
+    console.log(active[0].checked);
   }
   //TODO: Make this is a helper function where you will either use the filter all bands or get all bands
 }

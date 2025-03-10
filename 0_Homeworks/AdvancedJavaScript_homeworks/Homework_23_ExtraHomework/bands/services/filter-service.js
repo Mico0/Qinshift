@@ -1,6 +1,6 @@
 import Band from "../models/models.js";
 
-async function filterActive(page, pageSize = 10) {
+async function filterActive(page, pageSize = 10, tag) {
   const url =
     "https://raw.githubusercontent.com/Mico0/Qinshift/refs/heads/main/0_Homeworks/AdvancedJavaScript_homeworks/Homework_23_ExtraHomework/bands/bands.json";
   let response = await fetch(url);

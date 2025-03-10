@@ -1,5 +1,4 @@
 import Band from "../models/models.js";
-import Tag from "../models/models.js";
 
 export default class BandService {
   constructor() {

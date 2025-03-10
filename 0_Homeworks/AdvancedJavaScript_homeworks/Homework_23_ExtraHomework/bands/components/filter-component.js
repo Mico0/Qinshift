@@ -1,14 +1,13 @@
 import FilterService from "../services/filter-service.js";
 import BandService from "../services/band-service.js";
-import BandComponent from "./band-component.js";
 import NavigationComponent from "./nav-component.js";
 import HTMLHelpers from "../helpers/html-helpers.js";
 
 export default class FilterComponent {
-  constructor() {
-    this.bandComponent = new BandComponent();
+  constructor(bandComponent, navComponent) {
+    this.bandComponent = bandComponent;
+    this.navComponent = navComponent;
     this.bandService = new BandService();
-    this.navigationComponent = new NavigationComponent();
   }
 
   //! Generate and fill filters
@@ -38,26 +37,29 @@ export default class FilterComponent {
   }
 
   //! Filter functionalities
-  async showOnlyActive() {
+  async filterTable() {
     const active = document.getElementById("btncheck1");
 
     if (active) {
       active.addEventListener("click", async () => {
+        console.log("HERE IN ACTIVE");
         let data;
         if (active.checked) {
-          data = await FilterService.filterActive(
-            this.navigationComponent.page
-          );
+          data = await FilterService.filterActive(this.navComponent.page);
           // debugger;
         } else {
-          data = await this.bandService.getAllBands(
-            this.navigationComponent.page
-          );
+          data = await this.bandService.getAllBands(this.navComponent.page);
           data = data.bands;
         }
 
-        this.bandComponent.fillTable(data, this.navigationComponent.page);
+        this.bandComponent.fillTable(data, this.navComponent.page);
       });
     }
+  }
+
+  init() {
+    this.createFilters();
+    this.fillSelect();
+    this.filterTable();
   }
 }
