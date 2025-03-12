@@ -1,14 +1,12 @@
 import BandService from "../services/band-service.js";
 import BandComponent from "./band-component.js";
 import FilterService from "../services/filter-service.js";
-import FilterComponent from "../components/filter-component.js";
 import HTMLHelpers from "../helpers/html-helpers.js";
 
 export default class NavigationComponent {
   constructor(bandComponent) {
     this.bandComponent = bandComponent;
     this.bandService = new BandService();
-    this.filterComponent = new FilterComponent();
     this.page = 1;
   }
   createNavigation() {

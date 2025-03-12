@@ -77,6 +77,24 @@ export const deleteStudent = (id) => {
     throw new Error("Student not found");
   }
 
-  return updatedStudents;
+  saveStudentData(updatedStudents);
   //   const foundStudent = getStudentById(id);
+};
+
+export const updateStudent = (id, updatedData) => {
+  // const student = getStudentById(id);
+  const students = getStudents();
+  const foundStudentIndex = students.findIndex((student) => student.id === id);
+  console.log(foundStudentIndex);
+
+  // if student is not found
+  if (foundStudentIndex < 0) throw new Error("Student not found.");
+
+  const updatedStudentData = {
+    ...students[foundStudentIndex],
+    ...updatedData,
+  };
+  students[foundStudentIndex] = updatedStudentData;
+  saveStudentData(students);
+  return updatedStudentData;
 };
