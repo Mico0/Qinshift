@@ -8,37 +8,32 @@ export default class ProductService {
 
   static async getProduct(id) {
     const product = await ProductModel.getById(id);
-
     if (!product) {
       throw new Error("Product not found");
     }
-
     return product;
   }
 
   static async createProduct(body) {
-    const productObj = {
+    const product = {
       ...body,
       id: uuidv4(),
       createdAt: new Date().toISOString(),
     };
-
-    return await ProductModel.create(productObj);
+    return await ProductModel.create(product);
   }
 
   static async updateProduct(id, body) {
-    const product = ProductModel.getById(id);
-
+    const product = await ProductModel.getById(id);
     if (!product) {
       throw new Error("Product not found");
     }
     const updatedProduct = {
       ...body,
-      id: id,
+      id,
       updatedAt: new Date().toISOString(),
     };
-
-    return ProductModel.update(id, updatedProduct);
+    return await ProductModel.update(id, updatedProduct);
   }
 
   static async deleteProduct(id) {

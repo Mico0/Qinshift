@@ -1,7 +1,7 @@
 import ProductService from "../services/products.service.js";
 
 export default class ProductController {
-  static async getProdcts(req, res) {
+  static async getProducts(req, res) {
     try {
       const products = await ProductService.getProducts();
       res.send(products);
@@ -13,7 +13,7 @@ export default class ProductController {
   static async getProduct(req, res) {
     try {
       const product = await ProductService.getProduct(req.params.id);
-      res.status(200).send(product);
+      res.send(product);
     } catch (error) {
       res.status(400).send({ message: error.message });
     }
@@ -37,7 +37,7 @@ export default class ProductController {
         productId,
         productBody
       );
-      res.status(200).send(product);
+      res.send(product);
     } catch (error) {
       res.status(400).send({ message: error.message });
     }
@@ -45,8 +45,8 @@ export default class ProductController {
 
   static async deleteProduct(req, res) {
     try {
-      ProductService.deleteProduct(req.params.id);
-      res.status(204).send({ message: "Success, product deleted!" });
+      await ProductService.deleteProduct(req.params.id);
+      res.status(204).send({ message: "Product deleted" });
     } catch (error) {
       res.status(400).send({ message: error.message });
     }

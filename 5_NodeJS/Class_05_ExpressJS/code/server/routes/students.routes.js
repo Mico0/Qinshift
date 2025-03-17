@@ -1,52 +1,54 @@
 import express from "express";
 import {
   getStudents,
-  saveStudentData,
-  addStudent,
   getStudentById,
+  addStudent,
   deleteStudent,
   updateStudent,
-} from "../services/students_service.js";
+} from "../services/students.service.js";
 
 const router = express.Router();
 
+//1. Get all students
 router.get("/students", (req, res) => {
   const queryData = req.query;
   console.log(queryData);
 
+  // if no query passed, the query data will be an empty object, and it will return all the students
+  // filter works ONLY by gender and country
   try {
     const students = getStudents(queryData);
+    console.log(students);
     res.send(students);
   } catch (error) {
+    console.log(error);
     res.sendStatus(500);
   }
 });
 
-//! :id means that the identifier after the : will be replaced by some value
+//2. Get student by id
 router.get("/students/:id", (req, res) => {
   const studentId = req.params.id;
-
   try {
     const student = getStudentById(studentId);
     res.status(200).send(student);
   } catch (error) {
-    res.status(400).send(error.message);
+    res.status(404).send(error.message);
   }
 });
 
-//! Delete student by ID
+// 3. Delete a student by id
 router.delete("/students/:id", (req, res) => {
   const studentId = req.params.id;
-
   try {
-    const student = deleteStudent(studentId);
-    res.status(200).send({ success: true });
+    deleteStudent(studentId);
+    res.status(200).json({ success: true });
   } catch (error) {
-    res.status(400).send(error.message);
+    res.status(404).send(error.message);
   }
 });
 
-//! Add new student
+// 4. Add new student
 router.post("/students", (req, res) => {
   const newStudentData = req.body;
   console.log(newStudentData);
@@ -54,14 +56,11 @@ router.post("/students", (req, res) => {
     const createdStudent = addStudent(newStudentData);
     res.status(200).send(createdStudent);
   } catch (error) {
-    res.status(500).send({ message: error.message });
+    res.status(500);
   }
 });
 
-//! Update student info
-//! Put requests alter the whole object when updating
-//! Patch updates only the information in the object that is updated doesnt touch anything else
-
+// 5. Update student info
 router.patch("/students/:id", (req, res) => {
   const studentUpdates = req.body;
   const studentId = req.params.id;
@@ -69,10 +68,10 @@ router.patch("/students/:id", (req, res) => {
     const updatedStudent = updateStudent(studentId, studentUpdates);
     res.status(200).send(updatedStudent);
   } catch (error) {
-    if (error.message === "Student not found.") {
-      res.status(404).send({ message: error.message });
+    if (error.message === "Student not found") {
+      res.status(404).send(error.message);
     } else {
-      res.status(500).send({ message: error.message });
+      res.status(500);
     }
   }
 });

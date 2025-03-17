@@ -8,6 +8,14 @@
     "createdAt": "2024-03-13T08:00:00.000Z"
   },
   {
+    "id": "eb97fd86-81f1-4d3b-88e6-5921c0a4e0f7",
+    "name": "Samsung Galaxy Watch 4",
+    "description": "A stylish and feature-packed smartwatch with advanced health monitoring, GPS, and a vibrant AMOLED display.",
+    "stock": 75,
+    "price": 299.99,
+    "createdAt": "2024-03-13T08:05:00.000Z"
+  },
+  {
     "id": "1d7cfa34-89a5-4d0f-ba34-2ab4c356e9d0",
     "name": "Sony WH-1000XM4 Wireless Headphones",
     "description": "Premium noise-canceling headphones with industry-leading audio quality, touch controls, and long battery life.",
@@ -56,14 +64,6 @@
     "createdAt": "2024-03-13T08:35:00.000Z"
   },
   {
-    "id": "7fd8621d-d398-4b25-8de4-3f72a147f1e5",
-    "name": "Fitbit Charge 5 Fitness Tracker",
-    "description": "Advanced fitness tracker with built-in GPS, heart rate monitoring, ECG app, and a sleek design.",
-    "stock": 10,
-    "price": 149.99,
-    "createdAt": "2024-03-13T08:40:00.000Z"
-  },
-  {
     "id": "4f65e3d7-63c6-4295-b104-6b5a18c6f580",
     "name": "Microsoft Surface Pro 7",
     "description": "Versatile 2-in-1 laptop with a high-resolution PixelSense display, Intel Core i5 processor, and detachable keyboard.",
@@ -72,11 +72,11 @@
     "createdAt": "2024-03-13T08:45:00.000Z"
   },
   {
-    "name": "Samsung Galaxy Watch 4 - Updated product",
-    "description": "Created Product Desc: A stylish and feature-packed smartwatch with advanced health monitoring, GPS, and a vibrant AMOLED display.",
-    "stock": 100,
-    "price": 299.99,
-    "id": "8d777cf7-cbdd-4270-a1a5-36e4664c0853",
-    "updatedAt": "2025-03-12T19:52:26.885Z"
+    "name": "Updated product",
+    "description": "Updated product description",
+    "stock": 10,
+    "price": 400.99,
+    "id": "9157c7a7-ffea-4ead-beb6-e109817e65bc",
+    "updatedAt": "2025-03-12T19:52:07.664Z"
   }
 ]
