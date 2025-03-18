@@ -1,6 +1,5 @@
-import { ObjectId } from "mongodb";
 import { getDB } from "../config/db.js";
-// import { ObjectId } from "mongodb";
+import { ObjectId } from "mongodb";
 
 export default class MovieService {
   getAll() {
