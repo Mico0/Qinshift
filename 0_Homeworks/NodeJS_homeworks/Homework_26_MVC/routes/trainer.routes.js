@@ -3,7 +3,8 @@ import TrainerController from "../controllers/trainers.controller.js";
 
 const router = Router();
 
-router.get("", TrainerController.getTrainers);
+// router.get("", TrainerController.getTrainers);
+router.get("", TrainerController.sortTrainers);
 router.get("/:id", TrainerController.getTrainer);
 
 router.post("", TrainerController.createTrainer);
