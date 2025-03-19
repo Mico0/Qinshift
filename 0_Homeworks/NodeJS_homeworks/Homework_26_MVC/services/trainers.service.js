@@ -16,8 +16,9 @@ export default class TrainersService {
 
   static async createTrainer(body) {
     const trainer = {
-      ...body,
       id: uuidv4(),
+      ...body,
+
       createdAt: new Date().toISOString(),
     };
     return await TrainersModel.createTrainer(trainer);

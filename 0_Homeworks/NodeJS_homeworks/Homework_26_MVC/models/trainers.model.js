@@ -22,11 +22,11 @@ export default class TrainersModel {
   }
 
   static async createTrainer(body) {
-    const trainers = this.getAllTrainers();
+    const trainers = await this.getAllTrainers();
     trainers.push(body);
     await DataService.writeData(dataPath, trainers);
 
-    return 1;
+    return body;
   }
 
   static async update(id, body) {
@@ -37,7 +37,7 @@ export default class TrainersModel {
     }
     trainers[index] = body;
     await DataService.writeData(dataPath, trainers);
-    return 1;
+    return trainers[index];
   }
 
   static async delete(id) {

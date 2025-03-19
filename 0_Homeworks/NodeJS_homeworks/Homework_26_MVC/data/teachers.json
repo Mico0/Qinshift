@@ -1,12 +1,13 @@
 [
   {
-    "id": "1",
-    "firstName": "Alice",
+    "firstName": "Milan",
     "lastName": "Smith",
     "email": "alice.smith@example.com",
     "isCurrentlyTeaching": true,
     "timeEmployed": "1 year 3 months",
-    "coursesFinished": 12
+    "coursesFinished": 12,
+    "id": "1",
+    "updatedAt": "2025-03-19T17:37:53.824Z"
   },
   {
     "id": "2",
@@ -134,5 +135,15 @@
     "isCurrentlyTeaching": true,
     "timeEmployed": "2 years 1 month",
     "coursesFinished": 16
+  },
+  {
+    "id": "ab1ec941-a26d-45bb-8c58-db96b9c5c151",
+    "firstName": "Milan",
+    "lastName": "Smith",
+    "email": "milan.smith@example.com",
+    "isCurrentlyTeaching": true,
+    "timeEmployed": "2 year 3 months",
+    "coursesFinished": 15,
+    "createdAt": "2025-03-19T17:41:55.882Z"
   }
 ]
