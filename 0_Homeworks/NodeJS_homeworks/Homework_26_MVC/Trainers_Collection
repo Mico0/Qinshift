@@ -1,0 +1,238 @@
+{
+	"info": {
+		"_postman_id": "754a40ee-a0b3-44f5-8e25-e812a5936760",
+		"name": "TrainersCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43055767"
+	},
+	"item": [
+		{
+			"name": "getAllTrainers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/trainers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"trainers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getHome",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/home",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"home"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getKitten",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/home/hello-kitten.gif",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"home",
+						"hello-kitten.gif"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAll - Filtered&Sorted",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/trainers?sortBy=coursesAsc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"trainers"
+					],
+					"query": [
+						{
+							"key": "currentlyActive",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "sortBy",
+							"value": "coursesDesc",
+							"disabled": true
+						},
+						{
+							"key": "sortBy",
+							"value": "coursesAsc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTrainer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/trainers/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"trainers",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addTrainer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n        \"firstName\": \"Milan\",\r\n        \"lastName\": \"Smith\",\r\n        \"email\": \"milan.smith@example.com\",\r\n        \"isCurrentlyTeaching\": true,\r\n        \"timeEmployed\": \"2 year 3 months\",\r\n        \"coursesFinished\": 15\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/trainers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"trainers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateTrainer",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n        \"firstName\": \"Milan\",\r\n        \"lastName\": \"Smith\",\r\n        \"email\": \"alice.smith@example.com\",\r\n        \"isCurrentlyTeaching\": true,\r\n        \"timeEmployed\": \"1 year 3 months\",\r\n        \"coursesFinished\": 12\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/trainers/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"trainers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteTrainer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n        \"firstName\": \"Milan\",\r\n        \"lastName\": \"Smith\",\r\n        \"email\": \"alice.smith@example.com\",\r\n        \"isCurrentlyTeaching\": true,\r\n        \"timeEmployed\": \"1 year 3 months\",\r\n        \"coursesFinished\": 12\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/trainers/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"trainers",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteAllTrainers",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n        \"firstName\": \"Milan\",\r\n        \"lastName\": \"Smith\",\r\n        \"email\": \"alice.smith@example.com\",\r\n        \"isCurrentlyTeaching\": true,\r\n        \"timeEmployed\": \"1 year 3 months\",\r\n        \"coursesFinished\": 12\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/trainers/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"trainers",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

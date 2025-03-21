@@ -55,7 +55,7 @@ export default class TrainerController {
   static async deleteAllTrainers(req, res) {
     try {
       await TrainersService.deleteAll();
-      res.status(204), send({ message: "Deleted all trainers" });
+      res.status(204).send({ message: "Deleted all trainers" });
     } catch (error) {
       res.status(400).send({ error: error.message });
     }

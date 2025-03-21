@@ -1,0 +1,236 @@
+{
+	"info": {
+		"_postman_id": "5144635a-b673-4c32-bde8-68849ff09950",
+		"name": "RecipeCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43055767"
+	},
+	"item": [
+		{
+			"name": "getAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/recipes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getRecipe",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/recipes/67dd38b416908123f191eeab",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recipes",
+						"67dd38b416908123f191eeab"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCategory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/recipes/category/dinner",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recipes",
+						"category",
+						"dinner"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getVegetarian",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/recipes/vegetarian",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recipes",
+						"vegetarian"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findByTitle",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/recipes/search?title=Spaghetti Carbonara&",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recipes",
+						"search"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Spaghetti Carbonara"
+						},
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findBy - Difficulty and Category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/recipes?category=dinner",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recipes"
+					],
+					"query": [
+						{
+							"key": "difficulty",
+							"value": "medium",
+							"disabled": true
+						},
+						{
+							"key": "category",
+							"value": "dinner"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createRecipe",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Spaghetti Carbonara\",\r\n  \"description\": \"A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper for a rich and creamy flavor.\",\r\n  \"ingredients\": [\r\n    \"200g spaghetti\",\r\n    \"100g pancetta\",\r\n    \"2 large eggs\",\r\n    \"50g Pecorino Romano cheese\",\r\n    \"50g Parmesan cheese\",\r\n    \"Salt\",\r\n    \"Black pepper\"\r\n  ],\r\n  \"instructions\": [\r\n    \"Cook the spaghetti in salted boiling water until al dente.\",\r\n    \"In a bowl, whisk the eggs and mix with grated Pecorino Romano and Parmesan cheese.\",\r\n    \"Fry the pancetta in a pan until crispy.\",\r\n    \"Drain the pasta and add it to the pan with pancetta, stirring well.\",\r\n    \"Remove from heat and quickly mix in the egg and cheese mixture to create a creamy sauce.\",\r\n    \"Season with black pepper and serve immediately.\"\r\n  ],\r\n  \"cookingTime\": 20,\r\n  \"difficulty\": \"medium\",\r\n  \"isVegetarian\": false,\r\n  \"category\": \"dinner\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/recipes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recipes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateRecipe",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Le - Spaghetti Carbonara\",\r\n  \"description\": \"A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper for a rich and creamy flavor.\",\r\n  \"ingredients\": [\r\n    \"200g spaghetti\",\r\n    \"100g pancetta\",\r\n    \"2 large eggs\",\r\n    \"50g Pecorino Romano cheese\",\r\n    \"50g Parmesan cheese\",\r\n    \"Salt\",\r\n    \"Black pepper\"\r\n  ],\r\n  \"instructions\": [\r\n    \"Cook the spaghetti in salted boiling water until al dente.\",\r\n    \"In a bowl, whisk the eggs and mix with grated Pecorino Romano and Parmesan cheese.\",\r\n    \"Fry the pancetta in a pan until crispy.\",\r\n    \"Drain the pasta and add it to the pan with pancetta, stirring well.\",\r\n    \"Remove from heat and quickly mix in the egg and cheese mixture to create a creamy sauce.\",\r\n    \"Season with black pepper and serve immediately.\"\r\n  ],\r\n  \"cookingTime\": 20,\r\n  \"difficulty\": \"medium\",\r\n  \"isVegetarian\": false,\r\n  \"category\": \"dessert\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/recipes/67dd62ea84c525d48980d090",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recipes",
+						"67dd62ea84c525d48980d090"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteRecipe",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Le - Spaghetti Carbonara\",\r\n  \"description\": \"A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper for a rich and creamy flavor.\",\r\n  \"ingredients\": [\r\n    \"200g spaghetti\",\r\n    \"100g pancetta\",\r\n    \"2 large eggs\",\r\n    \"50g Pecorino Romano cheese\",\r\n    \"50g Parmesan cheese\",\r\n    \"Salt\",\r\n    \"Black pepper\"\r\n  ],\r\n  \"instructions\": [\r\n    \"Cook the spaghetti in salted boiling water until al dente.\",\r\n    \"In a bowl, whisk the eggs and mix with grated Pecorino Romano and Parmesan cheese.\",\r\n    \"Fry the pancetta in a pan until crispy.\",\r\n    \"Drain the pasta and add it to the pan with pancetta, stirring well.\",\r\n    \"Remove from heat and quickly mix in the egg and cheese mixture to create a creamy sauce.\",\r\n    \"Season with black pepper and serve immediately.\"\r\n  ],\r\n  \"cookingTime\": 20,\r\n  \"difficulty\": \"medium\",\r\n  \"isVegetarian\": false,\r\n  \"category\": \"dessert\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/recipes/67dd62ea84c525d48980d090",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"recipes",
+						"67dd62ea84c525d48980d090"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

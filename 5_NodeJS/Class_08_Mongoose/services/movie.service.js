@@ -4,6 +4,7 @@ import "../schemas/directors.schema.js"; //! must import the director schema bec
 export default class MovieService {
   async getAll() {
     const data = Movie.find({}).populate("director");
+    //! we must use .populate if the field hold an object ID to a different collection
 
     return data;
   }

@@ -47,8 +47,9 @@ export default class TrainersModel {
   }
 
   static async deleteAll() {
-    const trainers = await this.getAllTrainers();
+    let trainers = await this.getAllTrainers();
     trainers = [];
+    await DataService.writeData(dataPath, trainers);
     return trainers;
   }
 }
