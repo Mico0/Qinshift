@@ -10,4 +10,5 @@ export const genres = [
   "Sci-Fi",
   "Family",
   "Romance",
+  "The Movie!",
 ];

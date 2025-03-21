@@ -8,7 +8,13 @@ export default class MovieController {
 
   async getMovies(req, res) {
     try {
-      const movies = await this.movieService.getAll();
+      const filter = {};
+
+      if (req.query.genre) {
+        filter.genre = req.query.genre;
+      }
+
+      const movies = await this.movieService.getAll(filter);
       res.send(movies);
     } catch (error) {
       res.status(400).send({ message: error.message });
@@ -30,14 +36,36 @@ export default class MovieController {
       const movieObj = {
         name,
         genre,
-        director: await Director.findOne({
-          lastName: director.split("")[1],
-        }),
+        director,
         year,
         description,
         rating,
       };
-      res.send(this.movieService.create(movieObj));
+      const movie = this.movieService.create(movieObj);
+      //! Update and create return the new / updated movie
+      res.send(movie);
+    } catch (error) {
+      res.status(400).send({ message: error.message });
+    }
+  }
+
+  async updateMovie(req, res) {
+    try {
+      const movieBody = req.body;
+      const moviID = req.params.id;
+      // console.log(moviID);
+      const movie = this.movieService.update(moviID, movieBody);
+      res.status(200).send(movie);
+    } catch (error) {
+      res.status(400).send({ message: error.message });
+    }
+  }
+
+  async deleteMovie(req, res) {
+    try {
+      const movieId = req.params.id;
+      await this.movieService.delete(movieId);
+      res.status(200).send({ message: "Movie deleted successfully" });
     } catch (error) {
       res.status(400).send({ message: error.message });
     }
