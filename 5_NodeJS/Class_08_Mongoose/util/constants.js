@@ -12,3 +12,5 @@ export const genres = [
   "Romance",
   "The Movie!",
 ];
+
+export const UserRoles = ["Admin", "Standard"];
