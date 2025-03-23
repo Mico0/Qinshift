@@ -3,7 +3,9 @@ import TrainersService from "../services/trainers.service.js";
 export default class TrainerController {
   static async getTrainers(req, res) {
     try {
-      const trainers = await TrainersService.getTrainers();
+      const isActive = req.query.currentlyActive;
+      const sortBy = req.query.sortBy;
+      const trainers = await TrainersService.getTrainers(isActive, sortBy);
       res.send(trainers);
     } catch (error) {
       res.status(400).send({ message: error.message });
@@ -46,7 +48,7 @@ export default class TrainerController {
   static async deleteTrainer(req, res) {
     try {
       await TrainersService.deleteTrainer(req.params.id);
-      res.status(204).send({ message: "Trainer deleted" });
+      res.status(200).send({ message: "Trainer deleted" });
     } catch (error) {
       res.status(400).send({ message: error.message });
     }
@@ -55,42 +57,9 @@ export default class TrainerController {
   static async deleteAllTrainers(req, res) {
     try {
       await TrainersService.deleteAll();
-      res.status(204).send({ message: "Deleted all trainers" });
+      res.status(200).send({ message: "Deleted all trainers" });
     } catch (error) {
       res.status(400).send({ error: error.message });
-    }
-  }
-
-  static async sortTrainers(req, res) {
-    try {
-      const trainers = await TrainersService.getTrainers();
-      let filteredTrainers = [];
-
-      if (req.query.currentlyActive === "true") {
-        filteredTrainers = trainers.filter(
-          (x) => x.isCurrentlyTeaching === true
-        );
-      } else {
-        filteredTrainers = trainers;
-      }
-
-      if (req.query.sortBy === "coursesAsc") {
-        filteredTrainers = [...filteredTrainers].sort(
-          (a, b) => a.coursesFinished - b.coursesFinished
-        );
-      }
-      if (req.query.sortBy === "coursesDesc") {
-        filteredTrainers = [...filteredTrainers].sort(
-          (a, b) => b.coursesFinished - a.coursesFinished
-        );
-      }
-
-      res.status(200).send(filteredTrainers);
-      //   console.log("sortedAsc: ", sortedAsc);
-      //   console.log("sortedDesc: ", sortedDesc);
-      //   console.log("filtered: ", filteredTrainers);
-    } catch (error) {
-      res.status(400).send({ message: "Something went wrong" });
     }
   }
 }

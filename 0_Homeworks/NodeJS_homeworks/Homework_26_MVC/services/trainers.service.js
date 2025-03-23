@@ -2,8 +2,27 @@ import TrainersModel from "../models/trainers.model.js";
 import { v4 as uuidv4 } from "uuid";
 
 export default class TrainersService {
-  static async getTrainers() {
-    return await TrainersModel.getAllTrainers();
+  static async getTrainers(isActive = false, sortBy = null) {
+    const trainers = await TrainersModel.getAllTrainers();
+    let filteredTrainers = [];
+
+    if (isActive === "true") {
+      filteredTrainers = trainers.filter((x) => x.isCurrentlyTeaching === true);
+    } else {
+      filteredTrainers = trainers;
+    }
+
+    if (sortBy === "coursesAsc") {
+      filteredTrainers = [...filteredTrainers].sort(
+        (a, b) => a.coursesFinished - b.coursesFinished
+      );
+    }
+    if (sortBy === "coursesDesc") {
+      filteredTrainers = [...filteredTrainers].sort(
+        (a, b) => b.coursesFinished - a.coursesFinished
+      );
+    }
+    return filteredTrainers;
   }
 
   static async getTrainerById(id) {

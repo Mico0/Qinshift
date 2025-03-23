@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "getAllTrainers",
+			"name": "getAllTrainers - With filter and sort",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -20,6 +20,23 @@
 					"port": "3000",
 					"path": [
 						"trainers"
+					],
+					"query": [
+						{
+							"key": "currentlyActive",
+							"value": "true",
+							"disabled": true
+						},
+						{
+							"key": "sortBy",
+							"value": "coursesDesc",
+							"disabled": true
+						},
+						{
+							"key": "sortBy",
+							"value": "coursesAsc",
+							"disabled": true
+						}
 					]
 				}
 			},
@@ -59,41 +76,6 @@
 					"path": [
 						"home",
 						"hello-kitten.gif"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "getAll - Filtered&Sorted",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/trainers?sortBy=coursesAsc",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"trainers"
-					],
-					"query": [
-						{
-							"key": "currentlyActive",
-							"value": "true",
-							"disabled": true
-						},
-						{
-							"key": "sortBy",
-							"value": "coursesDesc",
-							"disabled": true
-						},
-						{
-							"key": "sortBy",
-							"value": "coursesAsc"
-						}
 					]
 				}
 			},
@@ -154,7 +136,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "   {\r\n        \"firstName\": \"Milan\",\r\n        \"lastName\": \"Smith\",\r\n        \"email\": \"alice.smith@example.com\",\r\n        \"isCurrentlyTeaching\": true,\r\n        \"timeEmployed\": \"1 year 3 months\",\r\n        \"coursesFinished\": 12\r\n    }",
+					"raw": "   {\r\n        \"firstName\": \"Milan\",\r\n        \"lastName\": \"Og\",\r\n        \"email\": \"alice.smith@example.com\",\r\n        \"isCurrentlyTeaching\": true,\r\n        \"timeEmployed\": \"1 year 3 months\",\r\n        \"coursesFinished\": 12\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -191,7 +173,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/trainers/1",
+					"raw": "http://localhost:3000/trainers/ab1ec941-a26d-45bb-8c58-db96b9c5c151",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -199,7 +181,7 @@
 					"port": "3000",
 					"path": [
 						"trainers",
-						"1"
+						"ab1ec941-a26d-45bb-8c58-db96b9c5c151"
 					]
 				}
 			},
