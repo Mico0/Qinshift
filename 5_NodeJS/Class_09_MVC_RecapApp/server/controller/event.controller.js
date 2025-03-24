@@ -16,9 +16,9 @@ export default class EventController {
       if (req.query.location) {
         filter.location = req.query.location;
       }
-      console.log("TEST");
+      // console.log("TEST");
       const events = await this.eventService.getAll(filter);
-      console.log("TEST 2");
+      // console.log("TEST 2");
 
       res.status(200).send(events);
     } catch (error) {

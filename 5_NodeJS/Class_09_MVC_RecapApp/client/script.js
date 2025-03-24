@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-
+      console.log(payload);
       if (response.ok) {
         responseMessage.textContent = "Event added successfully";
         responseMessage.className = "success";

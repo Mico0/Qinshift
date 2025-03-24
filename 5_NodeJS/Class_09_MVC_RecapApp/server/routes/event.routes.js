@@ -9,7 +9,7 @@ router.get("/", (req, res) => {
 });
 //! When we use dependancy injection in the controller class we must use arrow functions to bind this to the class
 
-router.post("/", eventController.create);
-router.delete("/:id", eventController.delete);
+router.post("/", (req, res) => eventController.create(req, res));
+router.delete("/:id", (req, res) => eventController.delete(req, res));
 
 export default router;
