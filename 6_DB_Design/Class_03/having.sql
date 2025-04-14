@@ -1,24 +1,29 @@
 -- HAVING
 
--- BASIC EXAMPLE
-SELECT
+SELECT * FROM sales;
+
+-- Basic example
+SELECT 
 	category,
 	COUNT(*) AS sale_count
 FROM sales
 GROUP BY category
-HAVING COUNT(*)>2;
+HAVING COUNT(*) > 2;
 
-SELECT
+SELECT 
 	product_name,
-	SUM (amount) as total_sales
+	SUM(amount) AS total_sales
 FROM sales
 GROUP BY product_name
 HAVING SUM(amount) > 1000;
 
-SELECT
+SELECT 
 	category,
-	COUNT(*) as sale_count,
+	COUNT(*) AS sale_count,
 	AVG(amount) as avg_sale
 FROM sales
 GROUP BY category
-HAVING COUNT(*) > 2 AND AVG (amount) > 100;
+HAVING COUNT(*) > 2 AND AVG(amount) > 3;
+
+
+

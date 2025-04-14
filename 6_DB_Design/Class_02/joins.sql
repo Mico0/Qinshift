@@ -5,24 +5,23 @@ SELECT * FROM employees;
 SELECT * FROM courses;
 SELECT * FROM student_courses;
 
---- BASIC INNER JOIN
-
+-- Basic INNER JOIN
 SELECT 
 	s.name,
 	sd.phone
-FROM students s
+FROM students AS s
 INNER JOIN student_details sd
-ON s.student_id = sd.student_id;
+ON  s.id = sd.student_id;
 
-SELECT
+SELECT 
 	e.name,
 	d.dept_name
 FROM employees AS e
 INNER JOIN departments d
 ON e.dept_id = d.dept_id;
 
---- LEFT JOIN
-SELECT
+-- LEFT JOIN
+SELECT 
 	s.name,
 	c.course_name
 FROM students s
@@ -31,16 +30,24 @@ ON s.student_id = sc.student_id
 LEFT JOIN courses c
 ON sc.course_id = c.course_id;
 
---- RIGHT JOIN
-SELECT 
-	e.name,
+ -- LEFT JOIN
+ SELECT 
+ 	e.name,
+	d.dept_name
+FROM employees e
+LEFT JOIN departments d
+ON e.dept_id = d.dept_id;
+
+ -- RIGHT JOIN
+ SELECT 
+ 	e.name,
 	d.dept_name
 FROM employees e
 RIGHT JOIN departments d
 ON e.dept_id = d.dept_id;
 
---- FULL JOIN
-SELECT
+-- FULL JOIN
+SELECT 
 	s.name,
 	sd.phone
 FROM students s
