@@ -46,3 +46,77 @@ const acaTtitle = "networks";
 //! AVOID THIS(UNION TPYES IN ARRAYS)
 const mixedArray = [1, 2, 3, 4, "Milan"];
 //TODO magic strings
+// ENUMS
+var Classic;
+(function (Classic) {
+    Classic[Classic["TYPE_ONE"] = 0] = "TYPE_ONE";
+    Classic[Classic["TYPE_TWO"] = 1] = "TYPE_TWO";
+    Classic[Classic["TYPE_THREE"] = 2] = "TYPE_THREE";
+})(Classic || (Classic = {}));
+console.log(Classic.TYPE_TWO);
+var Status;
+(function (Status) {
+    Status["ACTIVE"] = "active";
+    Status["ON_HOLD"] = "on-hold";
+    Status["CNCELLED"] = "cancelled";
+})(Status || (Status = {}));
+console.log(Status.ON_HOLD);
+// Functions
+const addTwoNumbers = (numOne, numTwo) => {
+    return numOne + numTwo;
+};
+function subtract(numOne, numTwo) {
+    return `The result of subtraction is ${numOne / numTwo}`;
+}
+// Functions that dont have a return keyword have a void return type
+const printFUllName = (firstName, lastName) => {
+    console.log(`${firstName} ${lastName}`);
+};
+printFUllName("Milan", "Ognjanoski");
+// ?: is used to make arguments in fucntions optional
+const sayHello = (name) => {
+    console.log(`${name || "User"} says hello`);
+};
+sayHello("John");
+sayHello();
+const printAcademy = (academy, length = 12) => {
+    console.log(`The academy ${academy} lats for ${length} months`);
+};
+printAcademy("programming", 6);
+const shoes = {
+    title: "Sneakers",
+    stock: 120,
+    description: "Very fancy sneakers",
+    category: "Footwear",
+    price: 300,
+    rating: 9.2,
+    printInfo() {
+        console.log(`${this.title} : ${this.description}`);
+    },
+};
+shoes.printInfo();
+const mechanic = {
+    firstName: "Sedat",
+    lastName: "Mustafa",
+    jobTitle: "SEO expert",
+    salary: 800,
+    getFullName() {
+        return `${this.firstName} : ${this.jobTitle}`;
+    },
+};
+console.log(mechanic.getFullName());
+// Classes
+// modern ts syntax for working with constructors
+class Laptop {
+    constructor(title, stock, description, category, price, rating) {
+        this.title = title;
+        this.stock = stock;
+        this.description = description;
+        this.category = category;
+        this.price = price;
+        this.rating = rating;
+        this.serialNumber = "LWQ23QG343";
+        this.productionYear = 2023;
+    }
+    printInfo() { }
+}
