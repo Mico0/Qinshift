@@ -119,4 +119,17 @@ class Laptop {
         this.productionYear = 2023;
     }
     printInfo() { }
+    getSerialNum() {
+        return this.serialNumber;
+    }
+    updateSerialNum(newSerialNum) {
+        if (newSerialNum[0] !== "L")
+            return;
+        this.serialNumber = newSerialNum;
+    }
 }
+const acerLaptop = new Laptop("Predator", 2, "Gaming laptop", "Personal Computers", 700, 8.21);
+console.log(acerLaptop);
+acerLaptop.updateSerialNum("A123123");
+console.log(acerLaptop.getSerialNum());
+console.log("Reading hte read only property", acerLaptop.productionYear);

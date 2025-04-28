@@ -204,7 +204,7 @@ type Programmer = Person &
 // modern ts syntax for working with constructors
 class Laptop implements Product {
   serialNumber: string = "LWQ23QG343";
-  productionYear = 2023;
+  readonly productionYear = 2023;
 
   constructor(
     public title: string,
@@ -215,4 +215,27 @@ class Laptop implements Product {
     public rating: number
   ) {}
   printInfo() {}
+  getSerialNum() {
+    return this.serialNumber;
+  }
+  updateSerialNum(newSerialNum: string) {
+    if (newSerialNum[0] !== "L") return;
+
+    this.serialNumber = newSerialNum;
+  }
 }
+
+const acerLaptop = new Laptop(
+  "Predator",
+  2,
+  "Gaming laptop",
+  "Personal Computers",
+  700,
+  8.21
+);
+
+console.log(acerLaptop);
+
+acerLaptop.updateSerialNum("A123123");
+console.log(acerLaptop.getSerialNum());
+console.log("Reading hte read only property", acerLaptop.productionYear);
