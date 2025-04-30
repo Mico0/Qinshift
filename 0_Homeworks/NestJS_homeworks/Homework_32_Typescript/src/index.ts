@@ -3,6 +3,7 @@ interface Student {
   name: string;
   age: number;
   grades: number[];
+  avgGrade?: number;
 }
 
 const student: Student = {
@@ -26,15 +27,12 @@ const student3: Student = {
 
 const studentArray: Student[] = [student, student2, student3];
 
-function calculateAverageGrade(students: Student[]): number {
-  const allGrades: number[] = students.flatMap((student) => student.grades);
-  let sum: number = 0;
-  let count: number = 0;
-  allGrades.forEach((grade) => {
-    sum += grade;
-    count++;
-  });
-  return sum / count;
+function calculateAverageGrade(students: Student[] | Student): number {
+  const studentArray = Array.isArray(students) ? students : [students];
+  const allGrades: number[] = studentArray.flatMap((student) => student.grades);
+  let sum: number = allGrades.reduce((acc, curr) => acc + curr, 0);
+
+  return sum / allGrades.length;
 }
 
 console.log(calculateAverageGrade(studentArray));
@@ -128,9 +126,15 @@ class CourseManager {
       throw new Error("Selected course has no students");
     }
 
-    let studentRanking: Student[];
     for (let student of course.students) {
+      student.avgGrade = calculateAverageGrade(student);
     }
+    // ! - after a variable usage tells Typescript that this variable will not be undefined, bypasses the {variable} might be undefined issue
+    let sorted = [...course.students].sort(
+      (a: Student, b: Student) => b.avgGrade! - a.avgGrade!
+    );
+
+    return sorted.slice(0, n);
   }
 }
 
@@ -148,3 +152,5 @@ courseMng.addCourse({
 console.log(courseMng.getById(105));
 courseMng.removeById(105);
 console.log(courseMng.getById(105));
+
+console.log(courseMng.getTopStudents(103, 2));
