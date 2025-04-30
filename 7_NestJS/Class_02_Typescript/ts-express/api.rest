@@ -4,3 +4,16 @@ GET http://localhost:3000/
 GET http://localhost:3000/api/products
 ### 
 GET http://localhost:3000/api/products/cbe3d6fa-6b43-4b4d-bfce-c0b25d4e750f
+
+
+### 
+
+POST http://localhost:3000/api/products
+Content-Type: application/json
+
+{
+    "title": "Test Product",
+    "stock": 143,
+    "price": 99
+}
+ 

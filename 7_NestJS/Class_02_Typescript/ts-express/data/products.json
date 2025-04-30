@@ -1,9 +1,10 @@
 [
   {
-    "title": "Washing machine",
+    "title": "Chair",
     "price": 300,
-    "stock": 120,
-    "id": "cbe3d6fa-6b43-4b4d-bfce-c0b25d4e750f"
+    "stock": 123,
+    "id": "cbe3d6fa-6b43-4b4d-bfce-c0b25d4e750f",
+    "city": 99
   },
   {
     "title": "Ironing board",
@@ -84,5 +85,17 @@
     "title": "Monitors",
     "stock": 120,
     "price": 322
+  },
+  {
+    "id": "275aa4e5-d939-40eb-a6ff-12fe81c83092",
+    "title": "Test Product",
+    "stock": 143,
+    "price": 99
+  },
+  {
+    "id": "e7766e71-437a-4ef6-b381-5bc3b91ff2f7",
+    "title": "Chips",
+    "stock": 123,
+    "price": 99
   }
 ]
