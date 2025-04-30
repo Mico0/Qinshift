@@ -129,10 +129,18 @@ class CourseManager {
     for (let student of course.students) {
       student.avgGrade = calculateAverageGrade(student);
     }
-    // ! - after a variable usage tells Typescript that this variable will not be undefined, bypasses the {variable} might be undefined issue
+
+    //! Way 1 to solve this with common assertion
+
     let sorted = [...course.students].sort(
-      (a: Student, b: Student) => b.avgGrade! - a.avgGrade!
+      (a, b) => (a.avgGrade as number) - (b.avgGrade as number)
     );
+
+    //! Way 2 to solve this
+    // ! - after a variable usage tells Typescript that this variable will not be undefined, bypasses the {variable} might be undefined issue AKA non null assertion
+    // let sorted = [...course.students].sort(
+    //   (a: Student, b: Student) => b.avgGrade! - a.avgGrade!
+    // );
 
     return sorted.slice(0, n);
   }
