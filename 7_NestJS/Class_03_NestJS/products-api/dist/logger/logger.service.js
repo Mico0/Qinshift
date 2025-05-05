@@ -6,20 +6,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppModule = void 0;
+exports.LoggerService = void 0;
 const common_1 = require("@nestjs/common");
-const app_controller_1 = require("./app.controller");
-const app_service_1 = require("./app.service");
-const products_module_1 = require("./products/products.module");
-const logger_module_1 = require("./logger/logger.module");
-let AppModule = class AppModule {
+const fs_1 = require("fs");
+const path_1 = require("path");
+let LoggerService = class LoggerService {
+    LOGS_PATH = (0, path_1.join)(process.cwd(), 'src', 'logger', 'data', 'logs.txt');
+    async addLog(msg) {
+        const date = new Date();
+        (0, fs_1.appendFileSync)(this.LOGS_PATH, `${msg} @ ${date}\n`, 'utf-8');
+    }
 };
-exports.AppModule = AppModule;
-exports.AppModule = AppModule = __decorate([
-    (0, common_1.Module)({
-        imports: [products_module_1.ProductsModule, logger_module_1.LoggerModule],
-        controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService],
-    })
-], AppModule);
-//# sourceMappingURL=app.module.js.map
+exports.LoggerService = LoggerService;
+exports.LoggerService = LoggerService = __decorate([
+    (0, common_1.Injectable)()
+], LoggerService);
+//# sourceMappingURL=logger.service.js.map
