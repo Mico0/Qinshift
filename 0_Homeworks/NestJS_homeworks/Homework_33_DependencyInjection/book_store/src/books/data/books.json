@@ -1,0 +1,170 @@
+[
+  {
+    "title": "The Last Horizon",
+    "author": "Elena Voss",
+    "description": "A gripping sci-fi tale of survival on a dying planet.",
+    "date_written": "2021-06-15",
+    "date_published": "2022-01-10",
+    "price": 14.99
+  },
+  {
+    "title": "Whispers in the Fog",
+    "author": "Darian Cole",
+    "description": "A mystery set in Victorian London filled with secrets and lies.",
+    "date_written": "2019-04-22",
+    "date_published": "2020-02-01",
+    "price": 12.49
+  },
+  {
+    "title": "The Clockmaker's War",
+    "author": "Harold Jameson",
+    "description": "Steampunk adventure involving time machines and rebellion.",
+    "date_written": "2018-11-30",
+    "date_published": "2019-05-17",
+    "price": 16.99
+  },
+  {
+    "title": "Echoes of the Fallen",
+    "author": "Marla DeWitt",
+    "description": "An epic fantasy about a forgotten kingdom's rise.",
+    "date_written": "2020-08-12",
+    "date_published": "2021-03-05",
+    "price": 18.0
+  },
+  {
+    "title": "Neon Abyss",
+    "author": "Tyler Crane",
+    "description": "Cyberpunk noir following a detective through the digital underworld.",
+    "date_written": "2022-02-14",
+    "date_published": "2023-01-20",
+    "price": 15.5
+  },
+  {
+    "title": "Letters to Arabelle",
+    "author": "Katherine Rowe",
+    "description": "A tragic love story told through a series of wartime letters.",
+    "date_written": "2016-10-03",
+    "date_published": "2017-02-28",
+    "price": 10.99
+  },
+  {
+    "title": "Children of the Ember",
+    "author": "Hassan M. Kadir",
+    "description": "Fantasy epic of elemental powers and ancient tribes.",
+    "date_written": "2021-03-22",
+    "date_published": "2021-12-01",
+    "price": 17.49
+  },
+  {
+    "title": "Midnight on Mercury",
+    "author": "Lucille Hart",
+    "description": "Hard science fiction exploring isolation and artificial intelligence.",
+    "date_written": "2020-01-11",
+    "date_published": "2020-09-14",
+    "price": 13.75
+  },
+  {
+    "title": "The Forgotten Codex",
+    "author": "Daniel Cross",
+    "description": "Archaeological thriller with ancient secrets and deadly puzzles.",
+    "date_written": "2019-06-09",
+    "date_published": "2020-01-05",
+    "price": 14.2
+  },
+  {
+    "title": "A Garden for Wolves",
+    "author": "Nadia Elson",
+    "description": "Dark fairy tale retelling with survival, betrayal, and magic.",
+    "date_written": "2018-07-18",
+    "date_published": "2019-03-11",
+    "price": 11.95
+  },
+  {
+    "title": "Beneath the Iron Sky",
+    "author": "Victor Hale",
+    "description": "Post-apocalyptic dystopia with strong environmental themes.",
+    "date_written": "2022-05-01",
+    "date_published": "2023-03-16",
+    "price": 16.25
+  },
+  {
+    "title": "Song of the Windborn",
+    "author": "Felicia Storm",
+    "description": "A lyrical fantasy about a bard with the power to move mountains.",
+    "date_written": "2017-09-21",
+    "date_published": "2018-04-20",
+    "price": 13.6
+  },
+  {
+    "title": "Digital Alchemy",
+    "author": "Remy Cho",
+    "description": "A technomagic hacker unearths a conspiracy in the global net.",
+    "date_written": "2020-12-19",
+    "date_published": "2021-07-30",
+    "price": 15.8
+  },
+  {
+    "title": "Crows of the Capital",
+    "author": "Isaiah G. North",
+    "description": "Political intrigue and espionage in a decaying empire.",
+    "date_written": "2019-02-25",
+    "date_published": "2019-09-18",
+    "price": 12.7
+  },
+  {
+    "title": "The Alabaster Curse",
+    "author": "Janelle Price",
+    "description": "Paranormal fantasy with ghost hunters and cursed relics.",
+    "date_written": "2021-10-31",
+    "date_published": "2022-06-08",
+    "price": 14.4
+  },
+  {
+    "title": "Twilight's Heir",
+    "author": "Gregory Shields",
+    "description": "Epic saga about royal bloodlines and celestial destinies.",
+    "date_written": "2018-05-13",
+    "date_published": "2019-01-23",
+    "price": 19.95
+  },
+  {
+    "title": "Mechanical Gods",
+    "author": "Omar Reyes",
+    "description": "Sci-fi thriller where humans worship ancient AI overlords.",
+    "date_written": "2022-08-04",
+    "date_published": "2023-04-12",
+    "price": 15.3
+  },
+  {
+    "title": "Canvas of Bones",
+    "author": "Althea Juno",
+    "description": "A gothic horror exploring grief, art, and the supernatural.",
+    "date_written": "2017-11-01",
+    "date_published": "2018-07-09",
+    "price": 11.85
+  },
+  {
+    "title": "Skybound",
+    "author": "Leonard D. Archer",
+    "description": "Adventure fantasy with airships, pirates, and lost cities.",
+    "date_written": "2019-12-22",
+    "date_published": "2020-08-10",
+    "price": 16.0
+  },
+  {
+    "title": "Ashes of Arcadia",
+    "author": "Tess Monroe",
+    "description": "Urban fantasy with magical factions battling for control.",
+    "date_written": "2021-07-07",
+    "date_published": "2022-03-15",
+    "price": 13.45
+  },
+  {
+    "title": "The Oracle's Mirror",
+    "author": "Samuel Kerr",
+    "description": "A philosophical fantasy where fate can be rewritten.",
+    "date_written": "2020-09-09",
+    "date_published": "2021-06-25",
+    "price": 14.1
+  }
+]
