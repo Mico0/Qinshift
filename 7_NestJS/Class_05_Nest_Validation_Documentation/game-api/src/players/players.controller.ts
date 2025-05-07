@@ -1,4 +1,5 @@
-import {   Body,
+import {
+  Body,
   Controller,
   Delete,
   Get,
@@ -7,23 +8,21 @@ import {   Body,
   Patch,
   Post,
   Query,
-  Res, } from '@nestjs/common';
+  Res,
+} from '@nestjs/common';
 import { PlayersService } from './players.service';
 import { CreatePlayerDto } from './dtos/create-player.dto';
 
 @Controller('players')
 export class PlayersController {
-  constructor(private playersService: PlayersService) {
+  constructor(private playersService: PlayersService) {}
+  @Get()
+  findAll() {
+    return this.playersService.findAll();
+  }
 
-    @Get()
-    findAll(){
-      return this.playersService.findAll();
-    }
-
-    @Post()
-    create(@Body() createData: CreatePlayerDto){
-      return this.playersService.create(createData);
-    }
-    
+  @Post()
+  create(@Body() createData: CreatePlayerDto) {
+    return this.playersService.create(createData);
   }
 }
