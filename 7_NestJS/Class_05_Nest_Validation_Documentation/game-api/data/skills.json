@@ -1,0 +1,11 @@
+[
+  {
+    "id": "9a568fdb-6d61-47c5-92fc-5de7a9bfb74b",
+    "name": "Fireball",
+    "damage": 5,
+    "heal": 0,
+    "manaCost": 3,
+    "cooldown": 5,
+    "description": "Throw a fireball that can tickle some monsters and iritate others"
+  }
+]

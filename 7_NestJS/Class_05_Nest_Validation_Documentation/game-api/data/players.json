@@ -1,1 +1,28 @@
-[]
+[
+  {
+    "id": "8ac636d6-c1d8-4cce-a789-640a8abea42d",
+    "skills": [
+      "9a568fdb-6d61-47c5-92fc-5de7a9bfb74b"
+    ],
+    "experience": 0,
+    "name": "noobKiller",
+    "health": 120,
+    "mana": 20,
+    "attack": 5,
+    "defense": 10,
+    "inventory": [],
+    "level": 1
+  },
+  {
+    "id": "dca10364-2652-422b-bce9-a963eb6e7a9f",
+    "skills": [],
+    "experience": 0,
+    "name": "thePostman",
+    "health": 120,
+    "mana": 25,
+    "attack": 10,
+    "defense": 15,
+    "inventory": [],
+    "level": 2
+  }
+]
