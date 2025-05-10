@@ -1,6 +1,7 @@
 import {
   IsArray,
   IsBoolean,
+  IsDate,
   IsDateString,
   IsEnum,
   IsNumber,
@@ -10,6 +11,7 @@ import {
   Max,
   Min,
 } from 'class-validator';
+import { Type } from 'class-transformer';
 import { RoomType } from '../types/room-type.type';
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 export class CreateRoomDto {
@@ -68,9 +70,11 @@ export class CreateRoomDto {
 
   @ApiProperty({
     description: 'A valid date string',
+    example: '2025-05-08T14:30:00.000Z',
   })
-  @IsDateString()
-  lastCleaned: string;
+  @IsDate()
+  @Type(() => Date)
+  lastCleaned: Date;
 
   @ApiPropertyOptional({
     description: 'An optional string of maintenance notes',

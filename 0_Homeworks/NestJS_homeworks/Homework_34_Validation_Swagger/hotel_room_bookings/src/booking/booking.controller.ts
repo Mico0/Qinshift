@@ -23,10 +23,18 @@ export class BookingController {
   @ApiOperation({ summary: 'Returns all hotel rooms' })
   @Get()
   getAllRooms(
+    @Query('roomNumber') roomNumber: string,
     @Query('availability') availability: string,
     @Query('roomType') roomType: string,
+    @Query('priceRange') priceRange: string,
   ) {
     const roomFilters: RoomFiltersDto = {};
+
+    if (roomNumber) {
+      roomFilters.roomNumber = !Number.isNaN(Number(roomNumber))
+        ? Number(roomNumber)
+        : null;
+    }
 
     if (availability === 'true') {
       roomFilters.availability = true;
@@ -38,7 +46,13 @@ export class BookingController {
       roomFilters.roomType = roomType as RoomType;
     }
 
+    if (priceRange) {
+      const prices = priceRange.split(',').map((price) => parseInt(price));
+      roomFilters.priceRange = prices;
+    }
+
     // console.log(typeof roomFilters.availability);
+    // console.log(roomFilters.priceRange);
 
     return this.bookingService.getAllRooms(roomFilters);
   }

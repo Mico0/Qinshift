@@ -16,6 +16,9 @@ let BookingService = class BookingService {
     async getAllRooms(filters) {
         const roomsJson = await (0, promises_1.readFile)(this.ROOMS_PATH, 'utf-8');
         let rooms = JSON.parse(roomsJson);
+        if (filters?.roomNumber) {
+            rooms = rooms.filter((room) => room.roomNumber === filters.roomNumber);
+        }
         if (filters?.availability !== undefined) {
             rooms = rooms.filter((room) => room.isAvailable === filters.availability);
         }
@@ -24,6 +27,7 @@ let BookingService = class BookingService {
         }
         if (filters?.priceRange) {
             const [minPrice, maxPrice] = filters.priceRange;
+            console.log(minPrice, maxPrice);
             rooms = rooms.filter((room) => room.price >= minPrice && room.price <= maxPrice);
         }
         return rooms;

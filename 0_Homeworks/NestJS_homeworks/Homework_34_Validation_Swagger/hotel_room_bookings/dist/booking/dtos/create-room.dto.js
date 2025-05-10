@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateRoomDto = void 0;
 const class_validator_1 = require("class-validator");
+const class_transformer_1 = require("class-transformer");
 const room_type_type_1 = require("../types/room-type.type");
 const swagger_1 = require("@nestjs/swagger");
 class CreateRoomDto {
@@ -86,9 +87,11 @@ __decorate([
 __decorate([
     (0, swagger_1.ApiProperty)({
         description: 'A valid date string',
+        example: '2025-05-08T14:30:00.000Z',
     }),
-    (0, class_validator_1.IsDateString)(),
-    __metadata("design:type", String)
+    (0, class_validator_1.IsDate)(),
+    (0, class_transformer_1.Type)(() => Date),
+    __metadata("design:type", Date)
 ], CreateRoomDto.prototype, "lastCleaned", void 0);
 __decorate([
     (0, swagger_1.ApiPropertyOptional)({

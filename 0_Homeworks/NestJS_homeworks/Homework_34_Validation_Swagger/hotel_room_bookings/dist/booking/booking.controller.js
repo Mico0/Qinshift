@@ -24,8 +24,13 @@ let BookingController = class BookingController {
     constructor(bookingService) {
         this.bookingService = bookingService;
     }
-    getAllRooms(availability, roomType) {
+    getAllRooms(roomNumber, availability, roomType, priceRange) {
         const roomFilters = {};
+        if (roomNumber) {
+            roomFilters.roomNumber = !Number.isNaN(Number(roomNumber))
+                ? Number(roomNumber)
+                : null;
+        }
         if (availability === 'true') {
             roomFilters.availability = true;
         }
@@ -34,6 +39,10 @@ let BookingController = class BookingController {
         }
         if (roomType && Object.values(room_type_type_1.RoomType).includes(roomType)) {
             roomFilters.roomType = roomType;
+        }
+        if (priceRange) {
+            const prices = priceRange.split(',').map((price) => parseInt(price));
+            roomFilters.priceRange = prices;
         }
         return this.bookingService.getAllRooms(roomFilters);
     }
@@ -54,10 +63,12 @@ exports.BookingController = BookingController;
 __decorate([
     (0, swagger_1.ApiOperation)({ summary: 'Returns all hotel rooms' }),
     (0, common_1.Get)(),
-    __param(0, (0, common_1.Query)('availability')),
-    __param(1, (0, common_1.Query)('roomType')),
+    __param(0, (0, common_1.Query)('roomNumber')),
+    __param(1, (0, common_1.Query)('availability')),
+    __param(2, (0, common_1.Query)('roomType')),
+    __param(3, (0, common_1.Query)('priceRange')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String, String]),
+    __metadata("design:paramtypes", [String, String, String, String]),
     __metadata("design:returntype", void 0)
 ], BookingController.prototype, "getAllRooms", null);
 __decorate([

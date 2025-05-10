@@ -6,6 +6,6 @@ export declare class CreateRoomDto {
     isAvailable: boolean;
     amenities: string[];
     maxOccupancy: number;
-    lastCleaned: string;
+    lastCleaned: Date;
     maintenanceNotes?: string;
 }

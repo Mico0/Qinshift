@@ -328,5 +328,17 @@
     ],
     "maxOccupancy": 2,
     "lastCleaned": "2025-05-09T08:00:00.000Z"
+  },
+  {
+    "id": "db44136d-04ee-4ca0-8cd9-09bc9db41069",
+    "roomNumber": 666,
+    "type": "Suite",
+    "price": 540,
+    "isAvailable": false,
+    "amenities": [
+      "King Bed"
+    ],
+    "maxOccupancy": 2,
+    "lastCleaned": "2025-05-09T08:00:00.000Z"
   }
 ]

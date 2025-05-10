@@ -23,6 +23,12 @@ export class BookingService {
 
     let rooms = JSON.parse(roomsJson) as RoomDto[];
 
+    if (filters?.roomNumber) {
+      rooms = rooms.filter(
+        (room) => room.roomNumber === (filters.roomNumber as number),
+      );
+    }
+
     if (filters?.availability !== undefined) {
       rooms = rooms.filter(
         (room) => room.isAvailable === (filters.availability as boolean),
@@ -37,6 +43,7 @@ export class BookingService {
 
     if (filters?.priceRange) {
       const [minPrice, maxPrice] = filters.priceRange;
+      console.log(minPrice, maxPrice);
       rooms = rooms.filter(
         (room) => room.price >= minPrice && room.price <= maxPrice,
       );
