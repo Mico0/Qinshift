@@ -1,5 +1,6 @@
 [
   {
+    "id": "3f1b59be-8f64-4bd4-80e7-23288ef05d95",
     "title": "The Last Horizon",
     "author": "Elena Voss",
     "description": "A gripping sci-fi tale of survival on a dying planet.",
@@ -8,6 +9,7 @@
     "price": 14.99
   },
   {
+    "id": "9f92a63c-d420-44ec-ae2d-2a279e0d2f4b",
     "title": "Whispers in the Fog",
     "author": "Darian Cole",
     "description": "A mystery set in Victorian London filled with secrets and lies.",
@@ -16,6 +18,7 @@
     "price": 12.49
   },
   {
+    "id": "f08499d3-2bcb-4a90-b3c7-cb539bba4284",
     "title": "The Clockmaker's War",
     "author": "Harold Jameson",
     "description": "Steampunk adventure involving time machines and rebellion.",
@@ -24,14 +27,16 @@
     "price": 16.99
   },
   {
+    "id": "5c2c7c30-c978-4e6b-b308-02d0535c57f3",
     "title": "Echoes of the Fallen",
     "author": "Marla DeWitt",
     "description": "An epic fantasy about a forgotten kingdom's rise.",
     "date_written": "2020-08-12",
     "date_published": "2021-03-05",
-    "price": 18.0
+    "price": 18
   },
   {
+    "id": "15476b8b-6f61-414c-8027-2df15bc4901d",
     "title": "Neon Abyss",
     "author": "Tyler Crane",
     "description": "Cyberpunk noir following a detective through the digital underworld.",
@@ -40,6 +45,7 @@
     "price": 15.5
   },
   {
+    "id": "a50137f1-ccee-41eb-b0ef-593f4127f464",
     "title": "Letters to Arabelle",
     "author": "Katherine Rowe",
     "description": "A tragic love story told through a series of wartime letters.",
@@ -48,6 +54,7 @@
     "price": 10.99
   },
   {
+    "id": "5a5f2e5c-fd80-4ef2-8f1f-71d14c892063",
     "title": "Children of the Ember",
     "author": "Hassan M. Kadir",
     "description": "Fantasy epic of elemental powers and ancient tribes.",
@@ -56,6 +63,7 @@
     "price": 17.49
   },
   {
+    "id": "eeb5fd8f-4745-443e-b073-16060ea8d837",
     "title": "Midnight on Mercury",
     "author": "Lucille Hart",
     "description": "Hard science fiction exploring isolation and artificial intelligence.",
@@ -64,6 +72,7 @@
     "price": 13.75
   },
   {
+    "id": "4878e988-8709-4b5b-b31e-8fe9799dff7a",
     "title": "The Forgotten Codex",
     "author": "Daniel Cross",
     "description": "Archaeological thriller with ancient secrets and deadly puzzles.",
@@ -72,6 +81,7 @@
     "price": 14.2
   },
   {
+    "id": "20890c4e-47c3-487e-b1ae-b7c4ea49757d",
     "title": "A Garden for Wolves",
     "author": "Nadia Elson",
     "description": "Dark fairy tale retelling with survival, betrayal, and magic.",
@@ -80,6 +90,7 @@
     "price": 11.95
   },
   {
+    "id": "b236f655-3b98-4cd2-b801-d94b909ebeb4",
     "title": "Beneath the Iron Sky",
     "author": "Victor Hale",
     "description": "Post-apocalyptic dystopia with strong environmental themes.",
@@ -88,6 +99,7 @@
     "price": 16.25
   },
   {
+    "id": "e0028ec3-214b-40a3-9a7e-b683ed9b708b",
     "title": "Song of the Windborn",
     "author": "Felicia Storm",
     "description": "A lyrical fantasy about a bard with the power to move mountains.",
@@ -96,6 +108,7 @@
     "price": 13.6
   },
   {
+    "id": "4a38b6d8-d6cf-4914-877f-348b243af0e7",
     "title": "Digital Alchemy",
     "author": "Remy Cho",
     "description": "A technomagic hacker unearths a conspiracy in the global net.",
@@ -104,6 +117,7 @@
     "price": 15.8
   },
   {
+    "id": "46dcb54f-5f11-4266-9bc0-f6e16eaaef16",
     "title": "Crows of the Capital",
     "author": "Isaiah G. North",
     "description": "Political intrigue and espionage in a decaying empire.",
@@ -112,6 +126,7 @@
     "price": 12.7
   },
   {
+    "id": "768cfb1b-1f33-4a61-90d2-bd61a10ed893",
     "title": "The Alabaster Curse",
     "author": "Janelle Price",
     "description": "Paranormal fantasy with ghost hunters and cursed relics.",
@@ -120,6 +135,7 @@
     "price": 14.4
   },
   {
+    "id": "c2ae14f4-1d5c-42ed-99cb-75cd8a72e616",
     "title": "Twilight's Heir",
     "author": "Gregory Shields",
     "description": "Epic saga about royal bloodlines and celestial destinies.",
@@ -128,6 +144,7 @@
     "price": 19.95
   },
   {
+    "id": "bf10e158-4b4a-4456-837b-bc39f938498b",
     "title": "Mechanical Gods",
     "author": "Omar Reyes",
     "description": "Sci-fi thriller where humans worship ancient AI overlords.",
@@ -136,6 +153,7 @@
     "price": 15.3
   },
   {
+    "id": "44c37003-b25b-452e-b6a3-b8eb8e9b79b5",
     "title": "Canvas of Bones",
     "author": "Althea Juno",
     "description": "A gothic horror exploring grief, art, and the supernatural.",
@@ -144,14 +162,16 @@
     "price": 11.85
   },
   {
+    "id": "eb89c4ed-cc4d-4ec2-8f7d-580e96e462bb",
     "title": "Skybound",
     "author": "Leonard D. Archer",
     "description": "Adventure fantasy with airships, pirates, and lost cities.",
     "date_written": "2019-12-22",
     "date_published": "2020-08-10",
-    "price": 16.0
+    "price": 16
   },
   {
+    "id": "01091fc7-6b5d-4527-80a1-7469dc6cd79e",
     "title": "Ashes of Arcadia",
     "author": "Tess Monroe",
     "description": "Urban fantasy with magical factions battling for control.",
@@ -160,11 +180,21 @@
     "price": 13.45
   },
   {
+    "id": "61b86135-6b0e-4414-9e7f-dc0aaf4e85a8",
     "title": "The Oracle's Mirror",
     "author": "Samuel Kerr",
     "description": "A philosophical fantasy where fate can be rewritten.",
     "date_written": "2020-09-09",
     "date_published": "2021-06-25",
     "price": 14.1
+  },
+  {
+    "id": "b1d0607d-461c-4f78-a80e-a793532795a6",
+    "title": "Algorithms and Data Structures: Foundations and Practices",
+    "author": "Dr. Emily Hart",
+    "description": "An in-depth guide to core computer science principles, covering sorting algorithms, tree structures, graph theory, and advanced data management techniques. Ideal for students and professionals.",
+    "date_written": "2015-09-15",
+    "date_published": "2016-03-20",
+    "price": 39.99
   }
 ]

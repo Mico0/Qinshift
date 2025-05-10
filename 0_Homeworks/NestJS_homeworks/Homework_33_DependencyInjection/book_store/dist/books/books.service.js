@@ -10,12 +10,57 @@ exports.BooksService = void 0;
 const common_1 = require("@nestjs/common");
 const promises_1 = require("fs/promises");
 const path_1 = require("path");
+const uuid_1 = require("uuid");
 let BooksService = class BooksService {
     BOOKS_PATH = (0, path_1.join)(process.cwd(), 'src', 'books', 'data', 'books.json');
-    async getAllBooks() {
+    async getAllBooks(filters) {
         const booksJson = await (0, promises_1.readFile)(this.BOOKS_PATH, 'utf-8');
-        const books = JSON.parse(booksJson);
-        console.log(books);
+        let books = JSON.parse(booksJson);
+        if (filters?.author) {
+            books = books.filter((book) => book.author
+                .toLowerCase()
+                .includes(filters.author?.toLocaleLowerCase()));
+        }
+        if (filters?.minPrice) {
+            books = books.filter((book) => book.price >= filters.minPrice);
+        }
+        return books;
+    }
+    async getById(id) {
+        const books = await this.getAllBooks();
+        const foundBook = books.find((book) => book.id === id);
+        if (!foundBook)
+            throw new common_1.NotFoundException('Book was not found');
+        return foundBook;
+    }
+    async saveBooks(books) {
+        await (0, promises_1.writeFile)(this.BOOKS_PATH, JSON.stringify(books, null, 2));
+    }
+    async createBook(createData) {
+        const books = await this.getAllBooks();
+        const newBook = {
+            id: (0, uuid_1.v4)(),
+            ...createData,
+        };
+        books.push(newBook);
+        this.saveBooks(books);
+    }
+    async updateBook(id, updateData) {
+        const books = await this.getAllBooks();
+        const index = books.findIndex((book) => book.id === id);
+        if (index === -1)
+            throw new common_1.NotFoundException(`Book with id: ${id} not found`);
+        books[index] = { ...books[index], ...updateData };
+        this.saveBooks(books);
+        return books[index];
+    }
+    async deleteBook(id) {
+        const books = await this.getAllBooks();
+        const removeBookArr = books.filter((book) => book.id !== id);
+        console.log(removeBookArr);
+        if (removeBookArr.length === books.length)
+            throw new common_1.NotFoundException('Book was not found and removed');
+        this.saveBooks(removeBookArr);
     }
 };
 exports.BooksService = BooksService;
