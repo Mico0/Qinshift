@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "72a6c115-c5a7-423f-bee9-f522959b0d0f",
+		"name": "Book Store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43055767"
+	},
+	"item": [
+		{
+			"name": "getAllBooks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/books?minPrice=35",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"books"
+					],
+					"query": [
+						{
+							"key": "minPrice",
+							"value": "35"
+						},
+						{
+							"key": "author",
+							"value": "Darian Cole",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/books/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"books",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "4a38b6d8-d6cf-4914-877f-348b243af0e7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createBook",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Algorithms and Data Structures: Foundations and Practices\",\r\n  \"author\": \"Dr. Emily Hart\",\r\n  \"description\": \"An in-depth guide to core computer science principles, covering sorting algorithms, tree structures, graph theory, and advanced data management techniques. Ideal for students and professionals.\",\r\n  \"date_written\": \"2015-09-15\",\r\n  \"date_published\": \"2016-03-20\",\r\n   \"price\": 39.99\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateBook",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Algorithms and Data Structures: Foundations and Practices - Updated\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/books/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"books",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "18cf7083-a9a6-4884-a9ab-bb8fffccf70b"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteBook",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/books/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"books",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "b1d0607d-461c-4f78-a80e-a793532795a6"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
