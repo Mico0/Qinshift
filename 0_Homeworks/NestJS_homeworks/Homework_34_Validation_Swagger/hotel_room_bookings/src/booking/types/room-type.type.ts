@@ -1,6 +1,6 @@
 export enum RoomType {
-  single = 'SINGLE',
-  double = 'DOUBLE',
-  suite = 'SUITE',
-  deluxe = 'DELUXE',
+  single = 'Single',
+  double = 'Double',
+  suite = 'Suite',
+  deluxe = 'Deluxe',
 }

@@ -1,1 +1,1 @@
-{"version":3,"file":"room.dto.js","sourceRoot":"","sources":["../../../src/booking/dtos/room.dto.ts"],"names":[],"mappings":";;;AAAA,uDAAkD;AAElD,MAAa,OAAQ,SAAQ,+BAAa;IACxC,EAAE,CAAS;CACZ;AAFD,0BAEC"}
+{"version":3,"file":"room.dto.js","sourceRoot":"","sources":["../../../src/booking/dtos/room.dto.ts"],"names":[],"mappings":";;;;;;;;;;;;AAAA,6CAA8C;AAC9C,uDAAkD;AAElD,MAAa,OAAQ,SAAQ,+BAAa;IAKxC,EAAE,CAAS;CACZ;AAND,0BAMC;AADC;IAJC,IAAA,qBAAW,EAAC;QACX,WAAW,EAAE,8BAA8B;QAC3C,OAAO,EAAE,sCAAsC;KAChD,CAAC;;mCACS"}

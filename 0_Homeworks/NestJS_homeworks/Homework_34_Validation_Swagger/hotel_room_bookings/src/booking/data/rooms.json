@@ -5,7 +5,11 @@
     "type": "Single",
     "price": 120,
     "isAvailable": true,
-    "amenities": ["WiFi", "TV", "Air Conditioning"],
+    "amenities": [
+      "WiFi",
+      "TV",
+      "Air Conditioning"
+    ],
     "maxOccupancy": 1,
     "lastCleaned": "2025-05-08T14:30:00.000Z",
     "maintenanceNotes": "No issues reported."
@@ -16,7 +20,11 @@
     "type": "Double",
     "price": 200,
     "isAvailable": false,
-    "amenities": ["WiFi", "Mini Bar", "TV"],
+    "amenities": [
+      "WiFi",
+      "Mini Bar",
+      "TV"
+    ],
     "maxOccupancy": 2,
     "lastCleaned": "2025-05-07T11:15:00.000Z",
     "maintenanceNotes": "TV remote missing."
@@ -27,7 +35,12 @@
     "type": "Suite",
     "price": 550,
     "isAvailable": true,
-    "amenities": ["Jacuzzi", "King Bed", "WiFi", "TV"],
+    "amenities": [
+      "Jacuzzi",
+      "King Bed",
+      "WiFi",
+      "TV"
+    ],
     "maxOccupancy": 4,
     "lastCleaned": "2025-05-08T09:45:00.000Z",
     "maintenanceNotes": "Check air conditioning."
@@ -38,7 +51,10 @@
     "type": "Single",
     "price": 90,
     "isAvailable": false,
-    "amenities": ["WiFi", "Desk"],
+    "amenities": [
+      "WiFi",
+      "Desk"
+    ],
     "maxOccupancy": 1,
     "lastCleaned": "2025-05-06T16:00:00.000Z",
     "maintenanceNotes": "Lightbulb replaced."
@@ -49,7 +65,11 @@
     "type": "Double",
     "price": 180,
     "isAvailable": true,
-    "amenities": ["WiFi", "Balcony", "Mini Fridge"],
+    "amenities": [
+      "WiFi",
+      "Balcony",
+      "Mini Fridge"
+    ],
     "maxOccupancy": 2,
     "lastCleaned": "2025-05-08T08:30:00.000Z",
     "maintenanceNotes": "Curtains cleaned."
@@ -60,7 +80,13 @@
     "type": "Suite",
     "price": 600,
     "isAvailable": false,
-    "amenities": ["Sauna", "Jacuzzi", "TV", "WiFi", "Bar"],
+    "amenities": [
+      "Sauna",
+      "Jacuzzi",
+      "TV",
+      "WiFi",
+      "Bar"
+    ],
     "maxOccupancy": 5,
     "lastCleaned": "2025-05-05T17:20:00.000Z",
     "maintenanceNotes": "Minor wall damage."
@@ -71,7 +97,11 @@
     "type": "Double",
     "price": 210,
     "isAvailable": true,
-    "amenities": ["WiFi", "TV", "Balcony"],
+    "amenities": [
+      "WiFi",
+      "TV",
+      "Balcony"
+    ],
     "maxOccupancy": 2,
     "lastCleaned": "2025-05-07T12:00:00.000Z",
     "maintenanceNotes": "No maintenance required."
@@ -82,7 +112,11 @@
     "type": "Single",
     "price": 75,
     "isAvailable": true,
-    "amenities": ["WiFi", "Desk", "Fan"],
+    "amenities": [
+      "WiFi",
+      "Desk",
+      "Fan"
+    ],
     "maxOccupancy": 1,
     "lastCleaned": "2025-05-09T07:15:00.000Z",
     "maintenanceNotes": "Paint peeling slightly."
@@ -93,7 +127,11 @@
     "type": "Double",
     "price": 230,
     "isAvailable": false,
-    "amenities": ["TV", "WiFi", "Mini Bar"],
+    "amenities": [
+      "TV",
+      "WiFi",
+      "Mini Bar"
+    ],
     "maxOccupancy": 2,
     "lastCleaned": "2025-05-06T10:30:00.000Z",
     "maintenanceNotes": "Shower head leaking."
@@ -104,7 +142,12 @@
     "type": "Suite",
     "price": 700,
     "isAvailable": true,
-    "amenities": ["Jacuzzi", "Fireplace", "Balcony", "TV"],
+    "amenities": [
+      "Jacuzzi",
+      "Fireplace",
+      "Balcony",
+      "TV"
+    ],
     "maxOccupancy": 4,
     "lastCleaned": "2025-05-09T13:50:00.000Z",
     "maintenanceNotes": "Fireplace cleaned."
@@ -115,7 +158,10 @@
     "type": "Single",
     "price": 85,
     "isAvailable": true,
-    "amenities": ["WiFi", "Reading Light"],
+    "amenities": [
+      "WiFi",
+      "Reading Light"
+    ],
     "maxOccupancy": 1,
     "lastCleaned": "2025-05-08T07:00:00.000Z",
     "maintenanceNotes": "No issues."
@@ -126,7 +172,12 @@
     "type": "Double",
     "price": 195,
     "isAvailable": true,
-    "amenities": ["TV", "WiFi", "Balcony", "Coffee Machine"],
+    "amenities": [
+      "TV",
+      "WiFi",
+      "Balcony",
+      "Coffee Machine"
+    ],
     "maxOccupancy": 2,
     "lastCleaned": "2025-05-08T06:45:00.000Z",
     "maintenanceNotes": "Coffee machine descaled."
@@ -137,7 +188,12 @@
     "type": "Suite",
     "price": 900,
     "isAvailable": false,
-    "amenities": ["King Bed", "WiFi", "Mini Bar", "Balcony"],
+    "amenities": [
+      "King Bed",
+      "WiFi",
+      "Mini Bar",
+      "Balcony"
+    ],
     "maxOccupancy": 5,
     "lastCleaned": "2025-05-07T10:20:00.000Z",
     "maintenanceNotes": "Mini bar restocked."
@@ -148,7 +204,9 @@
     "type": "Single",
     "price": 70,
     "isAvailable": true,
-    "amenities": ["WiFi"],
+    "amenities": [
+      "WiFi"
+    ],
     "maxOccupancy": 1,
     "lastCleaned": "2025-05-08T14:10:00.000Z",
     "maintenanceNotes": "Remote found under bed."
@@ -159,7 +217,12 @@
     "type": "Double",
     "price": 250,
     "isAvailable": false,
-    "amenities": ["TV", "Balcony", "WiFi", "Iron"],
+    "amenities": [
+      "TV",
+      "Balcony",
+      "WiFi",
+      "Iron"
+    ],
     "maxOccupancy": 2,
     "lastCleaned": "2025-05-06T15:00:00.000Z",
     "maintenanceNotes": "Iron replaced."
@@ -170,7 +233,11 @@
     "type": "Suite",
     "price": 950,
     "isAvailable": true,
-    "amenities": ["Jacuzzi", "Home Theater", "Mini Bar"],
+    "amenities": [
+      "Jacuzzi",
+      "Home Theater",
+      "Mini Bar"
+    ],
     "maxOccupancy": 5,
     "lastCleaned": "2025-05-09T12:25:00.000Z",
     "maintenanceNotes": "No issues."
@@ -181,7 +248,12 @@
     "type": "Double",
     "price": 220,
     "isAvailable": true,
-    "amenities": ["WiFi", "Balcony", "Coffee Machine", "TV"],
+    "amenities": [
+      "WiFi",
+      "Balcony",
+      "Coffee Machine",
+      "TV"
+    ],
     "maxOccupancy": 2,
     "lastCleaned": "2025-05-07T09:00:00.000Z",
     "maintenanceNotes": "Batteries replaced in remote."
@@ -192,7 +264,10 @@
     "type": "Single",
     "price": 60,
     "isAvailable": true,
-    "amenities": ["Fan", "WiFi"],
+    "amenities": [
+      "Fan",
+      "WiFi"
+    ],
     "maxOccupancy": 1,
     "lastCleaned": "2025-05-09T11:15:00.000Z",
     "maintenanceNotes": "Cleaned under bed."
@@ -203,7 +278,11 @@
     "type": "Double",
     "price": 190,
     "isAvailable": false,
-    "amenities": ["WiFi", "Balcony", "TV"],
+    "amenities": [
+      "WiFi",
+      "Balcony",
+      "TV"
+    ],
     "maxOccupancy": 2,
     "lastCleaned": "2025-05-05T13:40:00.000Z",
     "maintenanceNotes": "Window stuck, needs fixing."
@@ -214,9 +293,40 @@
     "type": "Suite",
     "price": 990,
     "isAvailable": true,
-    "amenities": ["Private Pool", "Jacuzzi", "King Bed", "Home Theater"],
+    "amenities": [
+      "Private Pool",
+      "Jacuzzi",
+      "King Bed",
+      "Home Theater"
+    ],
     "maxOccupancy": 5,
     "lastCleaned": "2025-05-09T08:00:00.000Z",
     "maintenanceNotes": "Pool filter cleaned."
+  },
+  {
+    "id": "086e8863-52db-4f0d-a400-92fb9a6280fb",
+    "roomNumber": 666,
+    "type": "Suite",
+    "price": 540,
+    "isAvailable": false,
+    "amenities": [
+      "King Bed"
+    ],
+    "maxOccupancy": 2,
+    "lastCleaned": "2025-05-09T08:00:00.000Z"
+  },
+  {
+    "id": "2911e035-5a0e-4939-b56a-c18d9bd16d49",
+    "roomNumber": 666,
+    "type": "Suite",
+    "price": 540,
+    "isAvailable": false,
+    "amenities": [
+      "Test",
+      "Wi-fi",
+      "King Bed"
+    ],
+    "maxOccupancy": 2,
+    "lastCleaned": "2025-05-09T08:00:00.000Z"
   }
 ]
