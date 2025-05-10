@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "5ce66fd3-7501-4f9a-94a6-cc4d258a2740",
+		"name": "Hotel Room Booking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43055767"
+	},
+	"item": [
+		{
+			"name": "getAllRooms",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/booking/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"booking",
+						""
+					],
+					"query": [
+						{
+							"key": "roomNumber",
+							"value": "115",
+							"disabled": true
+						},
+						{
+							"key": "availability",
+							"value": "false",
+							"disabled": true
+						},
+						{
+							"key": "roomType",
+							"value": "Single",
+							"disabled": true
+						},
+						{
+							"key": "priceRange",
+							"value": "100,300",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getRoom",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/booking/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"booking",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "993a8e77-6484-49fd-ae75-1bdaec9e5126"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createRoom",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"roomNumber\": 666,\r\n        \"type\": \"Suite\",\r\n        \"price\": 540,\r\n        \"isAvailable\": false,\r\n        \"amenities\": [\r\n            \"King Bed\"\r\n        ],\r\n        \"maxOccupancy\": 2,\r\n        \"lastCleaned\": \"2025-05-09T08:00:00.000Z\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/booking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"booking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateRoom",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amenities\": [\"Test\", \"Wi-fi\", \"King Bed\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/booking/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"booking",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "2911e035-5a0e-4939-b56a-c18d9bd16d49"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteRoom",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/booking/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"booking",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "42b10915-6074-40b8-9cc4-e8ef36ee92af"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
