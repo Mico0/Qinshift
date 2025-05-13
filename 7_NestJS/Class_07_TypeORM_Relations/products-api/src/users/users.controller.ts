@@ -22,9 +22,10 @@ export class UsersController {
   }
 
   @Get(':id')
-  getById(@Param('id') id: string) {
+  findById(@Param('id') id: string) {
     return this.usersService.findById(id);
   }
+
   @Get(':id/details')
   findDetails(@Param('id') id: string) {
     return this.usersService.findUserDetails(id);
@@ -38,7 +39,7 @@ export class UsersController {
   @HttpCode(204)
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateData: UpdateUserDto) {
-    return this.usersService.update(id, updateData);
+    return this.usersService.updateUser(id, updateData);
   }
 
   @HttpCode(204)

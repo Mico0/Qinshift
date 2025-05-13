@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.User = void 0;
+const order_entity_1 = require("../../orders/entities/order.entity");
 const user_address_entity_1 = require("../../user-address/entities/user-address.entity");
 const typeorm_1 = require("typeorm");
 let User = class User {
@@ -19,6 +20,7 @@ let User = class User {
     lastName;
     age;
     userAddress;
+    orders;
 };
 exports.User = User;
 __decorate([
@@ -26,7 +28,9 @@ __decorate([
     __metadata("design:type", String)
 ], User.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ unique: true }),
+    (0, typeorm_1.Column)({
+        unique: true,
+    }),
     __metadata("design:type", String)
 ], User.prototype, "email", void 0);
 __decorate([
@@ -42,9 +46,13 @@ __decorate([
     __metadata("design:type", Number)
 ], User.prototype, "age", void 0);
 __decorate([
-    (0, typeorm_1.OneToOne)(() => user_address_entity_1.UserAddress, (userAddress) => userAddress.user),
+    (0, typeorm_1.OneToOne)(() => user_address_entity_1.UserAddress, (userAddres) => userAddres.user),
     __metadata("design:type", user_address_entity_1.UserAddress)
 ], User.prototype, "userAddress", void 0);
+__decorate([
+    (0, typeorm_1.OneToMany)(() => order_entity_1.Order, (order) => order.user),
+    __metadata("design:type", Array)
+], User.prototype, "orders", void 0);
 exports.User = User = __decorate([
     (0, typeorm_1.Entity)()
 ], User);

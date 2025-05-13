@@ -25,7 +25,7 @@ let UsersController = class UsersController {
     findAll() {
         return this.usersService.findAll();
     }
-    getById(id) {
+    findById(id) {
         return this.usersService.findById(id);
     }
     findDetails(id) {
@@ -35,7 +35,7 @@ let UsersController = class UsersController {
         return this.usersService.create(createData);
     }
     update(id, updateData) {
-        return this.usersService.update(id, updateData);
+        return this.usersService.updateUser(id, updateData);
     }
     delete(id) {
         return this.usersService.deleteUser(id);
@@ -54,7 +54,7 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
-], UsersController.prototype, "getById", null);
+], UsersController.prototype, "findById", null);
 __decorate([
     (0, common_1.Get)(':id/details'),
     __param(0, (0, common_1.Param)('id')),

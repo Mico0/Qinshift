@@ -10,6 +10,7 @@ export class UserAddressService {
   constructor(
     @InjectRepository(UserAddress) private userAddRepo: Repository<UserAddress>,
   ) {}
+
   async create(createUserAddressDto: CreateUserAddressDto) {
     const newAddress = this.userAddRepo.create({
       ...createUserAddressDto,

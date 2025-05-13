@@ -14,9 +14,10 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UsersService = void 0;
 const common_1 = require("@nestjs/common");
-const user_entity_1 = require("./entities/user.entity");
 const typeorm_1 = require("@nestjs/typeorm");
+const user_entity_1 = require("./entities/user.entity");
 const typeorm_2 = require("typeorm");
+const DUPLICATE_PG_CODE = '23505';
 let UsersService = class UsersService {
     usersRepo;
     constructor(usersRepo) {
@@ -39,6 +40,7 @@ let UsersService = class UsersService {
             where: { id },
             relations: {
                 userAddress: true,
+                orders: true,
             },
         });
         if (!foundUser)
@@ -51,17 +53,21 @@ let UsersService = class UsersService {
             return newUser;
         }
         catch (error) {
-            console.log('Save error', error);
+            if (error.code === DUPLICATE_PG_CODE)
+                throw new common_1.BadRequestException('Email is taken');
+            throw new common_1.InternalServerErrorException(error.messsage);
         }
     }
-    async update(id, updateData) {
+    async updateUser(id, updateData) {
         try {
             const foundUser = await this.findById(id);
             Object.assign(foundUser, updateData);
             await this.usersRepo.save(foundUser);
         }
         catch (error) {
-            console.log('Save error', error);
+            if (error.code === DUPLICATE_PG_CODE)
+                throw new common_1.BadRequestException('Email is taken');
+            throw new common_1.InternalServerErrorException(error.messsage);
         }
     }
     async deleteUser(id) {

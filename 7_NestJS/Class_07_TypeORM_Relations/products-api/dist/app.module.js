@@ -15,6 +15,7 @@ const products_module_1 = require("./products/products.module");
 const config_1 = require("@nestjs/config");
 const users_module_1 = require("./users/users.module");
 const user_address_module_1 = require("./user-address/user-address.module");
+const orders_module_1 = require("./orders/orders.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -25,6 +26,12 @@ exports.AppModule = AppModule = __decorate([
             typeorm_1.TypeOrmModule.forRootAsync({
                 inject: [config_1.ConfigService],
                 useFactory(configService) {
+                    console.log('DB_HOST:', configService.get('DB_HOST'));
+                    console.log('DB_PORT:', configService.get('DB_PORT'));
+                    console.log('DB_USER:', configService.get('DB_USER'));
+                    console.log('DB_PASS:', configService.get('DB_PASS'));
+                    console.log('DB_NAME:', configService.get('DB_NAME'));
+                    console.log('ENVIRONMENT:', configService.get('ENVIRONMENT'));
                     return {
                         type: 'postgres',
                         host: configService.get('DB_HOST'),
@@ -37,9 +44,10 @@ exports.AppModule = AppModule = __decorate([
                     };
                 },
             }),
-            users_module_1.UsersModule,
             products_module_1.ProductsModule,
+            users_module_1.UsersModule,
             user_address_module_1.UserAddressModule,
+            orders_module_1.OrdersModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

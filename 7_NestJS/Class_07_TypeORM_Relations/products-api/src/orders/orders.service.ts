@@ -1,15 +1,32 @@
 import { Injectable } from '@nestjs/common';
 import { CreateOrderDto } from './dto/create-order.dto';
 import { UpdateOrderDto } from './dto/update-order.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Order } from './entities/order.entity';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class OrdersService {
+  constructor(@InjectRepository(Order) private ordersRepo: Repository<Order>) {}
+
   create(createOrderDto: CreateOrderDto) {
-    return 'This action adds a new order';
+    const newOrder = this.ordersRepo.create({
+      ...createOrderDto,
+      user: {
+        id: createOrderDto.userId,
+      },
+    });
+
+    return this.ordersRepo.save(newOrder);
   }
 
   findAll() {
-    return `This action returns all orders`;
+    return this.ordersRepo.find({
+      relations: {
+        user: true,
+        products: true,
+      },
+    });
   }
 
   findOne(id: number) {
