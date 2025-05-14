@@ -6,6 +6,7 @@ export declare class ProductsController {
     constructor(productsService: ProductsService);
     findAll(): Promise<import("./entities/product.entity").Product[]>;
     findById(id: string): Promise<import("./entities/product.entity").Product>;
+    findProductOrders(id: string): Promise<import("./entities/product.entity").Product>;
     create(createData: CreateProductDto): Promise<CreateProductDto & import("./entities/product.entity").Product>;
     update(id: string, updateData: UpdateProductDto): Promise<void>;
     delete(id: string): Promise<void>;

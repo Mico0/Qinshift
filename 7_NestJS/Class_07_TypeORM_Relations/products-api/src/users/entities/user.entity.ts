@@ -15,19 +15,24 @@ export class User {
 
   @Column({
     unique: true,
+    name: 'email',
   })
   email: string;
 
-  @Column()
+  @Column({
+    name: 'first_name',
+  })
   firstName: string;
 
-  @Column()
+  @Column({
+    name: 'last_name',
+  })
   lastName: string;
 
   @Column({ type: 'int' })
   age: number;
 
-  //User Details
+  //User Address
   @OneToOne(() => UserAddress, (userAddres) => userAddres.user)
   userAddress: UserAddress;
 

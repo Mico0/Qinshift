@@ -17,30 +17,47 @@ const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const order_entity_1 = require("./entities/order.entity");
 const typeorm_2 = require("typeorm");
+const FK_PG_CODE = '23503';
 let OrdersService = class OrdersService {
     ordersRepo;
     constructor(ordersRepo) {
         this.ordersRepo = ordersRepo;
     }
-    create(createOrderDto) {
-        const newOrder = this.ordersRepo.create({
-            ...createOrderDto,
-            user: {
-                id: createOrderDto.userId,
-            },
-        });
-        return this.ordersRepo.save(newOrder);
+    async create(createOrderDto) {
+        try {
+            const newOrder = await this.ordersRepo.save({
+                ...createOrderDto,
+                user: {
+                    id: createOrderDto.user,
+                },
+                products: createOrderDto.products.map((productId) => {
+                    return { id: productId };
+                }),
+            });
+            return newOrder;
+        }
+        catch (error) {
+            console.log(error);
+            if (error.code === FK_PG_CODE) {
+                throw new common_1.BadRequestException('Invalid references added');
+            }
+            throw new common_1.InternalServerErrorException(error.messsage);
+        }
     }
     findAll() {
-        return this.ordersRepo.find({
+        return this.ordersRepo.find();
+    }
+    async findOne(id) {
+        const foundOrder = await this.ordersRepo.findOne({
+            where: { id },
             relations: {
                 user: true,
                 products: true,
             },
         });
-    }
-    findOne(id) {
-        return `This action returns a #${id} order`;
+        if (!foundOrder)
+            throw new common_1.NotFoundException('Order not found');
+        return foundOrder;
     }
     update(id, updateOrderDto) {
         return `This action updates a #${id} order`;

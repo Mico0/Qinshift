@@ -9,12 +9,16 @@ import { User } from './entities/user.entity';
 import { Repository } from 'typeorm';
 import { CreateUserDto } from './dtos/create-user.dto';
 import { UpdateUserDto } from './dtos/update-user.dto';
+import { UserAddressService } from 'src/user-address/user-address.service';
 
 const DUPLICATE_PG_CODE = '23505';
 
 @Injectable()
 export class UsersService {
-  constructor(@InjectRepository(User) private usersRepo: Repository<User>) {}
+  constructor(
+    @InjectRepository(User) private usersRepo: Repository<User>,
+    private userAddressService: UserAddressService,
+  ) {}
 
   findAll() {
     return this.usersRepo.find();
@@ -46,7 +50,16 @@ export class UsersService {
 
   async create(createData: CreateUserDto) {
     try {
-      const newUser = await this.usersRepo.save(createData);
+      const { userAddress, ...userData } = createData;
+
+      //1. Create new user in the database
+      const newUser = await this.usersRepo.save(userData);
+
+      //2. Create user address for the created user
+      await this.userAddressService.create({
+        ...userAddress,
+        user: newUser.id,
+      });
 
       return newUser;
     } catch (error) {

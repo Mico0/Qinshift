@@ -23,10 +23,23 @@ let ProductsService = class ProductsService {
         this.productsRepo = productsRepo;
     }
     async findAll() {
-        return this.productsRepo.find();
+        return this.productsRepo.find({
+            loadRelationIds: true,
+        });
     }
     async findById(id) {
         const foundProduct = await this.productsRepo.findOneBy({ id });
+        if (!foundProduct)
+            throw new common_1.NotFoundException('product not found');
+        return foundProduct;
+    }
+    async findProductOrders(id) {
+        const foundProduct = await this.productsRepo.findOne({
+            where: { id },
+            relations: {
+                orders: true,
+            },
+        });
         if (!foundProduct)
             throw new common_1.NotFoundException('product not found');
         return foundProduct;

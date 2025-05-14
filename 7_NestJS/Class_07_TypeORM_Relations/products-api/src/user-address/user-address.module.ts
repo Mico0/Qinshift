@@ -8,5 +8,6 @@ import { UserAddress } from './entities/user-address.entity';
   imports: [TypeOrmModule.forFeature([UserAddress])],
   controllers: [UserAddressController],
   providers: [UserAddressService],
+  exports: [UserAddressService],
 })
 export class UserAddressModule {}

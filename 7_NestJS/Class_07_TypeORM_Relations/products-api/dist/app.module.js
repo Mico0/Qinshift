@@ -10,12 +10,12 @@ exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
-const typeorm_1 = require("@nestjs/typeorm");
 const products_module_1 = require("./products/products.module");
 const config_1 = require("@nestjs/config");
 const users_module_1 = require("./users/users.module");
 const user_address_module_1 = require("./user-address/user-address.module");
 const orders_module_1 = require("./orders/orders.module");
+const database_module_1 = require("./database/database.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -23,27 +23,7 @@ exports.AppModule = AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
             config_1.ConfigModule.forRoot({ envFilePath: '.env', isGlobal: true }),
-            typeorm_1.TypeOrmModule.forRootAsync({
-                inject: [config_1.ConfigService],
-                useFactory(configService) {
-                    console.log('DB_HOST:', configService.get('DB_HOST'));
-                    console.log('DB_PORT:', configService.get('DB_PORT'));
-                    console.log('DB_USER:', configService.get('DB_USER'));
-                    console.log('DB_PASS:', configService.get('DB_PASS'));
-                    console.log('DB_NAME:', configService.get('DB_NAME'));
-                    console.log('ENVIRONMENT:', configService.get('ENVIRONMENT'));
-                    return {
-                        type: 'postgres',
-                        host: configService.get('DB_HOST'),
-                        port: configService.get('DB_PORT'),
-                        username: configService.get('DB_USER'),
-                        password: configService.get('DB_PASS'),
-                        database: configService.get('DB_NAME'),
-                        synchronize: configService.get('ENVIRONMENT') === 'DEV',
-                        autoLoadEntities: true,
-                    };
-                },
-            }),
+            database_module_1.DatabaseModule,
             products_module_1.ProductsModule,
             users_module_1.UsersModule,
             user_address_module_1.UserAddressModule,

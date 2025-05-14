@@ -30,6 +30,9 @@ let ProductsController = class ProductsController {
             throw new common_1.BadRequestException('invalid id, only numbrs allowed');
         return this.productsService.findById(Number(id));
     }
+    findProductOrders(id) {
+        return this.productsService.findProductOrders(Number(id));
+    }
     create(createData) {
         return this.productsService.create(createData);
     }
@@ -58,6 +61,13 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], ProductsController.prototype, "findById", null);
+__decorate([
+    (0, common_1.Get)(':id/orders'),
+    __param(0, (0, common_1.Param)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", void 0)
+], ProductsController.prototype, "findProductOrders", null);
 __decorate([
     (0, common_1.Post)(),
     __param(0, (0, common_1.Body)()),

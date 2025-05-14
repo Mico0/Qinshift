@@ -1,5 +1,7 @@
 import {
+  IsArray,
   IsDateString,
+  IsInt,
   IsNegative,
   IsNumber,
   IsString,
@@ -15,5 +17,9 @@ export class CreateOrderDto {
   date: string;
 
   @IsString()
-  userId: string;
+  user: string;
+
+  @IsArray()
+  @IsInt({ each: true })
+  products: number[];
 }

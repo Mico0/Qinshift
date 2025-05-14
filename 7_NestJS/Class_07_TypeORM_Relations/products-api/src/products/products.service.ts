@@ -12,11 +12,27 @@ export class ProductsService {
   ) {}
 
   async findAll() {
-    return this.productsRepo.find();
+    return this.productsRepo.find({
+      //Will load all ids of relations of a given entity
+      // loadRelationIds: true,
+    });
   }
 
   async findById(id: number) {
     const foundProduct = await this.productsRepo.findOneBy({ id });
+
+    if (!foundProduct) throw new NotFoundException('product not found');
+
+    return foundProduct;
+  }
+
+  async findProductOrders(id: number) {
+    const foundProduct = await this.productsRepo.findOne({
+      where: { id },
+      relations: {
+        orders: true,
+      },
+    });
 
     if (!foundProduct) throw new NotFoundException('product not found');
 

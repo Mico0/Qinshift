@@ -10,12 +10,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateUserDto = void 0;
+const class_transformer_1 = require("class-transformer");
 const class_validator_1 = require("class-validator");
+const create_user_address_dto_1 = require("../../user-address/dto/create-user-address.dto");
 class CreateUserDto {
     email;
     firstName;
     lastName;
     age;
+    userAdress;
 }
 exports.CreateUserDto = CreateUserDto;
 __decorate([
@@ -37,4 +40,10 @@ __decorate([
     (0, class_validator_1.Min)(16),
     __metadata("design:type", Number)
 ], CreateUserDto.prototype, "age", void 0);
+__decorate([
+    (0, class_validator_1.IsObject)(),
+    (0, class_validator_1.ValidateNested)(),
+    (0, class_transformer_1.Type)(() => create_user_address_dto_1.CreateUserAddressDto),
+    __metadata("design:type", create_user_address_dto_1.CreateUserAddressDto)
+], CreateUserDto.prototype, "userAdress", void 0);
 //# sourceMappingURL=create-user.dto.js.map

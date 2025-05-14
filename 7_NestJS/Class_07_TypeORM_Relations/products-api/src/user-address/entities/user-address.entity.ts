@@ -12,19 +12,30 @@ export class UserAddress {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({
+    name: 'country',
+  })
   country: string;
 
-  @Column()
+  @Column({
+    name: 'city',
+  })
   city: string;
 
-  @Column()
+  @Column({
+    name: 'street',
+  })
   street: string;
 
-  @Column()
+  @Column({
+    name: 'zipcode',
+  })
   zipCode: string;
 
   @OneToOne(() => User, (user) => user.userAddress)
-  @JoinColumn()
+  @JoinColumn({
+    //In join column we configure the name of the foreign key column
+    name: 'user_id',
+  })
   user: User;
 }

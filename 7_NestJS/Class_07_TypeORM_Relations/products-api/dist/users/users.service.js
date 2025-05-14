@@ -49,7 +49,8 @@ let UsersService = class UsersService {
     }
     async create(createData) {
         try {
-            const newUser = await this.usersRepo.save(createData);
+            const { userAdress, ...userData } = createData;
+            const newUser = await this.usersRepo.save(userData);
             return newUser;
         }
         catch (error) {

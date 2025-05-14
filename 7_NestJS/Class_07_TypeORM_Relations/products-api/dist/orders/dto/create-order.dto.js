@@ -14,7 +14,8 @@ const class_validator_1 = require("class-validator");
 class CreateOrderDto {
     totalAmount;
     date;
-    userId;
+    user;
+    products;
 }
 exports.CreateOrderDto = CreateOrderDto;
 __decorate([
@@ -29,5 +30,10 @@ __decorate([
 __decorate([
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
-], CreateOrderDto.prototype, "userId", void 0);
+], CreateOrderDto.prototype, "user", void 0);
+__decorate([
+    (0, class_validator_1.IsArray)(),
+    (0, class_validator_1.IsInt)({ each: true }),
+    __metadata("design:type", Array)
+], CreateOrderDto.prototype, "products", void 0);
 //# sourceMappingURL=create-order.dto.js.map
