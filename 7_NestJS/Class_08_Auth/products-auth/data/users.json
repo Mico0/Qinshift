@@ -1,0 +1,16 @@
+[
+  {
+    "id": "884de2f9-3e34-4a06-9896-3522661f3f53",
+    "firstName": "First",
+    "lastName": "Firstson",
+    "email": "test@gmail.com",
+    "password": "$2b$08$nt4las3NKtxsBhXf3eJR/uESCK1h5PXxFR4yb4k7JIrEr5Bz6LOh."
+  },
+  {
+    "id": "a86a4aa2-d7c7-460a-ac4c-b163313175b6",
+    "firstName": "First",
+    "lastName": "Firstson",
+    "email": "test2@gmail.com",
+    "password": "$2b$08$SSqk/oSX2eyH2F3x.bJXheUbkoJgOxrZHxQp2lLOL8YRbkgravMN6"
+  }
+]
