@@ -30,15 +30,20 @@ __decorate([
 __decorate([
     (0, typeorm_1.Column)({
         unique: true,
+        name: 'email',
     }),
     __metadata("design:type", String)
 ], User.prototype, "email", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)({
+        name: 'first_name',
+    }),
     __metadata("design:type", String)
 ], User.prototype, "firstName", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)({
+        name: 'last_name',
+    }),
     __metadata("design:type", String)
 ], User.prototype, "lastName", void 0);
 __decorate([

@@ -23,9 +23,7 @@ let ProductsService = class ProductsService {
         this.productsRepo = productsRepo;
     }
     async findAll() {
-        return this.productsRepo.find({
-            loadRelationIds: true,
-        });
+        return this.productsRepo.find({});
     }
     async findById(id) {
         const foundProduct = await this.productsRepo.findOneBy({ id });

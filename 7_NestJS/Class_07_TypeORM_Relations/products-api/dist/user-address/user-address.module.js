@@ -20,6 +20,7 @@ exports.UserAddressModule = UserAddressModule = __decorate([
         imports: [typeorm_1.TypeOrmModule.forFeature([user_address_entity_1.UserAddress])],
         controllers: [user_address_controller_1.UserAddressController],
         providers: [user_address_service_1.UserAddressService],
+        exports: [user_address_service_1.UserAddressService],
     })
 ], UserAddressModule);
 //# sourceMappingURL=user-address.module.js.map

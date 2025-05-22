@@ -18,7 +18,7 @@ class CreateUserDto {
     firstName;
     lastName;
     age;
-    userAdress;
+    userAddress;
 }
 exports.CreateUserDto = CreateUserDto;
 __decorate([
@@ -45,5 +45,5 @@ __decorate([
     (0, class_validator_1.ValidateNested)(),
     (0, class_transformer_1.Type)(() => create_user_address_dto_1.CreateUserAddressDto),
     __metadata("design:type", create_user_address_dto_1.CreateUserAddressDto)
-], CreateUserDto.prototype, "userAdress", void 0);
+], CreateUserDto.prototype, "userAddress", void 0);
 //# sourceMappingURL=create-user.dto.js.map

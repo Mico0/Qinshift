@@ -26,15 +26,21 @@ __decorate([
     __metadata("design:type", Number)
 ], Product.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)({
+        name: 'title',
+    }),
     __metadata("design:type", String)
 ], Product.prototype, "title", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)({
+        name: 'stock',
+    }),
     __metadata("design:type", Number)
 ], Product.prototype, "stock", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)({
+        name: 'price',
+    }),
     __metadata("design:type", Number)
 ], Product.prototype, "price", void 0);
 __decorate([

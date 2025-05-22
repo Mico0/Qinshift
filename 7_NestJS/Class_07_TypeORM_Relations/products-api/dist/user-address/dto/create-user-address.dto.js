@@ -40,6 +40,7 @@ __decorate([
     __metadata("design:type", String)
 ], CreateUserAddressDto.prototype, "zipCode", void 0);
 __decorate([
+    (0, class_validator_1.IsOptional)(),
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], CreateUserAddressDto.prototype, "user", void 0);

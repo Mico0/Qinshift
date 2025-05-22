@@ -26,24 +26,34 @@ __decorate([
     __metadata("design:type", Number)
 ], UserAddress.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)({
+        name: 'country',
+    }),
     __metadata("design:type", String)
 ], UserAddress.prototype, "country", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)({
+        name: 'city',
+    }),
     __metadata("design:type", String)
 ], UserAddress.prototype, "city", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)({
+        name: 'street',
+    }),
     __metadata("design:type", String)
 ], UserAddress.prototype, "street", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)({
+        name: 'zipcode',
+    }),
     __metadata("design:type", String)
 ], UserAddress.prototype, "zipCode", void 0);
 __decorate([
     (0, typeorm_1.OneToOne)(() => user_entity_1.User, (user) => user.userAddress),
-    (0, typeorm_1.JoinColumn)(),
+    (0, typeorm_1.JoinColumn)({
+        name: 'user_id',
+    }),
     __metadata("design:type", user_entity_1.User)
 ], UserAddress.prototype, "user", void 0);
 exports.UserAddress = UserAddress = __decorate([

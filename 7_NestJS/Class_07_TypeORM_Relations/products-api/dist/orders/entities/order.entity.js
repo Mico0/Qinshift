@@ -26,20 +26,35 @@ __decorate([
     __metadata("design:type", Number)
 ], Order.prototype, "id", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)({
+        name: 'total_amount',
+    }),
     __metadata("design:type", Number)
 ], Order.prototype, "totalAmount", void 0);
 __decorate([
-    (0, typeorm_1.Column)(),
+    (0, typeorm_1.Column)({
+        name: 'date',
+    }),
     __metadata("design:type", Date)
 ], Order.prototype, "date", void 0);
 __decorate([
     (0, typeorm_1.ManyToOne)(() => user_entity_1.User, (user) => user.orders),
+    (0, typeorm_1.JoinColumn)({
+        name: 'user_id',
+    }),
     __metadata("design:type", user_entity_1.User)
 ], Order.prototype, "user", void 0);
 __decorate([
-    (0, typeorm_1.ManyToMany)(() => product_entity_1.Product, (product) => product.orders),
-    (0, typeorm_1.JoinTable)(),
+    (0, typeorm_1.ManyToMany)(() => product_entity_1.Product, (product) => product.orders, {}),
+    (0, typeorm_1.JoinTable)({
+        name: 'orders_products',
+        joinColumn: {
+            name: 'order_id',
+        },
+        inverseJoinColumn: {
+            name: 'product_id',
+        },
+    }),
     __metadata("design:type", Array)
 ], Order.prototype, "products", void 0);
 exports.Order = Order = __decorate([

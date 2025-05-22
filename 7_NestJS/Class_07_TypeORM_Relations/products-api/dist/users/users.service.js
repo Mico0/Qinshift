@@ -17,11 +17,14 @@ const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const user_entity_1 = require("./entities/user.entity");
 const typeorm_2 = require("typeorm");
+const user_address_service_1 = require("../user-address/user-address.service");
 const DUPLICATE_PG_CODE = '23505';
 let UsersService = class UsersService {
     usersRepo;
-    constructor(usersRepo) {
+    userAddressService;
+    constructor(usersRepo, userAddressService) {
         this.usersRepo = usersRepo;
+        this.userAddressService = userAddressService;
     }
     findAll() {
         return this.usersRepo.find();
@@ -49,8 +52,12 @@ let UsersService = class UsersService {
     }
     async create(createData) {
         try {
-            const { userAdress, ...userData } = createData;
+            const { userAddress, ...userData } = createData;
             const newUser = await this.usersRepo.save(userData);
+            await this.userAddressService.create({
+                ...userAddress,
+                user: newUser.id,
+            });
             return newUser;
         }
         catch (error) {
@@ -80,6 +87,7 @@ exports.UsersService = UsersService;
 exports.UsersService = UsersService = __decorate([
     (0, common_1.Injectable)(),
     __param(0, (0, typeorm_1.InjectRepository)(user_entity_1.User)),
-    __metadata("design:paramtypes", [typeorm_2.Repository])
+    __metadata("design:paramtypes", [typeorm_2.Repository,
+        user_address_service_1.UserAddressService])
 ], UsersService);
 //# sourceMappingURL=users.service.js.map

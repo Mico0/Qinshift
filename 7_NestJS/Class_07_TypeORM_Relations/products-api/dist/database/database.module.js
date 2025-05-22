@@ -28,6 +28,8 @@ exports.DatabaseModule = DatabaseModule = __decorate([
                         database: configService.get('DB_NAME'),
                         synchronize: configService.get('ENVIRONMENT') === 'DEV',
                         autoLoadEntities: true,
+                        logging: true,
+                        logger: 'formatted-console',
                     };
                 },
             }),
