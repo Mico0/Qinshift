@@ -2,6 +2,15 @@ import { RequestHandler } from "express";
 import { User, UserCredentials } from "../interfaces/user.interface";
 import { AuthService } from "../services/auth.service";
 
+//Here we are extending the exisiting SessionData type from the express-session module
+declare module "express-session" {
+  interface SessionData {
+    user: {
+      isLoggedIn: boolean;
+    };
+  }
+}
+
 export class AuthController {
   static registerUser: RequestHandler = async (req, res) => {
     try {
@@ -26,11 +35,24 @@ export class AuthController {
 
       const user = await AuthService.loginUser(creds);
 
+      //We have a valid logged in user here
+      req.session.user = {
+        isLoggedIn: true,
+      };
+
       res.json(user);
     } catch (error) {
       res
         .status(401)
         .json({ msg: "couldn't login user", error: (error as Error).message });
     }
+  };
+
+  static logoutUser: RequestHandler = async (req, res) => {
+    req.session.destroy(() => {
+      console.log("logout success");
+    });
+
+    res.sendStatus(200);
   };
 }

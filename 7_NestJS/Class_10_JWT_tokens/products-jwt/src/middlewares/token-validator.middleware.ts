@@ -1,7 +1,8 @@
 import { RequestHandler } from "express";
 import { verifyAccessToken } from "../const/jwt.const";
+import { AuthService } from "../services/auth.service";
 
-export const tokenValidator: RequestHandler = (req, res, next) => {
+export const tokenValidator: RequestHandler = async (req, res, next) => {
   try {
     //Checking if authorization header exists
     const authorizationHeader = req.headers.authorization;
@@ -15,7 +16,8 @@ export const tokenValidator: RequestHandler = (req, res, next) => {
     //Verifying token
     const { userId } = verifyAccessToken(token);
 
-    console.log(userId);
+    //Checking if user exists in the database
+    await AuthService.getUserById(userId);
 
     next();
   } catch (error) {

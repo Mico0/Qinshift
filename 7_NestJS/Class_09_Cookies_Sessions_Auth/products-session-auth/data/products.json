@@ -111,35 +111,5 @@
     "title": "Pizza",
     "stock": 690,
     "price": 785
-  },
-  {
-    "id": "e52e74b4-5136-42d1-b87a-458bece63013",
-    "title": "Fish",
-    "stock": 747,
-    "price": 767
-  },
-  {
-    "id": "1086058b-1040-450f-9e52-e1ac22c61d26",
-    "title": "Keyboard",
-    "stock": 822,
-    "price": 263
-  },
-  {
-    "id": "99cc11c6-8e04-4387-952e-b2d85bc580ef",
-    "title": "Bike",
-    "stock": 12,
-    "price": 323
-  },
-  {
-    "id": "5793caac-4153-42b0-a99f-7c17f1f6b11e",
-    "title": "Car",
-    "stock": 165,
-    "price": 829
-  },
-  {
-    "id": "48ead521-baba-4a78-b82d-e66d6e51605a",
-    "title": "Hat",
-    "stock": 497,
-    "price": 90
   }
 ]

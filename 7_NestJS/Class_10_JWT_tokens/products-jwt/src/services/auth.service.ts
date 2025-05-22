@@ -15,6 +15,16 @@ export class AuthService {
     return users;
   }
 
+  static async getUserById(id: string) {
+    const users = await this.getUsers();
+
+    const foundUser = users.find(user => user.id === id);
+
+    if (!foundUser) throw new Error("user not found");
+
+    return foundUser;
+  }
+
   static async saveUsers(users: User[]) {
     await writeFile(USERS_PATH, JSON.stringify(users, null, 2), "utf-8");
   }
@@ -34,6 +44,7 @@ export class AuthService {
       lastName: userData.lastName,
       email: userData.email,
       password: hashedPassword,
+      refreshTokens: [],
     };
 
     users.push(newUser);
@@ -59,8 +70,41 @@ export class AuthService {
 
     if (!isPasswordValid) throw new Error("invalid credentials");
 
-    const { password, ...userWithoutPassword } = foundUser;
+    const { password, refreshTokens, ...userWithoutPassword } = foundUser;
 
     return userWithoutPassword;
+  }
+
+  static async saveRefreshToken(userId: string, refreshToken: string) {
+    const users = await this.getUsers();
+
+    const updatedUsers = users.map(user => {
+      if (user.id === userId) {
+        user.refreshTokens.push(refreshToken);
+
+        return user;
+      } else {
+        return user;
+      }
+    });
+
+    await this.saveUsers(updatedUsers);
+  }
+
+  static async deleteRefreshToken(userId: string, refreshToken: string) {
+    const users = await this.getUsers();
+
+    const updatedUsers = users.map(user => {
+      if (user.id === userId) {
+        user.refreshTokens = user.refreshTokens.filter(
+          token => token !== refreshToken
+        );
+        return user;
+      } else {
+        return user;
+      }
+    });
+
+    await this.saveUsers(updatedUsers);
   }
 }

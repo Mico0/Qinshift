@@ -4,6 +4,7 @@ export interface User {
   lastName: string;
   email: string;
   password: string;
+  refreshTokens: string[];
 }
 
 export interface UserCredentials {

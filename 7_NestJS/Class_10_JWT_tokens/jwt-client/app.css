@@ -1,0 +1,109 @@
+*,
+*:before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+header {
+  background-color: #2a9d8f;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+h1 {
+  margin: 0;
+  padding: 15px 10px;
+}
+
+main {
+  background-color: lightgoldenrodyellow;
+  min-height: 1000px;
+  padding: 20px;
+}
+
+form {
+  margin: 0 auto;
+  width: 300px;
+  box-shadow: 5px 5px rgb(75, 75, 75);
+  border-radius: 4px;
+  font-size: 18px;
+  background-color: #f4a261;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  gap: 5px;
+}
+
+.form-group input {
+  font-size: 18px;
+  padding: 5px 10px;
+  border: none;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+button {
+  font-size: 18px;
+  padding: 8px 15px;
+  border-radius: 4px;
+  border: none;
+  background-color: #2a9d8f;
+}
+
+.products-view {
+  margin: 0 auto;
+  width: 500px;
+  box-shadow: 5px 5px rgb(75, 75, 75);
+  border-radius: 4px;
+  font-size: 18px;
+  background-color: #f4a261;
+  padding: 20px;
+}
+
+.products-view button {
+  text-align: center;
+}
+
+.user-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.user-controls button {
+  background-color: white;
+  cursor: pointer;
+}
+
+.user-controls button:hover {
+  background-color: #e76f51;
+}
+
+.products-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 15px;
+}
+
+.product-item {
+  padding: 10px;
+  background-color: rgb(255, 248, 249);
+  border: 1px solid rgb(255, 227, 231);
+  box-shadow: 3px 3px #e76f51;
+  border-radius: 4px;
+}

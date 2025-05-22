@@ -4,6 +4,7 @@
     "firstName": "First",
     "lastName": "Firstson",
     "email": "test@gmail.com",
-    "password": "$2b$08$nt4las3NKtxsBhXf3eJR/uESCK1h5PXxFR4yb4k7JIrEr5Bz6LOh."
+    "password": "$2b$08$nt4las3NKtxsBhXf3eJR/uESCK1h5PXxFR4yb4k7JIrEr5Bz6LOh.",
+    "refreshTokens": []
   }
 ]
