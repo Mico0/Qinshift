@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "607bbd57-6999-47ab-b231-d237980a284c",
+		"name": "Movies TypeORM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43055767"
+	},
+	"item": [
+		{
+			"name": "Get All Movies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/movies/?sortDirection=duration",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"movies",
+						""
+					],
+					"query": [
+						{
+							"key": "genre",
+							"value": "fantasy",
+							"disabled": true
+						},
+						{
+							"key": "minRating",
+							"value": "8",
+							"disabled": true
+						},
+						{
+							"key": "maxDuration",
+							"value": "148",
+							"disabled": true
+						},
+						{
+							"key": "title",
+							"value": "the",
+							"disabled": true
+						},
+						{
+							"key": "sortBy",
+							"value": "desc",
+							"disabled": true
+						},
+						{
+							"key": "sortDirection",
+							"value": "releaseYear",
+							"disabled": true
+						},
+						{
+							"key": "sortDirection",
+							"value": "rating",
+							"disabled": true
+						},
+						{
+							"key": "sortDirection",
+							"value": "duration"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Movie By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/movies/:id",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"movies",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "921d9e9e-37cd-4273-a04c-69a54c690aba"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Movie",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"title\": \"The Dark Knight\",\r\n    \"description\": \"Batman sets out to dismantle the remaining criminal organizations in Gotham, but he finds himself prey to the chaos unleashed by the Joker.\",\r\n    \"release_year\": 2008,\r\n    \"genre\": \"action\",\r\n    \"duration\": 152,\r\n    \"rating\": 10,\r\n    \"poster_url\": \"https://example.com/posters/darkknight.jpg\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/movies",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Movie",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"The Matrix - Updated\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/movies/:id",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"movies",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "921d9e9e-37cd-4273-a04c-69a54c690aba"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Movie Copy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"The Matrix - Updated\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/movies/:id",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"movies",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "921d9e9e-37cd-4273-a04c-69a54c690abas"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
