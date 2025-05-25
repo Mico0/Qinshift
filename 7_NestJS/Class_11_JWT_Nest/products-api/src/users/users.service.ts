@@ -92,6 +92,24 @@ export class UsersService {
     }
   }
 
+  async saveRefreshToken(id: string, refreshToken: string) {
+    const foundUser = await this.findById(id);
+
+    foundUser.refreshTokens.push(refreshToken);
+
+    await this.usersRepo.save(foundUser);
+  }
+
+  async deleteRefreshToken(id: string, refreshToken: string) {
+    const foundUser = await this.findById(id);
+
+    foundUser.refreshTokens = foundUser.refreshTokens.filter(
+      (token) => token !== refreshToken,
+    );
+
+    await this.usersRepo.save(foundUser);
+  }
+
   async deleteUser(id: string) {
     const foundUser = await this.findById(id);
 

@@ -35,6 +35,13 @@ export class User {
   @Column({ type: 'int' })
   age: number;
 
+  @Column('text', {
+    array: true,
+    default: [],
+    nullable: true,
+  })
+  refreshTokens: string[];
+
   //User Address
   @OneToOne(() => UserAddress, (userAddres) => userAddres.user)
   userAddress: UserAddress;
