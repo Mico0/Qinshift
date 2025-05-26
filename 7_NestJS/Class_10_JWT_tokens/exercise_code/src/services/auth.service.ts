@@ -4,6 +4,7 @@ import { User, UserCredentials } from "../interfaces/user.interface";
 import { json } from "node:stream/consumers";
 import bcrypt from "bcryptjs";
 import { v4 as uuid } from "uuid";
+import { markAsUntransferable } from "node:worker_threads";
 
 const USERS_PATH = join(process.cwd(), "data", "users.json");
 
@@ -14,6 +15,16 @@ export class AuthService {
     const users: User[] = JSON.parse(usersJSON);
 
     return users;
+  }
+
+  static async getUserById(id: string) {
+    const users = await this.getUsers();
+
+    const foundUser = users.find((user) => user.id === id);
+
+    if (!foundUser) throw new Error("user not found");
+
+    return foundUser;
   }
 
   static async saveUsers(users: User[]) {
@@ -63,12 +74,45 @@ export class AuthService {
       foundUser.password
     );
 
-    console.log(comparePass);
+    // console.log(comparePass);
 
     if (!comparePass) throw new Error("Password is invalid");
 
     const { password, ...userWithoutpass } = foundUser;
 
     return userWithoutpass;
+  }
+
+  static async saveRefreshToken(userId: string, refreshToken: string) {
+    const users = await this.getUsers();
+
+    const updateUsers = users.map((user) => {
+      if (user.id === userId) {
+        user.refreshTokens.push(refreshToken);
+
+        return user;
+      } else {
+        return user;
+      }
+    });
+
+    await this.saveUsers(updateUsers);
+  }
+
+  static async deleteRefreshToken(userId: string, refreshToken: string) {
+    const users = await this.getUsers();
+
+    const updateUsers = users.map((user) => {
+      if (user.id === userId) {
+        user.refreshTokens = user.refreshTokens.filter(
+          (token) => token !== refreshToken
+        );
+        return user;
+      } else {
+        return user;
+      }
+    });
+
+    await this.saveUsers(updateUsers);
   }
 }

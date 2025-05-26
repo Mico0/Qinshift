@@ -27,41 +27,41 @@ npm install jsonwebtoken
 ### Basic Usage in Express
 
 ```javascript
-import jwt from 'jsonwebtoken';
-import express from 'express';
+import jwt from "jsonwebtoken";
+import express from "express";
 const app = express();
 
 // Secret key (store in .env file in production)
-const SECRET_KEY = 'your-secret-key';
+const SECRET_KEY = "your-secret-key";
 
 // Create a token
-app.post('/login', (req, res) => {
-	const user = { id: 1, username: 'john_doe' };
+app.post("/login", (req, res) => {
+  const user = { id: 1, username: "john_doe" };
 
-	const token = jwt.sign(user, SECRET_KEY, { expiresIn: '1h' });
-	res.json({ token });
+  const token = jwt.sign(user, SECRET_KEY, { expiresIn: "1h" });
+  res.json({ token });
 });
 
 // Verify token middleware
 const verifyToken = (req, res, next) => {
-	const token = req.headers['authorization'];
+  const token = req.headers["authorization"];
 
-	if (!token) {
-		return res.status(403).json({ message: 'No token provided' });
-	}
+  if (!token) {
+    return res.status(403).json({ message: "No token provided" });
+  }
 
-	try {
-		const decoded = jwt.verify(token, SECRET_KEY);
-		req.user = decoded;
-		next();
-	} catch (err) {
-		return res.status(401).json({ message: 'Invalid token' });
-	}
+  try {
+    const decoded = jwt.verify(token, SECRET_KEY);
+    req.user = decoded;
+    next();
+  } catch (err) {
+    return res.status(401).json({ message: "Invalid token" });
+  }
 };
 
 // Protected route example
-app.get('/protected', verifyToken, (req, res) => {
-	res.json({ message: 'Protected data', user: req.user });
+app.get("/protected", verifyToken, (req, res) => {
+  res.json({ message: "Protected data", user: req.user });
 });
 ```
 
@@ -104,15 +104,15 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJqb2huX2RvZSIsIml
 
    ```javascript
    // Login route
-   app.post('/login', async (req, res) => {
-   	const { username, password } = req.body;
-   	// Verify credentials
-   	if (validCredentials) {
-   		const token = jwt.sign({ userId: user.id }, SECRET_KEY, {
-   			expiresIn: '1h',
-   		});
-   		res.json({ token });
-   	}
+   app.post("/login", async (req, res) => {
+     const { username, password } = req.body;
+     // Verify credentials
+     if (validCredentials) {
+       const token = jwt.sign({ userId: user.id }, SECRET_KEY, {
+         expiresIn: "1h",
+       });
+       res.json({ token });
+     }
    });
    ```
 
@@ -120,9 +120,9 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJqb2huX2RvZSIsIml
 
 ```javascript
 // Protect API routes
-app.get('/api/data', verifyToken, (req, res) => {
-	// Only accessible with valid token
-	res.json({ data: 'Protected content' });
+app.get("/api/data", verifyToken, (req, res) => {
+  // Only accessible with valid token
+  res.json({ data: "Protected content" });
 });
 ```
 

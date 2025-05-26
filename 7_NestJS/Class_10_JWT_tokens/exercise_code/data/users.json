@@ -1,10 +1,14 @@
 [
   {
-    "id": "d75d3c4c-094d-4426-b059-0b9dda10d6a1",
-    "firstName": "Baby",
-    "lastName": "Smith",
+    "id": "4a085192-b5a5-44dd-8b2d-1666eade039e",
+    "firstName": "Matilda",
+    "lastName": "Greenholt",
     "email": "first@gmail.com",
-    "password": "$2b$08$/gtdXL7RCgaB6tnCIw3Ag.fYuiz838zv4cYUBT7mOjmSjopgYe90m",
-    "refreshTokens": []
+    "password": "$2b$08$J2Jy64tLR8ImT24gdCRP3eraYO7N7cLAUfW7bQmPSizsc2/WIhW5i",
+    "refreshTokens": [
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0YTA4NTE5Mi1iNWE1LTQ0ZGQtOGIyZC0xNjY2ZWFkZTAzOWUiLCJpYXQiOjE3NDgyNDIyNzUsImV4cCI6MTc0ODg0NzA3NX0.xAedgi3KCftM0321pp4S9rzRE3CDrQtg5F6fPVx22Vg",
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0YTA4NTE5Mi1iNWE1LTQ0ZGQtOGIyZC0xNjY2ZWFkZTAzOWUiLCJpYXQiOjE3NDgyNDIzMjAsImV4cCI6MTc0ODg0NzEyMH0.Db5AQ9h8k9KunbVxVVBY0mX8JGcFTBo6edjj86OJY-c",
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0YTA4NTE5Mi1iNWE1LTQ0ZGQtOGIyZC0xNjY2ZWFkZTAzOWUiLCJpYXQiOjE3NDgyNDM3NzEsImV4cCI6MTc0ODg0ODU3MX0.87gMC4xsECVdluMIjUWOhPxyISzR0FBb4FweshJWcPA"
+    ]
   }
 ]
