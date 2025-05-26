@@ -16,12 +16,12 @@ const FK_PG_CODE = '23503';
 export class OrdersService {
   constructor(@InjectRepository(Order) private ordersRepo: Repository<Order>) {}
 
-  async create(createOrderDto: CreateOrderDto) {
+  async create(userId: string, createOrderDto: CreateOrderDto) {
     try {
       const newOrder = await this.ordersRepo.save({
         ...createOrderDto,
         user: {
-          id: createOrderDto.user,
+          id: userId,
         },
         products: createOrderDto.products.map((productId) => {
           return { id: productId };

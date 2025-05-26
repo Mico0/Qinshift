@@ -16,9 +16,6 @@ export class CreateOrderDto {
   @IsDateString()
   date: string;
 
-  @IsString()
-  user: string;
-
   @IsArray()
   @IsInt({ each: true })
   products: number[];

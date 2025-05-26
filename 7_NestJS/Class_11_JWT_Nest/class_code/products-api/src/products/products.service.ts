@@ -1,9 +1,19 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Product } from './entities/product.entity';
-import { Repository } from 'typeorm';
+import {
+  Equal,
+  FindManyOptions,
+  ILike,
+  LessThanOrEqual,
+  MoreThan,
+  MoreThanOrEqual,
+  Repository,
+} from 'typeorm';
 import { CreateProductDto } from './dtos/create-product.dto';
 import { UpdateProductDto } from './dtos/update-product.dto';
+import { ProductFiltersDto } from './dtos/product-filters.dto';
+import { filter } from 'rxjs';
 
 @Injectable()
 export class ProductsService {
@@ -11,11 +21,42 @@ export class ProductsService {
     @InjectRepository(Product) private productsRepo: Repository<Product>,
   ) {}
 
-  async findAll() {
-    return this.productsRepo.find({
-      //Will load all ids of relations of a given entity
-      // loadRelationIds: true,
-    });
+  async findAll(productFilters: ProductFiltersDto) {
+    const findOptions: FindManyOptions<Product> = {};
+
+    if (productFilters.title) {
+      findOptions.where = { title: ILike(`%${productFilters.title}%`) };
+    }
+
+    if (productFilters.inStock === 'true') {
+      findOptions.where = { ...findOptions.where, stock: MoreThan(0) };
+    }
+
+    if (productFilters.inStock === 'false') {
+      findOptions.where = { ...findOptions.where, stock: Equal(0) };
+    }
+
+    if (productFilters.minPrice) {
+      findOptions.where = {
+        ...findOptions.where,
+        price: MoreThanOrEqual(productFilters.minPrice),
+      };
+    }
+
+    if (productFilters.maxPrice) {
+      findOptions.where = {
+        ...findOptions.where,
+        price: LessThanOrEqual(productFilters.maxPrice),
+      };
+    }
+
+    findOptions.skip = productFilters.firstResult - 1;
+    findOptions.take = productFilters.maxResults;
+
+    const [products, totalCOunt] =
+      await this.productsRepo.findAndCount(findOptions);
+
+    return { products, totalCOunt };
   }
 
   async findById(id: number) {
