@@ -100,6 +100,16 @@ export class UsersService {
     this.usersRepo.save(foundUser);
   }
 
+  async deleteRefreshToken(id: string, refreshToken: string) {
+    const foundUser = await this.findById(id);
+
+    foundUser.refreshTokens = foundUser.refreshTokens.filter(
+      (token) => token !== refreshToken,
+    );
+
+    this.usersRepo.save(foundUser);
+  }
+
   async deleteUser(id: string) {
     const foundUser = await this.findById(id);
 

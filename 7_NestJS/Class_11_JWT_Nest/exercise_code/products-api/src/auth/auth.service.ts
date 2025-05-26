@@ -96,4 +96,16 @@ export class AuthService {
       throw new ForbiddenException();
     }
   }
+
+  async logoutUser(refreshToken: string) {
+    try {
+      const { userId } = await this.jwtService.verifyAsync(refreshToken, {
+        secret: this.configService.get('REFRESH_TOKEN_SECRET'),
+      });
+
+      await this.usersService.deleteRefreshToken(userId, refreshToken);
+    } catch (error) {
+      throw new BadRequestException('Could not logout user');
+    }
+  }
 }

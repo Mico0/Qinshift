@@ -1,6 +1,7 @@
 import {
   Body,
   Controller,
+  Head,
   Headers,
   HttpCode,
   HttpStatus,
@@ -45,5 +46,11 @@ export class AuthController {
     res.set('access-token', accessToken);
 
     res.sendStatus(HttpStatus.NO_CONTENT);
+  }
+
+  @HttpCode(HttpStatus.NO_CONTENT)
+  @Post('logout')
+  async logoutUser(@Headers('refresh-token') refreshToken: string) {
+    return this.authService.logoutUser(refreshToken);
   }
 }
