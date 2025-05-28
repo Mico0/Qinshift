@@ -4,7 +4,6 @@ import { AuthController } from './auth.controller';
 import { UsersModule } from 'src/users/users.module';
 import { JwtModule } from '@nestjs/jwt';
 import { ConfigService } from '@nestjs/config';
-import { AuthGuard } from './auth.guard';
 
 @Module({
   imports: [
@@ -15,7 +14,7 @@ import { AuthGuard } from './auth.guard';
         return {
           secret: configService.get('ACCESS_TOKEN_SECRET'),
           signOptions: {
-            expiresIn: '20m',
+            expiresIn: '40m',
           },
         };
       },

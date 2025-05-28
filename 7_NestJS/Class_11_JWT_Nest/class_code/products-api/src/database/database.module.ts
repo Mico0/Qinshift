@@ -20,7 +20,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
           // entities: [Product],
           autoLoadEntities: true,
           //Allows us to see sql output sent to the databse in the console
-          logging: true,
+          // logging: true,
           logger: 'formatted-console',
         };
       },

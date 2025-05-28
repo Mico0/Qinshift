@@ -5,6 +5,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './entities/user.entity';
 import { UserAddressModule } from 'src/user-address/user-address.module';
 
+@Global()
 @Module({
   imports: [TypeOrmModule.forFeature([User]), UserAddressModule],
   controllers: [UsersController],
