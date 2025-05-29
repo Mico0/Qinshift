@@ -33,9 +33,11 @@ export class AuthService {
     //Save the user to the database
     await this.usersService.create(userData);
   }
-  //2. Login user
+  // 2. Login user
   async loginUser(credentials: CredentialsDto) {
     const foundUser = await this.usersService.findByEmail(credentials.email);
+
+    console.log(foundUser);
 
     if (!foundUser) throw new UnauthorizedException('invalid credentials');
 
@@ -47,9 +49,11 @@ export class AuthService {
     if (!isPasswordValid)
       throw new UnauthorizedException('invalid credentials');
 
-    const token = await this.jwtService.signAsync({ userId: foundUser.id });
+    console.log(foundUser);
+
+    const token = await this.jwtService.signAsync({ userId: foundUser._id });
     const refreshToken = await this.jwtService.signAsync(
-      { userId: foundUser.id },
+      { userId: foundUser._id },
       {
         secret: this.configService.get('REFRESH_TOKEN_SECRET'),
         expiresIn: '7d',
@@ -58,10 +62,10 @@ export class AuthService {
 
     await this.usersService.saveRefreshToken(foundUser.id, refreshToken);
 
-    const { password, refreshTokens, ...userWithoutPass } = foundUser;
+    foundUser.password = '';
 
     return {
-      user: userWithoutPass,
+      user: foundUser,
       token,
       refreshToken,
     };
@@ -73,19 +77,14 @@ export class AuthService {
       const { userId } = await this.jwtService.verifyAsync(refreshToken, {
         secret: this.configService.get('REFRESH_TOKEN_SECRET'),
       });
-
       //2. Find user in db
       const foundUser = await this.usersService.findById(userId);
-
       //3. Check if token exits in users refreshTokens
       const tokenExists = foundUser.refreshTokens.some(
         (token) => token === refreshToken,
       );
-
       if (!tokenExists) throw new Error();
-
       const token = await this.jwtService.signAsync({ userId: foundUser.id });
-
       return { token };
     } catch (error) {
       console.log(error);
@@ -98,7 +97,6 @@ export class AuthService {
       const { userId } = await this.jwtService.verifyAsync(refreshToken, {
         secret: this.configService.get('REFRESH_TOKEN_SECRET'),
       });
-
       await this.usersService.deleteRefreshToken(userId, refreshToken);
     } catch (error) {
       console.log(error);

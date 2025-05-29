@@ -1,6 +1,5 @@
 import {
   Body,
-  ClassSerializerInterceptor,
   Controller,
   Delete,
   Get,
@@ -9,7 +8,6 @@ import {
   Patch,
   Post,
   UseGuards,
-  UseInterceptors,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dtos/create-user.dto';
@@ -19,8 +17,8 @@ import { RolesGuard } from 'src/roles/roles.guard';
 import { RoleType } from 'src/roles/roles.model';
 import { Roles } from 'src/roles/roles.decorator';
 
+// @UseInterceptors(ClassSerializerInterceptor)
 @UseGuards(AuthGuard, RolesGuard)
-@UseInterceptors(ClassSerializerInterceptor)
 @Roles(RoleType.ADMIN)
 @Controller('users')
 export class UsersController {

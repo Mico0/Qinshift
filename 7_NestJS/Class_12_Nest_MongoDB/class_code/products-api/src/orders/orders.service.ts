@@ -1,24 +1,37 @@
-import {
-  BadRequestException,
-  Injectable,
-  InternalServerErrorException,
-  NotFoundException,
-} from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateOrderDto } from './dto/create-order.dto';
 import { UpdateOrderDto } from './dto/update-order.dto';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Order } from './entities/order.entity';
-import { Repository } from 'typeorm';
-
-const FK_PG_CODE = '23503';
+import { InjectModel } from '@nestjs/mongoose';
+import { Order } from './models/order.model';
+import { Model } from 'mongoose';
 
 @Injectable()
 export class OrdersService {
-  async create(userId: string, createOrderDto: CreateOrderDto) {}
+  constructor(@InjectModel(Order.name) private ordersModel: Model<Order>) {}
 
-  findAll() {}
+  async create(userId: string, createOrderDto: CreateOrderDto) {
+    const newOrder = new this.ordersModel({ ...createOrderDto, user: userId });
 
-  async findOne(id: number) {}
+    const createdOrder = await newOrder.save();
+
+    return createdOrder;
+  }
+
+  findAll() {
+    return this.ordersModel.find({});
+  }
+
+  async findOne(id: string) {
+    try {
+      const order = await this.ordersModel.findById(id).populate('products');
+
+      if (!order) throw new Error();
+
+      return order;
+    } catch (error) {
+      throw new NotFoundException('Order not found');
+    }
+  }
 
   update(id: number, updateOrderDto: UpdateOrderDto) {
     return `This action updates a #${id} order`;
