@@ -16,7 +16,11 @@ export class DirectorsService {
   }
 
   findAll() {
-    return this.directorRepo.find();
+    return this.directorRepo.find({
+      relations: {
+        movies: true,
+      },
+    });
   }
 
   findOne(id: number) {

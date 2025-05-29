@@ -6,6 +6,8 @@ import { DatabaseModule } from './database/database.module';
 import { MoviesModule } from './movies/movies.module';
 import { DirectorsModule } from './directors/directors.module';
 import { ActorModule } from './actor/actor.module';
+import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -14,6 +16,8 @@ import { ActorModule } from './actor/actor.module';
     MoviesModule,
     DirectorsModule,
     ActorModule,
+    AuthModule,
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -3,6 +3,7 @@ import {
   CreateDateColumn,
   Entity,
   JoinColumn,
+  JoinTable,
   ManyToMany,
   ManyToOne,
   PrimaryGeneratedColumn,
@@ -53,5 +54,14 @@ export class Movie {
   director: Director;
 
   @ManyToMany(() => Actor, (actor) => actor.movies)
+  @JoinTable({
+    name: 'movies_actors',
+    joinColumn: {
+      name: 'actor_id',
+    },
+    inverseJoinColumn: {
+      name: 'movie_id',
+    },
+  })
   actors: Actor[];
 }

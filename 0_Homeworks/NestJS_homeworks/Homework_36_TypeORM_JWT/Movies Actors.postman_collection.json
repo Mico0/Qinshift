@@ -1,0 +1,53 @@
+{
+	"info": {
+		"_postman_id": "64105af2-efad-429a-bab1-c91f549c7c9e",
+		"name": "Movies Actors",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43055767"
+	},
+	"item": [
+		{
+			"name": "Get Actors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/actor",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"actor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Actor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"fullName\": \"Elijah Jordan Wood 2\",\r\n    \"birthYear\": 1981\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/actor",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"actor"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

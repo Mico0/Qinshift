@@ -8,16 +8,38 @@ import { CreateMovieDto } from './dto/create-movie.dto';
 import { UpdateMovieDto } from './dto/update-movie.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Movie } from './entities/movie.entity';
-import { Repository } from 'typeorm';
+import { DeepPartial, Repository } from 'typeorm';
 import { MovieFilters } from 'src/interfaces/movieFilters.interface';
 import { filter } from 'rxjs';
+import { UpdateDirectorDto } from 'src/directors/dto/update-director.dto';
+import { Director } from 'src/directors/entities/director.entity';
 
 @Injectable()
 export class MoviesService {
   constructor(@InjectRepository(Movie) private movieRepo: Repository<Movie>) {}
 
   async create(createMovieDto: CreateMovieDto) {
-    return this.movieRepo.save(createMovieDto);
+    try {
+      const newMovie = await this.movieRepo.save({
+        ...createMovieDto,
+        director: {
+          id: createMovieDto.director,
+        },
+        actors: createMovieDto.actors.map((actorId) => {
+          return { id: actorId };
+        }),
+      });
+
+      return newMovie;
+    } catch (error) {
+      console.log(error);
+
+      if (error.code === '23503') {
+        throw new BadRequestException('Invalid references added');
+      }
+
+      throw new InternalServerErrorException(error.messsage);
+    }
   }
 
   async findAll(filters?: MovieFilters) {
@@ -58,12 +80,19 @@ export class MoviesService {
 
     return queryBuilder
       .leftJoinAndSelect('movies.director', 'director')
+      .leftJoinAndSelect('movies.actors', 'actor')
       .getMany();
   }
 
   async findOne(id: string) {
     try {
-      const foundMovie = await this.movieRepo.findOneByOrFail({ id });
+      const foundMovie = await this.movieRepo.findOneOrFail({
+        where: { id },
+        relations: {
+          director: true,
+          actors: true,
+        },
+      });
       return foundMovie;
     } catch (error) {
       throw new NotFoundException('Movie with that ID was not found');
@@ -74,11 +103,28 @@ export class MoviesService {
     try {
       const foundMovie = await this.findOne(id);
 
-      Object.assign(foundMovie, updateMovieDto);
+      if (updateMovieDto.actors) {
+        foundMovie.actors = updateMovieDto.actors.map(
+          (actorId) =>
+            ({
+              id: actorId,
+            }) as any,
+        );
+      }
 
-      await this.movieRepo.save(foundMovie);
+      if (updateMovieDto.director) {
+        foundMovie.director = {
+          id: updateMovieDto.director,
+        } as any;
+      }
+
+      const { actors, director, ...rest } = updateMovieDto;
+      Object.assign(foundMovie, rest);
+
+      return await this.movieRepo.save(foundMovie);
     } catch (error) {
-      throw new InternalServerErrorException(error.messsage);
+      console.error(error);
+      throw new InternalServerErrorException(error.message);
     }
   }
 

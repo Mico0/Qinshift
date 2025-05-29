@@ -14,7 +14,11 @@ export class ActorService {
   }
 
   findAll() {
-    return this.actorRepo.find();
+    return this.actorRepo.find({
+      relations: {
+        movies: true,
+      },
+    });
   }
 
   findOne(id: number) {

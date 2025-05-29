@@ -8,6 +8,9 @@ import {
   Delete,
   HttpCode,
   Query,
+  ClassSerializerInterceptor,
+  UseGuards,
+  UseInterceptors,
 } from '@nestjs/common';
 import { MoviesService } from './movies.service';
 import { CreateMovieDto } from './dto/create-movie.dto';
@@ -22,8 +25,13 @@ import {
 } from '@nestjs/swagger';
 import { MovieFilters } from 'src/interfaces/movieFilters.interface';
 import { Genre } from './enums/genre.enum';
+import { RolesGuard } from 'src/roles/roles.guard';
+import { AuthGuard } from 'src/auth/auth.guard';
+import { RoleType } from 'src/roles/roles.model';
+import { Roles } from 'src/roles/roles.decorator';
 
 @ApiTags('Movies')
+@UseGuards(AuthGuard, RolesGuard)
 @Controller('movies')
 export class MoviesController {
   constructor(private readonly moviesService: MoviesService) {}
@@ -43,9 +51,17 @@ export class MoviesController {
         duration: 178,
         rating: 9,
         poster_url: 'https://example.com/posters/lotr1.jpg',
-        id: '55fdecbf-0de9-42bd-baf7-1245a4f2f74a',
-        created_at: '2025-05-22T13:53:38.995Z',
-        updated_at: '2025-05-22T13:53:38.995Z',
+        director: {
+          id: '82296dd1-e168-4a40-a1dd-87abd94bd2fb',
+        },
+        actors: [
+          {
+            id: '16bc9ae8-3049-43fb-b2ba-24bd36cf4ead',
+          },
+        ],
+        id: 'ae905934-1ba0-4381-b7a1-b77bf824d827',
+        created_at: '2025-05-29T11:55:10.951Z',
+        updated_at: '2025-05-29T11:55:10.951Z',
       },
     },
   })
@@ -64,7 +80,7 @@ export class MoviesController {
     schema: {
       example: [
         {
-          id: 'b20429e4-bc9d-4383-8232-0540c57495b4',
+          id: 'ae905934-1ba0-4381-b7a1-b77bf824d827',
           title: 'Lord of The Rings: The Fellowship of the Ring',
           description:
             'Frodo Baggins, a hobbit of the Shire, inherits the One Ring. He must journey across Middle-earth to destroy it in the fires of Mount Doom.',
@@ -73,34 +89,55 @@ export class MoviesController {
           duration: 178,
           rating: 9,
           poster_url: 'https://example.com/posters/lotr1.jpg',
-          created_at: '2025-05-22T14:07:18.025Z',
-          updated_at: '2025-05-22T14:07:18.025Z',
+          created_at: '2025-05-29T11:55:10.951Z',
+          updated_at: '2025-05-29T11:55:10.951Z',
+          director: {
+            id: '82296dd1-e168-4a40-a1dd-87abd94bd2fb',
+            fullName: 'Peter Jackson',
+            birthYear: 1961,
+          },
+          actors: [
+            {
+              id: '89e86895-a06d-4d74-a774-fc097d293613',
+              fullName: 'Elijah Jordan Wood 2',
+              birthYear: 1981,
+            },
+            {
+              id: '16bc9ae8-3049-43fb-b2ba-24bd36cf4ead',
+              fullName: 'Elijah Jordan Wood',
+              birthYear: 1981,
+            },
+          ],
         },
         {
-          id: '8b3285a2-38b6-4dae-83ae-929808347bdb',
-          title: 'Inception',
+          id: 'ae905934-1ba0-4381-b7a1-b77bf824d827',
+          title: 'Lord of The Rings: The Fellowship of the Ring',
           description:
-            "A skilled thief who steals secrets through dream-sharing technology is tasked with planting an idea in a target's subconscious.",
-          release_year: 2010,
-          genre: 'sci-fi',
-          duration: 148,
-          rating: 8,
-          poster_url: 'https://example.com/posters/inception.jpg',
-          created_at: '2025-05-22T14:08:24.391Z',
-          updated_at: '2025-05-22T14:08:24.391Z',
-        },
-        {
-          id: '921d9e9e-37cd-4273-a04c-69a54c690aba',
-          title: 'The Matrix',
-          description:
-            'A hacker discovers the reality he knows is a simulation and joins a rebellion against the machines controlling humanity.',
-          release_year: 1999,
-          genre: 'sci-fi',
-          duration: 136,
+            'Frodo Baggins, a hobbit of the Shire, inherits the One Ring. He must journey across Middle-earth to destroy it in the fires of Mount Doom.',
+          release_year: 2001,
+          genre: 'fantasy',
+          duration: 178,
           rating: 9,
-          poster_url: 'https://example.com/posters/matrix.jpg',
-          created_at: '2025-05-22T14:08:35.145Z',
-          updated_at: '2025-05-22T14:27:07.557Z',
+          poster_url: 'https://example.com/posters/lotr1.jpg',
+          created_at: '2025-05-29T11:55:10.951Z',
+          updated_at: '2025-05-29T11:55:10.951Z',
+          director: {
+            id: '82296dd1-e168-4a40-a1dd-87abd94bd2fb',
+            fullName: 'Peter Jackson',
+            birthYear: 1961,
+          },
+          actors: [
+            {
+              id: '89e86895-a06d-4d74-a774-fc097d293613',
+              fullName: 'Elijah Jordan Wood 2',
+              birthYear: 1981,
+            },
+            {
+              id: '16bc9ae8-3049-43fb-b2ba-24bd36cf4ead',
+              fullName: 'Elijah Jordan Wood',
+              birthYear: 1981,
+            },
+          ],
         },
       ],
     },
@@ -142,6 +179,8 @@ export class MoviesController {
       'By which condition should the movies be sorted: releaseYear, rating, duration',
     required: false,
   })
+  @Roles(RoleType.ADMIN)
+  @Roles(RoleType.USER)
   @Get()
   async findAll(
     @Query('genre') genre: string,
@@ -195,20 +234,39 @@ export class MoviesController {
     description: 'You get a status code of 200 if the movie was found',
     schema: {
       example: {
-        id: '921d9e9e-37cd-4273-a04c-69a54c690aba',
-        title: 'The Matrix',
+        id: 'ae905934-1ba0-4381-b7a1-b77bf824d827',
+        title: 'Lord of The Rings: The Fellowship of the Ring',
         description:
-          'A hacker discovers the reality he knows is a simulation and joins a rebellion against the machines controlling humanity.',
-        release_year: 1999,
-        genre: 'sci-fi',
-        duration: 136,
+          'Frodo Baggins, a hobbit of the Shire, inherits the One Ring. He must journey across Middle-earth to destroy it in the fires of Mount Doom.',
+        release_year: 2001,
+        genre: 'fantasy',
+        duration: 178,
         rating: 9,
-        poster_url: 'https://example.com/posters/matrix.jpg',
-        created_at: '2025-05-22T14:08:35.145Z',
-        updated_at: '2025-05-22T14:27:07.557Z',
+        poster_url: 'https://example.com/posters/lotr1.jpg',
+        created_at: '2025-05-29T11:55:10.951Z',
+        updated_at: '2025-05-29T11:55:10.951Z',
+        director: {
+          id: '82296dd1-e168-4a40-a1dd-87abd94bd2fb',
+          fullName: 'Peter Jackson',
+          birthYear: 1961,
+        },
+        actors: [
+          {
+            id: '89e86895-a06d-4d74-a774-fc097d293613',
+            fullName: 'Elijah Jordan Wood 2',
+            birthYear: 1981,
+          },
+          {
+            id: '16bc9ae8-3049-43fb-b2ba-24bd36cf4ead',
+            fullName: 'Elijah Jordan Wood',
+            birthYear: 1981,
+          },
+        ],
       },
     },
   })
+  @Roles(RoleType.ADMIN)
+  @Roles(RoleType.USER)
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.moviesService.findOne(id);
@@ -229,6 +287,7 @@ export class MoviesController {
       },
     },
   })
+  @Roles(RoleType.ADMIN)
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateMovieDto: UpdateMovieDto) {
     return this.moviesService.update(id, updateMovieDto);
@@ -248,6 +307,7 @@ export class MoviesController {
     type: 'string',
   })
   @HttpCode(204)
+  @Roles(RoleType.ADMIN)
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.moviesService.remove(id);

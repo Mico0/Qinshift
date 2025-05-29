@@ -1,6 +1,7 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { Genre } from '../enums/genre.enum';
 import {
+  IsArray,
   IsEnum,
   IsNotEmpty,
   IsNumber,
@@ -86,4 +87,19 @@ export class CreateMovieDto {
   @MinLength(10)
   @MaxLength(600)
   poster_url?: string;
+
+  @ApiPropertyOptional({
+    example: 'c0d165a3-5cd6-4fe3-b853-d45e2072b57b',
+    description: 'Movie director ID',
+  })
+  @IsString()
+  director: string;
+
+  @ApiPropertyOptional({
+    example: ['c0d165a3-5cd6-4fe3-b853-d45e2072b57b'],
+    description: 'Movie director ID',
+  })
+  @IsArray()
+  @IsString({ each: true })
+  actors: [];
 }

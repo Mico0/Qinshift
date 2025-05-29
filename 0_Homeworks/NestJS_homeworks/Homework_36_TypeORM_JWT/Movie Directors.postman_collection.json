@@ -1,0 +1,53 @@
+{
+	"info": {
+		"_postman_id": "edb1ea9d-f5a5-424f-9350-8d35c433173f",
+		"name": "Movie Directors",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43055767"
+	},
+	"item": [
+		{
+			"name": "Get All Directors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/directors",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"directors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Director",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fullName\": \"Peter Jackson\",\r\n    \"birthYear\": 1961\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/directors",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"directors"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

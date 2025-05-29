@@ -8,6 +8,7 @@ import {
   Max,
   Min,
 } from 'class-validator';
+import { Movie } from 'src/movies/entities/movie.entity';
 
 export class CreateActorDto {
   @ApiProperty({
@@ -27,8 +28,4 @@ export class CreateActorDto {
   @Min(1900)
   @Max(2000)
   birthYear: number;
-
-  @IsArray()
-  @IsString({ each: true })
-  movies: string[];
 }

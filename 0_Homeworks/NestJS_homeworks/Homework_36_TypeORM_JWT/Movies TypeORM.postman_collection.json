@@ -1,0 +1,225 @@
+{
+	"info": {
+		"_postman_id": "607bbd57-6999-47ab-b231-d237980a284c",
+		"name": "Movies TypeORM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43055767"
+	},
+	"item": [
+		{
+			"name": "Get All Movies",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{url}}/movies/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"movies",
+						""
+					],
+					"query": [
+						{
+							"key": "minRating",
+							"value": "9",
+							"disabled": true
+						},
+						{
+							"key": "maxDuration",
+							"value": "148",
+							"disabled": true
+						},
+						{
+							"key": "title",
+							"value": "inc",
+							"disabled": true
+						},
+						{
+							"key": "sortDirection",
+							"value": "asc",
+							"disabled": true
+						},
+						{
+							"key": "sortBy",
+							"value": "release_year",
+							"disabled": true
+						},
+						{
+							"key": "sortBy",
+							"value": "rating",
+							"disabled": true
+						},
+						{
+							"key": "sortBy",
+							"value": "duration",
+							"disabled": true
+						},
+						{
+							"key": "genre",
+							"value": "action",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Movie By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/movies/:id",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"movies",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "ae905934-1ba0-4381-b7a1-b77bf824d827"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Movie",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Lord of The Rings: The Fellowship of the Ring\",\r\n    \"description\": \"Frodo Baggins, a hobbit of the Shire, inherits the One Ring. He must journey across Middle-earth to destroy it in the fires of Mount Doom.\",\r\n    \"release_year\": 2001,\r\n    \"genre\": \"fantasy\",\r\n    \"duration\": 178,\r\n    \"rating\": 9,\r\n    \"poster_url\": \"https://example.com/posters/lotr1.jpg\",\r\n    \"director\": \"82296dd1-e168-4a40-a1dd-87abd94bd2fb\",\r\n    \"actors\": [\r\n        \"16bc9ae8-3049-43fb-b2ba-24bd36cf4ead\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/movies",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"movies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Movie",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"actors\": [\"89e86895-a06d-4d74-a774-fc097d293613\",\"16bc9ae8-3049-43fb-b2ba-24bd36cf4ead\" ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/movies/:id",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"movies",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "ae905934-1ba0-4381-b7a1-b77bf824d827"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Movie",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"The Matrix - Updated\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/movies/:id",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"movies",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "f28c3e0c-3f09-4e54-ac81-1361c9f7a580"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIyMjc3ZTk0Mi02NDNmLTQzMWUtYmY1Ny03NjQxNWQyOTQ5NzAiLCJpYXQiOjE3NDg1MjU4MjAsImV4cCI6MTc0ODUyODIyMH0.x07QE_L8yc_iSNH0LIeXuDRH3ibNtPUUW_2jC4bg5lo",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

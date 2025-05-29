@@ -18,17 +18,6 @@ export class Actor {
   @Column()
   birthYear: number;
 
-  @ManyToMany(() => Movie, (movie) => movie.actors, {
-    eager: true,
-  })
-  @JoinTable({
-    name: 'actors_movies',
-    joinColumn: {
-      name: 'actor_id',
-    },
-    inverseJoinColumn: {
-      name: 'movie_id',
-    },
-  })
+  @ManyToMany(() => Movie, (movie) => movie.actors)
   movies: Movie[];
 }
