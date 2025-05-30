@@ -7,22 +7,26 @@ To be able to complete this homework you will need to have the [previous one](ht
 The goal of this homework is to add relations and authentication to the movie app.
 
 ## Relations
+
 ### Basic Requirement
+
 #### Director - Movie (One-to-Many)
 
-1. Create a new entity ```director``` with properties ```id, fullName, birthYear```
+1. Create a new entity `director` with properties `id, fullName, birthYear`
 2. One director can direct many movies
 3. A movie belongs to one director
 
 ### Bonus
+
 #### Movie - Actor (Many-to-Many)
 
-1. Create a new entity ```actor```
-2. Properties: ```id, fullName, birthYear```
+1. Create a new entity `actor`
+2. Properties: `id, fullName, birthYear`
 3. A movie can have many actors
 4. An actor can act in many movies
 
 ## Authentication
+
 ### Basic Requirement
 
 1. Create users
@@ -33,9 +37,9 @@ The goal of this homework is to add relations and authentication to the movie ap
 
 ### Bonus (We will show this on Monday, but you can try to solve it until then)
 
-1. Add a role based authentication. Users should have roles (```admin``` and ```user```):
-   - Admins can do everything (```GET, CREATE, UPDATE, DELETE```)
-   - Users can only view movies (```GET```)
+1. Add a role based authentication. Users should have roles (`admin` and `user`):
+   - Admins can do everything (`GET, CREATE, UPDATE, DELETE`)
+   - Users can only view movies (`GET`)
 2. Add createdBy property which will be the email (username) of the user that created the movie.
 
 ## Before you send it...

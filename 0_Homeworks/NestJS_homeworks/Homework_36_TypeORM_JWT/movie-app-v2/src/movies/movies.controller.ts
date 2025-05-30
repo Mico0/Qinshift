@@ -11,6 +11,9 @@ import {
   ClassSerializerInterceptor,
   UseGuards,
   UseInterceptors,
+  ExecutionContext,
+  Req,
+  Res,
 } from '@nestjs/common';
 import { MoviesService } from './movies.service';
 import { CreateMovieDto } from './dto/create-movie.dto';
@@ -65,9 +68,23 @@ export class MoviesController {
       },
     },
   })
+  @Roles(RoleType.ADMIN)
   @Post()
-  create(@Body() createMovieDto: CreateMovieDto) {
-    return this.moviesService.create(createMovieDto);
+  create(
+    @Body() createMovieDto: CreateMovieDto,
+    @Req() req: Request,
+    // context: ExecutionContext,
+  ) {
+    // const request = context.switchToHttp().getRequest();
+    // const user = request.user;
+    // console.log((req as any).user);
+
+    const userEmail = (req as any).user.email;
+
+    return this.moviesService.create({
+      ...createMovieDto,
+      createdBy: userEmail,
+    });
   }
 
   @ApiOperation({
@@ -179,8 +196,7 @@ export class MoviesController {
       'By which condition should the movies be sorted: releaseYear, rating, duration',
     required: false,
   })
-  @Roles(RoleType.ADMIN)
-  @Roles(RoleType.USER)
+  @Roles(RoleType.ADMIN, RoleType.USER)
   @Get()
   async findAll(
     @Query('genre') genre: string,
@@ -265,8 +281,7 @@ export class MoviesController {
       },
     },
   })
-  @Roles(RoleType.ADMIN)
-  @Roles(RoleType.USER)
+  @Roles(RoleType.ADMIN, RoleType.USER)
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.moviesService.findOne(id);

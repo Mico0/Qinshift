@@ -27,14 +27,12 @@ export class ActorController {
     return this.actorService.create(createActorDto);
   }
 
-  @Roles(RoleType.ADMIN)
-  @Roles(RoleType.USER)
+  @Roles(RoleType.ADMIN, RoleType.USER)
   @Get()
   findAll() {
     return this.actorService.findAll();
   }
-  @Roles(RoleType.ADMIN)
-  @Roles(RoleType.USER)
+  @Roles(RoleType.ADMIN, RoleType.USER)
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.actorService.findOne(+id);

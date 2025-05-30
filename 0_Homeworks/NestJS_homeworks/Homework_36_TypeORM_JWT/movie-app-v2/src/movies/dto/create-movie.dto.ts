@@ -102,4 +102,8 @@ export class CreateMovieDto {
   @IsArray()
   @IsString({ each: true })
   actors: [];
+
+  @IsString()
+  @IsOptional()
+  createdBy?: string;
 }

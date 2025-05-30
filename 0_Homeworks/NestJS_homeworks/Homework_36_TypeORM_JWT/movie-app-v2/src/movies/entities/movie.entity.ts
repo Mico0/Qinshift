@@ -64,4 +64,7 @@ export class Movie {
     },
   })
   actors: Actor[];
+
+  @Column()
+  createdBy?: string;
 }

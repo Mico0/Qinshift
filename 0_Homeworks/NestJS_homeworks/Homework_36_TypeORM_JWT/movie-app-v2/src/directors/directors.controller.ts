@@ -27,15 +27,13 @@ export class DirectorsController {
     return this.directorsService.create(createDirectorDto);
   }
 
-  @Roles(RoleType.ADMIN)
-  @Roles(RoleType.USER)
+  @Roles(RoleType.ADMIN, RoleType.USER)
   @Get()
   findAll() {
     return this.directorsService.findAll();
   }
 
-  @Roles(RoleType.ADMIN)
-  @Roles(RoleType.USER)
+  @Roles(RoleType.ADMIN, RoleType.USER)
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.directorsService.findOne(+id);

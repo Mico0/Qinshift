@@ -28,6 +28,7 @@ export class MoviesService {
         actors: createMovieDto.actors.map((actorId) => {
           return { id: actorId };
         }),
+        createdBy: createMovieDto.createdBy,
       });
 
       return newMovie;
