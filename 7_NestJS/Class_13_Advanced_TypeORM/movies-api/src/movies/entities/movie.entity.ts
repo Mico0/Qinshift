@@ -1,10 +1,14 @@
+import { CastMember } from 'src/cast-members/entities/cast-member.entity';
 import { Director } from 'src/directors/entities/director.entity';
+import { Genre } from 'src/genres/entities/genre.entity';
 import {
   Column,
   CreateDateColumn,
   Entity,
   JoinColumn,
+  ManyToMany,
   ManyToOne,
+  OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
@@ -50,4 +54,10 @@ export class Movie {
   @ManyToOne(() => Director, (director) => director.movies)
   @JoinColumn({ name: 'director_id' })
   director: Director;
+
+  @ManyToMany(() => Genre, (genre) => genre.movies)
+  genres: Genre[];
+
+  @OneToMany(() => CastMember, (castMember) => castMember.movie)
+  castMembers: CastMember[];
 }
