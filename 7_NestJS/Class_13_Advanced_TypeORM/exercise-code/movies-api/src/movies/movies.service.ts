@@ -25,7 +25,7 @@ export class MoviesService {
 
     return queryBuilder.getMany();
 
-    //TODO: ZASTO ZA GET ALL RABOTI A ZA GET ONE BEZ RAW NE RABOTI
+    //TODO: ZASTO ZA GET ALL RABOTI A ZA GET ONE BEZ RAW NE RABOTI - * e edge case vo ovoj slucaj i ne  e predvideno da se koristi za vlecenje na cela data
   }
 
   async findOne(id: number) {
