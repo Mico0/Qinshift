@@ -3,7 +3,7 @@ import "./Footer.css";
 function Footer() {
   return (
     <footer className="Footer">
-      <small>By Milan Ognjanoski @Qinshift 2025</small>
+      <small>By Borche Borisovski ©️SEDC 2025</small>
     </footer>
   );
 }

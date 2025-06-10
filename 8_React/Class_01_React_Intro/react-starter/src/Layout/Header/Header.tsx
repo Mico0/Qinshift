@@ -5,9 +5,9 @@ function Header() {
     <header className="Header">
       <h1>React Starter</h1>
       <nav>
-        <a href="">Home</a>
-        <a href="">Contact</a>
-        <a href=""> About</a>
+        <a>Home</a>
+        <a>Contact</a>
+        <a>About</a>
       </nav>
     </header>
   );

@@ -12,8 +12,7 @@ function PersonInfo({ firstName, lastName, bgColor }: PersonInfoProps) {
       className="PersonInfo"
       style={{ backgroundColor: bgColor || "lightblue" }}
     >
-      <strong>{firstName}</strong>
-      <strong>{lastName}</strong>
+      <strong>{firstName}</strong> <strong>{lastName}</strong>
     </div>
   );
 }
