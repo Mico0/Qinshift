@@ -1,0 +1,12 @@
+.ProductsPage h2 {
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  font-size: 28px;
+}
+
+.ProductsPage .products-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 20px;
+}
