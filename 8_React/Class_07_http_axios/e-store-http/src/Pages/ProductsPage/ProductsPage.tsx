@@ -4,7 +4,7 @@ import SearchInput from "../../Components/SearchInput/SearchInput";
 import "./ProductsPage.css";
 import { ProductsContext } from "../../Contexts/ProductsContext";
 import { useSearchParams } from "react-router-dom";
-import { Page } from "../../Page/Page";
+import { Page } from "../../Layout/Page/Page";
 
 function ProductsPage() {
   const { products } = useContext(ProductsContext);
@@ -19,15 +19,13 @@ function ProductsPage() {
 
   const onSearch = useCallback(
     (value: string) => {
-      setSearchParams((prevParams) => {
+      setSearchParams(prevParams => {
         prevParams.set("q", value);
         return prevParams;
       });
 
       setFilteredProducts(
-        products.filter((product) =>
-          product.title.toLowerCase().includes(value)
-        )
+        products.filter(product => product.title.toLowerCase().includes(value))
       );
     },
     [products, setSearchParams]
@@ -39,26 +37,11 @@ function ProductsPage() {
         <SearchInput onSearch={onSearch} defaultValue={query} />
       </div>
       <div className="ProductsPage">
-        {filteredProducts.map((product) => (
+        {filteredProducts.map(product => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
     </Page>
-    // <section className="page ProductsPage">
-    //   <div className="page-heading">
-    //     <h2>Products</h2>
-    //   </div>
-    //   <div className="page-content">
-    //     <div>
-    //       <SearchInput onSearch={onSearch} defaultValue={query} />
-    //     </div>
-    //     <div className="card-container">
-    //       {filteredProducts.map(product => (
-    //         <ProductCard key={product.id} product={product} />
-    //       ))}
-    //     </div>
-    //   </div>
-    // </section>
   );
 }
 

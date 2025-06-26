@@ -1,5 +1,5 @@
 import CartList from "../../Components/CartList/CartList";
-import { Page } from "../../Page/Page";
+import { Page } from "../../Layout/Page/Page";
 
 function CartPage() {
   return (
