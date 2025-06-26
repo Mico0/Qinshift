@@ -1,0 +1,92 @@
+[
+  {
+    "name": { "common": "Germany" },
+    "capital": ["Berlin"],
+    "region": "Europe",
+    "area": 357022,
+    "flag": "/flags/de.png",
+    "population": 83000000,
+    "landlocked": false
+  },
+  {
+    "name": { "common": "Switzerland" },
+    "capital": ["Bern"],
+    "region": "Europe",
+    "area": 41285,
+    "flag": "/flags/ch.png",
+    "population": 8600000,
+    "landlocked": true
+  },
+  {
+    "name": { "common": "Brazil" },
+    "capital": ["Brasília"],
+    "region": "Americas",
+    "area": 8515767,
+    "flag": "/flags/br.png",
+    "population": 211000000,
+    "landlocked": false
+  },
+  {
+    "name": { "common": "Nepal" },
+    "capital": ["Kathmandu"],
+    "region": "Asia",
+    "area": 147181,
+    "flag": "/flags/np.png",
+    "population": 30000000,
+    "landlocked": true
+  },
+  {
+    "name": { "common": "Canada" },
+    "capital": ["Ottawa"],
+    "region": "Americas",
+    "area": 9984670,
+    "flag": "/flags/ca.png",
+    "population": 38000000,
+    "landlocked": false
+  },
+  {
+    "name": { "common": "Australia" },
+    "capital": ["Canberra"],
+    "region": "Oceania",
+    "area": 7692024,
+    "flag": "/flags/au.png",
+    "population": 25000000,
+    "landlocked": false
+  },
+  {
+    "name": { "common": "Egypt" },
+    "capital": ["Cairo"],
+    "region": "Africa",
+    "area": 1002450,
+    "flag": "/flags/eg.png",
+    "population": 102000000,
+    "landlocked": false
+  },
+  {
+    "name": { "common": "Austria" },
+    "capital": ["Vienna"],
+    "region": "Europe",
+    "area": 83879,
+    "flag": "/flags/at.png",
+    "population": 8900000,
+    "landlocked": true
+  },
+  {
+    "name": { "common": "Japan" },
+    "capital": ["Tokyo"],
+    "region": "Asia",
+    "area": 377975,
+    "flag": "/flags/jp.png",
+    "population": 126000000,
+    "landlocked": false
+  },
+  {
+    "name": { "common": "Chad" },
+    "capital": ["N'Djamena"],
+    "region": "Africa",
+    "area": 1284000,
+    "flag": "/flags/td.png",
+    "population": 16400000,
+    "landlocked": true
+  }
+]
