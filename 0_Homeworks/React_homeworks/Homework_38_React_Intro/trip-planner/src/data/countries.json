@@ -1,92 +1,112 @@
 [
   {
-    "name": { "common": "Germany" },
-    "capital": ["Berlin"],
+    "name": "Germany",
+    "capital": "Berlin",
     "region": "Europe",
     "area": 357022,
-    "flag": "/flags/de.png",
+    "flag": "https://flagcdn.com/w320/de.png",
+    "image": "https://flagcdn.com/w640/de.png",
     "population": 83000000,
-    "landlocked": false
+    "landlocked": false,
+    "description": "Germany is a major European country known for its strong economy, cultural heritage, and historical landmarks."
   },
   {
-    "name": { "common": "Switzerland" },
-    "capital": ["Bern"],
+    "name": "Switzerland",
+    "capital": "Bern",
     "region": "Europe",
     "area": 41285,
-    "flag": "/flags/ch.png",
+    "flag": "https://flagcdn.com/w320/ch.png",
+    "image": "https://flagcdn.com/w640/ch.png",
     "population": 8600000,
-    "landlocked": true
+    "landlocked": true,
+    "description": "Switzerland is a landlocked country known for its neutrality, banking system, and Alpine scenery."
   },
   {
-    "name": { "common": "Brazil" },
-    "capital": ["Brasília"],
+    "name": "Brazil",
+    "capital": "Brasília",
     "region": "Americas",
     "area": 8515767,
-    "flag": "/flags/br.png",
+    "flag": "https://flagcdn.com/w320/br.png",
+    "image": "https://flagcdn.com/w640/br.png",
     "population": 211000000,
-    "landlocked": false
+    "landlocked": false,
+    "description": "Brazil is the largest country in South America, famous for the Amazon rainforest and vibrant culture."
   },
   {
-    "name": { "common": "Nepal" },
-    "capital": ["Kathmandu"],
+    "name": "Nepal",
+    "capital": "Kathmandu",
     "region": "Asia",
     "area": 147181,
-    "flag": "/flags/np.png",
+    "flag": "https://flagcdn.com/w320/np.png",
+    "image": "https://flagcdn.com/w640/np.png",
     "population": 30000000,
-    "landlocked": true
+    "landlocked": true,
+    "description": "Nepal is a landlocked Himalayan country, home to Mount Everest and rich cultural traditions."
   },
   {
-    "name": { "common": "Canada" },
-    "capital": ["Ottawa"],
+    "name": "Canada",
+    "capital": "Ottawa",
     "region": "Americas",
     "area": 9984670,
-    "flag": "/flags/ca.png",
+    "flag": "https://flagcdn.com/w320/ca.png",
+    "image": "https://flagcdn.com/w640/ca.png",
     "population": 38000000,
-    "landlocked": false
+    "landlocked": false,
+    "description": "Canada is the second-largest country in the world, known for its natural landscapes and multicultural society."
   },
   {
-    "name": { "common": "Australia" },
-    "capital": ["Canberra"],
+    "name": "Australia",
+    "capital": "Canberra",
     "region": "Oceania",
     "area": 7692024,
-    "flag": "/flags/au.png",
+    "flag": "https://flagcdn.com/w320/au.png",
+    "image": "https://flagcdn.com/w640/au.png",
     "population": 25000000,
-    "landlocked": false
+    "landlocked": false,
+    "description": "Australia is a vast island nation famous for its wildlife, beaches, and the Outback."
   },
   {
-    "name": { "common": "Egypt" },
-    "capital": ["Cairo"],
+    "name": "Egypt",
+    "capital": "Cairo",
     "region": "Africa",
     "area": 1002450,
-    "flag": "/flags/eg.png",
+    "flag": "https://flagcdn.com/w320/eg.png",
+    "image": "https://flagcdn.com/w640/eg.png",
     "population": 102000000,
-    "landlocked": false
+    "landlocked": false,
+    "description": "Egypt is a historic country known for ancient civilization, the Nile River, and the pyramids."
   },
   {
-    "name": { "common": "Austria" },
-    "capital": ["Vienna"],
+    "name": "Austria",
+    "capital": "Vienna",
     "region": "Europe",
     "area": 83879,
-    "flag": "/flags/at.png",
+    "flag": "https://flagcdn.com/w320/at.png",
+    "image": "https://flagcdn.com/w640/at.png",
     "population": 8900000,
-    "landlocked": true
+    "landlocked": true,
+    "description": "Austria is a landlocked country in Central Europe, known for classical music, the Alps, and elegant cities."
   },
   {
-    "name": { "common": "Japan" },
-    "capital": ["Tokyo"],
+    "name": "Japan",
+    "capital": "Tokyo",
     "region": "Asia",
     "area": 377975,
-    "flag": "/flags/jp.png",
+    "flag": "https://flagcdn.com/w320/jp.png",
+    "image": "https://flagcdn.com/w640/jp.png",
     "population": 126000000,
-    "landlocked": false
+    "landlocked": false,
+    "description": "Japan is an island nation famous for its technology, tradition, cuisine, and cherry blossoms."
   },
   {
-    "name": { "common": "Chad" },
-    "capital": ["N'Djamena"],
+    "name": "Chad",
+    "capital": "N'Djamena",
     "region": "Africa",
     "area": 1284000,
-    "flag": "/flags/td.png",
+    "flag": "https://flagcdn.com/w320/td.png",
+    "image": "https://flagcdn.com/w640/td.png",
     "population": 16400000,
-    "landlocked": true
+    "landlocked": true,
+    "description": "Chad is a landlocked country in Central Africa, with desert landscapes and diverse cultures."
   }
 ]

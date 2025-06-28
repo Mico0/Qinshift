@@ -1,9 +1,11 @@
 import "./Header.css";
+import Navbar from "../../Components/Navbar/Navbar";
 
 export default function Header() {
   return (
     <header className="Header">
-      <h2>Trip Planner</h2>
+      <h1>Trip Planner</h1>
+      <Navbar />
     </header>
   );
 }
