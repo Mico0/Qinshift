@@ -1,11 +1,15 @@
 import "./Header.css";
 import Navbar from "../../Components/Navbar/Navbar";
 
-export default function Header() {
+interface HeaderProps {
+  onClickMenu: (page: string) => void;
+}
+
+export default function Header({ onClickMenu }: HeaderProps) {
   return (
     <header className="Header">
       <h1>Trip Planner</h1>
-      <Navbar />
+      <Navbar onClickNavLink={onClickMenu} />
     </header>
   );
 }

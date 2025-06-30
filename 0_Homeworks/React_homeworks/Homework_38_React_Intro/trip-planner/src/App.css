@@ -5,38 +5,32 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.App .container {
+  margin: 0 auto;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  gap: 1.7rem;
+  max-width: 80vw;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.App .container .pageTitle {
+  grid-column: 1/-1;
+  text-align: left;
+  justify-self: left;
+  font-weight: 800;
+  border-left: 7px var(--tea-green) solid;
+
+  width: 43rem;
+  padding: 0 1rem;
+}
+
+@media (max-width: 600px) {
+  .App .container {
+    grid-template-columns: 1fr;
   }
-  to {
-    transform: rotate(360deg);
+  .App .container .pageTitle {
+    width: 80vw;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }

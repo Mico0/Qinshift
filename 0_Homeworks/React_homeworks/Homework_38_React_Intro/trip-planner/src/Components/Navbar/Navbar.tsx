@@ -1,6 +1,11 @@
+import { useState } from "react";
 import "./Navbar.css";
 
-export default function Navbar() {
+interface NavbarProps {
+  onClickNavLink: (page: string) => void;
+}
+
+export default function Navbar({ onClickNavLink }: NavbarProps) {
   const navLinks: string[] = [
     "Home",
     "Europe",
@@ -15,7 +20,9 @@ export default function Navbar() {
       <ul>
         {navLinks.map((link, i) => (
           <li key={i}>
-            <a href={`/${link.toLowerCase()}`}>{link}</a>
+            <a onClick={() => onClickNavLink(link)} href="#">
+              {link}
+            </a>
           </li>
         ))}
       </ul>

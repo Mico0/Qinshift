@@ -1,0 +1,42 @@
+.Header {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 5px;
+  margin: 1rem auto;
+  font-weight: 600;
+  background-color: var(--papaya);
+  border-radius: 20px;
+  border: 3px solid var(--tea-green);
+}
+
+.Header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.Header ul {
+  list-style: none;
+
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.Header a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.3rem;
+  background: linear-gradient(to right, var(--tea-green), var(--tea-green)),
+    linear-gradient(to right, var(--tea-green), var(--beige), var(--cornsilk));
+  background-size: 100% 4px, 0 4px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+  padding-bottom: 0.2rem;
+}
+
+.Header a:hover {
+  background-size: 0 4px, 100% 4px;
+}
