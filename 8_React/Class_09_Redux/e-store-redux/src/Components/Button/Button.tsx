@@ -3,22 +3,21 @@ import "./Button.css";
 
 interface ButtonProps {
   style?: React.CSSProperties;
-  onBtnClick: () => void;
   disabled?: boolean;
+  onBtnClick: () => void;
   children: ReactNode;
 }
 
-const Button = ({ style, onBtnClick, disabled, children }: ButtonProps) => {
+function Button({ style, disabled, children, onBtnClick }: ButtonProps) {
   return (
     <button
-      style={style}
       className="Button"
-      onClick={onBtnClick}
       disabled={disabled}
+      style={style}
+      onClick={onBtnClick}
     >
       {children}
     </button>
   );
-};
-
+}
 export default Button;

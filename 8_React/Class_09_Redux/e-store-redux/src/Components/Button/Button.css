@@ -11,5 +11,5 @@
 .Button:hover {
   transition: 0.2s ease-in-out;
   border: 2px solid black;
-  background-color: lightcoral;
+  background-color: var(--darkgreen);
 }
