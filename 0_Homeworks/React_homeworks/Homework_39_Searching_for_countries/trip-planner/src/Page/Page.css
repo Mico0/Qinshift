@@ -21,7 +21,7 @@
 }
 
 @media (max-width: 600px) {
-  .Page.container {
+  .Page .container {
     grid-template-columns: 1fr;
   }
   .Page .container .pageTitle {
