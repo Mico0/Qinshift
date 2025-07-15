@@ -4,33 +4,3 @@
   padding: 2rem;
   text-align: center;
 }
-
-.container {
-  margin: 0 auto;
-  display: grid;
-  justify-items: center;
-  align-items: center;
-  gap: 1.7rem;
-  max-width: 80vw;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.container .pageTitle {
-  grid-column: 1/-1;
-  text-align: left;
-  justify-self: left;
-  font-weight: 800;
-  border-left: 7px var(--tea-green) solid;
-
-  width: 43rem;
-  padding: 0 1rem;
-}
-
-@media (max-width: 600px) {
-  .App .container {
-    grid-template-columns: 1fr;
-  }
-  .App .container .pageTitle {
-    width: 80vw;
-  }
-}

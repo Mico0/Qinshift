@@ -5,26 +5,29 @@ import CountryCard from "./Components/CountryCard/CountryCard";
 import Search from "./Components/Search/Search";
 import countryData from "./data/countries.json";
 import { useState } from "react";
-import CountryPages from "./Pages/CountryPages/CountryPages";
 import type { Country } from "./models/country.model";
 import { Page } from "./Page/Page";
 
 function App() {
+  const topCountries = countryData.slice(0, 10);
   const [selectedPage, setSelectedPage] = useState("Home");
-  const [view, setView] = useState<Country[]>();
+  const [view, setView] = useState<Country[]>(topCountries);
 
   const isHomepage = selectedPage === "Home" || "";
 
   function handleSearchInput(input: string) {
-    if (!input) {
-      return;
-    }
+    setTimeout(() => {
+      if (!input) {
+        setView(topCountries);
+        return;
+      }
 
-    const newData = [...countryData].filter((country) =>
-      country.name.common.toLowerCase().includes(input.toLowerCase())
-    );
+      const newData = [...countryData].filter((country) =>
+        country.name.common.toLowerCase().includes(input.toLowerCase())
+      );
 
-    setView(newData);
+      setView(newData);
+    }, 1000);
   }
 
   console.log(view);
@@ -33,29 +36,27 @@ function App() {
   let defaultView;
 
   if (!isHomepage) {
-    defaultView = <CountryPages pageName={selectedPage} />;
+    defaultView = <Page title={selectedPage}></Page>;
   } else {
-    defaultView = countryData
-      .slice(0, 10)
-      .map((country) => (
-        <CountryCard
-          key={country.name.common}
-          image={country.image}
-          title={country.name.common}
-          description={country.description}
-        />
-      ));
+    defaultView = (
+      <Page title="10 most popular tourist destinations">
+        <Search handleChange={handleSearchInput} />
+        {view.map((country) => (
+          <CountryCard
+            key={country.name.common}
+            image={country.image}
+            title={country.name.common}
+            description={country.description}
+          />
+        ))}
+      </Page>
+    );
   }
 
   return (
     <div className="App">
       <Header onClickMenu={setSelectedPage} />
-      <main>
-        <Page title="10 most popular tourist destinations">
-          <Search handleChange={handleSearchInput} />
-          {defaultView}
-        </Page>
-      </main>
+      <main>{defaultView}</main>
       <Footer />
     </div>
   );
