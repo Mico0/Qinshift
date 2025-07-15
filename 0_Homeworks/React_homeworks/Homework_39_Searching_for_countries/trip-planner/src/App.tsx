@@ -16,18 +16,16 @@ function App() {
   const isHomepage = selectedPage === "Home" || "";
 
   function handleSearchInput(input: string) {
-    setTimeout(() => {
-      if (!input) {
-        setView(topCountries);
-        return;
-      }
+    if (!input) {
+      setView(topCountries);
+      return;
+    }
 
-      const newData = [...countryData].filter((country) =>
-        country.name.common.toLowerCase().includes(input.toLowerCase())
-      );
+    const newData = [...countryData].filter((country) =>
+      country.name.common.toLowerCase().includes(input.toLowerCase())
+    );
 
-      setView(newData);
-    }, 1000);
+    setView(newData);
   }
 
   console.log(view);

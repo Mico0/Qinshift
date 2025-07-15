@@ -28,7 +28,7 @@ function SearchInput({ onSearch }: SearchInputProps) {
         type="text"
         value={value}
         placeholder="Search by product name..."
-        onChange={e => setValue(e.target.value)}
+        onChange={(e) => setValue(e.target.value)}
       />
       {/* <Button
         text="🔎"
