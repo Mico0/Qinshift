@@ -1,13 +1,12 @@
 import "./App.css";
 import Footer from "./Layout/Footer/Footer";
 import Header from "./Layout/Header/Header";
-import CountryCard from "./Components/CountryCard/CountryCard";
 import Search from "./Components/Search/Search";
 import countryData from "./data/countries.json";
 import { useEffect, useState } from "react";
 import type { Country } from "./models/country.model";
 import { Page } from "./Page/Page";
-import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 
 function App() {
   const topCountries = countryData.slice(0, 10);
