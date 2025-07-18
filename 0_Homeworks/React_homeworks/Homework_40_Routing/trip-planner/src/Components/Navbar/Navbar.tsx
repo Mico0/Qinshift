@@ -13,11 +13,11 @@ export default function Navbar() {
   return (
     <nav className="Navbar">
       <ul>
-        <li>
+        <li key="home">
           <Link to="/">Home</Link>
         </li>
-        {navLinks.map((link, i) => (
-          <li key={i}>
+        {navLinks.map((link) => (
+          <li key={link.toLowerCase()}>
             <Link to={link.toLowerCase()}>{link}</Link>
           </li>
         ))}

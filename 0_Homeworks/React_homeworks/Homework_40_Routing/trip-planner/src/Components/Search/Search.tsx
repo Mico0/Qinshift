@@ -1,18 +1,22 @@
 import { useEffect, useState } from "react";
 
 interface SearchProps {
-  handleChange: (input: string) => void;
+  handleChange?: (input: string) => void;
 }
 
 function Search({ handleChange }: SearchProps) {
   const [value, setValue] = useState("");
 
   useEffect(() => {
+    console.log("IN TIMEOUT FUNC");
     const timerId = setTimeout(() => {
-      handleChange(value);
+      if (handleChange) {
+        handleChange(value);
+      }
     }, 1000);
 
     return () => {
+      console.log("CLEARING TIMEOUT");
       clearTimeout(timerId);
     };
   }, [value]);
