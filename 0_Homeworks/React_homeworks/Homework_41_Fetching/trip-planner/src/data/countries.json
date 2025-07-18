@@ -1,0 +1,202 @@
+[
+  {
+    "name": { "common": "Germany" },
+    "capital": ["Berlin"],
+    "region": "Europe",
+    "area": 357022,
+    "image": "https://flagcdn.com/w640/de.png",
+    "population": 83000000,
+    "landlocked": false,
+    "description": "Germany is a major European country known for its strong economy, cultural heritage, and historical landmarks."
+  },
+  {
+    "name": { "common": "Switzerland" },
+    "capital": ["Bern"],
+    "region": "Europe",
+    "area": 41285,
+    "image": "https://flagcdn.com/w640/ch.png",
+    "population": 8600000,
+    "landlocked": true,
+    "description": "Switzerland is a landlocked country known for its neutrality, banking system, and Alpine scenery."
+  },
+  {
+    "name": { "common": "Brazil" },
+    "capital": ["Brasília"],
+    "region": "Americas",
+    "area": 8515767,
+    "image": "https://flagcdn.com/w640/br.png",
+    "population": 211000000,
+    "landlocked": false,
+    "description": "Brazil is the largest country in South America, famous for the Amazon rainforest and vibrant culture."
+  },
+  {
+    "name": { "common": "Nepal" },
+    "capital": ["Kathmandu"],
+    "region": "Asia",
+    "area": 147181,
+    "image": "https://flagcdn.com/w640/np.png",
+    "population": 30000000,
+    "landlocked": true,
+    "description": "Nepal is a landlocked Himalayan country, home to Mount Everest and rich cultural traditions."
+  },
+  {
+    "name": { "common": "Canada" },
+    "capital": ["Ottawa"],
+    "region": "Americas",
+    "area": 9984670,
+    "image": "https://flagcdn.com/w640/ca.png",
+    "population": 38000000,
+    "landlocked": false,
+    "description": "Canada is the second-largest country in the world, known for its natural landscapes and multicultural society."
+  },
+  {
+    "name": { "common": "Australia" },
+    "capital": ["Canberra"],
+    "region": "Oceania",
+    "area": 7692024,
+    "image": "https://flagcdn.com/w640/au.png",
+    "population": 25000000,
+    "landlocked": false,
+    "description": "Australia is a vast island nation famous for its wildlife, beaches, and the Outback."
+  },
+  {
+    "name": { "common": "Egypt" },
+    "capital": ["Cairo"],
+    "region": "Africa",
+    "area": 1002450,
+    "image": "https://flagcdn.com/w640/eg.png",
+    "population": 102000000,
+    "landlocked": false,
+    "description": "Egypt is a historic country known for ancient civilization, the Nile River, and the pyramids."
+  },
+  {
+    "name": { "common": "Austria" },
+    "capital": ["Vienna"],
+    "region": "Europe",
+    "area": 83879,
+    "image": "https://flagcdn.com/w640/at.png",
+    "population": 8900000,
+    "landlocked": true,
+    "description": "Austria is a landlocked country in Central Europe, known for classical music, the Alps, and elegant cities."
+  },
+  {
+    "name": { "common": "Japan" },
+    "capital": ["Tokyo"],
+    "region": "Asia",
+    "area": 377975,
+    "image": "https://flagcdn.com/w640/jp.png",
+    "population": 126000000,
+    "landlocked": false,
+    "description": "Japan is an island nation famous for its technology, tradition, cuisine, and cherry blossoms."
+  },
+  {
+    "name": { "common": "Chad" },
+    "capital": ["N'Djamena"],
+    "region": "Africa",
+    "area": 1284000,
+    "image": "https://flagcdn.com/w640/td.png",
+    "population": 16400000,
+    "landlocked": true,
+    "description": "Chad is a landlocked country in Central Africa, with desert landscapes and diverse cultures."
+  },
+  {
+    "name": { "common": "France" },
+    "capital": ["Paris"],
+    "region": "Europe",
+    "area": 551695,
+    "image": "https://flagcdn.com/w640/fr.png",
+    "population": 67000000,
+    "landlocked": false,
+    "description": "France is a Western European country known for its art, fashion, cuisine, and historical landmarks like the Eiffel Tower."
+  },
+  {
+    "name": { "common": "India" },
+    "capital": ["New Delhi"],
+    "region": "Asia",
+    "area": 3287263,
+    "image": "https://flagcdn.com/w640/in.png",
+    "population": 1393000000,
+    "landlocked": false,
+    "description": "India is a South Asian nation with a rich cultural heritage, diverse geography, and the world's largest democracy."
+  },
+  {
+    "name": { "common": "Nigeria" },
+    "capital": ["Abuja"],
+    "region": "Africa",
+    "area": 923769,
+    "image": "https://flagcdn.com/w640/ng.png",
+    "population": 206000000,
+    "landlocked": false,
+    "description": "Nigeria is Africa’s most populous country, known for its oil wealth, Nollywood, and vibrant culture."
+  },
+  {
+    "name": { "common": "Mexico" },
+    "capital": ["Mexico City"],
+    "region": "Americas",
+    "area": 1964375,
+    "image": "https://flagcdn.com/w640/mx.png",
+    "population": 126000000,
+    "landlocked": false,
+    "description": "Mexico is a North American country rich in history, ancient civilizations, and colorful traditions."
+  },
+  {
+    "name": { "common": "New Zealand" },
+    "capital": ["Wellington"],
+    "region": "Oceania",
+    "area": 268021,
+    "image": "https://flagcdn.com/w640/nz.png",
+    "population": 5000000,
+    "landlocked": false,
+    "description": "New Zealand is an island nation known for its stunning landscapes, Maori culture, and adventure sports."
+  },
+  {
+    "name": { "common": "Italy" },
+    "capital": ["Rome"],
+    "region": "Europe",
+    "area": 301340,
+    "image": "https://flagcdn.com/w640/it.png",
+    "population": 60000000,
+    "landlocked": false,
+    "description": "Italy is a European country with a rich history in art, architecture, cuisine, and the Roman Empire."
+  },
+  {
+    "name": { "common": "Pakistan" },
+    "capital": ["Islamabad"],
+    "region": "Asia",
+    "area": 881912,
+    "image": "https://flagcdn.com/w640/pk.png",
+    "population": 225000000,
+    "landlocked": false,
+    "description": "Pakistan is a South Asian country with diverse geography and a mix of ancient and modern cultures."
+  },
+  {
+    "name": { "common": "Ethiopia" },
+    "capital": ["Addis Ababa"],
+    "region": "Africa",
+    "area": 1104300,
+    "image": "https://flagcdn.com/w640/et.png",
+    "population": 115000000,
+    "landlocked": true,
+    "description": "Ethiopia is a landlocked country in East Africa known for its unique history, highlands, and ancient traditions."
+  },
+  {
+    "name": { "common": "Argentina" },
+    "capital": ["Buenos Aires"],
+    "region": "Americas",
+    "area": 2780400,
+    "image": "https://flagcdn.com/w640/ar.png",
+    "population": 45000000,
+    "landlocked": false,
+    "description": "Argentina is a South American country famous for tango, the Andes, and its vibrant cities."
+  },
+  {
+    "name": { "common": "Fiji" },
+    "capital": ["Suva"],
+    "region": "Oceania",
+    "area": 18274,
+    "image": "https://flagcdn.com/w640/fj.png",
+    "population": 900000,
+    "landlocked": false,
+    "description": "Fiji is an island nation in the South Pacific known for its tropical beauty, coral reefs, and hospitality."
+  }
+]
