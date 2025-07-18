@@ -8,7 +8,7 @@ function Search({ handleChange }: SearchProps) {
   const [value, setValue] = useState("");
 
   useEffect(() => {
-    console.log("IN TIMEOUT FUNC");
+    // console.log("IN TIMEOUT FUNC");
     const timerId = setTimeout(() => {
       if (handleChange) {
         handleChange(value);
@@ -16,7 +16,7 @@ function Search({ handleChange }: SearchProps) {
     }, 1000);
 
     return () => {
-      console.log("CLEARING TIMEOUT");
+      // console.log("CLEARING TIMEOUT");
       clearTimeout(timerId);
     };
   }, [value]);

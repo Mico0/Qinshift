@@ -56,7 +56,7 @@ export function Page({ title, children, page }: PageProps) {
     }
   }
 
-  console.log("Countries selected", countries);
+  // console.log("Countries selected", countries);
 
   return (
     <div className="Page">

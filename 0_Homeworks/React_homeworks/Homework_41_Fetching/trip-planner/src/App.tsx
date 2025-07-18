@@ -22,7 +22,7 @@ function App() {
       );
       return data;
     } catch (error) {
-      console.log(error.message as Error);
+      console.log(error);
     }
   };
 
