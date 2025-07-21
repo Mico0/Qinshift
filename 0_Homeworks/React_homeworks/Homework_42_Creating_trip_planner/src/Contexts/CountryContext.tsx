@@ -5,10 +5,12 @@ import Spinner from "../Components/Spinner/Spinner.tsx";
 
 interface CountryContextInterface {
   countries: Country[];
+  addToTripPlanner: (selectedCountry: Country) => void;
 }
 
 export const CountryContext = createContext<CountryContextInterface>({
   countries: [],
+  addToTripPlanner() {},
 });
 
 function CountryContextProvider({
@@ -63,12 +65,29 @@ function CountryContextProvider({
     fetchCountries();
   }, [initRegion]);
 
+  function addToTripPlanner(selectedCountry: Country) {
+    setCountries((prevCountries) => {
+      return prevCountries.map((country) => {
+        if (
+          country.name.common.toLowerCase() ===
+          selectedCountry.name.common.toLowerCase()
+        ) {
+          country.days = 1;
+          country.countryInTripPlanner = true;
+          console.log(country);
+          return country;
+        }
+        return country;
+      });
+    });
+  }
+
   return (
     <>
       {isLoading ? (
         <Spinner />
       ) : (
-        <CountryContext.Provider value={{ countries }}>
+        <CountryContext.Provider value={{ countries, addToTripPlanner }}>
           {children}
         </CountryContext.Provider>
       )}

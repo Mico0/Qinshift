@@ -44,13 +44,8 @@ export function Page({ title, children }: PageProps) {
         {children}
         {filteredCountries.map((country) => (
           <CountryCard
-            key={country.name.common}
-            image={country.flags.png}
-            title={country.name.common}
-            capital={country.capital.map((capital) => capital)}
-            area={Number(country.area)}
-            population={Number(country.population)}
-            landlocked={country.landlocked}
+            key={country.name.common.toLowerCase()}
+            country={country}
             className={
               country.landlocked
                 ? "CountryCard card green"

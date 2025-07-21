@@ -11,4 +11,6 @@ export interface Country {
   };
   population: number;
   landlocked: boolean;
+  countryInTripPlanner: boolean;
+  days: number;
 }

@@ -3,9 +3,10 @@ import "./Button.css";
 interface ButtonProps {
   icon: string;
   children?: React.ReactNode;
+  onBtnClick: () => void;
 }
 
-function Button({ icon, children }: ButtonProps) {
+function Button({ icon, children, onBtnClick }: ButtonProps) {
   let chosenIcon;
 
   if (icon === "add") {
@@ -15,7 +16,7 @@ function Button({ icon, children }: ButtonProps) {
         xmlSpace="preserve"
         viewBox="-10 0 80 80"
       >
-        <g fill-rule="evenodd" clip-rule="evenodd">
+        <g fillRule="evenodd" clipRule="evenodd">
           <path
             fill="#00AFD0"
             d="M56 28a2 2 0 0 1-2-2l-.002-.026.002-.036C54 13.82 44.15 4 32 4s-22 9.82-22 21.938l.002.036L10 26c0 .056.007.111.01.167.005.427.026.861.065 1.302a21.885 21.885 0 0 0 1.689 7.169C16.116 46.682 27.37 59.75 32 59.75c3.321 0 10.01-6.69 15.145-14.901l.012.007A2.046 2.046 0 0 1 48.819 44c1.135 0 2.056.919 2.056 2.056 0 .468-.162.895-.427 1.241C44.551 56.592 36.608 64 32 64c-6.766 0-20.337-15.474-24.647-29.765a25.826 25.826 0 0 1-1.251-6.242A22.172 22.172 0 0 1 6 26C6 11.642 17.642 0 32 0c14.359 0 26 11.642 26 26a2 2 0 0 1-2 2zm-2 4a2 2 0 1 1 .001 3.999A2 2 0 0 1 54 32z"
@@ -29,7 +30,11 @@ function Button({ icon, children }: ButtonProps) {
     );
   } else if (icon === "delete") {
     chosenIcon = (
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 0 80 80">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlSpace="preserve"
+        viewBox="-4 0 30 30"
+      >
         <g data-name="30.Pin">
           <path d="M13.376 24h-2.752l-.282-.248C10 23.455 2 16.38 2 10a10 10 0 0 1 20 0c0 6.38-8 13.455-8.342 13.752zm-1.99-2h1.227C13.979 20.735 20 14.877 20 10a8 8 0 0 0-16 0c0 4.886 6.021 10.737 7.386 12z" />
           <path d="M8 9h8v2H8z" />
@@ -39,7 +44,7 @@ function Button({ icon, children }: ButtonProps) {
   }
 
   return (
-    <button className="Btn">
+    <button className="Btn" onClick={onBtnClick}>
       <div className="sign">{chosenIcon}</div>
 
       <div className="text">{children}</div>

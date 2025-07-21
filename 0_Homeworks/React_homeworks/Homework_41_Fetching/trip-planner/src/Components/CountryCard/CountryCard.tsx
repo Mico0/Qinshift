@@ -1,47 +1,35 @@
 import "./CountryCard.css";
+import type { Country } from "../../models/country.model";
 
 interface CountryCardProps {
-  image: string;
-  title: string;
-  capital: string[];
-  area: number;
-  population: number;
-  landlocked: boolean;
+  country: Country;
   className: string;
 }
 
-function CountryCard({
-  image,
-  title,
-  capital,
-  area,
-  population,
-  landlocked,
-  className,
-}: CountryCardProps) {
+function CountryCard({ country, className }: CountryCardProps) {
   return (
     <div className={className}>
-      <img src={image} alt="" />
+      <img src={country.flags.png} alt={country.flags.alt} />
       <h2>
-        <b>{title}</b>
+        <b>{country.name.common}</b>
       </h2>
       <p>
-        <b>Capital:</b> {capital}{" "}
+        <b>Capital:</b> {country.capital}
       </p>
       <p>
-        <b>Area:</b> {area} km<sup>2</sup>
+        <b>Area:</b> {country.area} km<sup>2</sup>
       </p>
       <p>
-        <b>Population:</b> {population}
+        <b>Population:</b> {country.population}
       </p>
 
-      {landlocked ? (
+      {country.landlocked ? (
         <p className="mb-4">
-          <b>{title}</b> is a landlocked country
+          <b>{country.name.common}</b> is a landlocked country
         </p>
       ) : (
         <p className="mb-4">
-          <b>{title}</b> is not a landlocked country
+          <b>{country.name.common}</b> is not a landlocked country
         </p>
       )}
     </div>
