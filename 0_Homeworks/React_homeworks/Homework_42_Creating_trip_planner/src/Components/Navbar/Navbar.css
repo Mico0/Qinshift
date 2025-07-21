@@ -1,0 +1,18 @@
+.Navbar #trip-planner {
+  width: 13rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border: 3px solid var(--tea-green);
+  border-radius: 20px;
+  background-color: var(--cornsilk);
+  svg {
+    width: 25px;
+    margin-right: 0.5rem;
+  }
+}
+
+.Navbar #trip-planner a {
+  background: none;
+}
