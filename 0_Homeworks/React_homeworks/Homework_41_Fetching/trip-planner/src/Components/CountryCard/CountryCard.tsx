@@ -3,19 +3,47 @@ import "./CountryCard.css";
 interface CountryCardProps {
   image: string;
   title: string;
-  description: string;
-  style?: React.CSSProperties;
+  capital: string[];
+  area: number;
+  population: number;
+  landlocked: boolean;
+  className: string;
 }
 
-function CountryCard({ image, title, description, style }: CountryCardProps) {
+function CountryCard({
+  image,
+  title,
+  capital,
+  area,
+  population,
+  landlocked,
+  className,
+}: CountryCardProps) {
   return (
-    <div className="CountryCard" style={{ ...style }}>
-      <img src={image} alt={title} />
+    <div className={className}>
+      <img src={image} alt="" />
+      <h2>
+        <b>{title}</b>
+      </h2>
+      <p>
+        <b>Capital:</b> {capital}{" "}
+      </p>
+      <p>
+        <b>Area:</b> {area} km<sup>2</sup>
+      </p>
+      <p>
+        <b>Population:</b> {population}
+      </p>
 
-      <div className="CountryCard__content">
-        <p className="CountryCard__title">{title}</p>
-        <p className="CountryCard__description">{description}</p>
-      </div>
+      {landlocked ? (
+        <p className="mb-4">
+          <b>{title}</b> is a landlocked country
+        </p>
+      ) : (
+        <p className="mb-4">
+          <b>{title}</b> is not a landlocked country
+        </p>
+      )}
     </div>
   );
 }

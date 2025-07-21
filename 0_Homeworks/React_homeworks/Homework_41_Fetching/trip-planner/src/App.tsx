@@ -1,7 +1,7 @@
 import "./App.css";
+import CountryContextProvider from "./Contexts/CountryContext";
 import Footer from "./Layout/Footer/Footer";
 import Header from "./Layout/Header/Header";
-import httpService from "./service/httpService.js";
 
 import { Page } from "./Page/Page";
 import { Route, Routes, useLocation } from "react-router-dom";
@@ -13,20 +13,8 @@ function App() {
       ? "Home"
       : pathname.slice(1, pathname.length).toUpperCase();
 
-  console.log("PAGE IS:", page);
+  // console.log("PAGE IS:", page);
 
-  const axiosFetch = async () => {
-    try {
-      const { data } = await httpService.get(
-        'all?fields=name,capital,region,area,flags,population,landlocked"'
-      );
-      return data;
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  console.log(axiosFetch());
   return (
     <div className="App">
       <Header />
@@ -35,28 +23,50 @@ function App() {
           <Route
             path="/"
             element={
-              <Page page={page} title="10 most popular tourist destinations" />
+              <CountryContextProvider initRegion={page}>
+                <Page title="10 most popular tourist destinations" />
+              </CountryContextProvider>
             }
           />
           <Route
             path="/europe"
-            element={<Page title={page} page={page}></Page>}
+            element={
+              <CountryContextProvider initRegion={page}>
+                <Page title={page} />
+              </CountryContextProvider>
+            }
           />
           <Route
             path="/asia"
-            element={<Page title={page} page={page}></Page>}
+            element={
+              <CountryContextProvider initRegion={page}>
+                <Page title={page} />
+              </CountryContextProvider>
+            }
           />
           <Route
             path="/africa"
-            element={<Page title={page} page={page}></Page>}
+            element={
+              <CountryContextProvider initRegion={page}>
+                <Page title={page} />
+              </CountryContextProvider>
+            }
           />
           <Route
             path="/oceania"
-            element={<Page title={page} page={page}></Page>}
+            element={
+              <CountryContextProvider initRegion={page}>
+                <Page title={page} />
+              </CountryContextProvider>
+            }
           />
           <Route
             path="/americas"
-            element={<Page title={page} page={page}></Page>}
+            element={
+              <CountryContextProvider initRegion={page}>
+                <Page title={page} />
+              </CountryContextProvider>
+            }
           />
         </Routes>
       </main>

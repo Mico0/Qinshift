@@ -1,66 +1,78 @@
-.CountryCard {
-  position: relative;
+.CountryCard.card {
   width: 300px;
-  height: 200px;
-  background-position: center;
-  border-radius: 10px;
+  height: 430px;
+  padding: 1rem;
+  background: white;
+  position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  place-content: center;
+  place-items: center;
   overflow: hidden;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  padding: 2rem;
-  padding: 100px;
-  background: rgba(0, 0, 0, 0.096);
+  border-radius: 20px;
+  filter: drop-shadow(10px 10px 8px var(--tea-green))
+    drop-shadow(-10px -10px 8px var(--tea-green));
+  gap: 0.7rem;
+  flex-direction: column;
 }
 
-.CountryCard img {
-  max-width: 300px;
-
-  fill: #333;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  object-fit: contain;
+.CountryCard.card h2 {
+  z-index: 1;
+  color: var(--tea-green);
+  text-decoration: underline;
+  filter: drop-shadow(10px 10px 8px var(--papaya));
+  font-size: 2em;
+  text-align: center;
+  text-wrap: wrap;
 }
 
-.CountryCard:hover {
-  transform: rotate(-5deg) scale(1.1);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+.CountryCard.card p {
+  z-index: 1;
 }
 
-.CountryCard__content {
+.CountryCard.card img {
+  margin-top: 1rem;
+  border-radius: 20px;
+  z-index: 1;
+  width: 9rem;
+}
+
+.CountryCard.card.green::before {
+  content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-45deg);
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  box-sizing: border-box;
-  background-color: #fff;
-  opacity: 0;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  width: 100px;
+  background-image: linear-gradient(180deg, var(--tea-green), var(--tea-green));
+  height: 130%;
+  animation: rotBGimg 3s linear 1;
+  transition: all 1s linear;
+}
+.CountryCard.card.blue::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  background-image: linear-gradient(180deg, #26aee7, #26aee7);
+  height: 130%;
+  animation: rotBGimg 3s linear 1;
+  transition: all 1s linear;
 }
 
-.CountryCard:hover .CountryCard__content {
-  transform: translate(-50%, -50%) rotate(0deg);
-  opacity: 1;
+@keyframes rotBGimg {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.CountryCard__title {
-  margin: 0;
-  font-size: 24px;
-  color: #333;
-  font-weight: 700;
+.CountryCard.card::after {
+  content: "";
+  position: absolute;
+  background: var(--papaya);
+  inset: 8px;
+  border-radius: 15px;
 }
-
-.CountryCard__description {
-  margin: 10px 0 0;
-  font-size: 14px;
-  color: #777;
-  line-height: 1.4;
-}
-
-.CountryCard:hover svg {
-  scale: 0;
-  transform: rotate(-45deg);
-}
+/* .card:hover:before {
+  background-image: linear-gradient(180deg, rgb(81, 255, 0), purple);
+  animation: rotBGimg 3.5s linear infinite;
+} */

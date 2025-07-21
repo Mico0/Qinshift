@@ -1,58 +1,34 @@
-import { useEffect, useState, type ReactNode } from "react";
+import { useContext, useEffect, useState, type ReactNode } from "react";
 import "./Page.css";
-import type { Country } from "../models/country.model";
 import CountryCard from "../Components/CountryCard/CountryCard";
 import Search from "../Components/Search/Search";
-import COUNTRIES from "../data/countries.json";
+import { CountryContext } from "../Contexts/CountryContext";
+import type { Country } from "../models/country.model";
 
 interface PageProps {
-  page: string;
   title?: string;
   children?: ReactNode;
 }
 
-export function Page({ title, children, page }: PageProps) {
-  const topCountries = COUNTRIES.slice(0, 10);
-  const [countries, setCountries] = useState<Country[]>([]);
-
-  const borderProperties = {
-    width: "15px",
-    colorGreen: "var(--tea-green)",
-    colorBlue: "#26AEE7",
-  };
+export function Page({ title, children }: PageProps) {
+  const { countries } = useContext(CountryContext);
+  const [filteredCountries, setFilteredCountries] = useState<Country[]>([]);
 
   useEffect(() => {
-    if (page !== "Home") {
-      // console.log("Not homepage");
-
-      const newData = [...COUNTRIES].filter(
-        (country) => country.region.toLowerCase() === page.toLowerCase()
-      );
-      if (JSON.stringify(newData) !== JSON.stringify(countries)) {
-        setCountries(newData);
-      }
-    } else {
-      if (JSON.stringify(topCountries) !== JSON.stringify(countries)) {
-        setCountries(topCountries);
-      }
-    }
-  }, [page]);
+    setFilteredCountries(countries);
+  }, [countries]);
 
   function handleSearchInput(input: string) {
     if (!input) {
-      // console.log("Homepage and input empty");
-
-      setCountries(topCountries);
-
-      return;
-    } else if (input) {
+      setFilteredCountries(countries);
+    } else {
       // console.log("Homepage and not empty");
 
-      const newData = [...COUNTRIES].filter((country) =>
+      const newData = countries.filter((country) =>
         country.name.common.toLowerCase().includes(input.toLowerCase())
       );
 
-      setCountries(newData);
+      setFilteredCountries(newData);
     }
   }
 
@@ -62,24 +38,23 @@ export function Page({ title, children, page }: PageProps) {
     <div className="Page">
       <section className="container">
         <h2 className="pageTitle">{title}</h2>
-        {page === "Home" && <Search handleChange={handleSearchInput} />}
+        {title === "10 most popular tourist destinations" && (
+          <Search handleChange={handleSearchInput} />
+        )}
         {children}
-        {countries.map((country) => (
+        {filteredCountries.map((country) => (
           <CountryCard
             key={country.name.common}
-            image={country.image}
+            image={country.flags.png}
             title={country.name.common}
-            description={country.description}
-            style={
-              country.landlocked === true
-                ? {
-                    borderLeftColor: borderProperties.colorGreen,
-                    borderLeftWidth: borderProperties.width,
-                  }
-                : {
-                    borderLeftColor: borderProperties.colorBlue,
-                    borderLeftWidth: borderProperties.width,
-                  }
+            capital={country.capital.map((capital) => capital)}
+            area={Number(country.area)}
+            population={Number(country.population)}
+            landlocked={country.landlocked}
+            className={
+              country.landlocked
+                ? "CountryCard card green"
+                : "CountryCard card blue"
             }
           />
         ))}

@@ -10,6 +10,7 @@ function Search({ handleChange }: SearchProps) {
   useEffect(() => {
     // console.log("IN TIMEOUT FUNC");
     const timerId = setTimeout(() => {
+      // console.log(value);
       if (handleChange) {
         handleChange(value);
       }
@@ -34,7 +35,7 @@ function Search({ handleChange }: SearchProps) {
       <input
         onChange={(e) => setValue(e.target.value)}
         value={value}
-        type="email"
+        type="text"
         placeholder="Search for a country"
         className="w-full outline-none bg-transparent text-gray-600 text-sm"
       />

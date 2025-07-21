@@ -5,8 +5,10 @@ export interface Country {
   capital: string[];
   region: string;
   area: number;
-  image: string;
+  flags: {
+    png: string;
+    alt: string;
+  };
   population: number;
   landlocked: boolean;
-  description: string;
 }
