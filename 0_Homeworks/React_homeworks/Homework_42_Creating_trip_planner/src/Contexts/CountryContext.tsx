@@ -94,6 +94,7 @@ function CountryContextProvider({
         )
       ) {
         toast.info("Country already in planner");
+
         return prevCountries;
       }
 
@@ -102,8 +103,11 @@ function CountryContextProvider({
         days: 1,
         countryInTripPlanner: true,
       };
+
       const updated = [...prevCountries, countryToAdd];
+
       saveToLocalStorage(updated);
+
       toast.success("Country added to planner");
       return updated;
     });
@@ -114,8 +118,11 @@ function CountryContextProvider({
       const updated = prevCountries.filter(
         (country) => country.name.common !== selectedCountry.name.common
       );
+
       saveToLocalStorage(updated);
+
       toast.warning("Country removed from planner");
+
       return updated;
     });
   }
@@ -126,9 +133,12 @@ function CountryContextProvider({
         if (country.name.common === selectedCountry.name.common) {
           return { ...country, days: country.days + 1 };
         }
+
         return country;
       });
+
       saveToLocalStorage(updated);
+
       return updated;
     });
   };
