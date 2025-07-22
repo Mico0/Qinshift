@@ -42,11 +42,10 @@ function CountryContextProvider({
       }
       // console.log(data);
 
-      const countries: Country[] = dataCountries;
-
       // console.log(initRegion);
 
-      const result = initRegion === "Home" ? countries.slice(0, 10) : countries;
+      const result =
+        initRegion === "Home" ? dataCountries.slice(0, 10) : dataCountries;
 
       setCountries(result);
 

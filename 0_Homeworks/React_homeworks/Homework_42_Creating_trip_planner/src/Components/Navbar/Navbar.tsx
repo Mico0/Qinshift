@@ -30,9 +30,7 @@ export default function Navbar() {
             </g>
           </svg>
 
-          <Link onClick={} to="trip-planner">
-            Trip Planner
-          </Link>
+          <Link to="trip-planner">Trip Planner</Link>
         </li>
       </ul>
     </nav>
