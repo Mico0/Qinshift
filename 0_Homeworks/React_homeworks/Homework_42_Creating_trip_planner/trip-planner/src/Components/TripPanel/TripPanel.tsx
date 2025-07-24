@@ -15,6 +15,7 @@ function TripPanel({ country }: TripPanelProps) {
     <div className="p-2 flex items-center justify-center gap-4 flex-wrap text-center sm:justify-between ">
       <label htmlFor="countryDays">Number of days to visit: </label>
       <button
+        disabled={country.days === 1}
         onClick={() => removeDays(country)}
         className="p-2 text-2xl cursor-pointer"
       >
@@ -30,6 +31,7 @@ function TripPanel({ country }: TripPanelProps) {
         value={country.days}
       />
       <button
+        disabled={country.days === 30}
         onClick={() => addDays(country)}
         className="p-2 text-2xl cursor-pointer"
       >
