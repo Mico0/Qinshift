@@ -20,64 +20,20 @@ function App() {
     <div className="App">
       <Header />
       <main>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <CountryContextProvider initRegion={page}>
-                <Page title="10 most popular tourist destinations" />
-              </CountryContextProvider>
-            }
-          />
-          <Route
-            path="/europe"
-            element={
-              <CountryContextProvider initRegion={page}>
-                <Page title={page} />
-              </CountryContextProvider>
-            }
-          />
-          <Route
-            path="/asia"
-            element={
-              <CountryContextProvider initRegion={page}>
-                <Page title={page} />
-              </CountryContextProvider>
-            }
-          />
-          <Route
-            path="/africa"
-            element={
-              <CountryContextProvider initRegion={page}>
-                <Page title={page} />
-              </CountryContextProvider>
-            }
-          />
-          <Route
-            path="/oceania"
-            element={
-              <CountryContextProvider initRegion={page}>
-                <Page title={page} />
-              </CountryContextProvider>
-            }
-          />
-          <Route
-            path="/americas"
-            element={
-              <CountryContextProvider initRegion={page}>
-                <Page title={page} />
-              </CountryContextProvider>
-            }
-          />
-          <Route
-            path="/trip-planner"
-            element={
-              <CountryContextProvider initRegion={page}>
-                <TripPlanner />
-              </CountryContextProvider>
-            }
-          />
-        </Routes>
+        <CountryContextProvider initRegion={page}>
+          <Routes>
+            <Route
+              path="/"
+              element={<Page title="10 most popular tourist destinations" />}
+            />
+            <Route path="/europe" element={<Page title={page} />} />
+            <Route path="/asia" element={<Page title={page} />} />
+            <Route path="/africa" element={<Page title={page} />} />
+            <Route path="/oceania" element={<Page title={page} />} />
+            <Route path="/americas" element={<Page title={page} />} />
+            <Route path="/trip-planner" element={<TripPlanner />} />
+          </Routes>
+        </CountryContextProvider>
       </main>
       <Footer />
     </div>

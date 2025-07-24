@@ -8,7 +8,7 @@ function TripList() {
 
   const countries = getTripPlanner();
 
-  console.log(countries);
+  // console.log(countries);
 
   return (
     <div className=" w-full  p-4 shadow-md rounded-lg border-t-2 border-[var(--tea-green)]">

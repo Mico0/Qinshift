@@ -11,11 +11,14 @@ function TripPanel({ country }: TripPanelProps) {
   const { removeFromTripPlanner, addDays, removeDays } =
     useContext(CountryContext);
 
+  const MIN_DAYS = 1;
+  const MAX_DAYS = 30;
+
   return (
     <div className="p-2 flex items-center justify-center gap-4 flex-wrap text-center sm:justify-between ">
       <label htmlFor="countryDays">Number of days to visit: </label>
       <button
-        disabled={country.days === 1}
+        disabled={country.days === MIN_DAYS}
         onClick={() => removeDays(country)}
         className="p-2 text-2xl cursor-pointer"
       >
@@ -26,12 +29,13 @@ function TripPanel({ country }: TripPanelProps) {
         name="countryDays"
         id="countryDays"
         className="border w-20 rounded-md p-2 border-[var(--tea-green)] shadow-md text-center bg-[var(--cornsilk)]"
-        max={30}
-        min={1}
+        max={MAX_DAYS}
+        min={MIN_DAYS}
+        onChange={() => {}}
         value={country.days}
       />
       <button
-        disabled={country.days === 30}
+        disabled={country.days === MAX_DAYS}
         onClick={() => addDays(country)}
         className="p-2 text-2xl cursor-pointer"
       >

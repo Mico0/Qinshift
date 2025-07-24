@@ -51,7 +51,7 @@ function CountryContextProvider({
     try {
       // console.log("IN FETCH");
 
-      // console.log(initRegion);
+      console.log(initRegion);
       if (initRegion !== "Home" && initRegion !== "TRIP-PLANNER") {
         const { data } = await httpService.get(
           `/region/${initRegion.toLowerCase()}?fields=name,capital,region,area,flags,population,landlocked`
