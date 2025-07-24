@@ -22,7 +22,7 @@ function TripList() {
             className="grid gap-3 m-4  grid-cols-1 bg-[var(--papaya)]"
             id="accordion-collapse-body-1"
           >
-            <div className="flex flex-wrap md:flex-nowrap border-[var(--tea-green)] border-2 items-center justify-between rounded-md transition duration-500 shadow-sm hover:shadow-md hover:shadow-teal-600">
+            <div className="flex flex-wrap md:flex-nowrap border-[var(--tea-green)] border-2 items-center justify-center md:justify-between rounded-md transition duration-500 shadow-sm hover:shadow-md hover:shadow-teal-600">
               <div className="w-20 p-2 shrink-0">
                 <img
                   src={item.flags.png}

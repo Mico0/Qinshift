@@ -86,14 +86,14 @@ function CountryContextProvider({
   }, [initRegion]);
 
   function addToTripPlanner(selectedCountry: Country) {
+    let alreadyExists = false;
     setTripPlanner((prevCountries) => {
       if (
         prevCountries.some(
           (country) => country.name.common === selectedCountry.name.common
         )
       ) {
-        toast.info("Country already in planner");
-
+        alreadyExists = true;
         return prevCountries;
       }
 
@@ -107,9 +107,13 @@ function CountryContextProvider({
 
       saveToLocalStorage(updated);
 
-      toast.success("Country added to planner");
       return updated;
     });
+    if (alreadyExists) {
+      toast.info("Country already in planner");
+    } else {
+      toast.success("Country added to planner");
+    }
   }
 
   function removeFromTripPlanner(selectedCountry: Country) {
@@ -120,10 +124,9 @@ function CountryContextProvider({
 
       saveToLocalStorage(updated);
 
-      toast.warning("Country removed from planner");
-
       return updated;
     });
+    toast.warning("Country removed from planner");
   }
 
   const addDays = (selectedCountry: Country) => {
