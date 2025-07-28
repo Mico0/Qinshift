@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { formValidations } from "./formValidations";
 import { saveToLocalStorage } from "../../service/localStorage";
+import { toast } from "react-toastify";
 
 export interface AddTripValues {
   passengerName: string;
@@ -26,7 +27,7 @@ export default function AddTripInformation() {
     saveToLocalStorage("passengerInfo", undefined, formValue);
     navigate("/trip-planner");
   }
-  console.log(errors);
+  // console.log(Object.keys(errors).length === 0);
   return (
     <div className="bg-[var(--papaya)]  border-4 border-[var(--tea-green)] rounded-lg shadow-2xl relative m-2 md:m-10">
       <div className="flex items-center justify-center p-5 border-b-4 rounded-t border-[var(--tea-green)]">
@@ -133,15 +134,14 @@ export default function AddTripInformation() {
             </div>
           </div>
           <div className="p-6  mt-4 border-t border-[var(--tea-green)] rounded-b flex items-center justify-center">
-            <Button icon="add" type="submit" disabled={!errors}>
+            <Button icon="add" type="submit">
               Add trip
             </Button>
           </div>
-          {isSubmitSuccessful && (
-            <h4 className="text-green-800 p-2">
-              You have successfully submitted your information
-            </h4>
-          )}
+          {isSubmitSuccessful &&
+            toast.success(
+              "You have successfully entered your passenger information"
+            )}
         </form>
       </div>
     </div>

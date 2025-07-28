@@ -12,7 +12,7 @@ function TripList() {
   const countries = getTripPlanner();
   const passenger: AddTripValues = loadFromLocalStorage("passengerInfo");
 
-  console.log(passenger);
+  // console.log(passenger);
 
   return (
     <div className=" w-full  p-4 shadow-md rounded-lg border-t-2 border-[var(--tea-green)]">
@@ -20,7 +20,7 @@ function TripList() {
         <p className="font-bold text-xl">Your Trip Planner</p>
       </div>
 
-      {passenger && (
+      {(Array.isArray(passenger) && passenger.length) !== 0 && (
         <PassengerCard
           passengerName={passenger?.passengerName}
           budget={passenger?.budget}

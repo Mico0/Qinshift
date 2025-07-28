@@ -33,7 +33,7 @@ function App() {
             <Route path="/oceania" element={<Page title={page} />} />
             <Route path="/americas" element={<Page title={page} />} />
             <Route path="/trip-planner" element={<TripPlanner />} />
-            <Route path="/add-trip" element={<AddTripInformation />} />
+            <Route path="/add-trip-info" element={<AddTripInformation />} />
           </Routes>
         </CountryContextProvider>
       </main>

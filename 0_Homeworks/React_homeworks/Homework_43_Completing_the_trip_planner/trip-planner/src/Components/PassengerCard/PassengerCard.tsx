@@ -10,7 +10,7 @@ export default function PassengerCard({
   comments,
 }: PassengerCardProps) {
   return (
-    <div className="profile-card w-[250px] md:w-[400px] m-auto rounded-md shadow-xl overflow-hidden z-[100] relative cursor-pointer snap-start shrink-0 bg-[var(--papaya)] flex flex-col items-center justify-center gap-4 transition-all duration-300 group">
+    <div className="profile-card w-[250px] md:w-[400px] m-auto rounded-md shadow-xl overflow-hidden z-[100] relative snap-start shrink-0 bg-[var(--papaya)] flex flex-col items-center justify-center gap-4 transition-all duration-300 group">
       <div className="avatar w-full pt-5 flex items-center justify-center flex-col gap-4">
         <div className="img_container w-full flex items-center justify-center relative z-40 after:absolute after:h-[6px] after:w-full after:bg-[var(--tea-green)] after:top-4 after:group-hover:size-[1%] after:delay-300 after:group-hover:delay-0 after:group-hover:transition-all after:group-hover:duration-300 after:transition-all after:duration-300 before:absolute before:h-[6px] before:w-full before:bg-[var(--tea-green)] before:bottom-4 before:group-hover:size-[1%] before:delay-300 before:group-hover:delay-0 before:group-hover:transition-all before:group-hover:duration-300 before:transition-all before:duration-300">
           <svg
@@ -27,12 +27,16 @@ export default function PassengerCard({
           <div className="absolute bg-[var(--tea-green)] z-10 size-[60%] w-full group-hover:size-[1%] group-hover:transition-all group-hover:duration-300 transition-all duration-300 delay-700 group-hover:delay-0"></div>
         </div>
       </div>
-      <div className="headings *:text-center *:leading-4">
-        <p className="my-1 text-xl font-serif font-semibold text-[#434955]">
-          {passengerName}
+      <div className="headings *:text-left *:leading-4">
+        <p className="my-1 text-xl font-semibold text-[#434955]">
+          Passenger: {passengerName}
         </p>
-        <p className="my-1 text-sm font-semibold text-[#434955]">{budget}</p>
-        <p className="my-1 text-sm font-semibold text-[#434955]">{comments}</p>
+        <p className="my-2 text-sm font-semibold text-[#434955]">
+          Budget: {budget}$
+        </p>
+        <p className="my-2 text-sm font-semibold text-[#434955]">
+          Comments: {comments}
+        </p>
       </div>
 
       <hr className="w-full group-hover:h-5 h-3 bg-[var(--tea-green)] group-hover:transition-all group-hover:duration-300 transition-all duration-300" />

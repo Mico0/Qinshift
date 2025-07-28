@@ -1,8 +1,5 @@
 .Navbar #trip-planner {
-  width: 13rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 14rem;
   padding: 0.5rem;
   border: 3px solid var(--tea-green);
   border-radius: 20px;
@@ -10,6 +7,11 @@
   svg {
     width: 25px;
     margin-right: 0.5rem;
+  }
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
