@@ -8,7 +8,6 @@ import {
 } from "../service/localStorage.ts";
 import { toast, ToastContainer } from "react-toastify";
 import { Slide } from "react-toastify/unstyled";
-import type { AddTripValues } from "../Pages/AddTripInformation/AddTripInformation.tsx";
 
 interface CountryContextInterface {
   countries: Country[];
@@ -17,6 +16,7 @@ interface CountryContextInterface {
   addDays: (selectedCountry: Country) => void;
   removeDays: (selectedCountry: Country) => void;
   getTripPlanner: () => Country[];
+  removeAllFromTripPlanner: () => void;
 }
 
 export const CountryContext = createContext<CountryContextInterface>({
@@ -28,6 +28,7 @@ export const CountryContext = createContext<CountryContextInterface>({
   getTripPlanner() {
     return [];
   },
+  removeAllFromTripPlanner() {},
 });
 
 function CountryContextProvider({
@@ -57,7 +58,8 @@ function CountryContextProvider({
       if (
         initRegion !== "Home" &&
         initRegion !== "TRIP-PLANNER" &&
-        initRegion !== "ADD-TRIP-INFO"
+        initRegion !== "ADD-TRIP-INFO" &&
+        initRegion !== "TRIPS"
       ) {
         const { data } = await httpService.get(
           `/region/${initRegion.toLowerCase()}?fields=name,capital,region,area,flags,population,landlocked`
@@ -135,6 +137,14 @@ function CountryContextProvider({
     toast.warning("Country removed from planner");
   }
 
+  function removeAllFromTripPlanner() {
+    localStorage.removeItem("tripPlanner");
+
+    setTripPlanner([]);
+
+    toast.success("Trip planner cleared");
+  }
+
   const addDays = (selectedCountry: Country) => {
     setTripPlanner((prevCountries) => {
       const updated = prevCountries.map((country) => {
@@ -189,6 +199,7 @@ function CountryContextProvider({
               addDays,
               removeDays,
               getTripPlanner,
+              removeAllFromTripPlanner,
             }}
           >
             {children}

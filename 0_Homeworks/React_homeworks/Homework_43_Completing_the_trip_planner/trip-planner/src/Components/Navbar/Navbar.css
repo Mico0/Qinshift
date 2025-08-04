@@ -1,4 +1,5 @@
-.Navbar #trip-planner {
+.Navbar #trip-planner,
+#trips {
   width: 14rem;
   padding: 0.5rem;
   border: 3px solid var(--tea-green);

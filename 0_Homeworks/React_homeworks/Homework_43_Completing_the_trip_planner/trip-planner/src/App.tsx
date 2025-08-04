@@ -7,6 +7,7 @@ import { Page } from "./Page/Page";
 import { Route, Routes, useLocation } from "react-router-dom";
 import TripPlanner from "./Pages/TripPlanner/TripPlanner";
 import AddTripInformation from "./Pages/AddTripInformation/AddTripInformation";
+import AllTrips from "./Pages/AllTrips/AllTrips";
 
 function App() {
   const { pathname } = useLocation();
@@ -34,6 +35,7 @@ function App() {
             <Route path="/americas" element={<Page title={page} />} />
             <Route path="/trip-planner" element={<TripPlanner />} />
             <Route path="/add-trip-info" element={<AddTripInformation />} />
+            <Route path="/trips" element={<AllTrips />} />
           </Routes>
         </CountryContextProvider>
       </main>

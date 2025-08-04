@@ -2,8 +2,14 @@ import Button from "../../Components/Button/Button";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { formValidations } from "./formValidations";
-import { saveToLocalStorage } from "../../service/localStorage";
+import {
+  loadFromLocalStorage,
+  saveToLocalStorage,
+} from "../../service/localStorage";
 import { toast } from "react-toastify";
+import type { Country } from "../../models/country.model";
+import { CountryContext } from "../../Contexts/CountryContext";
+import { useContext } from "react";
 
 export interface AddTripValues {
   passengerName: string;
@@ -13,19 +19,46 @@ export interface AddTripValues {
   comments: string;
 }
 
+export interface TripInfo {
+  passenger: {
+    passengerName: string;
+    budget: string;
+    comments: string;
+  };
+  countries: Country[];
+}
+
 export default function AddTripInformation() {
+  const { removeAllFromTripPlanner } = useContext(CountryContext);
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitSuccessful },
+    formState: { errors },
   } = useForm<AddTripValues>();
 
   const navigate = useNavigate();
 
+  const countries: Country[] = loadFromLocalStorage("tripPlanner");
+
   function onSubmit(formValue: AddTripValues) {
-    // console.log(formValue);
-    saveToLocalStorage("passengerInfo", undefined, formValue);
-    navigate("/trip-planner");
+    const tripInfoArray: TripInfo = {
+      passenger: {
+        passengerName: formValue.passengerName,
+        budget: formValue.budget,
+        comments: formValue.comments,
+      },
+      countries: countries,
+    };
+
+    const existingData: TripInfo[] =
+      loadFromLocalStorage("passengerInfo") || [];
+
+    const updatedData: any = [...existingData, tripInfoArray];
+
+    saveToLocalStorage("passengerInfo", undefined, updatedData);
+    removeAllFromTripPlanner();
+    toast.success("You have successfully entered your passenger information");
+    navigate("/trips");
   }
   // console.log(Object.keys(errors).length === 0);
   return (
@@ -138,10 +171,6 @@ export default function AddTripInformation() {
               Add trip
             </Button>
           </div>
-          {isSubmitSuccessful &&
-            toast.success(
-              "You have successfully entered your passenger information"
-            )}
         </form>
       </div>
     </div>

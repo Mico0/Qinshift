@@ -2,15 +2,14 @@ import { useContext } from "react";
 import type { Country } from "../../models/country.model";
 import { CountryContext } from "../../Contexts/CountryContext";
 import TripPanel from "../TripPanel/TripPanel.js";
-import PassengerCard from "../PassengerCard/PassengerCard.js";
-import { loadFromLocalStorage } from "../../service/localStorage.js";
-import type { AddTripValues } from "../../Pages/AddTripInformation/AddTripInformation.js";
+
+import Button from "../Button/Button.js";
+import { Link } from "react-router-dom";
 
 function TripList() {
   const { getTripPlanner } = useContext(CountryContext);
 
   const countries = getTripPlanner();
-  const passenger: AddTripValues = loadFromLocalStorage("passengerInfo");
 
   // console.log(passenger);
 
@@ -20,15 +19,8 @@ function TripList() {
         <p className="font-bold text-xl">Your Trip Planner</p>
       </div>
 
-      {(Array.isArray(passenger) && passenger.length) !== 0 && (
-        <PassengerCard
-          passengerName={passenger?.passengerName}
-          budget={passenger?.budget}
-          comments={passenger?.comments}
-        />
-      )}
-
       {countries.map((item: Country) => {
+        console.log(item.flags.png);
         return (
           <div
             key={item.name.common.toLowerCase()}
@@ -51,6 +43,13 @@ function TripList() {
           </div>
         );
       })}
+      {countries.length > 0 && (
+        <Link to="/add-trip-info">
+          <Button style={{ margin: "0 auto" }} icon="add">
+            Confirm trip
+          </Button>
+        </Link>
+      )}
     </div>
   );
 }

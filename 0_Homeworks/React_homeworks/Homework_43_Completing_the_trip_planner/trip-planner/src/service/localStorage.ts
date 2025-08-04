@@ -1,10 +1,10 @@
 import type { Country } from "../models/country.model";
-import type { AddTripValues } from "../Pages/AddTripInformation/AddTripInformation";
+import type { TripInfo } from "../Pages/AddTripInformation/AddTripInformation";
 
 export const saveToLocalStorage = (
   key: string,
   countries?: Country[],
-  tripInfo?: AddTripValues
+  tripInfo?: TripInfo[]
 ) => {
   let result;
 
