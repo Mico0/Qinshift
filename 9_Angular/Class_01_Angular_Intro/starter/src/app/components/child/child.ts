@@ -8,11 +8,10 @@ import { Component, input, output } from '@angular/core';
 })
 export class Child {
   parentTitle = input<string>();
-
   titleOutput = output<string>();
 
   onTitleSend() {
-    console.log('On title send called');
-    this.titleOutput.emit('Title from ze CHILD');
+    console.log('on title send called');
+    this.titleOutput.emit('I AM THE TITLE FROM THE CHILD');
   }
 }

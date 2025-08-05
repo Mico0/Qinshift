@@ -13,7 +13,7 @@ export class Parent {
   titleFromChild = '';
 
   onTitleRecieve(newTitle: string) {
-    console.log('Event recieved from the child');
     this.titleFromChild = newTitle;
+    console.log('EVENT RECIEVED FROM THE CHILD');
   }
 }
