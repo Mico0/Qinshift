@@ -1,9 +1,12 @@
 <div>
   <h2>Parent Component</h2>
-  <h4>Title from the child: {{ titleFromChild }}</h4>
+  <h4 [style]="{ color: colorFromChild }">
+    Title from the child: {{ titleFromChild }}
+  </h4>
 
   <app-child
     [parentTitle]="parentTitle"
     (titleOutput)="onTitleRecieve($event)"
+    (colorOutput)="onColorRecieve($event)"
   />
 </div>

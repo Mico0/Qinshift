@@ -9,9 +9,15 @@ import { Component, input, output } from '@angular/core';
 export class Child {
   parentTitle = input<string>();
   titleOutput = output<string>();
+  colorOutput = output<string>();
 
   onTitleSend() {
     console.log('on title send called');
     this.titleOutput.emit('I AM THE TITLE FROM THE CHILD');
+  }
+
+  onChangeColor() {
+    console.log('Color change called');
+    this.colorOutput.emit('red');
   }
 }

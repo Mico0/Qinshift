@@ -11,9 +11,14 @@ export class Parent {
   parentTitle = 'I COME FROM THE PARENT';
 
   titleFromChild = '';
+  colorFromChild = '';
 
   onTitleRecieve(newTitle: string) {
     this.titleFromChild = newTitle;
     console.log('EVENT RECIEVED FROM THE CHILD');
+  }
+
+  onColorRecieve(newColor: string) {
+    this.colorFromChild = newColor;
   }
 }
