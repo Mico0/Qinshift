@@ -1,0 +1,47 @@
+<div class="ticket-panel">
+  <div class="panel-controls">
+    <button
+      (click)="filterTicketByStatus(ticketStatus.NEW)"
+      class="control-btn"
+    >
+      NEW
+    </button>
+    <button
+      (click)="filterTicketByStatus(ticketStatus.IN_PROGRESS)"
+      class="control-btn"
+    >
+      IN PROGRESS
+    </button>
+    <button
+      (click)="filterTicketByStatus(ticketStatus.DONE)"
+      class="control-btn"
+    >
+      DONE
+    </button>
+    <button (click)="filteredTickets.set(ticketList())" class="control-btn">
+      RESET
+    </button>
+  </div>
+  <div class="panel-container">
+    <div class="ticket-list">
+      @for (ticket of filteredTickets(); track ticket.id) {
+      <app-ticket-box
+        [ticket]="ticket"
+        (ticketOutput)="onTicketSelect($event)"
+      />
+      }
+    </div>
+    @if (isDetailsShown()) {
+    <app-ticket-details
+      [selectedTicket]="selectedTicket()"
+      (hideOutput)="isDetailsShown.set(false)"
+    />
+    }
+  </div>
+</div>
+
+<!-- <ol>
+  @for (ticket of ticketList(); track ticket.id) {
+  <li>{{ ticket.title }} < = > {{ ticket.description }}</li>
+  }
+</ol> -->

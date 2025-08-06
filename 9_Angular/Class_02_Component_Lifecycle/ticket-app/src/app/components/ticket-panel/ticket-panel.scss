@@ -1,0 +1,17 @@
+.ticket-panel {
+  .panel-controls {
+    display: flex;
+    gap: 10px;
+  }
+
+  .control-btn {
+    min-width: 100px;
+    transition: 0.15s;
+    border: 1px solid lightgray;
+    padding: 5px 0;
+
+    &:hover {
+      transform: translateY(-3px);
+    }
+  }
+}
