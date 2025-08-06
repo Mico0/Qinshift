@@ -1,3 +1,4 @@
+import { CssSelector } from '@angular/compiler';
 import { Component, input, output } from '@angular/core';
 
 @Component({
@@ -9,7 +10,7 @@ import { Component, input, output } from '@angular/core';
 export class Child {
   parentTitle = input<string>();
   titleOutput = output<string>();
-  colorOutput = output<string>();
+  colorOutput = output<{ color: string }>();
 
   onTitleSend() {
     console.log('on title send called');
@@ -18,6 +19,6 @@ export class Child {
 
   onChangeColor() {
     console.log('Color change called');
-    this.colorOutput.emit('red');
+    this.colorOutput.emit({ color: 'red' });
   }
 }
