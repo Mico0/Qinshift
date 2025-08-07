@@ -1,16 +1,1 @@
-<div class="ticket-details">
-  @if (selectedTicket()) {
-  <h3>Ticket: {{ selectedTicket().title }}</h3>
-  <div>Description: {{ selectedTicket().description }}</div>
-
-  <p>
-    <strong [ngClass]="selectedTicket().status"
-      >Status: {{ selectedTicket().status }}</strong
-    >
-  </p>
-  <button (click)="onClearClick()">Clear</button>
-
-  }@else {
-  <p>No ticket selected</p>
-  }
-</div>
+<p>ticket-details works!</p>

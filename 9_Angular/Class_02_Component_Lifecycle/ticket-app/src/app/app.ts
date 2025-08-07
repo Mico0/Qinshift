@@ -1,5 +1,4 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
 import { Ticket, TicketStatus } from './models/ticket.model';
 import { TicketPanel } from './components/ticket-panel/ticket-panel';
 
@@ -10,51 +9,45 @@ import { TicketPanel } from './components/ticket-panel/ticket-panel';
   styleUrl: './app.scss',
 })
 export class App {
-  title = 'Issue tracker';
+  title = 'Issue Tracker';
 
   ticketList: Ticket[] = [
     {
       id: 1,
-      title: 'Fix login bug',
-      description: 'Users cannot log in with correct credentials.',
+      title: 'Mouse doesnt work',
+      description: 'My mouse stopped working. Please help!',
+      assignee: 'Jon Doe',
       status: TicketStatus.NEW,
     },
     {
       id: 2,
-      title: 'Add password reset feature',
-      description: 'Allow users to reset their password via email.',
-      status: TicketStatus.IN_PROGRESS,
+      title: 'Monitor doesnt work',
+      description: 'My monitor stopped working. Please help!',
+      assignee: 'Jane Doe',
+      status: TicketStatus.NEW,
     },
     {
       id: 3,
-      title: 'Optimize dashboard loading time',
-      description: 'Dashboard takes too long to load on slower connections.',
-      status: TicketStatus.DONE,
+      title: 'Keyboard doesnt work',
+      description:
+        'My keyboard stopped working. I spilled soda on it. Please help!',
+      assignee: 'Jack Smith',
+      status: TicketStatus.IN_PROGRESS,
     },
     {
       id: 4,
-      title: 'Update user onboarding flow',
-      description: 'Redesign the onboarding steps to improve UX.',
+      title: 'Car doesnt work',
+      description: 'My car stopped working. I spilled soda on it. Please help!',
+      assignee: 'Jon Doe',
       status: TicketStatus.IN_PROGRESS,
     },
     {
       id: 5,
-      title: 'Resolve payment gateway error',
-      description: 'Transactions fail intermittently with Stripe API.',
-      status: TicketStatus.NEW,
-    },
-    {
-      id: 6,
-      title: 'Refactor user profile component',
-      description: 'Improve readability and reusability of profile code.',
-      status: TicketStatus.DONE,
-    },
-    {
-      id: 7,
-      title: 'Implement dark mode toggle',
+      title: 'Computer doesnt work',
       description:
-        'Users should be able to switch between light and dark themes.',
-      status: TicketStatus.NEW,
+        'My computer stopped working. It fell from the third floor! Please help!',
+      assignee: 'Nick Jacobs',
+      status: TicketStatus.DONE,
     },
   ];
 }
