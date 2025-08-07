@@ -1,15 +1,53 @@
 <div class="ticket-panel">
   <div class="panel-controls">
-    <button class="control-btn">NEW</button>
-    <button class="control-btn">IN PROGRESS</button>
-    <button class="control-btn">DONE</button>
-    <button class="control-btn">RESET</button>
+    <button
+      class="control-btn"
+      (click)="filterTicketByStatus(ticketStatus.NEW)"
+    >
+      NEW
+    </button>
+    <button
+      class="control-btn"
+      (click)="filterTicketByStatus(ticketStatus.IN_PROGRESS)"
+    >
+      IN PROGRESS
+    </button>
+    <button
+      class="control-btn"
+      (click)="filterTicketByStatus(ticketStatus.DONE)"
+    >
+      DONE
+    </button>
+    <button class="control-btn" (click)="filteredTickets.set(ticketList())">
+      RESET
+    </button>
   </div>
   <div class="panel-container">
-    <!-- <ol>
-  @for (ticket of ticketList(); track ticket.id) {
-    <li>{{ ticket.title }} | {{ ticket.assignee }}</li>
-  }
-</ol> -->
+    <div class="ticket-list">
+      @for (ticket of filteredTickets(); track ticket.id) {
+        <app-ticket-box
+          [ticket]="ticket"
+          (ticketOutput)="onTicketSelect($event)"
+        />
+      }
+    </div>
+    @if (isDetailsShown()) {
+      <!-- Signals can have their values set directly in the template without the need of template method wrappers -->
+      <app-ticket-details
+        [selectedTicket]="selectedTicket()"
+        (hideOutput)="isDetailsShown.set(false)"
+      />
+    }
+    <!-- Legacy way of conditional rednering with structural directives -->
+    <!-- <app-ticket-box
+        *ngFor="let ticket of filteredTickets()"
+        [ticket]="ticket"
+        (ticketOutput)="onTicketSelect($event)"
+      /> -->
+    <!-- <app-ticket-details
+      *ngIf="isDetailsShown()"
+      [selectedTicket]="selectedTicket()"
+      (hideOutput)="isDetailsShown.set(false)"
+    /> -->
   </div>
 </div>

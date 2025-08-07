@@ -1,4 +1,8 @@
 .ticket-panel {
+  .panel-container {
+    display: flex;
+  }
+
   .panel-controls {
     display: flex;
     gap: 10px;

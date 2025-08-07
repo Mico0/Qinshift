@@ -1,0 +1,22 @@
+.ticket-details {
+  border: 1.5px solid lightgray;
+  padding: 10px;
+  margin: 10px;
+  width: 350px;
+  border-radius: 4px;
+}
+
+.new {
+  color: #2ecc71;
+  text-transform: uppercase;
+}
+
+.in-progress {
+  color: #f1c40f;
+  text-transform: uppercase;
+}
+
+.done {
+  color: #2980b9;
+  text-transform: uppercase;
+}
