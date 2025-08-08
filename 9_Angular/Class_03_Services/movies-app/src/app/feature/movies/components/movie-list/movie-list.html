@@ -1,0 +1,12 @@
+<section class="movie-list container">
+  <h2>Reviews</h2>
+  <div class="list-content">
+    <ul>
+      @for (movie of movies(); track movie.id) {
+        <li (click)="onMovieItemClick(movie)">
+          <app-movie-item [movie]="movie" />
+        </li>
+      }
+    </ul>
+  </div>
+</section>
