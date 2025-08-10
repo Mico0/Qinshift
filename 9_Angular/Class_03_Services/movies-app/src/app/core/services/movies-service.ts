@@ -20,4 +20,18 @@ export class MoviesService {
     console.log('The selected movie is ', movie);
     this.selectedMovie.set(movie);
   }
+
+  addLikeDislike(type: 'LIKE' | 'DISLIKE', movieId: number) {
+    //Update works with a callback in which it accepts the previous value
+    this.movies.update((prevMovies) =>
+      prevMovies.map((movie) => {
+        if (movie.id !== movieId) return movie;
+
+        if (type === 'LIKE') movie.likeCount = movie.likeCount + 1;
+        if (type === 'DISLIKE') movie.likeCount = movie.likeCount - 1;
+
+        return movie;
+      }),
+    );
+  }
 }

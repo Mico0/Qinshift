@@ -23,6 +23,18 @@
       <p>
         <em>{{ selectedMovie().author }}</em>
       </p>
+      <div class="details-controls">
+        <app-button
+          iconClass="fa-solid fa-thumbs-up"
+          [style]="{ backgroundColor: '#B5DFB2' }"
+          (btnClick)="onClickLikeDislike('LIKE')"
+        />
+        <app-button
+          iconClass="fa-solid fa-thumbs-down"
+          [style]="{ backgroundColor: '#fe9a9a' }"
+          (btnClick)="onClickLikeDislike('DISLIKE')"
+        />
+      </div>
     </div>
   } @else {
     <div class="details-heading">

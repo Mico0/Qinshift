@@ -1,9 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { MoviesService } from '../../../../core/services/movies-service';
+import { Button } from '../../../../shared/components/button/button';
 
 @Component({
   selector: 'app-movie-details',
-  imports: [],
+  imports: [Button],
   templateUrl: './movie-details.html',
   styleUrl: './movie-details.scss',
 })
@@ -12,4 +13,9 @@ export class MovieDetails {
 
   //This is a referen e to the property in the service, not a new signal/object
   selectedMovie = this.moviesService.selectedMovie;
+
+  onClickLikeDislike(type: 'LIKE' | 'DISLIKE') {
+    console.log('like or dislike clicked with: ', type);
+    this.moviesService.addLikeDislike(type, this.selectedMovie().id);
+  }
 }
