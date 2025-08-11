@@ -1,3 +1,17 @@
 <header class="header">
   <h1>Movies App / Services</h1>
+  <div class="count-display">
+    <strong
+      >Total Likes:
+      <span class="likes-count">
+        {{ totalLikes() }} <i class="fa-regular fa-thumbs-up"></i>
+      </span>
+    </strong>
+    <strong>
+      Avg Rating:
+      <span class="likes-count">
+        {{ avgRating().toFixed(2) }} / 10 <i class="fa-regular fa-star"></i>
+      </span>
+    </strong>
+  </div>
 </header>

@@ -16,6 +16,7 @@ export class MovieList implements OnInit {
   private moviesService = inject(MoviesService);
 
   //This is a reference to the signal that is defined in the service, it is not a copy (changing this wrongly will also change the source in the service)
+  //This is only here because we need to use the movies from the movies service in the template of the component
   movies = this.moviesService.movies;
 
   ngOnInit(): void {
