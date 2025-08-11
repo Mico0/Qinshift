@@ -1,6 +1,6 @@
 import { Task, TaskStatus } from './models/task.model';
 
-const tasksMock: Task[] = [
+export const tasksMock: Task[] = [
   {
     id: 1,
     name: 'Set up project repository',

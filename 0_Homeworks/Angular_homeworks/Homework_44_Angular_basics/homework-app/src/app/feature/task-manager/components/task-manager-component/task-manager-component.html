@@ -1,1 +1,7 @@
-<p>task-manager-component works!</p>
+<ul>
+  @for (task of tasks(); track task.id) {
+  <li>
+    <app-task-item [task]="task" />
+  </li>
+  }
+</ul>

@@ -1,0 +1,10 @@
+<div class="card">
+  <div class="head">{{ task().name }}</div>
+  <div class="content">
+    <p>{{ task().description }}</p>
+    <div [ngClass]="`status ${task().status}`">{{ task().status }}</div>
+    <button [ngClass]="'button'" (click)="onUpdateClick(task())">
+      Update Status
+    </button>
+  </div>
+</div>
