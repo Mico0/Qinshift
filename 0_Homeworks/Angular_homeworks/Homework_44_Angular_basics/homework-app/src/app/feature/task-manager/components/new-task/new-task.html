@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="head">Add a new task</div>
+  <div class="content">
+    <label for="name">Task Name:</label>
+    <br />
+    <input type="text" name="name" id="name" (change)="onNameChange($event)" />
+    <br /><br />
+    <label for="description">Task Description:</label><br />
+    <textarea
+      name="description"
+      id="description"
+      (change)="onDescriptionChange($event)"
+    ></textarea>
+  </div>
+  <div class="controls">
+    <app-button [text]="'Add task'" (onClick)="onAddTask()" />
+  </div>
+</div>

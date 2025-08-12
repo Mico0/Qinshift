@@ -1,0 +1,11 @@
+<div class="card">
+  <div class="head">Task Statistics</div>
+  <div class="content">
+    <h4>New Tasks: {{ newTasks() }}</h4>
+    <h4>In-Progress: Tasks: {{ inProgressTasks() }}</h4>
+    <h4>Completed Tasks: {{ completedTasks() }}</h4>
+  </div>
+  <div class="controls">
+    <app-button [text]="'Clear Tasks'" (onClick)="onRemoveTask()" />
+  </div>
+</div>

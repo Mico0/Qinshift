@@ -3,8 +3,22 @@
   <div class="content">
     <p>{{ task().description }}</p>
     <div [ngClass]="`status ${task().status}`">{{ task().status }}</div>
-    <button [ngClass]="'button'" (click)="onUpdateClick(task())">
-      Update Status
-    </button>
+    <div class="controls">
+      <app-button
+        [text]="'Mark as:\nNew'"
+        [btnClass]="'new'"
+        (onClick)="onUpdateClick(task(), 'new')"
+      />
+      <app-button
+        [text]="'Mark as:\nIn-Progress'"
+        [btnClass]="'in-progress'"
+        (onClick)="onUpdateClick(task(), 'in-progress')"
+      />
+      <app-button
+        [text]="'Mark as:\nDone'"
+        [btnClass]="'done'"
+        (onClick)="onUpdateClick(task(), 'done')"
+      />
+    </div>
   </div>
 </div>
