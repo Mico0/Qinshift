@@ -9,16 +9,21 @@ import { Movie } from '../../models/movie-model';
   styleUrl: './movie-list.scss',
 })
 export class MovieList implements OnInit {
-  private movieService = inject(MoviesService);
+  private moviesService = inject(MoviesService);
+
   movies: Movie[] = [];
 
-  ngOnInit(): void {
-    this.movieService.movies$.subscribe((value) => {
-      console.log('event emmited');
+  ngOnInit() {
+    this.moviesService.movies$.subscribe((value) => {
+      console.log('EVENT EMITTED');
       console.log(value);
       this.movies = value;
     });
 
-    this.movieService.loadMovies();
+    this.moviesService.loadMovies();
+  }
+
+  onMovieClick(movie: Movie) {
+    this.moviesService.onMovieSelect(movie);
   }
 }

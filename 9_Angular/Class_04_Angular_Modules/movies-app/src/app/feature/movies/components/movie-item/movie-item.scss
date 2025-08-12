@@ -1,0 +1,16 @@
+.movie-item {
+  background-color: white;
+  padding: 15px;
+  border: 1.5px solid #090c08;
+  margin: 25px 5px;
+  color: #474056;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .fa-thumbs-up {
+    color: black;
+  }
+}
