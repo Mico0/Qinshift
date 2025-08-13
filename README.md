@@ -25,26 +25,6 @@ Inside you’ll find **presentations, exercises, class code, and homework assign
 
 ---
 
-## 📅 Learning Progress Timeline
-
-timeline
-    title Qinshift Full Stack Web Dev Journey
-    section ✅ Completed
-      HTML & CSS : 7 months ago
-      JavaScript Basics : 7 months ago
-      Advanced JavaScript : 6 months ago
-      Node.js : 4 months ago
-      DB Design : 4 months ago
-      NestJS : 2 months ago
-      React : last month
-      Angular : yesterday
-    section 🚧 In Progress
-      Module Homeworks : today
-    section 📌 Upcoming
-      Final Project : coming soon
-
----
-
 ## 🚀 Getting Started
 
 1. **Clone the repository**:
@@ -67,5 +47,6 @@ timeline
 > *"Every commit is a step forward in the journey."* 📈
 
 ---
+
 
 
