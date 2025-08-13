@@ -3,55 +3,50 @@
 ## 📌 About This Repository
 
 Welcome to the **Qinshift Full Stack Web Development Academy** GitHub repository! 🎓  
-This repository contains **learning materials, exercises, and homework** for mastering full stack web development. This is my journey to full stack **MEAN / MEARN**
-
-## 📚 Covered Technologies
-
-Below are the core technologies you'll learn, along with their respective icons for easy recognition:
-
-### 1. ![HTML5](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg) **HTML5**
-
-- Learn the **fundamentals of web structure** using semantic HTML.
-- Master forms, multimedia, and accessibility best practices.
-
-### 2. ![CSS3](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg) **CSS3**
-
-- Explore **styling techniques** using modern CSS.
-- Understand Flexbox, Grid, animations, and responsive design.
-
-### 3. ![JavaScript](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg) **JavaScript**
-
-- Build **dynamic and interactive** web applications.
-- Work with ES6+ features, event handling, and APIs.
-
-### 4. ![Advanced JavaScript](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg) **Advanced JavaScript**
-
-- Deep dive into **asynchronous programming**, closures, and design patterns.
-- Explore **functional programming**, modules, and performance optimization.
-
-### 5. ![Node.js](https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg) **Node.js**
-
-- Learn **server-side JavaScript** with Node.js.
-- Build REST APIs, work with databases, and use Express.js.
-
-#### To be continued...
+This is my documented journey toward becoming a **Full Stack MEAN / MERN Developer**.  
+Inside you’ll find **presentations, exercises, class code, and homework assignments** — neatly organized into modules.
 
 ---
 
-## 🚀 Get Started
+## 📚 Modules & Technologies Covered
 
-1.  **Clone this repository** to your local machine:
+| #  | Module | Icon | Topics |
+|----|--------|------|--------|
+| 0  | **Homeworks** | <img src="https://cdn-icons-png.flaticon.com/512/3039/3039381.png" width="20"/> | Assignments & practice challenges |
+| 1  | **HTML5** | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="20"/> | Semantic structure, forms, accessibility |
+| 2  | **CSS3** | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="20"/> | Styling, Flexbox, Grid, animations, responsiveness |
+| 3  | **JavaScript** | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="20"/> | Core syntax, DOM, events, ES6+ |
+| 4  | **Advanced JavaScript** | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="20"/> | Closures, async/await, modular JS, patterns |
+| 5  | **Node.js** | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="20"/> | Server-side JS, Express, REST APIs, DB integration |
+| 6  | **DB Design** | <img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png" width="20"/> | Database schemas, ER diagrams, SQL/NoSQL |
+| 7  | **NestJS** | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg" width="20"/> | Scalable backend, TypeScript, dependency injection |
+| 8  | **React** | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="20"/> | Components, hooks, state management, UI interactivity |
+| 9  | **Angular** | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" width="20"/> | TypeScript-based front-end, services, routing |
 
-    ```sh
-    git clone https://github.com/QinshiftAcademy/fullstack-web-dev.git
+---
 
-    ```
+## 🚀 Getting Started
 
-2.  **Navigate into the project folder:**
+1. **Clone the repository**:
 
-    ```sh
-    cd fullstack-web-dev
+   ```sh
+   git clone https://github.com/QinshiftAcademy/fullstack-web-dev.git
+   ```
 
-    ```
+2. **Navigate into the project folder**:
 
-🔗 Practice makes it perfect 🎉
+   ```sh
+   cd fullstack-web-dev
+   ```
+
+---
+
+## 💡 Motivation & Mindset
+
+> *"Code. Break. Debug. Learn. Repeat."* 🎯
+> *"Every commit is a step forward in the journey."* 📈
+
+---
+
+
+
