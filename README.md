@@ -1,9 +1,3 @@
-Got it ✅
-Here’s your **final complete `README.md`** — everything in one place: modules table, timeline, getting started, quotes — formatted cleanly and ready to paste into GitHub.
-
----
-
-````markdown
 # 🚀 Qinshift Full Stack Web Development Academy
 
 ## 📌 About This Repository
@@ -33,7 +27,7 @@ Inside you’ll find **presentations, exercises, class code, and homework assign
 
 ## 📅 Learning Progress Timeline
 
-```mermaid
+mermaid
 %%{init: {'theme':'default', 'themeVariables': { 'primaryColor': '#d1f5d3', 'primaryBorderColor': '#3ba55c', 'primaryTextColor': '#000', 'doneTaskColor': '#a8e6cf', 'activeTaskColor': '#ffd54f', 'futureTaskColor': '#81d4fa'}}}%%
 timeline
     title Qinshift Full Stack Web Dev Journey
@@ -50,7 +44,6 @@ timeline
       Module Homeworks : today
     section 📌 Upcoming
       Final Project : coming soon
-````
 
 ---
 
@@ -76,3 +69,4 @@ timeline
 > *"Every commit is a step forward in the journey."* 📈
 
 ---
+
