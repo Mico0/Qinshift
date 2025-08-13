@@ -27,8 +27,6 @@ Inside you’ll find **presentations, exercises, class code, and homework assign
 
 ## 📅 Learning Progress Timeline
 
-mermaid
-%%{init: {'theme':'default', 'themeVariables': { 'primaryColor': '#d1f5d3', 'primaryBorderColor': '#3ba55c', 'primaryTextColor': '#000', 'doneTaskColor': '#a8e6cf', 'activeTaskColor': '#ffd54f', 'futureTaskColor': '#81d4fa'}}}%%
 timeline
     title Qinshift Full Stack Web Dev Journey
     section ✅ Completed
@@ -69,4 +67,5 @@ timeline
 > *"Every commit is a step forward in the journey."* 📈
 
 ---
+
 
