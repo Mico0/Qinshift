@@ -1,0 +1,27 @@
+.movie-list {
+  .movies-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+      font-size: 20px;
+    }
+  }
+
+  .sort-container {
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .list-content {
+    font-size: 20px;
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+  }
+}
