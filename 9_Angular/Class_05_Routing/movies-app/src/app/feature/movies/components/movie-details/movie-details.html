@@ -13,13 +13,30 @@
     </div>
     <div class="details-body">
       <h3>Movie Details</h3>
-      <div class="details-body">
+      <div>
         <p>Year: {{ selectedMovie().year }}</p>
         <p>Director: {{ selectedMovie().director }}</p>
         <p>Genres: {{ selectedMovie().genres }}</p>
       </div>
       <h3>Review</h3>
       <p>{{ selectedMovie().text }}</p>
+    </div>
+    <div class="details-footer">
+      <p>
+        <em>{{ selectedMovie().author }}</em>
+      </p>
+      <div class="details-controls">
+        <app-button
+          iconClass="fa-solid fa-thumbs-up"
+          (btnClick)="onClickLikeDislike('LIKE')"
+          [style]="{ backgroundColor: 'lightgreen' }"
+        />
+        <app-button
+          iconClass="fa-solid fa-thumbs-down"
+          (btnClick)="onClickLikeDislike('DISLIKE')"
+          [style]="{ backgroundColor: 'lightpink' }"
+        />
+      </div>
     </div>
   } @else {
     <div class="details-heading">
