@@ -15,13 +15,24 @@ export const routes: Routes = [
     path: 'about',
     component: About,
   },
+  // {
+  //   path: 'movies',
+  //   component: MovieList,
+  // },
   {
     path: 'movies',
-    component: MovieList,
+    //* The import must be a correct path to the component ts file
+    loadComponent: () =>
+      import('./feature/movies/components/movie-list/movie-list').then(
+        (c) => c.MovieList,
+      ),
   },
   {
     path: 'movies/:id',
-    component: MovieDetails,
+    loadComponent: () =>
+      import('./feature/movies/components/movie-details/movie-details').then(
+        (c) => c.MovieDetails,
+      ),
   },
   {
     path: 'add-movie',

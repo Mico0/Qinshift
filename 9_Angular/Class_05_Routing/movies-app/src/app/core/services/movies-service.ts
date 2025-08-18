@@ -20,8 +20,14 @@ export class MoviesService {
       this.movies().length,
   );
 
-  getMovies() {
-    fetch(MOVIES_URL)
+  getMovies(sortBy: 'rating' | 'likeCount') {
+    let url = MOVIES_URL;
+
+    if (sortBy) {
+      url = `${url}?_sort=-${sortBy}`;
+    }
+
+    fetch(url)
       .then((res) => res.json())
       .then((value: Movie[]) => {
         console.log('this is the value from the get movies fetch', value);
