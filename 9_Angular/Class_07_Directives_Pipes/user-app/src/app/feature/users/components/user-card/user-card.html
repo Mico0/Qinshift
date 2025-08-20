@@ -1,0 +1,33 @@
+<div class="user" appHoverShadow>
+  <div class="user-header">
+    <div class="user-id">{{ user().id }}</div>
+    <div>
+      <div>{{ user().name | uppercase }}</div>
+      <div>{{ user().email | lowercase }}</div>
+    </div>
+  </div>
+  <div class="user-details">
+    <h3>Personal Details</h3>
+    <div class="details-item">
+      <p>Phone: {{ user().phone }}</p>
+      <p>Website: {{ user().website }}</p>
+      <p>Birthdate: {{ user().dateOfBirth | date: "short" }}</p>
+    </div>
+    <div class="details-item">
+      <p>Hourly Rate: {{ user().hourlyRate | currency: "EUR" }}</p>
+      <p>Rating: {{ user().rating | number: "1.1-4" }}</p>
+      <p>Rating %: {{ user().rating | percent: "1.1-3" }}</p>
+    </div>
+  </div>
+  <div class="address-container" appToggleAddress [isInitiallyOpen]="true">
+    <h3>Address 🔽</h3>
+    <div class="address-details">
+      <div class="address-content">
+        <p>Street: {{ user().address.street }}</p>
+        <p>Suite: {{ user().address.suite }}</p>
+        <p>City: {{ user().address.city | shorten: 6 }}</p>
+        <p>Zipcode: {{ user().address.zipcode }}</p>
+      </div>
+    </div>
+  </div>
+</div>
