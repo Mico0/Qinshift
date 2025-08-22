@@ -1,0 +1,7 @@
+<ul>
+  @for (job of jobs(); track job.id ) {
+  <li>
+    <app-job-card [job]="job" />
+  </li>
+  }
+</ul>

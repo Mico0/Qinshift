@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header">
+    <h4 class="company-name">{{ job().companyName }}</h4>
+    <img
+      [src]="job().companyLogo"
+      [alt]="job().companyName"
+      class="company-logo"
+    />
+  </div>
+  <div class="card-basic-info">
+    <h4 class="card-position">{{ job().position }}</h4>
+    <p class="info-pill">
+      <i class="fa-regular fa-calendar"></i> {{ job().expires }}
+    </p>
+    <p class="info-pill">
+      <i class="fa-regular fa-money-bill-1"></i> {{ job().startingSalary }}
+    </p>
+    <p class="info-pill">
+      <i class="fa-solid fa-location-dot"></i> {{ job().location }}
+    </p>
+  </div>
+  <button type="button">Apply</button>
+</div>

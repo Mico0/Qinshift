@@ -1,0 +1,19 @@
+header {
+  display: flex;
+  margin: 0.5rem auto;
+  flex-direction: column;
+  place-content: center;
+  place-items: center;
+  gap: 0.2rem;
+  padding: 0.2rem;
+  border: 5px solid var(--midnight);
+  box-shadow: (3px 3px 0px var(--blue));
+
+  h1 {
+    color: var(--midnight);
+
+    span {
+      color: var(--bright-pink);
+    }
+  }
+}
