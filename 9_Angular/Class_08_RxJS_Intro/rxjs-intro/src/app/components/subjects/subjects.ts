@@ -12,9 +12,9 @@ import { AsyncPipe } from '@angular/common';
 export class Subjects implements OnInit {
   private rxjsService = inject(RxjsService);
 
-  nameArr = signal<string[]>([]);
-
   fruitsSubject$ = this.rxjsService.fruitsSubject$;
+
+  nameArr = signal<string[]>([]);
 
   nameValue = model<string>();
   fruitValue = model<string>();
@@ -27,9 +27,7 @@ export class Subjects implements OnInit {
   }
 
   onAddName() {
-    if (!this.nameValue()) {
-      return;
-    }
+    if (!this.nameValue()) return;
 
     this.rxjsService.addName(this.nameValue());
 
@@ -37,11 +35,9 @@ export class Subjects implements OnInit {
   }
 
   onAddFruit() {
-    if (!this.fruitValue()) {
-      return;
-    }
+    if (!this.fruitValue()) return;
 
-    this.rxjsService.addName(this.fruitValue());
+    this.rxjsService.addFruit(this.fruitValue());
 
     this.fruitValue.set('');
   }

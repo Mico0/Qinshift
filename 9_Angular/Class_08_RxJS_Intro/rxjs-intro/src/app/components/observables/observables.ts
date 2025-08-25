@@ -1,6 +1,6 @@
 import { AsyncPipe } from '@angular/common';
 import { Component } from '@angular/core';
-import { from, interval, Observable, of, Subscriber, Subscription } from 'rxjs';
+import { from, interval, Observable, of, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-observables',
@@ -38,7 +38,7 @@ export class Observables {
 
   intervalAsync$ = interval(500);
 
-  intervalSbscription: Subscription;
+  intervalSubscription: Subscription;
 
   ngOnInit() {
     // this.fromObs$.subscribe((value) => {
@@ -63,13 +63,12 @@ export class Observables {
       error: (err) => console.log('manual obs error: ', err),
       complete: () => console.log('obs completed'),
     });
-
-    this.intervalSbscription = this.intervalObs$.subscribe((value) => {
+    this.intervalSubscription = this.intervalObs$.subscribe((value) => {
       console.log(value);
     });
   }
 
   ngOnDestroy() {
-    this.intervalSbscription.unsubscribe();
+    this.intervalSubscription.unsubscribe();
   }
 }

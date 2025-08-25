@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject } from 'rxjs';
 
-const fruits = ['appple', 'pear', 'peach', 'grape', 'orange'];
+const fruits = ['Apple', 'Pear', 'Orange', 'Grape', 'Banana'];
 
 @Injectable({
   providedIn: 'root',
 })
 export class RxjsService {
-  nameArray = ['Milan', 'Gordana', 'Shemsa'];
+  nameArray = ['Jack', 'Jill', 'Bob'];
 
   nameSubject$ = new Subject<string[]>();
 

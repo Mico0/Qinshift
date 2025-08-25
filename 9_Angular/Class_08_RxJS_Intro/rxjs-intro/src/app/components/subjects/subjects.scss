@@ -1,0 +1,26 @@
+.container > div {
+  display: flex;
+}
+
+.list-container {
+  border: 3px solid lightgray;
+  background-color: white;
+  font-size: 1.1rem;
+  width: fit-content;
+  padding: 20px;
+  margin: 10px;
+
+  h2 {
+    margin: 0;
+  }
+}
+
+.fruit-list {
+  padding: 0 10px;
+  li {
+    border-bottom: 1.5px solid lightgray;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+  }
+}

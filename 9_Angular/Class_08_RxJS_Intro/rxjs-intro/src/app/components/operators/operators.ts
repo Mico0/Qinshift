@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { of, from, map, filter, take, skip, tap } from 'rxjs';
+import { filter, from, map, of, skip, take, tap } from 'rxjs';
 
 @Component({
   selector: 'app-operators',
@@ -8,39 +8,51 @@ import { of, from, map, filter, take, skip, tap } from 'rxjs';
   styleUrl: './operators.scss',
 })
 export class Operators implements OnInit {
-  usernames = ['Janko', 'Petko', 'Stanko', 'Milan', 'Leon', 'Ivan'];
+  usernames = [
+    'Janko',
+    'Petko',
+    'Stanko',
+    'Lazar',
+    'Krsto',
+    'Stojan',
+    'Blazhe',
+    'Laste',
+    'Ratko',
+    'Sveto',
+    'Risto',
+    'Mile',
+    'Boris',
+    'Slavko',
+    'Stefan',
+    'Stamencho',
+  ];
 
   usernamesOfObs$ = of(this.usernames);
 
-  usernamesFroObs$ = from(this.usernames);
+  usernamesFromObs$ = from(this.usernames);
 
-  ngOnInit(): void {
-    //* Map operator
-    // this.usernamesFroObs$
+  ngOnInit() {
+    //Map Operator
+    // this.usernamesFromObs$
     //   .pipe(map((value) => value + ' Arsov'))
-    //   .subscribe((value) => {
-    //     console.log(value);
-    //   });
-
-    //* Filter operator
-    // this.usernamesFroObs$
+    //   .subscribe((value) => console.log(value));
+    //Filter Operator
+    // this.usernamesFromObs$
     //   .pipe(filter((value) => value.startsWith('S')))
-    //   .subscribe((value) => console.log(value));\
-
-    //* Take
-    // this.usernamesFroObs$
+    //   .subscribe((value) => console.log(value));
+    // Take and skip
+    // this.usernamesFromObs$
     //   .pipe(skip(2), take(3))
     //   .subscribe((value) => console.log(value));
-
-    //* Tap
-    // this.usernamesFroObs$
+    //Tap
+    // this.usernamesFromObs$
     //   .pipe(tap((value) => console.log('this is from the tap: ', value)))
     //   .subscribe((value) => console.log(value));
-
-    this.usernamesFroObs$
+    this.usernamesFromObs$
       .pipe(
-        filter((value) => value.startsWith('M')),
-        map((value) => value + ' Ognjanoski'),
+        filter((value) => value.startsWith('R')),
+        map((value) => value + ' Ristov'),
+        skip(1),
       )
       .subscribe((value) => console.log(value));
   }

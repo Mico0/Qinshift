@@ -9,20 +9,20 @@
         }
       </ul>
       <div>
-        <input [(ngModel)]="nameValue" type="text" name="name" id="name" />
-        <button (click)="onAddName()">Add name</button>
+        <input type="text" [(ngModel)]="nameValue" />
+        <button (click)="onAddName()">Add Name</button>
       </div>
     </div>
     <div class="list-container">
-      <h3>Behaviour Subject List</h3>
+      <h3>Behavior Subject List</h3>
       <ul>
         @for (fruit of fruitsSubject$ | async; track $index) {
           <li>{{ fruit }}</li>
         }
       </ul>
       <div>
-        <input [(ngModel)]="fruitValue" type="text" name="name" id="name" />
-        <button (click)="onAddFruit()">Add fruit</button>
+        <input type="text" [(ngModel)]="fruitValue" />
+        <button (click)="onAddFruit()">Add Fruit</button>
       </div>
     </div>
   </div>
