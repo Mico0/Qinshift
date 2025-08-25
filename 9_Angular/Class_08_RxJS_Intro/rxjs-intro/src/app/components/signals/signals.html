@@ -1,1 +1,17 @@
-<p>signals works!</p>
+<section class="container">
+  <h1>RxJs with Signals</h1>
+
+  <div>
+    <h3>toSignal</h3>
+    <button (click)="onNumChange()">Change Num</button>
+    <div>{{ randomNum() }}</div>
+  </div>
+
+  <div>
+    <h3>toObservable</h3>
+
+    <input type="text" placeholder="Search..." [(ngModel)]="inputValue" />
+
+    <h4>Current Search Value: {{ searchValue() }}</h4>
+  </div>
+</section>

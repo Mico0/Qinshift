@@ -1,3 +1,8 @@
 <section class="container">
   <h2>Operators</h2>
+  <ul>
+    @for (username of usernamesOfObs$ | async; track $index) {
+      <li>{{ username }}</li>
+    }
+  </ul>
 </section>

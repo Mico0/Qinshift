@@ -1,0 +1,15 @@
+<button
+  class="btn"
+  (click)="toggleForm()"
+  [ngStyle]="{ backgroundColor: showTemplateForm() ? '#becd3a' : '#74b9ff' }"
+>
+  Toggle Forms
+</button>
+
+@if (showTemplateForm()) {
+  <h1>Template Form</h1>
+  <app-template-form />
+} @else {
+  <h1>Reactive Form</h1>
+  <app-reactive-form />
+}

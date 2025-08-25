@@ -1,0 +1,8 @@
+.basic-data,
+.btn {
+  background-color: #74b9ff;
+
+  &:disabled {
+    background-color: #d63031;
+  }
+}

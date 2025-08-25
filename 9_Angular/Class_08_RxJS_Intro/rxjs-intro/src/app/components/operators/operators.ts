@@ -1,9 +1,10 @@
+import { AsyncPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { filter, from, map, of, skip, take, tap } from 'rxjs';
 
 @Component({
   selector: 'app-operators',
-  imports: [],
+  imports: [AsyncPipe],
   templateUrl: './operators.html',
   styleUrl: './operators.scss',
 })
@@ -27,7 +28,9 @@ export class Operators implements OnInit {
     'Stamencho',
   ];
 
-  usernamesOfObs$ = of(this.usernames);
+  usernamesOfObs$ = of(this.usernames).pipe(
+    map((value) => value.map((el) => el.toUpperCase())),
+  );
 
   usernamesFromObs$ = from(this.usernames);
 
