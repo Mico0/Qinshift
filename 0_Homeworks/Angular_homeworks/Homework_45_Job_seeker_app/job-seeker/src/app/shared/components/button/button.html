@@ -1,0 +1,12 @@
+<button
+  [ngClass]="'button ' + (icon() === 'more' ? 'read-more' : 'send')"
+  type="button"
+  (click)="onBtnClick()"
+>
+  @if (text()) {
+  {{ text() }}
+  }
+  <div class="icon">
+    <i [ngClass]="chosenIcon"></i>
+  </div>
+</button>

@@ -20,7 +20,7 @@ export interface Job {
 }
 
 export enum WorkType {
-  REMOTE = 'remote',
-  ON_SITE = 'onsite',
-  HYBRID = 'hybrid',
+  REMOTE = 'Remote',
+  ON_SITE = 'On-Site',
+  HYBRID = 'Hybrid',
 }

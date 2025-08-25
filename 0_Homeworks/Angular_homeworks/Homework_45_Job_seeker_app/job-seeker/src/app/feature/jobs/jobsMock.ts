@@ -5,7 +5,7 @@ export const mockJobs: Job[] = [
     id: 1,
     companyName: 'Google',
     companyLogo:
-      'https://img.logo.dev/google.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg',
+      'https://img.logo.dev/google.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg&size=128&format=png&retina=true',
     expires: '2025-09-30',
     position: 'Software Engineer',
     startingSalary: 120000,
@@ -24,7 +24,7 @@ export const mockJobs: Job[] = [
     id: 2,
     companyName: 'Microsoft',
     companyLogo:
-      'https://img.logo.dev/microsoft.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg',
+      'https://img.logo.dev/microsoft.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg&size=128&format=png&retina=true',
     expires: '2025-10-05',
     position: 'Cloud Solutions Architect',
     startingSalary: 130000,
@@ -42,7 +42,7 @@ export const mockJobs: Job[] = [
     id: 3,
     companyName: 'Apple',
     companyLogo:
-      'https://img.logo.dev/apple.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg',
+      'https://img.logo.dev/apple.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg&size=128&format=png&retina=true',
     expires: '2025-09-25',
     position: 'Hardware Engineer',
     startingSalary: 125000,
@@ -60,7 +60,7 @@ export const mockJobs: Job[] = [
     id: 4,
     companyName: 'Amazon',
     companyLogo:
-      'https://img.logo.dev/amazon.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg',
+      'https://img.logo.dev/amazon.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg&size=128&format=png&retina=true',
     expires: '2025-10-10',
     position: 'Logistics Data Scientist',
     startingSalary: 110000,
@@ -78,7 +78,7 @@ export const mockJobs: Job[] = [
     id: 5,
     companyName: 'Meta',
     companyLogo:
-      'https://img.logo.dev/meta.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg',
+      'https://img.logo.dev/meta.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg&size=128&format=png&retina=true',
     expires: '2025-11-01',
     position: 'AR/VR Developer',
     startingSalary: 140000,
@@ -96,7 +96,7 @@ export const mockJobs: Job[] = [
     id: 6,
     companyName: 'Adobe',
     companyLogo:
-      'https://img.logo.dev/adobe.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg',
+      'https://img.logo.dev/adobe.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg&size=128&format=png&retina=true',
     expires: '2025-09-20',
     position: 'UX Designer',
     startingSalary: 90000,
@@ -114,7 +114,7 @@ export const mockJobs: Job[] = [
     id: 7,
     companyName: 'Intel',
     companyLogo:
-      'https://img.logo.dev/intel.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg',
+      'https://img.logo.dev/intel.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg&size=128&format=png&retina=true',
     expires: '2025-10-15',
     position: 'Firmware Engineer',
     startingSalary: 115000,
@@ -132,7 +132,7 @@ export const mockJobs: Job[] = [
     id: 8,
     companyName: 'Cisco',
     companyLogo:
-      'https://img.logo.dev/cisco.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg',
+      'https://img.logo.dev/cisco.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg&size=128&format=png&retina=true',
     expires: '2025-10-30',
     position: 'Network Engineer',
     startingSalary: 105000,
@@ -150,7 +150,7 @@ export const mockJobs: Job[] = [
     id: 9,
     companyName: 'Tencent',
     companyLogo:
-      'https://img.logo.dev/tencent.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg',
+      'https://img.logo.dev/tencent.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg&size=128&format=png&retina=true',
     expires: '2025-11-10',
     position: 'Mobile Game Dev',
     startingSalary: 95000,
@@ -168,7 +168,7 @@ export const mockJobs: Job[] = [
     id: 10,
     companyName: 'Oracle',
     companyLogo:
-      'https://img.logo.dev/oracle.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg',
+      'https://img.logo.dev/oracle.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg&size=128&format=png&retina=true',
     expires: '2025-09-28',
     position: 'Database Administrator',
     startingSalary: 115000,
@@ -185,7 +185,8 @@ export const mockJobs: Job[] = [
   {
     id: 11,
     companyName: 'IBM',
-    companyLogo: 'https://img.logo.dev/ibm.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg',
+    companyLogo:
+      'https://img.logo.dev/ibm.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg&size=128&format=png&retina=true',
     expires: '2025-10-12',
     position: 'AI Researcher',
     startingSalary: 130000,
@@ -203,7 +204,7 @@ export const mockJobs: Job[] = [
     id: 12,
     companyName: 'Salesforce',
     companyLogo:
-      'https://img.logo.dev/salesforce.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg',
+      'https://img.logo.dev/salesforce.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg&size=128&format=png&retina=true',
     expires: '2025-10-20',
     position: 'Sales Engineer',
     startingSalary: 100000,
@@ -222,7 +223,7 @@ export const mockJobs: Job[] = [
     id: 13,
     companyName: 'Tesla',
     companyLogo:
-      'https://img.logo.dev/tesla.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg',
+      'https://img.logo.dev/tesla.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg&size=128&format=png&retina=true',
     expires: '2025-11-15',
     position: 'Autopilot Software Engineer',
     startingSalary: 150000,
@@ -240,7 +241,7 @@ export const mockJobs: Job[] = [
     id: 14,
     companyName: 'Netflix',
     companyLogo:
-      'https://img.logo.dev/netflix.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg',
+      'https://img.logo.dev/netflix.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg&size=128&format=png&retina=true',
     expires: '2025-09-22',
     position: 'Streaming Engineer',
     startingSalary: 125000,
@@ -258,7 +259,7 @@ export const mockJobs: Job[] = [
     id: 15,
     companyName: 'Spotify',
     companyLogo:
-      'https://img.logo.dev/spotify.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg',
+      'https://img.logo.dev/spotify.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg&size=128&format=png&retina=true',
     expires: '2025-10-07',
     position: 'Data Engineer',
     startingSalary: 110000,
@@ -276,7 +277,7 @@ export const mockJobs: Job[] = [
     id: 16,
     companyName: 'Airbnb',
     companyLogo:
-      'https://img.logo.dev/airbnb.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg',
+      'https://img.logo.dev/airbnb.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg&size=128&format=png&retina=true',
     expires: '2025-09-29',
     position: 'Backend Developer',
     startingSalary: 120000,
@@ -294,7 +295,7 @@ export const mockJobs: Job[] = [
     id: 17,
     companyName: 'Dropbox',
     companyLogo:
-      'https://img.logo.dev/dropbox.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg',
+      'https://img.logo.dev/dropbox.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg&size=128&format=png&retina=true',
     expires: '2025-11-05',
     position: 'Storage Systems Engineer',
     startingSalary: 115000,
@@ -312,7 +313,7 @@ export const mockJobs: Job[] = [
     id: 18,
     companyName: 'Uber',
     companyLogo:
-      'https://img.logo.dev/uber.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg',
+      'https://img.logo.dev/uber.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg&size=128&format=png&retina=true',
     expires: '2025-10-25',
     position: 'Logistics Optimization Engineer',
     startingSalary: 118000,
@@ -330,7 +331,7 @@ export const mockJobs: Job[] = [
     id: 19,
     companyName: 'Salesforce',
     companyLogo:
-      'https://img.logo.dev/salesforce.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg',
+      'https://img.logo.dev/salesforce.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg&size=128&format=png&retina=true',
     expires: '2025-11-20',
     position: 'Marketing Cloud Consultant',
     startingSalary: 95000,
@@ -349,7 +350,7 @@ export const mockJobs: Job[] = [
     id: 20,
     companyName: 'Intel',
     companyLogo:
-      'https://img.logo.dev/intel.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg',
+      'https://img.logo.dev/intel.com?token=pk_dNiyapDZRpGK-JJJ-HN5wg&size=128&format=png&retina=true',
     expires: '2025-11-10',
     position: 'AI Accelerator Architect',
     startingSalary: 140000,

@@ -1,17 +1,22 @@
 header {
   display: flex;
+  position: sticky;
+  top: 0;
   margin: 0.5rem auto;
+  width: 85%;
+  border-radius: 0.5rem;
   flex-direction: column;
   place-content: center;
   place-items: center;
   gap: 0.2rem;
   padding: 0.2rem;
   border: 5px solid var(--midnight);
-  box-shadow: (3px 3px 0px var(--blue));
+  background-color: var(--midnight);
+  box-shadow: (3px 3px 3px var(--blue));
+  color: white;
+  z-index: 99;
 
   h1 {
-    color: var(--midnight);
-
     span {
       color: var(--bright-pink);
     }

@@ -1,0 +1,50 @@
+.button {
+  background: var(--midnight);
+  color: white;
+  font-family: inherit;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0.35em 3em 0.35em 1.2em;
+  border: none;
+  border-radius: 1rem;
+  height: 2.6em;
+  box-shadow: inset 0 0 1.6em -0.6em var(--bright-pink);
+
+  .icon {
+    background: white;
+    position: absolute;
+    right: 0.35em;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 2.2em;
+    width: 2.2em;
+    margin-left: 1em;
+    border-radius: 1rem;
+
+    box-shadow: 0.1em 0.1em 0.6em 0.15em var(--bright-pink);
+    transition: all 0.3s;
+
+    i {
+      width: 1em;
+      color: var(--bright-pink);
+      transition: transform 0.3s;
+      transform: translateX(0.1em);
+    }
+  }
+
+  &:hover .icon {
+    width: calc(100% - 0.7em);
+  }
+  &:active .icon {
+    transform: scale(0.95);
+  }
+}

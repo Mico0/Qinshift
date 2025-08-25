@@ -1,8 +1,104 @@
 .card {
-  width: 50rem;
+  width: 30rem;
+
   display: flex;
   place-items: center;
   place-content: space-evenly;
-  gap: 3rem;
+
+  gap: 1.5rem;
   padding: 1rem;
+  background-color: var(--blue);
+  color: white;
+  border-radius: var(--border-radius);
+  border: 3px solid var(--midnight);
+  filter: drop-shadow(3px 3px 3px var(--midnight));
+}
+
+.card-content {
+  display: flex;
+  place-items: center;
+  place-content: space-evenly;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.card-header {
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  place-items: center;
+  gap: 0.4rem;
+  position: relative;
+  height: 100%;
+  width: 10rem;
+  padding: 0.5rem;
+  // border: 3px solid black;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  &::before {
+    content: "";
+    filter: blur(5px);
+    background-color: var(--sunglow);
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    inset: 0;
+  }
+}
+
+.company-logo {
+  border-radius: var(--border-radius);
+}
+
+.card-basic-info {
+  text-align: left;
+}
+
+.card-expires {
+  font-size: 0.8rem;
+}
+
+.pills {
+  display: flex;
+  place-content: flex-start;
+  place-items: center;
+  gap: 0.3rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.info-pill {
+  box-shadow: inset 0 0 1.6em -0.6em var(--bright-pink);
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--midnight);
+  padding: 0.5rem;
+  margin: 0.2rem 0;
+  text-align: center;
+}
+
+i {
+  margin-right: 0.3rem;
+  color: var(--bright-pink);
+}
+.card-controls {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.below-the-fold {
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  place-items: flex-start;
+  gap: 0.3rem;
+  font-size: 1rem;
+  transition: 0.3s ease-in-out;
+  .yes {
+    color: var(--emerald);
+  }
+  .no {
+    color: crimson;
+  }
 }
