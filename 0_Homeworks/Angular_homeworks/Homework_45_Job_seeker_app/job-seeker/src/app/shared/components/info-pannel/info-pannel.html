@@ -1,0 +1,21 @@
+<div class="panels">
+  <div class="info-panel">
+    <h3>Info Panel:</h3>
+    <h4>
+      # of Applied to jobs: <span>{{ numAppliedJobs() }}</span>
+    </h4>
+    <h4>
+      # of Available jobs: <span>{{ numAvailaleJobs() }}</span>
+    </h4>
+  </div>
+
+  <div class="info-panel">
+    <h3>Sort By:</h3>
+    <div class="controls">
+      <button class="starting-salary" (click)="onClickSort($event)">
+        Starting salary
+      </button>
+      <button class="work-type" (click)="onClickSort($event)">Work type</button>
+    </div>
+  </div>
+</div>

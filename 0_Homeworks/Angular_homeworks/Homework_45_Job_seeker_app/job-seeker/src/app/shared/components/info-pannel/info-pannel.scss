@@ -1,0 +1,41 @@
+.panels {
+  margin: 0.5rem auto;
+  display: flex;
+  width: 40rem;
+  place-content: center;
+  place-items: center;
+  gap: 0.2rem;
+}
+
+.info-panel {
+  border: 2px solid rgb(255, 255, 255, 0.2);
+  background-color: rgb(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px) brightness(1.1);
+  border-radius: var(--border-radius);
+  margin: 0 auto;
+  display: flex;
+  place-content: center;
+  place-items: flex-start;
+  flex-direction: column;
+  padding: 1rem;
+  width: 15rem;
+  color: var(--midnight);
+  span {
+    color: var(--bright-pink);
+  }
+  h4 {
+    margin-top: 0.5rem;
+  }
+  .controls {
+    display: flex;
+    gap: 10px;
+
+    h4 {
+      cursor: pointer;
+      color: var(--bright-pink);
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -26,6 +26,9 @@ export class Button {
     if (icon === 'more') {
       this.chosenIcon = 'fa-regular fa-circle-down';
     }
+    if (icon === 'cancel') {
+      this.chosenIcon = 'fa-solid fa-ban';
+    }
   }
 
   onBtnClick() {

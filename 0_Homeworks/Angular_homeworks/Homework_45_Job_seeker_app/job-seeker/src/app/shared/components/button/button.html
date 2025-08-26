@@ -6,7 +6,7 @@
   @if (text()) {
   {{ text() }}
   }
-  <div class="icon">
+  <div [ngClass]="'icon ' + (icon() === 'more' ? 'read-more' : 'send')">
     <i [ngClass]="chosenIcon"></i>
   </div>
 </button>

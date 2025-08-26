@@ -1,0 +1,10 @@
+<div class="container">
+  <app-info-pannel />
+  <ul>
+    @for (job of appliedJobs() | sort:'starting-salary'; track job.id ) {
+    <li>
+      <app-job-card [job]="job" />
+    </li>
+    }
+  </ul>
+</div>

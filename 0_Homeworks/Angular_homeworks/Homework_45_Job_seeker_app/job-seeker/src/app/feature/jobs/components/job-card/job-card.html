@@ -51,7 +51,16 @@
 
     <div class="card-controls">
       <app-button [text]="'Read more'" [icon]="'more'" />
-      <app-button [text]="'Apply'" [icon]="'send'" />
+
+      @if(job().isApplied){
+      <app-button
+        [text]="'Cancel'"
+        [icon]="'cancel'"
+        (btnClick)="onCancelClick()"
+      />
+      } @else{
+      <app-button (btnClick)="onApplyJob()" [text]="'Apply'" [icon]="'send'" />
+      }
     </div>
   </div>
 </div>
