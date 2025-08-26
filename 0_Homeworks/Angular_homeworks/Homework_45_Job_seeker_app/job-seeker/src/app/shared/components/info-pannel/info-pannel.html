@@ -1,21 +1,48 @@
 <div class="panels">
+  <div class="info-panel jobs-info-panel">
+    <h3>Jobs you have applied to:</h3>
+    <ul>
+      @for (job of appliedToJobs(); track job.id) {
+      <li>
+        <img
+          [src]="job.companyLogo"
+          [alt]="job.companyName"
+          class="company-logo"
+          width="45"
+        />
+        -
+        <p>{{ job.position }}</p>
+        -
+        <p>{{ job.workType }}</p>
+        <app-button
+          [text]="'Cancel'"
+          [icon]="'cancel'"
+          (btnClick)="onCancelApplication(job.id)"
+        />
+      </li>
+      }
+    </ul>
+  </div>
   <div class="info-panel">
     <h3>Info Panel:</h3>
     <h4>
-      # of Applied to jobs: <span>{{ numAppliedJobs() }}</span>
+      # of Applied to jobs: <span>{{ numberOfAppliedJobs() }}</span>
     </h4>
     <h4>
-      # of Available jobs: <span>{{ numAvailaleJobs() }}</span>
+      # of Available jobs: <span>{{ numberOfTotalJobs() }}</span>
     </h4>
   </div>
 
   <div class="info-panel">
     <h3>Sort By:</h3>
     <div class="controls">
-      <button class="starting-salary" (click)="onClickSort($event)">
-        Starting salary
-      </button>
-      <button class="work-type" (click)="onClickSort($event)">Work type</button>
+      <app-button (btnClick)="onSortClick()" text="Salary" icon="sort" />
+      <select (change)="onFilterChange($event)" name="work-type" id="work-type">
+        <option value="Select">Select an option</option>
+        <option value="Remote">Remote</option>
+        <option value="On-Site">On-Site</option>
+        <option value="Hybrid">Hybrid</option>
+      </select>
     </div>
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, computed, inject, model, signal } from '@angular/core';
 import { Button } from '../button/button';
 import { JobsService } from '../../../core/services/jobs-service';
 
@@ -10,26 +10,33 @@ import { JobsService } from '../../../core/services/jobs-service';
 })
 export class InfoPannel {
   jobsService = inject(JobsService);
-  numAvailaleJobs = this.jobsService.numberOfTotalJobs;
-  numAppliedJobs = this.jobsService.numberOfAppliedJobs;
+
+  jobs = this.jobsService.jobs;
+
+  appliedToJobs = computed(() =>
+    this.jobs().filter((job) => job.isApplied === true)
+  );
+
+  numberOfTotalJobs = computed(
+    () => this.jobs().filter((job) => job.isApplied === false).length
+  );
+  numberOfAppliedJobs = computed(() => this.appliedToJobs().length);
 
   sortValue = signal('');
 
-  onClickSort(event: Event) {
-    const target = event.target as HTMLHeadingElement;
+  sortBy = model('');
 
-    // console.log(target);
+  onCancelApplication(jobId: number) {
+    this.jobsService.cancelApply(jobId);
+  }
 
-    if (target.className.includes('starting-salary')) {
-      this.sortValue.set('starting-salary');
-      console.log(this.sortValue());
-      console.log('Starting salary');
-    }
+  onSortClick() {
+    this.jobsService.getJobs('salary');
+  }
 
-    if (target.className.includes('work-type')) {
-      this.sortValue.set('work-type');
-      console.log(this.sortValue());
-      console.log('Work type');
-    }
+  onFilterChange(event: Event) {
+    const target = event.target as HTMLSelectElement;
+    console.log(target.value);
+    this.jobsService.getJobs(null, target.value);
   }
 }

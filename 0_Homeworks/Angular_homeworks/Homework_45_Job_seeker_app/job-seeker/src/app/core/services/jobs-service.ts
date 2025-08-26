@@ -8,17 +8,32 @@ import { mockJobs } from '../../feature/jobs/jobsMock';
 export class JobsService {
   jobs = signal<Job[]>([]);
 
-  appliedToJobs = computed(() =>
-    this.jobs().filter((job) => job.isApplied === true)
-  );
+  sorted = false;
 
-  numberOfTotalJobs = computed(
-    () => this.jobs().filter((job) => job.isApplied === false).length
-  );
-  numberOfAppliedJobs = computed(() => this.appliedToJobs().length);
+  getJobs(sortBy?: string, workType?: string) {
+    let processedJobs: Job[] = [...this.jobs()];
+    // console.log(this.sorted);
+    if ((!workType && !sortBy) || workType === 'Select') {
+      this.jobs.set(mockJobs);
+      return;
+    }
 
-  getJobs() {
-    this.jobs.set(mockJobs);
+    if (sortBy && sortBy === 'salary' && !this.sorted) {
+      // console.log('test');
+      processedJobs.sort((a, b) => b.startingSalary - a.startingSalary);
+      this.sorted = true;
+    } else if (this.sorted) {
+      processedJobs = processedJobs.sort(
+        (a, b) => a.startingSalary - b.startingSalary
+      );
+      this.sorted = false;
+    }
+
+    if (workType) {
+      processedJobs = processedJobs.filter((job) => job.workType === workType);
+    }
+
+    this.jobs.set(processedJobs);
     // console.log(this.jobs());
   }
 

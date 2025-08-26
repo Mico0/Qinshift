@@ -29,6 +29,10 @@ export class Button {
     if (icon === 'cancel') {
       this.chosenIcon = 'fa-solid fa-ban';
     }
+
+    if (icon === 'sort') {
+      this.chosenIcon = 'fa-solid fa-sort';
+    }
   }
 
   onBtnClick() {
