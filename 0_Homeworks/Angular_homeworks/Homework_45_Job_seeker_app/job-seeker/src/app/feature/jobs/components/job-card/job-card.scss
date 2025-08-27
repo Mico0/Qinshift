@@ -23,6 +23,7 @@
 .card-header {
   display: flex;
   flex-direction: column;
+  cursor: pointer;
   place-content: center;
   place-items: center;
   gap: 0.4rem;

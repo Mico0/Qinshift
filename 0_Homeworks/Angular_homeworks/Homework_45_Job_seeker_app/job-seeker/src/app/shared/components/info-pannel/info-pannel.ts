@@ -1,10 +1,11 @@
 import { Component, computed, inject, model, signal } from '@angular/core';
 import { Button } from '../button/button';
 import { JobsService } from '../../../core/services/jobs-service';
+import { AppliedFilterPipe } from '../../../core/pipes/applied-filter-pipe';
 
 @Component({
   selector: 'app-info-pannel',
-  imports: [Button],
+  imports: [Button, AppliedFilterPipe],
   templateUrl: './info-pannel.html',
   styleUrl: './info-pannel.scss',
 })
@@ -13,14 +14,8 @@ export class InfoPannel {
 
   jobs = this.jobsService.jobs;
 
-  appliedToJobs = computed(() =>
-    this.jobs().filter((job) => job.isApplied === true)
-  );
-
-  numberOfTotalJobs = computed(
-    () => this.jobs().filter((job) => job.isApplied === false).length
-  );
-  numberOfAppliedJobs = computed(() => this.appliedToJobs().length);
+  numAppliedToJobs = this.jobsService.numberOfAppliedJobs;
+  availableJobs = this.jobsService.numberOfTotalJobs;
 
   sortValue = signal('');
 
@@ -31,12 +26,12 @@ export class InfoPannel {
   }
 
   onSortClick() {
-    this.jobsService.getJobs('salary');
+    this.jobsService.sortJobs('salary');
   }
 
   onFilterChange(event: Event) {
     const target = event.target as HTMLSelectElement;
     console.log(target.value);
-    this.jobsService.getJobs(null, target.value);
+    this.jobsService.filterJobs(target.value);
   }
 }

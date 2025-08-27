@@ -5,11 +5,10 @@ header {
   margin: 0.5rem auto;
   width: 85%;
   border-radius: 0.5rem;
-  flex-direction: column;
-  place-content: center;
+  place-content: space-between;
   place-items: center;
   gap: 0.2rem;
-  padding: 0.2rem;
+  padding: 0.5rem 2rem;
   border: 2px solid rgb(255, 255, 255, 0.5);
   background-color: rgb(255, 255, 255, 0.1);
   backdrop-filter: blur(10px) brightness(1.1);
@@ -17,9 +16,37 @@ header {
   color: var(--midnight);
   z-index: 99;
 
+  ul {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    gap: 1rem;
+    a {
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--midnight);
+      transition: 0.5 ease-in;
+      padding: 0.2rem 0.5rem;
+
+      &:hover {
+        color: var(--bright-pink);
+      }
+    }
+  }
+
   h1 {
     span {
       color: var(--bright-pink);
     }
+  }
+
+  .active {
+    border: 2px solid rgb(255, 255, 255, 0.2);
+    background-color: rgb(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px) brightness(1.1);
+    border-radius: 5px;
+    color: var(--bright-pink) !important;
   }
 }

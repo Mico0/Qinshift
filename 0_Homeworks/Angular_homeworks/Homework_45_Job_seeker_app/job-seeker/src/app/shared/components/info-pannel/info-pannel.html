@@ -2,7 +2,7 @@
   <div class="info-panel jobs-info-panel">
     <h3>Jobs you have applied to:</h3>
     <ul>
-      @for (job of appliedToJobs(); track job.id) {
+      @for (job of jobs() | appliedFilter:true; track job.id) {
       <li>
         <img
           [src]="job.companyLogo"
@@ -26,10 +26,10 @@
   <div class="info-panel">
     <h3>Info Panel:</h3>
     <h4>
-      # of Applied to jobs: <span>{{ numberOfAppliedJobs() }}</span>
+      # of Applied to jobs: <span>{{ numAppliedToJobs() }}</span>
     </h4>
     <h4>
-      # of Available jobs: <span>{{ numberOfTotalJobs() }}</span>
+      # of Available jobs: <span>{{ availableJobs() }}</span>
     </h4>
   </div>
 

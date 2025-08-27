@@ -1,0 +1,17 @@
+div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: var(--midnight);
+  place-content: center;
+  place-items: center;
+  min-width: 100vh;
+  h1 {
+    color: var(--bright-pink);
+  }
+  span {
+    cursor: pointer;
+    color: var(--bright-pink);
+    text-decoration: dotted;
+  }
+}

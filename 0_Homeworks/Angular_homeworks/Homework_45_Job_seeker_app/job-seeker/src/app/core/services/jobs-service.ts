@@ -1,26 +1,74 @@
 import { computed, Injectable, signal } from '@angular/core';
 import { Job } from '../../feature/jobs/models/jobs.model';
 import { mockJobs } from '../../feature/jobs/jobsMock';
+import { Company } from '../../feature/companies/models/company.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class JobsService {
   jobs = signal<Job[]>([]);
+  allJobs = signal<Job[]>(mockJobs);
 
+  numberOfTotalJobs = computed(
+    () => this.jobs().filter((job) => job.isApplied === false).length
+  );
+  numberOfAppliedJobs = computed(
+    () => this.jobs().filter((job) => job.isApplied === true).length
+  );
   sorted = false;
 
-  getJobs(sortBy?: string, workType?: string) {
-    let processedJobs: Job[] = [...this.jobs()];
-    // console.log(this.sorted);
-    if ((!workType && !sortBy) || workType === 'Select') {
-      this.jobs.set(mockJobs);
+  selectedCompany = signal<Company>(null);
+
+  getJobs() {
+    this.jobs.set(this.allJobs());
+    // console.log(this.jobs());
+  }
+
+  selectCompany(id: number): Company | undefined {
+    const job = this.jobs().find((job) => job.id === id);
+    if (!job) return undefined;
+
+    const company = {
+      companyId: job.id,
+      companyName: job.companyName,
+      companyLogo: job.companyLogo,
+      companyAddress: job.companyAddress,
+      companyIndustry: job.companyIndustry,
+      companyWebsite: job.companyWebsite,
+    };
+
+    this.selectedCompany.set(company);
+
+    return company;
+  }
+
+  getCompanyById(id: number) {
+    if (this.selectedCompany()) return;
+
+    this.selectCompany(id);
+  }
+
+  filterJobs(workType?: string) {
+    if (!workType || workType === 'Select') {
+      this.jobs.set(this.allJobs()); // reset to full list
       return;
     }
 
-    if (sortBy && sortBy === 'salary' && !this.sorted) {
-      // console.log('test');
-      processedJobs.sort((a, b) => b.startingSalary - a.startingSalary);
+    const processedJobs = this.allJobs().filter(
+      (job) => job.workType === workType
+    );
+
+    this.jobs.set(processedJobs);
+  }
+
+  sortJobs(type: 'salary') {
+    let processedJobs: Job[] = [...this.jobs()];
+    if (type && !this.sorted) {
+      console.log('test');
+      processedJobs = processedJobs.sort(
+        (a, b) => b.startingSalary - a.startingSalary
+      );
       this.sorted = true;
     } else if (this.sorted) {
       processedJobs = processedJobs.sort(
@@ -28,13 +76,7 @@ export class JobsService {
       );
       this.sorted = false;
     }
-
-    if (workType) {
-      processedJobs = processedJobs.filter((job) => job.workType === workType);
-    }
-
     this.jobs.set(processedJobs);
-    // console.log(this.jobs());
   }
 
   applyJob(jobId: number) {
