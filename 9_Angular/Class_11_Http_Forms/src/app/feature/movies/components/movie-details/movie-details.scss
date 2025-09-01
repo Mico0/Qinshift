@@ -1,0 +1,32 @@
+.movie-details {
+  .details-heading {
+    display: grid;
+    grid-template-columns: 1fr max-content max-content;
+    align-items: center;
+  }
+
+  .details-controls {
+    display: flex;
+    gap: 15px;
+  }
+
+  .item-rating,
+  .item-likes {
+    font-size: 35px;
+  }
+
+  .details-info {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    gap: 30px;
+  }
+
+  .details-footer {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+
+    em {
+      font-size: 26px;
+    }
+  }
+}

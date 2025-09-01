@@ -1,0 +1,76 @@
+<div class="dog-manager">
+  <div class="add-dog-section">
+    <h2>🐕 Add New Dog</h2>
+    <div class="add-form">
+      <input
+        type="text"
+        [(ngModel)]="dogName"
+        placeholder="Enter dog name..."
+        class="name-input"
+      />
+      <input
+        type="text"
+        [(ngModel)]="dogBreed"
+        placeholder="Enter dog breed..."
+        class="breed-input"
+      />
+      <input
+        type="number"
+        [(ngModel)]="dogAge"
+        min="0"
+        max="20"
+        class="age-input"
+      />
+      <button
+        (click)="addDog()"
+        class="add-btn"
+        [disabled]="!dogName.trim() || !dogBreed.trim()"
+      >
+        🐾 Add Dog
+      </button>
+    </div>
+  </div>
+
+  <div class="dogs-section">
+    <h2>Your dogs</h2>
+    <div class="dogs-grid">
+      @for (dog of store.dogs(); track dog.id) {
+        <div class="dog-card">
+          <div class="dog-header">
+            <div class="dog-info">
+              <h3>{{ dog.name }}</h3>
+              <p>{{ dog.breed }}</p>
+              <p>{{ dog.age }} years old</p>
+            </div>
+            <div class="dog-actions">
+              <button
+                class="remove-btn"
+                title="Remove dog"
+                (click)="removeDog(dog.id)"
+              >
+                ❌
+              </button>
+            </div>
+          </div>
+          <div class="dog-stats">
+            <div class="stat-item">
+              <span class="stat-label">🚶 Walked:</span>
+              <span class="stat-value">{{ dog.walkCount }} times</span>
+              @if (dog.lastWalked) {
+                <span class="stat-time"
+                  >Last: {{ dog.lastWalked | date: "shortTime" }}</span
+                >
+              }
+            </div>
+          </div>
+          <div class="dog-actions-main">
+            <button class="action-btn feed-btn">Feed Now</button>
+            <button (click)="walkDog(dog.id)" class="action-btn feed-btn">
+              Walk Now
+            </button>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>

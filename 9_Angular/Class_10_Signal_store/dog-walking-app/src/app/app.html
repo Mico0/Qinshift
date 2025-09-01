@@ -1,0 +1,33 @@
+<div class="app-container">
+  <header class="app-header">
+    <div class="header-content">
+      <h1>🐕 Doggy Tracker</h1>
+      <p>Track your furry friends' daily activities with fun and ease!</p>
+    </div>
+  </header>
+  <nav class="app-nav">
+    <div class="nav-content">
+      <button
+        (click)="currentTab = 'manage'"
+        [class.active]="currentTab === 'manage'"
+        class="nav-btn"
+      >
+        🏠 Manage Dogs
+      </button>
+      <button
+        (click)="currentTab = 'stats'"
+        [class.active]="currentTab === 'stats'"
+        class="nav-btn"
+      >
+        📊 View Stats
+      </button>
+    </div>
+  </nav>
+  <main class="app-main">
+    @if (currentTab === "manage") {
+      <app-dog-manager />
+    } @else if (currentTab === "stats") {
+      <app-stats />
+    }
+  </main>
+</div>
