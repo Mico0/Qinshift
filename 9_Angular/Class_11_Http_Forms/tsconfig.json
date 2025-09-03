@@ -4,10 +4,9 @@
   "compileOnSave": false,
   "compilerOptions": {
     "strict": true,
-    "strictPropertyInitialization": false,
-    "strictNullChecks": false,
     "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": false,
+    "noPropertyAccessFromIndexSignature": true,
+    "strictNullChecks": false,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,

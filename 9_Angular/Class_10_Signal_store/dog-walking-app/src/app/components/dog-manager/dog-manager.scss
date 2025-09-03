@@ -1,0 +1,161 @@
+.dog-manager {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.add-dog-section {
+  background: #f0f0f0;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.add-form {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr auto;
+  gap: 0.5rem;
+  align-items: end;
+}
+
+.name-input,
+.breed-input,
+.age-input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.add-btn {
+  padding: 0.5rem 1rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dogs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.dog-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.dog-card.selected {
+  border-color: #007bff;
+  background: #f8f9ff;
+}
+
+.dog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.dog-name {
+  margin: 0 0 0.25rem 0;
+  cursor: pointer;
+}
+
+.edit-input {
+  width: 100%;
+  padding: 0.25rem;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+}
+
+.dog-breed {
+  margin: 0 0 0.25rem 0;
+  color: #666;
+  font-style: italic;
+}
+
+.dog-age {
+  margin: 0;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.dog-stats {
+  margin-bottom: 1rem;
+  color: black;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  background: #f8f9fa;
+  border-radius: 4px;
+}
+
+.dog-actions-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.action-btn {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.feed-btn {
+  background: #28a745;
+  color: white;
+}
+
+.walk-btn {
+  background: #17a2b8;
+  color: white;
+}
+
+.dog-created {
+  text-align: center;
+  color: #999;
+  font-size: 0.8rem;
+}
+
+.no-dogs {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+}
+
+.dogs-section {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .add-form {
+    grid-template-columns: 1fr;
+  }
+
+  .dogs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dog-actions-main {
+    grid-template-columns: 1fr;
+  }
+}

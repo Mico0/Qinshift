@@ -82,3 +82,11 @@ form {
 input.ng-invalid.ng-touched {
   border: 2px solid $color-red;
 }
+
+textarea.ng-invalid.ng-touched {
+  border: 2px solid $color-red;
+}
+
+textarea {
+  resize: vertical;
+}

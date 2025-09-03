@@ -1,0 +1,12 @@
+.movie-item {
+  background-color: white;
+  padding: 15px;
+  border: 1.5px solid #090c08;
+  margin: 25px 5px;
+  color: #474056;
+  border-radius: 4px;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 1fr 110px 110px;
+  align-items: center;
+}

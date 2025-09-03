@@ -1,5 +1,7 @@
+@let basicCtrls = expenseForm.controls.basicData.controls;
+
 <form [formGroup]="expenseForm" (ngSubmit)="onFormSubmit()">
-  <div class="basic-data">
+  <div class="basic-data" formGroupName="basicData">
     <div class="form-group">
       <label for="expense-title">Title</label>
       <input
@@ -10,7 +12,14 @@
         autocomplete="off"
       />
     </div>
-
+    @if (basicCtrls.title.touched) {
+      @if (basicCtrls.title.errors?.required) {
+        <p class="help-block">Title is required</p>
+      }
+      @if (basicCtrls.title.errors?.blockedWord) {
+        <p class="help-block">This type of expense is not allowed</p>
+      }
+    }
     <div class="form-group">
       <label for="expense-amount">Amount</label>
       <input
@@ -21,6 +30,15 @@
         autocomplete="off"
       />
     </div>
+
+    @if (basicCtrls.amount.touched) {
+      @if (basicCtrls.amount.errors?.required) {
+        <p class="help-block">Amount is required</p>
+      }
+      @if (basicCtrls.amount.errors?.min || basicCtrls.amount.errors?.max) {
+        <p class="help-block">Amount must be between 1 and 500</p>
+      }
+    }
 
     <div class="form-group">
       <label for="expense-date">Date</label>
@@ -33,5 +51,51 @@
       />
     </div>
   </div>
+  <div class="form-group">
+    <label for="expense-priority"></label>
+    <select
+      formControlName="priority"
+      name="expensePriority"
+      type="text"
+      class="form-control"
+      id="expense-priority"
+    >
+      <option value="low">Low</option>
+      <option value="medium">Medium</option>
+      <option value="high">High</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="expense-comment">Comment</label>
+    <textarea
+      formControlName="comment"
+      name="expenseComment"
+      class="form-control"
+      id="expense-comment"
+      placeholder="Please enter your comment here"
+      rows="10"
+    ></textarea>
+    <p>
+      {{ expenseForm.controls.comment?.value.length }} /
+      {{ this.maxCommentLength }}
+    </p>
+  </div>
+  <div class="form-group">
+    @for (type of paymentTypes; track type) {
+      <div>
+        <input
+          type="radio"
+          [id]="type + '-radio'"
+          formControlName="type"
+          name="type"
+          [value]="type"
+        />
+        <label [htmlFor]="type + '-radio'">{{ type | titlecase }}</label>
+      </div>
+    }
+  </div>
   <button class="btn" type="submit">Submit</button>
+  <button class="btn" type="button" (click)="populateForm()">
+    Load form data
+  </button>
 </form>

@@ -1,0 +1,212 @@
+.dog-stats {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  color: white;
+}
+
+.dog-stats h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.stat-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat-number {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+}
+
+.activity-highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.highlight-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.highlight-card h3 {
+  margin: 0 0 0.5rem 0;
+}
+
+.highlight-value {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 0.25rem;
+}
+
+.highlight-description {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.dog-activity h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.activity-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.activity-item.selected {
+  border-color: #007bff;
+  background: #f8f9ff;
+}
+
+.dog-avatar {
+  width: 40px;
+  height: 40px;
+  background: #007bff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+}
+
+.dog-details {
+  flex: 1;
+}
+
+.dog-name {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.dog-breed {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.activity-metrics {
+  display: flex;
+  gap: 1rem;
+}
+
+.metric {
+  text-align: center;
+}
+
+.metric-icon {
+  font-size: 1rem;
+}
+
+.metric-value {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.metric-label {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.last-activity {
+  color: #999;
+  font-size: 0.8rem;
+}
+
+.fun-facts h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.fact-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fact-icon {
+  font-size: 1.5rem;
+}
+
+.fact-text {
+  color: #555;
+}
+
+.empty-stats {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .activity-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .facts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .activity-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .activity-metrics {
+    justify-content: center;
+  }
+}
