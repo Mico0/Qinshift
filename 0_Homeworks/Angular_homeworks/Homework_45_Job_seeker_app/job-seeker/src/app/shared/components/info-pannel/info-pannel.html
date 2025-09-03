@@ -44,5 +44,16 @@
         <option value="Hybrid">Hybrid</option>
       </select>
     </div>
+
+    <h3 style="margin-top: 1rem">Search companies:</h3>
+    <input
+      type="text"
+      name="search"
+      id="search"
+      placeholder="Search..."
+      [(ngModel)]="searchValue"
+      (keyup)="onSearchChange()"
+    />
+    <!-- <p>{{ searchValue() }}</p> -->
   </div>
 </div>

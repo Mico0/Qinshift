@@ -19,6 +19,7 @@
   flex-direction: column;
   padding: 1rem;
   width: 17rem;
+
   color: var(--midnight);
   span {
     color: var(--bright-pink);
@@ -40,6 +41,10 @@
       background: var(--midnight);
       color: white;
     }
+  }
+  &:nth-child(2),
+  &:nth-child(3) {
+    height: 10rem;
   }
 }
 
@@ -68,4 +73,10 @@
       }
     }
   }
+}
+
+#search {
+  border-radius: var(--border-radius);
+  padding: 0.5rem;
+  height: 30px;
 }
