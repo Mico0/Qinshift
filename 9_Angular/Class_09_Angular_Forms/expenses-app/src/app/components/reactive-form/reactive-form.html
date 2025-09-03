@@ -1,3 +1,4 @@
+@let ctrls = expenseForm.controls;
 @let basicCtrls = expenseForm.controls.basicData.controls;
 
 <form [formGroup]="expenseForm" (ngSubmit)="onFormSubmit()">
@@ -30,13 +31,12 @@
         autocomplete="off"
       />
     </div>
-
     @if (basicCtrls.amount.touched) {
       @if (basicCtrls.amount.errors?.required) {
         <p class="help-block">Amount is required</p>
       }
       @if (basicCtrls.amount.errors?.min || basicCtrls.amount.errors?.max) {
-        <p class="help-block">Amount must be between 1 and 500</p>
+        <p class="help-block">Amount must be betewen 1 and 500</p>
       }
     }
 
@@ -55,7 +55,6 @@
     <label for="expense-priority"></label>
     <select
       formControlName="priority"
-      name="expensePriority"
       type="text"
       class="form-control"
       id="expense-priority"
@@ -69,24 +68,20 @@
     <label for="expense-comment">Comment</label>
     <textarea
       formControlName="comment"
-      name="expenseComment"
       class="form-control"
       id="expense-comment"
-      placeholder="Please enter your comment here"
-      rows="10"
+      rows="5"
+      placeholder="Please enter your comment here..."
     ></textarea>
-    <p>
-      {{ expenseForm.controls.comment?.value.length }} /
-      {{ this.maxCommentLength }}
-    </p>
+    <p>{{ ctrls.comment.value?.length }} / {{ maxCommentLength }}</p>
   </div>
   <div class="form-group">
     @for (type of paymentTypes; track type) {
       <div>
         <input
+          formControlName="type"
           type="radio"
           [id]="type + '-radio'"
-          formControlName="type"
           name="type"
           [value]="type"
         />
@@ -94,8 +89,12 @@
       </div>
     }
   </div>
+
   <button class="btn" type="submit">Submit</button>
   <button class="btn" type="button" (click)="populateForm()">
-    Load form data
+    Load Form With Data
   </button>
+  <!-- <button [disabled]="expenseForm.invalid" class="btn" type="submit">
+    Submit
+  </button> -->
 </form>
