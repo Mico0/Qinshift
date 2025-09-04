@@ -9,3 +9,13 @@ export interface Movie {
   genres: string;
   likeCount: number;
 }
+
+export interface ReviewFormValue {
+  title: string;
+  director: string;
+  year: number;
+  genres: string;
+  author: string;
+  rating: number;
+  text: string;
+}

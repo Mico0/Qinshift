@@ -1,14 +1,19 @@
 import { computed, inject, Injectable, signal } from '@angular/core';
-import { Movie } from '../../feature/movies/models/movie-model';
-
+import {
+  Movie,
+  ReviewFormValue,
+} from '../../feature/movies/models/movie-model';
 import { MoviesApiService } from './movies-api-service';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MoviesService {
+  private router = inject(Router);
+  private apiService = inject(MoviesApiService);
+
   movies = signal<Movie[]>([]);
-  apiService = inject(MoviesApiService);
 
   selectedMovie = signal<Movie>(null);
 
@@ -22,18 +27,7 @@ export class MoviesService {
       this.movies().length,
   );
 
-  getMovies(sortBy: 'rating' | 'likeCount') {
-    // fetch(url)
-    //   .then((res) => res.json())
-    //   .then((value: Movie[]) => {
-    //     console.log('this is the value from the get movies fetch', value);
-    //     this.movies.set(value);
-    //   })
-    //   .catch((err) => {
-    //     console.error('Something went wrong');
-    //     console.error(err);
-    //   });
-
+  getMovies(sortBy?: 'rating' | 'likeCount') {
     this.apiService.fetchMovies(sortBy).subscribe({
       next: (value) => {
         console.log('this is the value from the get movies fetch', value);
@@ -47,11 +41,6 @@ export class MoviesService {
     //We check if selected movie has a value to avoid uneccesary calls to the backend
     if (this.selectedMovie()) return;
 
-    // fetch(`${MOVIES_URL}/${id}`)
-    //   .then((res) => res.json())
-    //   .then((value: Movie) => this.selectedMovie.set(value))
-    //   .catch((err) => console.error(err));
-
     this.apiService.fetchMovieById(id).subscribe({
       next: (value) => this.selectedMovie.set(value),
       error: (err) => console.log(err),
@@ -62,14 +51,29 @@ export class MoviesService {
     this.selectedMovie.set(movie);
   }
 
+  createMovie(reqBody: ReviewFormValue) {
+    this.apiService.postMovie(reqBody).subscribe({
+      next: (createdMovie) => {
+        console.log('returned value from creating movie', createdMovie);
+        this.router.navigate(['movies', createdMovie.id]);
+      },
+      error: (err) => console.log(err),
+    });
+  }
+
+  updateMovie(id: string, reqBody: Partial<Movie>) {
+    this.apiService.patchMovie(id, reqBody).subscribe({
+      next: (updatedMovie) => {
+        console.log('this is the result of the patch operation', updatedMovie);
+        this.selectedMovie.set(updatedMovie);
+        this.router.navigate(['movies', updatedMovie.id]);
+      },
+
+      error: (err) => console.log(err),
+    });
+  }
+
   addLikeDislike(type: 'LIKE' | 'DISLIKE') {
-    // this.selectedMovie.update((prevMovie) => {
-    //   if (type === 'LIKE') prevMovie.likeCount += 1;
-    //   if (type === 'DISLIKE') prevMovie.likeCount -= 1;
-
-    //   return prevMovie;
-    // });
-
     const reqMovie: Movie = {
       ...this.selectedMovie(),
       likeCount:
@@ -78,15 +82,9 @@ export class MoviesService {
           : this.selectedMovie().likeCount - 1,
     };
 
-    // fetch(`${MOVIES_URL}/${this.selectedMovie().id}`, {
-    //   method: 'PUT',
-    //   body: JSON.stringify(reqMovie),
-    // })
-    //   .then((res) => res.json())
-    //   .then((value) => this.selectedMovie.set(value));
-
-    this.apiService.updateMovie(this.selectedMovie().id, reqMovie).subscribe({
-      // next: (value) => this.selectedMovie.set(value),
+    this.apiService.putMovie(this.selectedMovie().id, reqMovie).subscribe({
+      next: (value) => this.selectedMovie.set(value),
+      error: (err) => console.log(err),
     });
   }
 }

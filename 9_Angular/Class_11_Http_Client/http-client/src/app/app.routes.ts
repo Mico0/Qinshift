@@ -2,9 +2,8 @@ import { Routes } from '@angular/router';
 import { Home } from './feature/home/home';
 import { About } from './feature/about/about';
 import { AddMovie } from './feature/movies/components/add-movie/add-movie';
-import { MovieList } from './feature/movies/components/movie-list/movie-list';
-import { MovieDetails } from './feature/movies/components/movie-details/movie-details';
 import { NotFound } from './core/components/not-found/not-found';
+import { EditMovie } from './feature/movies/components/edit-movie/edit-movie';
 
 export const routes: Routes = [
   {
@@ -19,11 +18,16 @@ export const routes: Routes = [
   //   path: 'movies',
   //   component: MovieList,
   // },
+  // {
+  //   path: 'movies/:id',
+  //   component: MovieDetails,
+  // },
   {
     path: 'movies',
-    //* The import must be a correct path to the component ts file
     loadComponent: () =>
+      //The import must be a correct path to the component ts file
       import('./feature/movies/components/movie-list/movie-list').then(
+        //The callback here needs to return the component class declaration
         (c) => c.MovieList,
       ),
   },
@@ -37,6 +41,10 @@ export const routes: Routes = [
   {
     path: 'add-movie',
     component: AddMovie,
+  },
+  {
+    path: 'edit-movie/:id',
+    component: EditMovie,
   },
   {
     //** means catch all routes that weren't matched above

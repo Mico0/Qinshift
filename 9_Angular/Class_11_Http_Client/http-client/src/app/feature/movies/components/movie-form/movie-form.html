@@ -1,0 +1,54 @@
+<form [formGroup]="reviewForm" class="movie-form" (ngSubmit)="onFormSubmit()">
+  <div class="form-group">
+    <label>Title</label>
+    <input type="text" class="form-input" formControlName="title" />
+  </div>
+  <div class="form-group">
+    <label>Year</label>
+    <input type="number" class="form-input" formControlName="year" />
+  </div>
+  @if (reviewForm.controls.year.errors?.min) {
+    <p class="control-error">Year must be above 1850</p>
+  }
+
+  <div class="form-group">
+    <label>Director</label>
+    <input type="text" class="form-input" formControlName="director" />
+  </div>
+  <div class="form-group">
+    <label>Genres</label>
+    <input type="text" class="form-input" formControlName="genres" />
+  </div>
+  <div class="form-group">
+    <label>Review</label>
+    <textarea rows="5" formControlName="text"></textarea>
+  </div>
+  <div class="form-group">
+    <label>Author</label>
+    <input type="text" class="form-input" formControlName="author" />
+  </div>
+  <div class="form-group">
+    <label>Rating</label>
+    <div class="radio-container">
+      @for (number of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; track number) {
+        <div>
+          <input
+            type="radio"
+            name="rating"
+            formControlName="rating"
+            [value]="number"
+            class="radio"
+            [id]="'rating-radio-' + number"
+            [attr.number]="number"
+          />
+        </div>
+      }
+    </div>
+  </div>
+  @if (reviewForm.touched && reviewForm.invalid) {
+    <div class="form-error">All fields are required</div>
+  }
+  <div class="form-controls">
+    <app-button [text]="editMovieData() ? 'UPDATE' : 'ADD'" type="submit" />
+  </div>
+</form>

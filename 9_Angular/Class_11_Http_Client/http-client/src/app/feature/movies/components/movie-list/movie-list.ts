@@ -3,7 +3,6 @@ import { MoviesService } from '../../../../core/services/movies-service';
 import { MovieItem } from '../movie-item/movie-item';
 import { Movie } from '../../models/movie-model';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AddMovie } from '../add-movie/add-movie';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
 
 @Component({
@@ -22,15 +21,17 @@ export class MovieList implements OnInit {
   avgRating = this.moviesService.avgRating;
 
   ngOnInit() {
-    // console.log('this is the query param', this.route.snapshot.queryParams);
-
     const sortBy = this.route.snapshot.queryParams['_sort'];
 
     this.moviesService.getMovies(sortBy);
 
+    console.log(this.route);
+
     this.route.queryParams.subscribe((value) => {
-      console.log('this is the new value of the query params:', value);
+      console.log('this is the value in the query params subscribe: ', value);
+
       const sortBy = value['_sort'];
+
       this.moviesService.getMovies(sortBy);
     });
   }
@@ -44,6 +45,7 @@ export class MovieList implements OnInit {
     this.router.navigate(['movies', movie.id]);
     // this.router.navigateByUrl(`/movies/${movie.id}`);
   }
+
   onSortClick(sortBy: 'rating' | 'likeCount') {
     this.router.navigate([], {
       queryParams: {

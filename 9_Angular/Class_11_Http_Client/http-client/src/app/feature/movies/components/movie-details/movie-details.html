@@ -26,6 +26,7 @@
         <em>{{ selectedMovie().author }}</em>
       </p>
       <div class="details-controls">
+        <app-button text="Edit" (click)="goToEditMovie()" />
         <app-button
           iconClass="fa-solid fa-thumbs-up"
           (btnClick)="onClickLikeDislike('LIKE')"

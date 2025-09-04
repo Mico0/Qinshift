@@ -3,11 +3,17 @@ button {
   padding: 15px;
   border-radius: 4px;
   cursor: pointer;
-  transition: 0.1s;
-  border: 1px solid darkgray;
-  background-color: white;
+  transition: 0.3s;
+  box-shadow:
+    0 10px 20px #d0d3ca,
+    0 6px 6px #d0d3ca;
+  border: none;
+  min-width: 150px;
+  background: white;
 
   &:hover {
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.567);
+    box-shadow:
+      0 10px 20px rgba(0, 0, 0, 0.19),
+      0 6px 6px rgba(0, 0, 0, 0.23);
   }
 }

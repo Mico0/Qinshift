@@ -1,0 +1,7 @@
+<section class="container form-container">
+  <h2>Edit Movie</h2>
+  <app-movie-form
+    [editMovieData]="selectedMovie()"
+    (submitOutput)="onEditMovie($event)"
+  />
+</section>

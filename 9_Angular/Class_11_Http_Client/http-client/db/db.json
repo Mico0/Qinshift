@@ -6,10 +6,10 @@
       "director": "Tom Hooper",
       "year": 2019,
       "author": "Mason",
-      "rating": 1.5,
+      "rating": 2,
       "text": "Nightmare fuel with fur.",
       "genres": "Musical, Fantasy",
-      "likeCount": 94
+      "likeCount": 103
     },
     {
       "id": "2",
@@ -17,10 +17,10 @@
       "director": "Christopher Nolan",
       "year": 2008,
       "author": "Mia",
-      "rating": 9.5,
+      "rating": 10,
       "text": "Joker stole the show, and my sanity.",
       "genres": "Action, Crime",
-      "likeCount": 999
+      "likeCount": 1003
     },
     {
       "id": "3",
@@ -28,7 +28,7 @@
       "director": "Roger Christian",
       "year": 2000,
       "author": "Ryan",
-      "rating": 0.5,
+      "rating": 1,
       "text": "My brain still hurts.",
       "genres": "Sci-Fi, Action",
       "likeCount": 41
@@ -39,10 +39,10 @@
       "director": "Christopher Nolan",
       "year": 2014,
       "author": "Grace",
-      "rating": 9.5,
+      "rating": 9,
       "text": "Cried in space. Zero gravity tears.",
       "genres": "Sci-Fi, Drama",
-      "likeCount": 1000
+      "likeCount": 1009
     },
     {
       "id": "5",
@@ -50,10 +50,10 @@
       "director": "Catherine Hardwicke",
       "year": 2008,
       "author": "Isabella",
-      "rating": 2.5,
+      "rating": 2,
       "text": "Sparkles don’t save bad acting.",
       "genres": "Romance, Fantasy",
-      "likeCount": 109
+      "likeCount": 110
     },
     {
       "id": "6",
@@ -61,7 +61,7 @@
       "director": "Steven Spielberg",
       "year": 1993,
       "author": "Max",
-      "rating": 8.5,
+      "rating": 9,
       "text": "Life finds a way to eat you.",
       "genres": "Adventure, Sci-Fi",
       "likeCount": 886
@@ -94,7 +94,7 @@
       "director": "Tony Leondis",
       "year": 2017,
       "author": "Owen",
-      "rating": 0.5,
+      "rating": 1,
       "text": "Should’ve stayed in my phone.",
       "genres": "Animation, Comedy",
       "likeCount": 72
@@ -160,7 +160,7 @@
       "director": "Various",
       "year": 2013,
       "author": "Henry",
-      "rating": 0.5,
+      "rating": 1,
       "text": "An assault on comedy itself.",
       "genres": "Comedy",
       "likeCount": 39
@@ -193,7 +193,7 @@
       "director": "Ridley Scott",
       "year": 2000,
       "author": "Nina",
-      "rating": 8.5,
+      "rating": 9,
       "text": "Are you not entertained? Yes.",
       "genres": "Action, Drama",
       "likeCount": 531
@@ -215,7 +215,7 @@
       "director": "Robert Zemeckis",
       "year": 1994,
       "author": "Ava",
-      "rating": 7.5,
+      "rating": 8,
       "text": "Life’s like a box of rewatches.",
       "genres": "Drama, Romance",
       "likeCount": 387
@@ -251,7 +251,7 @@
       "rating": 7,
       "text": "Jazz and heartbreak. Great combo.",
       "genres": "Musical, Romance",
-      "likeCount": 344
+      "likeCount": 347
     },
     {
       "id": "24",
@@ -259,7 +259,7 @@
       "director": "Andrew Adamson & Vicky Jenson",
       "year": 2001,
       "author": "Lily",
-      "rating": 7.5,
+      "rating": 7,
       "text": "An onion of a movie. Layers, people.",
       "genres": "Animation, Comedy",
       "likeCount": 395
@@ -270,7 +270,7 @@
       "director": "George Miller",
       "year": 2015,
       "author": "Isla",
-      "rating": 8.5,
+      "rating": 8,
       "text": "Two hours of car chases. Bliss.",
       "genres": "Action, Adventure",
       "likeCount": 487
@@ -292,7 +292,7 @@
       "director": "James Cameron",
       "year": 1997,
       "author": "Sophie",
-      "rating": 8.5,
+      "rating": 7,
       "text": "Great love story, but the door was big enough.",
       "genres": "Romance, Drama",
       "likeCount": 745
@@ -313,11 +313,11 @@
       "title": "Frozen",
       "director": "Chris Buck & Jennifer Lee",
       "year": 2013,
-      "author": "Lucas",
-      "rating": 6.5,
+      "author": "Anne",
+      "rating": 5,
       "text": "Let it go? Still stuck in my head.",
       "genres": "Animation, Musical",
-      "likeCount": 211
+      "likeCount": 217
     },
     {
       "id": "30",
@@ -329,6 +329,28 @@
       "text": "Blue people, big trees, bigger budget.",
       "genres": "Sci-Fi, Adventure",
       "likeCount": 477
+    },
+    {
+      "id": "914b",
+      "title": "The Matrix",
+      "director": "Wachowski Brothers ( Sisters ) ",
+      "year": 1999,
+      "author": "Boris",
+      "rating": 9,
+      "text": "one of the best sci-fi movies of the 20th century",
+      "genres": "sci-fi, action",
+      "likeCount": 0
+    },
+    {
+      "id": "3221",
+      "title": "zona zamfirova",
+      "director": "asd",
+      "year": 1999,
+      "author": "John",
+      "rating": 8,
+      "text": "This review has just been edited and it works properly",
+      "genres": "drama, period piece",
+      "likeCount": 2
     }
   ]
 }

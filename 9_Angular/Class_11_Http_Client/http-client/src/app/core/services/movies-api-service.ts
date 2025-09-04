@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Movie } from '../../feature/movies/models/movie-model';
+import {
+  Movie,
+  ReviewFormValue,
+} from '../../feature/movies/models/movie-model';
 
 const BASE_URL = 'http://localhost:3000';
 
@@ -24,7 +27,18 @@ export class MoviesApiService {
     return this.http.get<Movie>(`${BASE_URL}/movies/${id}`);
   }
 
-  updateMovie(id: string, reqBody: Movie) {
-    return this.http.put(`${BASE_URL}/movies/${id}`, reqBody);
+  postMovie(reqBody: ReviewFormValue) {
+    return this.http.post<Movie>(`${BASE_URL}/movies`, {
+      ...reqBody,
+      likeCount: 0,
+    });
+  }
+
+  patchMovie(id: string, reqBody: Partial<Movie>) {
+    return this.http.patch<Movie>(`${BASE_URL}/movies/${id}`, reqBody);
+  }
+
+  putMovie(id: string, reqBody: Movie) {
+    return this.http.put<Movie>(`${BASE_URL}/movies/${id}`, reqBody);
   }
 }
