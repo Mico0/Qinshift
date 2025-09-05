@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import {
   AbstractControl,
   FormControl,
@@ -7,6 +7,8 @@ import {
   Validators,
 } from '@angular/forms';
 import { Button } from '../../../../shared/components/button/button';
+import { AuthService } from '../../../../core/services/auth-service';
+import { RegisterReq } from '../../auth-model';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +17,11 @@ import { Button } from '../../../../shared/components/button/button';
   styleUrl: './register.scss',
 })
 export class Register {
+  private authService = inject(AuthService);
+
   registerForm = this.generateForm();
+
+  isSubmitted = signal(false);
 
   generateForm() {
     return new FormGroup(
@@ -55,9 +61,10 @@ export class Register {
     console.log('CONFIRM VALUE: ', confirmCtrl.value);
 
     if (passwordCtrl.value !== confirmCtrl.value) {
-      confirmCtrl.setErrors({ passwordMissmatch: true });
+      confirmCtrl.setErrors({ passwordMismatch: true });
     } else {
-      confirmCtrl.setErrors(null);
+      delete confirmCtrl.errors?.passwordMismatch;
+      confirmCtrl.setErrors({ ...confirmCtrl.errors });
     }
 
     return null;
@@ -70,18 +77,28 @@ export class Register {
   //   console.log('PASSWORD VALUE: ', passwordCtrl.value);
   //   console.log('CONFIRM VALUE: ', confirmCtrl.value);
 
-  //   if (passwordCtrl.value !== confirmCtrl.value) {
-  //     return { passwordMissmatch: true };
-  //   }
+  //   if (passwordCtrl.value !== confirmCtrl.value)
+  //     return { passwordMismatch: true };
 
   //   return null;
   // }
 
   onFormSubmit() {
+    this.isSubmitted.set(true);
     this.registerForm.markAllAsTouched();
 
     if (this.registerForm.invalid) return;
 
     console.log(this.registerForm.value);
+
+    const req: RegisterReq = {
+      firstName: this.registerForm.value.firstName,
+      lastName: this.registerForm.value.lastName,
+      username: this.registerForm.value.username,
+      email: this.registerForm.value.email,
+      password: this.registerForm.value.password,
+    };
+
+    this.authService.registerUser(req);
   }
 }

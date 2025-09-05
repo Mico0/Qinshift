@@ -74,14 +74,16 @@
           placeholder="same as password"
         />
       </div>
-      @if (registerForm.invalid && registerForm.touched) {
-        <p class="form-error">All fields are required and must be valid</p>
-      }
       @if (
         ctrls.confirmPassword.touched &&
-        ctrls.confirmPassword.errors?.passwordMissmatch
+        ctrls.confirmPassword.errors?.passwordMismatch
       ) {
-        <p class="form-error">Password and Confirm password must be the same</p>
+        <div class="control-error">
+          Password and Confirm Password must match
+        </div>
+      }
+      @if (isSubmitted() && registerForm.invalid && registerForm.touched) {
+        <p class="form-error">All fields are required and must be valid</p>
       }
 
       <div class="form-btns">
