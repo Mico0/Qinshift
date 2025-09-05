@@ -1,0 +1,77 @@
+GET http://localhost:3000/api/
+
+###
+
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+    "email": "first@gmail.com",
+    "password": "test1234",
+    "firstName": "First",
+    "lastName": "Firstson",
+    "username": "firstuser"
+}
+
+### 
+
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "first@gmail.com",
+    "password": "test1234"
+}
+
+###
+
+GET http://localhost:3000/api/auth/refresh-token
+refresh-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNiMTQ5OTY0LWZlMjctNGMyNi05ODc4LTFkZTczNGFlMGFiMyIsImlhdCI6MTcyNjI5OTcwMiwiZXhwIjoxNzI2OTA0NTAyfQ.GfHdSIUBnQeixApsfHgijJvRLcKfxdGgqhazSaus9PE
+
+###
+
+GET http://localhost:3000/api/reviews
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3MGU5NjUyLTBhNGQtNGE3MS04ZjdiLTkxY2EwMzFlY2VmNiIsImlhdCI6MTc1NjkwMjc5MSwiZXhwIjoxNzU2OTAzMzkxfQ.9Nh_BOAtkZVB2CJpkL-vIKN44m0zt4KTvln7TnOoBk4
+
+###
+
+POST http://localhost:3000/api/reviews
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3MGU5NjUyLTBhNGQtNGE3MS04ZjdiLTkxY2EwMzFlY2VmNiIsImlhdCI6MTc1NjkwMjc5MSwiZXhwIjoxNzU2OTAzMzkxfQ.9Nh_BOAtkZVB2CJpkL-vIKN44m0zt4KTvln7TnOoBk4
+Content-Type: application/json
+ 
+{
+  "title": "Good Will Hunting",
+  "year": 1997,
+  "genres": "drama",
+  "rating": 8.7,
+  "text": "An amazing story about the human character",
+  "director": "Gus Van Sant",
+  "poster": "https://image.tmdb.org/t/p/w600_and_h900_bestv2/bABCBKYBK7A5G1x0FzoeoNfuj2.jpg"
+}
+
+### 
+
+POST http://localhost:3000/api/comments
+Content-Type: application/json
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNiMTQ5OTY0LWZlMjctNGMyNi05ODc4LTFkZTczNGFlMGFiMyIsImlhdCI6MTcyNjE1ODUwNiwiZXhwIjoxNzI2MTcyOTA2fQ.EoKZQPqFnSpRoohnhxgF6CEE-dPW6eR1DmwlFqUYDeM
+
+{
+  "reviewId": 1,
+  "text": "Free javascript tutorials at punjabi.com"
+}
+
+### 
+
+POST http://localhost:3000/api/reviews/10/add-like-dislike
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJlNmVlMTY4LTc2YWMtNDI1NC04ZGNjLTg1ZDQyZmZmN2MxNyIsImlhdCI6MTcyNjE0OTc3NywiZXhwIjoxNzI2MTY0MTc3fQ.WTMagB5hc7G0J-wtRU81rTltExPoKSLcADCldNrK4yk
+Content-Type: application/json
+
+
+{
+  "type": "LIKE"
+}
+
+### 
+
+GET http://localhost:3000/api/comments/review/1
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNiMTQ5OTY0LWZlMjctNGMyNi05ODc4LTFkZTczNGFlMGFiMyIsImlhdCI6MTcyNjE2MDQ5NSwiZXhwIjoxNzI2MTc0ODk1fQ.SSif5rA4iCG-7-KazvtWAOU9LDd8syvC8jXPYkGNETE

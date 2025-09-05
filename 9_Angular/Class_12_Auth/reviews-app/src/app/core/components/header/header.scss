@@ -1,0 +1,66 @@
+.header {
+  background-color: black;
+  color: white;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  align-items: center;
+
+  strong {
+    font-size: 18px;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 45px;
+    font-weight: 300;
+    padding: 20px;
+    cursor: pointer;
+  }
+
+  .logo {
+    padding: 20px 20px;
+    margin-top: 5px;
+    img {
+      height: 60px;
+    }
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+
+    .user {
+      border: 2px solid var(--color-gold);
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      padding: 10px;
+      border-radius: 4px;
+    }
+
+    .nav-link {
+      margin: 15px;
+      font-size: 20px;
+      cursor: pointer;
+
+      a {
+        color: white;
+        text-decoration: none;
+        transition: 0.2s;
+        padding: 5px;
+        border-radius: 4px;
+      }
+
+      a:hover {
+        background-color: #fff8cdd6;
+        color: #2d3436;
+      }
+
+      .active {
+        background-color: var(--color-gold);
+        color: #2d3436;
+      }
+    }
+  }
+}

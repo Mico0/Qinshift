@@ -1,0 +1,99 @@
+@let ctrls = registerForm.controls;
+
+<section class="register-container">
+  <div class="register-form">
+    <h2>Register</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onFormSubmit()">
+      <div class="form-group">
+        <label for="register-firstname">First Name *</label>
+        <input
+          formControlName="firstName"
+          id="register-firstname"
+          type="text"
+          class="form-control"
+          placeholder="2-30 characters"
+        />
+      </div>
+      <div class="form-group">
+        <label for="register-lastname">Last Name *</label>
+        <input
+          formControlName="lastName"
+          id="register-lastname"
+          type="text"
+          class="form-control"
+          placeholder="2-30 characters"
+        />
+      </div>
+      <div class="form-group">
+        <label for="register-username">Username *</label>
+        <input
+          formControlName="username"
+          id="register-username"
+          type="text"
+          class="form-control"
+          placeholder="5-20 characters"
+        />
+      </div>
+      <div class="form-group">
+        <label for="register-email">Email *</label>
+        <input
+          formControlName="email"
+          id="register-email"
+          type="text"
+          class="form-control"
+          placeholder="valid email"
+        />
+      </div>
+      @if (ctrls.email.errors?.email) {
+        <div class="control-error">Please enter a valid email</div>
+      }
+      <div class="form-group">
+        <label for="register-password">Password *</label>
+        <input
+          formControlName="password"
+          id="register-password"
+          type="password"
+          class="form-control"
+          placeholder="valid password"
+        />
+      </div>
+      @if (
+        ctrls.password.errors?.minlength || ctrls.password.errors?.maxlength
+      ) {
+        <div class="control-error">
+          Password must be between 8-30 characters
+        </div>
+      }
+      <div class="form-group">
+        <label for="register-confirm-password">Confirm Password *</label>
+        <input
+          formControlName="confirmPassword"
+          id="register-confirm-password"
+          type="password"
+          class="form-control"
+          placeholder="same as password"
+        />
+      </div>
+      @if (registerForm.invalid && registerForm.touched) {
+        <p class="form-error">All fields are required and must be valid</p>
+      }
+      @if (
+        ctrls.confirmPassword.touched &&
+        ctrls.confirmPassword.errors?.passwordMissmatch
+      ) {
+        <p class="form-error">Password and Confirm password must be the same</p>
+      }
+
+      <div class="form-btns">
+        <app-button
+          text="Register"
+          type="submit"
+          [style]="{
+            backgroundColor: '#2C3E50',
+            color: 'white',
+          }"
+        />
+      </div>
+    </form>
+  </div>
+</section>

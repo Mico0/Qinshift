@@ -1,0 +1,17 @@
+.button {
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: none;
+  min-width: 120px;
+  background: var(--color-navy);
+  color: var(--bg-gray);
+
+  &:hover {
+    box-shadow:
+      0 10px 20px rgba(0, 0, 0, 0.19),
+      0 6px 6px rgba(0, 0, 0, 0.23);
+  }
+}
