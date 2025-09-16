@@ -6,14 +6,14 @@
 }
 
 .hero {
-  width: 75%;
-  height: 800px;
+  width: 1245px;
+  height: 830px;
   position: relative;
   color: white;
   border-radius: var(--border-radius);
   border: 2px solid rgba(255, 255, 255, 0.2);
   background: url("../../../../../public/bussiness-people-working-team-office.jpg")
-    center/cover no-repeat;
+    center/contain no-repeat;
   overflow: hidden;
 
   backdrop-filter: blur(10px) brightness(1.1);

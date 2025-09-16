@@ -11,11 +11,13 @@ export class JobsService {
   allJobs = signal<Job[]>(mockJobs);
 
   numberOfTotalJobs = computed(
-    () => this.jobs().filter((job) => job.isApplied === false).length
+    () => this.allJobs().filter((job) => job.isApplied === false).length
   );
+
   numberOfAppliedJobs = computed(
-    () => this.jobs().filter((job) => job.isApplied === true).length
+    () => this.allJobs().filter((job) => job.isApplied === true).length
   );
+
   sorted = false;
 
   selectedCompany = signal<Company>(null);
@@ -51,7 +53,7 @@ export class JobsService {
 
   filterJobs(workType?: string) {
     if (!workType || workType === 'Select') {
-      this.jobs.set(this.allJobs()); // reset to full list
+      this.jobs.set(this.allJobs());
       return;
     }
 
@@ -88,10 +90,27 @@ export class JobsService {
         return { ...job, isApplied: true };
       });
     });
+
+    this.allJobs.update((prevJobs) => {
+      return prevJobs.map((job) => {
+        if (job.id !== jobId) {
+          return job;
+        }
+        return { ...job, isApplied: true };
+      });
+    });
   }
 
   cancelApply(jobId: number) {
     this.jobs.update((prevJobs) => {
+      return prevJobs.map((job) => {
+        if (job.id !== jobId) {
+          return job;
+        }
+        return { ...job, isApplied: false };
+      });
+    });
+    this.allJobs.update((prevJobs) => {
       return prevJobs.map((job) => {
         if (job.id !== jobId) {
           return job;
