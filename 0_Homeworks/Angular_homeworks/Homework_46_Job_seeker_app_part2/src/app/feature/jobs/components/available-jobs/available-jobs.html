@@ -1,0 +1,10 @@
+<div class="container">
+  <app-info-pannel (search)="onSearchChange($event)" />
+  <ul>
+    @for (job of jobs() | searchFilter:searchValue(); track job.id ) {
+    <li>
+      <app-job-card [job]="job" />
+    </li>
+    }
+  </ul>
+</div>

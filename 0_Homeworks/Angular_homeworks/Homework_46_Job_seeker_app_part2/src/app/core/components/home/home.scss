@@ -1,0 +1,63 @@
+.container {
+  display: flex;
+  place-content: center;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.hero {
+  width: 1245px;
+  height: 830px;
+  position: relative;
+  color: white;
+  border-radius: var(--border-radius);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: url("../../../../../public/bussiness-people-working-team-office.jpg")
+    center/contain no-repeat;
+  overflow: hidden;
+
+  backdrop-filter: blur(10px) brightness(1.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  border-radius: var(--border-radius);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.45); /* darker overlay for contrast */
+  z-index: 0;
+}
+
+.hero h2,
+.hero p,
+.hero app-button {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+.hero h2 span {
+  color: var(--bright-pink);
+}
+.hero p {
+  max-width: 650px;
+  font-size: 1.2rem;
+}
+.hero ::ng-deep app-button button {
+  font-size: 1.2rem;
+}

@@ -1,0 +1,58 @@
+<div class="card">
+  <div class="card-header" (click)="onCompanyClick()">
+    <h4 class="company-name">{{ job().companyName }}</h4>
+    <img
+      [src]="job().companyLogo"
+      [alt]="job().companyName"
+      class="company-logo"
+      width="128"
+    />
+  </div>
+  <div class="card-content" appToggleReadMore>
+    <div class="card-basic-info">
+      <p class="card-expires">
+        <i class="fa-regular fa-calendar"></i> Expires:
+        {{ job().expires | date }}
+      </p>
+      <h2 class="card-position">{{ job().position }}</h2>
+      <div class="pills">
+        <p class="info-pill">
+          <i class="fa-regular fa-money-bill-1"></i>
+          {{ job().startingSalary | currency : "USD" : "symbol" : "1.0" }}
+        </p>
+        <p class="info-pill">
+          <i class="fa-solid fa-location-dot"></i> {{ job().workType }}
+        </p>
+      </div>
+      <div class="below-the-fold">
+        <div class="pills">
+          @for (qualification of qualificationsArray; track $index) {
+          <p class="info-pill">
+            {{ qualification }}
+          </p>
+          }
+        </div>
+        <p>
+          <i class="fa-regular fa-map"></i>&nbsp;Location:{{ job().location }}
+        </p>
+        <p>
+          <i class="fa-regular fa-flag"></i>&nbsp;Country: {{ job().country }}
+        </p>
+
+        <p>
+          Has been applied to: @if (job().isApplied) {
+          <i class="fa-solid fa-check yes"></i>
+          } @else {
+          <i class="fa-solid fa-xmark no"></i>
+          }
+        </p>
+      </div>
+    </div>
+
+    <div class="card-controls">
+      <app-button [text]="'Read more'" [icon]="'more'" />
+
+      <app-button (btnClick)="onApplyJob()" [text]="'Apply'" [icon]="'send'" />
+    </div>
+  </div>
+</div>

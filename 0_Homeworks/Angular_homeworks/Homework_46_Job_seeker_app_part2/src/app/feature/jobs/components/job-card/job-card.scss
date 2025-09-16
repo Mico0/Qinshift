@@ -1,0 +1,103 @@
+.card {
+  width: 30rem;
+  display: flex;
+  place-items: center;
+  place-content: space-evenly;
+  gap: 1.5rem;
+  padding: 1rem;
+  color: var(--midnight);
+  border-radius: var(--border-radius);
+  border: 2px solid rgb(255, 255, 255, 0.2);
+  background-color: rgb(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px) brightness(1.1);
+}
+
+.card-content {
+  display: flex;
+  place-items: center;
+  place-content: space-evenly;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.card-header {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  place-content: center;
+  place-items: center;
+  gap: 0.4rem;
+  position: relative;
+  height: 100%;
+  width: 10rem;
+  padding: 0.5rem;
+  // border: 3px solid black;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  border: 2px solid rgb(255, 255, 255, 0.2);
+  background-color: rgb(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px) brightness(1.1);
+}
+
+.company-logo {
+  border-radius: var(--border-radius);
+}
+
+.card-basic-info {
+  text-align: left;
+}
+
+.card-expires {
+  font-size: 0.8rem;
+}
+
+.pills {
+  display: flex;
+  place-content: flex-start;
+  place-items: center;
+  gap: 0.3rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: white;
+}
+
+.info-pill {
+  box-shadow: inset 0 0 1.6em -0.6em var(--bright-pink);
+  border: none;
+  border-radius: var(--border-radius);
+  background-color: var(--midnight);
+  padding: 0.5rem;
+  margin: 0.2rem 0;
+  text-align: center;
+}
+
+i {
+  margin-right: 0.3rem;
+  color: var(--bright-pink);
+}
+.card-controls {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.below-the-fold {
+  display: flex;
+  max-height: 0px;
+  overflow: hidden;
+  flex-direction: column;
+  place-content: center;
+  place-items: flex-start;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  transition: 0.3s ease-in-out;
+  .pills {
+    font-size: 0.5rem;
+  }
+  .yes {
+    color: green;
+  }
+  .no {
+    color: crimson;
+  }
+}
