@@ -1,0 +1,78 @@
+$spinkit-size: 4.5em !default;
+$spinkit-spinner-color: #feb508 !default;
+
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+
+  height: 100vh;
+  width: 100vw;
+
+  background-color: #00000082;
+  z-index: 999999;
+}
+
+.sk-cube-grid {
+  $delayRange: 0.4s;
+
+  width: $spinkit-size;
+  height: $spinkit-size;
+  margin: auto;
+
+  .sk-cube {
+    width: 33%;
+    height: 33%;
+    background-color: $spinkit-spinner-color;
+    float: left;
+    animation: sk-cube-grid-scale-delay 1.3s infinite ease-in-out;
+  }
+
+  /*
+       * Spinner positions
+       * 1 2 3
+       * 4 5 6
+       * 7 8 9
+       */
+
+  .sk-cube-1 {
+    animation-delay: ($delayRange * 0.5);
+  }
+  .sk-cube-2 {
+    animation-delay: ($delayRange * 0.75);
+  }
+  .sk-cube-3 {
+    animation-delay: $delayRange;
+  }
+  .sk-cube-4 {
+    animation-delay: ($delayRange * 0.25);
+  }
+  .sk-cube-5 {
+    animation-delay: ($delayRange * 0.5);
+  }
+  .sk-cube-6 {
+    animation-delay: ($delayRange * 0.75);
+  }
+  .sk-cube-7 {
+    animation-delay: 0s;
+  }
+  .sk-cube-8 {
+    animation-delay: ($delayRange * 0.25);
+  }
+  .sk-cube-9 {
+    animation-delay: ($delayRange * 0.5);
+  }
+}
+
+@keyframes sk-cube-grid-scale-delay {
+  0%,
+  70%,
+  100% {
+    transform: scale3D(1, 1, 1);
+  }
+  35% {
+    transform: scale3D(0, 0, 1);
+  }
+}

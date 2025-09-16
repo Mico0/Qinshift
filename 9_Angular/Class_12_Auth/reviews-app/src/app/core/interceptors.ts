@@ -1,8 +1,11 @@
 import { HttpHandlerFn, HttpRequest } from '@angular/common/http';
 import { AuthService } from './services/auth-service';
 import { inject } from '@angular/core';
+import { SpinnerService } from './services/spinner-service';
+import { finalize, tap } from 'rxjs';
 
 export const authInterceptor = (req: HttpRequest<any>, next: HttpHandlerFn) => {
+  //In special cases like interceptors or guards we can inject in the functions
   const authService = inject(AuthService);
 
   if (
@@ -24,4 +27,15 @@ export const authInterceptor = (req: HttpRequest<any>, next: HttpHandlerFn) => {
   });
 
   return next(clone);
+};
+
+export const spinnerInterceptor = (
+  req: HttpRequest<any>,
+  next: HttpHandlerFn,
+) => {
+  const spinnerService = inject(SpinnerService);
+
+  spinnerService.toggleSpinner(true);
+
+  return next(req).pipe(finalize(() => spinnerService.toggleSpinner(false)));
 };
