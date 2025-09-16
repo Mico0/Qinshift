@@ -1,0 +1,43 @@
+@if (selectedReview()) {
+  <section class="container">
+    <div class="review-details">
+      <div class="details-poster">
+        <img [src]="selectedReview().poster" alt="the poster of the movie" />
+      </div>
+      <div class="details-info">
+        <div class="info-heading">
+          <div>
+            <h3>
+              {{ selectedReview().title }}
+              <span>{{ selectedReview().year }}</span>
+            </h3>
+            <div class="genres">
+              @for (genre of genresArr(); track genre) {
+                <span>{{ genre }}</span>
+              }
+            </div>
+          </div>
+          <h3>
+            {{ selectedReview().rating }} / 10
+            <i class="fa-solid fa-star"></i>
+          </h3>
+        </div>
+        <div class="info-body">
+          <p>{{ selectedReview().text }}</p>
+          <div class="info-footer">
+            <em>
+              by
+              {{ selectedReview().user.firstName }}
+              {{ selectedReview().user.lastName }}
+            </em>
+            @if (userData().id === selectedReview().user.id) {
+              <div class="edit-link">
+                Edit <i class="fa-solid fa-pen-to-square"></i>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+}

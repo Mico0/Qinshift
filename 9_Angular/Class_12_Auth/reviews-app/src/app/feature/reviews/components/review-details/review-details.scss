@@ -1,0 +1,128 @@
+.container {
+  margin: 50px 10%;
+}
+
+.comments {
+  h3 {
+    text-align: center;
+  }
+}
+
+.review-details {
+  display: grid;
+  grid-template-columns: 0.3fr 0.7fr;
+  gap: 40px;
+
+  h3 {
+    text-align: center;
+  }
+
+  .details-poster {
+    width: 100%;
+    img {
+      box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.19),
+        0 6px 6px rgba(0, 0, 0, 0.23);
+      width: 100%;
+    }
+  }
+
+  .details-info {
+    display: grid;
+    grid-template-rows: max-content 1fr;
+
+    em {
+      color: #2c3e50;
+    }
+
+    .genres {
+      display: flex;
+      padding-top: 10px;
+      gap: 10px;
+
+      span {
+        color: #2c3e50;
+        border-radius: 30px;
+        padding: 2px 12px;
+        border: 1px solid #2c3e50;
+      }
+    }
+
+    .info-heading {
+      display: flex;
+      justify-content: space-between;
+
+      .fa-star {
+        color: #feb508;
+      }
+    }
+
+    h3 {
+      font-size: 30px;
+      font-weight: 400;
+      margin: 0;
+    }
+
+    .info-body {
+      display: grid;
+      grid-template-rows: 1fr max-content;
+
+      p {
+        align-self: center;
+        font-size: 16px;
+      }
+
+      .info-footer {
+        display: grid;
+        grid-template-columns: 1fr max-content max-content;
+        gap: 10px;
+        align-items: center;
+        border-top: 2px solid rgb(205, 205, 205);
+        padding-top: 20px;
+
+        em {
+          font-size: 18px;
+        }
+
+        .edit-link {
+          background-color: rgb(173, 172, 184);
+          border: 1px solid lightgray;
+          border-radius: 30px;
+          font-size: 22px;
+          padding: 5px 10px;
+          cursor: pointer;
+        }
+
+        .likes-dislikes-panel {
+          display: flex;
+          background-color: rgb(173, 172, 184);
+          border: 1px solid lightgray;
+          border-radius: 30px;
+
+          > div {
+            cursor: pointer;
+            font-size: 24px;
+            padding: 5px 10px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+
+            i {
+              transition: 0.2s;
+            }
+
+            .fa-regular.fa-thumbs-up:hover {
+              transform: rotate(-30deg) scale(1.5);
+              color: darkgreen;
+            }
+
+            .fa-regular.fa-thumbs-down:hover {
+              transform: rotate(10deg) scale(1.5);
+              color: darkred;
+            }
+          }
+        }
+      }
+    }
+  }
+}

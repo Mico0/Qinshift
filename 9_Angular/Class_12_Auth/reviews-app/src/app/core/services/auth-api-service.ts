@@ -1,6 +1,10 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { RegisterReq } from '../../feature/auth/auth-model';
+import {
+  RegisterReq,
+  User,
+  UserCredentials,
+} from '../../feature/auth/auth-model';
 import { BASE_URL } from '../core-constants';
 
 @Injectable({
@@ -11,5 +15,19 @@ export class AuthApiService {
 
   registerUser(req: RegisterReq) {
     return this.http.post(`${BASE_URL}/auth/register`, req);
+  }
+
+  loginUser(credentials: UserCredentials) {
+    return this.http.post<User>(`${BASE_URL}/auth/login`, credentials, {
+      observe: 'response',
+    });
+  }
+
+  logoutUser(refreshToken: string) {
+    return this.http.get(`${BASE_URL}/auth/logout`, {
+      headers: {
+        'refresh-token': refreshToken,
+      },
+    });
   }
 }

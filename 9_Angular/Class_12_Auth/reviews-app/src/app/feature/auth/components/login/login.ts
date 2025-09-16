@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -6,6 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Button } from '../../../../shared/components/button/button';
+import { AuthService } from '../../../../core/services/auth-service';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +15,8 @@ import { Button } from '../../../../shared/components/button/button';
   styleUrl: './login.scss',
 })
 export class Login {
+  private authService = inject(AuthService);
+
   loginForm = this.generateForm();
 
   generateForm() {
@@ -29,5 +32,10 @@ export class Login {
     if (this.loginForm.invalid) return;
 
     console.log(this.loginForm.value);
+
+    this.authService.loginUser({
+      email: this.loginForm.value.email,
+      password: this.loginForm.value.password,
+    });
   }
 }

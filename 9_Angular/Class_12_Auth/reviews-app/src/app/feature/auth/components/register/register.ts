@@ -64,7 +64,7 @@ export class Register {
       confirmCtrl.setErrors({ passwordMismatch: true });
     } else {
       delete confirmCtrl.errors?.passwordMismatch;
-      confirmCtrl.setErrors({ ...confirmCtrl.errors });
+      confirmCtrl.setErrors(null);
     }
 
     return null;

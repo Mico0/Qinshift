@@ -1,0 +1,17 @@
+<div [routerLink]="'/details/' + review().id" class="review-item">
+  <div class="item-poster">
+    <img [src]="review().poster" alt="image of the movie poster" />
+  </div>
+  <div class="item-info">
+    <div class="info-rating">
+      <span>{{ review().rating }}/10 <i class="fa-solid fa-star"></i></span>
+      <span>
+        {{ review().likes.length }} <i class="fa-regular fa-thumbs-up"></i>
+        {{ review().dislikes.length }} <i class="fa-regular fa-thumbs-down"></i>
+      </span>
+    </div>
+    <div class="info-author">
+      by {{ review().user.firstName }} {{ review().user.lastName }}
+    </div>
+  </div>
+</div>

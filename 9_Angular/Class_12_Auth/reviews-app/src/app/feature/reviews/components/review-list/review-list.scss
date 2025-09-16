@@ -1,0 +1,10 @@
+section {
+  h2 {
+    margin: 0;
+  }
+}
+
+.reviews-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
