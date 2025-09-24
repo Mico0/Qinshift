@@ -1,0 +1,192 @@
+
+
+POST http://localhost:3000/api/jobs/many
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA3NzI2YWQ2LTBlZGEtNDVlYi04MDdhLTM2YTlhYjYzNGFjMiIsImlhdCI6MTcyNTg4MDE5MCwiZXhwIjoxNzI1ODk0NTkwfQ.27-sUwEo6uooTHh4HO_kmxdTYObQKsMdP1vfFRAEFxw
+
+
+[
+  {
+    "expires": "2024-12-31",
+    "position": "Software Engineer",
+    "startingSalary": 80000,
+    "workType": "remote",
+    "location": "New York, NY",
+    "country": "USA",
+    "qualifications": "Bachelor's degree in Computer Science or related field.",
+    "jobDescription": "We are looking for a skilled software engineer to join our team remotely. The ideal candidate will have experience with JavaScript, Python, and cloud-based services. You will be responsible for developing scalable software solutions, collaborating with other developers, and implementing new features based on client needs.",
+    "companyName": "Tech Solutions Inc.",
+    "companyLogo": "https://example.com/logos/tech_solutions_logo.png",
+    "companyAddress": "1234 Silicon Avenue, New York, NY",
+    "companyIndustry": "Technology",
+    "companyWebsite": "https://www.techsolutions.com"
+  },
+  {
+    "expires": "2024-11-15",
+    "position": "Marketing Specialist",
+    "startingSalary": 50000,
+    "workType": "onsite",
+    "location": "Los Angeles, CA",
+    "country": "USA",
+    "qualifications": "Bachelor's degree in Marketing or related field.",
+    "jobDescription": "We are looking for a creative marketing specialist to join our dynamic team. The candidate should be proficient in digital marketing, SEO, and content creation. You will work closely with the marketing manager to develop and execute marketing strategies that drive brand awareness and lead generation.",
+    "companyName": "Creative Marketing Group",
+    "companyLogo": "https://example.com/logos/creative_marketing_logo.png",
+    "companyAddress": "5678 Market Street, Los Angeles, CA",
+    "companyIndustry": "Marketing",
+    "companyWebsite": "https://www.creativemarketinggroup.com"
+  },
+  {
+    "expires": "2024-10-01",
+    "position": "Data Scientist",
+    "startingSalary": 95000,
+    "workType": "hybrid",
+    "location": "San Francisco, CA",
+    "country": "USA",
+    "qualifications": "Master's degree in Data Science or related field.",
+    "jobDescription": "We are hiring a data scientist to help us make data-driven decisions. The candidate should have experience in machine learning, data analysis, and statistical modeling. You will work with a team of data professionals to analyze large datasets and provide insights that drive business strategy.",
+    "companyName": "Data Insights Corp.",
+    "companyLogo": "https://example.com/logos/data_insights_logo.png",
+    "companyAddress": "9876 Data Drive, San Francisco, CA",
+    "companyIndustry": "Data Science",
+    "companyWebsite": "https://www.datainsightscorp.com"
+  },
+  {
+    "expires": "2025-01-15",
+    "position": "Human Resources Manager",
+    "startingSalary": 70000,
+    "workType": "onsite",
+    "location": "Chicago, IL",
+    "country": "USA",
+    "qualifications": "Bachelor's degree in Human Resources or related field.",
+    "jobDescription": "Our company is seeking an experienced HR Manager to lead our human resources team. The ideal candidate will have experience in talent acquisition, employee relations, and compliance. You will be responsible for managing HR policies and ensuring a positive workplace culture.",
+    "companyName": "People First Solutions",
+    "companyLogo": "https://example.com/logos/people_first_logo.png",
+    "companyAddress": "2468 HR Avenue, Chicago, IL",
+    "companyIndustry": "Human Resources",
+    "companyWebsite": "https://www.peoplefirstsolutions.com"
+  },
+  {
+    "expires": "2024-09-30",
+    "position": "Project Manager",
+    "startingSalary": 85000,
+    "workType": "remote",
+    "location": "Seattle, WA",
+    "country": "USA",
+    "qualifications": "PMP Certification or equivalent.",
+    "jobDescription": "We are looking for a remote project manager to oversee our software development projects. The candidate should have strong leadership skills, experience in agile methodologies, and the ability to manage multiple projects simultaneously. You will be coordinating between teams and ensuring project goals are met.",
+    "companyName": "Agile Project Solutions",
+    "companyLogo": "https://example.com/logos/agile_project_logo.png",
+    "companyAddress": "3456 Agile Road, Seattle, WA",
+    "companyIndustry": "Project Management",
+    "companyWebsite": "https://www.agileprojectsolutions.com"
+  },
+  {
+    "expires": "2024-08-20",
+    "position": "UX/UI Designer",
+    "startingSalary": 60000,
+    "workType": "hybrid",
+    "location": "Austin, TX",
+    "country": "USA",
+    "qualifications": "Bachelor's degree in Design or related field.",
+    "jobDescription": "Join our design team as a UX/UI Designer where you will be responsible for creating user-friendly and visually appealing interfaces. The ideal candidate will have experience with Figma, Adobe XD, and user testing methodologies. You will collaborate with product managers and developers to enhance the user experience.",
+    "companyName": "Design Innovations",
+    "companyLogo": "https://example.com/logos/design_innovations_logo.png",
+    "companyAddress": "6543 Design Blvd, Austin, TX",
+    "companyIndustry": "Design",
+    "companyWebsite": "https://www.designinnovations.com"
+  },
+  {
+    "expires": "2024-11-30",
+    "position": "Product Manager",
+    "startingSalary": 90000,
+    "workType": "onsite",
+    "location": "Boston, MA",
+    "country": "USA",
+    "qualifications": "MBA or equivalent experience.",
+    "jobDescription": "We are seeking a product manager to lead the development of new products from conception to launch. The ideal candidate will have experience in product lifecycle management, market research, and cross-functional team leadership. You will be working closely with engineering, marketing, and sales teams.",
+    "companyName": "Product Masters LLC",
+    "companyLogo": "https://example.com/logos/product_masters_logo.png",
+    "companyAddress": "7890 Product Lane, Boston, MA",
+    "companyIndustry": "Product Development",
+    "companyWebsite": "https://www.productmasters.com"
+  },
+  {
+    "expires": "2024-07-15",
+    "position": "Financial Analyst",
+    "startingSalary": 70000,
+    "workType": "remote",
+    "location": "Remote",
+    "country": "USA",
+    "qualifications": "Bachelor's degree in Finance or related field.",
+    "jobDescription": "Our company is looking for a financial analyst who will be responsible for analyzing financial data, preparing reports, and advising on financial decisions. The candidate should have strong analytical skills, knowledge of financial modeling, and experience with financial software tools.",
+    "companyName": "Finance Experts Inc.",
+    "companyLogo": "https://example.com/logos/finance_experts_logo.png",
+    "companyAddress": "9012 Finance Road, Remote",
+    "companyIndustry": "Finance",
+    "companyWebsite": "https://www.financeexperts.com"
+  },
+  {
+    "expires": "2024-10-20",
+    "position": "Operations Manager",
+    "startingSalary": 75000,
+    "workType": "hybrid",
+    "location": "Houston, TX",
+    "country": "USA",
+    "qualifications": "Bachelor's degree in Business Administration.",
+    "jobDescription": "We are hiring an operations manager to streamline our operations and improve efficiency. The ideal candidate will have experience in logistics, supply chain management, and process optimization. You will be responsible for managing daily operations, setting performance metrics, and ensuring operational goals are met.",
+    "companyName": "Efficiency Experts Ltd.",
+    "companyLogo": "https://example.com/logos/efficiency_experts_logo.png",
+    "companyAddress": "3450 Operations Blvd, Houston, TX",
+    "companyIndustry": "Operations",
+    "companyWebsite": "https://www.efficiencyexperts.com"
+  },
+  {
+    "expires": "2025-02-28",
+    "position": "Business Development Executive",
+    "startingSalary": 85000,
+    "workType": "onsite",
+    "location": "Miami, FL",
+    "country": "USA",
+    "qualifications": "Bachelor's degree in Business or related field.",
+    "jobDescription": "We are looking for a business development executive to expand our market reach and drive new business opportunities. The ideal candidate will have experience in sales, client relationship management, and strategic planning. You will work closely with the marketing team to identify new prospects and develop sales strategies.",
+    "companyName": "Growth Solutions Ltd.",
+    "companyLogo": "https://example.com/logos/growth_solutions_logo.png",
+    "companyAddress": "5670 Business Road, Miami, FL",
+    "companyIndustry": "Business Development",
+    "companyWebsite": "https://www.growthsolutions.com"
+  }
+]
+
+###
+
+GET http://localhost:3000/api/jobs
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjA3NzI2YWQ2LTBlZGEtNDVlYi04MDdhLTM2YTlhYjYzNGFjMiIsImlhdCI6MTcyNTg4MDE5MCwiZXhwIjoxNzI1ODk0NTkwfQ.27-sUwEo6uooTHh4HO_kmxdTYObQKsMdP1vfFRAEFxw
+
+
+### Register
+
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+    "firstName": "Test",
+    "lastName": "Rest",
+    "email": "test@gmail.com",
+    "username": "test001",
+    "password": "test1234",
+    "country": "USA",
+    "city": "New York",
+    "yearsOfExperience": 5,
+    "workStatus": "searching"
+}
+
+### Login
+
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "test@gmail.com",
+    "password": "test1234"
+}

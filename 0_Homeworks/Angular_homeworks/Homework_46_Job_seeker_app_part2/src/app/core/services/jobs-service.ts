@@ -1,14 +1,17 @@
-import { computed, Injectable, signal } from '@angular/core';
+import { computed, inject, Injectable, signal } from '@angular/core';
 import { Job } from '../../feature/jobs/models/jobs.model';
 import { mockJobs } from '../../feature/jobs/jobsMock';
 import { Company } from '../../feature/companies/models/company.model';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class JobsService {
   jobs = signal<Job[]>([]);
-  allJobs = signal<Job[]>(mockJobs);
+  allJobs = signal<Job[]>([...mockJobs]);
+
+  private router = inject(Router);
 
   numberOfTotalJobs = computed(
     () => this.allJobs().filter((job) => job.isApplied === false).length
@@ -22,9 +25,20 @@ export class JobsService {
 
   selectedCompany = signal<Company>(null);
 
+  selectedJob = signal<Job>(null);
+
   getJobs() {
     this.jobs.set(this.allJobs());
     // console.log(this.jobs());
+  }
+
+  selectJob(id: number): Job {
+    const job = this.jobs().find((job) => job.id === id);
+    if (!job) return undefined;
+
+    this.selectedJob.set(job);
+
+    return job;
   }
 
   selectCompany(id: number): Company | undefined {
@@ -110,6 +124,7 @@ export class JobsService {
         return { ...job, isApplied: false };
       });
     });
+
     this.allJobs.update((prevJobs) => {
       return prevJobs.map((job) => {
         if (job.id !== jobId) {
@@ -118,5 +133,38 @@ export class JobsService {
         return { ...job, isApplied: false };
       });
     });
+  }
+
+  addJob(job: Job) {
+    this.allJobs.update((prevJobs) => [...prevJobs, job]);
+    this.jobs.update((prevJobs) => [...prevJobs, job]);
+    mockJobs.push(job);
+    this.router.navigate(['/jobs']);
+  }
+
+  updateJob(updatedJob: Job) {
+    this.allJobs.update((prevJobs) =>
+      prevJobs.map((prevJob) =>
+        prevJob.id === updatedJob.id ? { ...prevJob, ...updatedJob } : prevJob
+      )
+    );
+
+    this.jobs.update((prevJobs) =>
+      prevJobs.map((prevJob) =>
+        prevJob.id === updatedJob.id ? { ...prevJob, ...updatedJob } : prevJob
+      )
+    );
+
+    // console.log(updatedJob.id);
+
+    const index = mockJobs.findIndex((j) => j.id === Number(updatedJob.id));
+
+    if (index !== -1) {
+      mockJobs[index] = { ...mockJobs[index], ...updatedJob };
+    } else {
+      console.log('Job not found');
+    }
+
+    this.router.navigate(['/jobs']);
   }
 }

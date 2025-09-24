@@ -4,6 +4,8 @@ import { CompanyProfile } from './feature/companies/components/company-profile/c
 import { Profile } from './feature/profile/components/profile/profile';
 import { NotFound } from './core/components/not-found/not-found';
 import { Home } from './core/components/home/home';
+import { AddJob } from './feature/jobs/components/add-job/add-job';
+import { EditJob } from './feature/jobs/components/edit-job/edit-job';
 
 export const routes: Routes = [
   {
@@ -21,6 +23,14 @@ export const routes: Routes = [
   {
     path: 'profile',
     component: Profile,
+  },
+  {
+    path: 'add-job',
+    component: AddJob,
+  },
+  {
+    path: 'edit-job',
+    component: EditJob,
   },
   {
     path: '**',

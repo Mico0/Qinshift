@@ -33,6 +33,9 @@ export class Button {
     if (icon === 'sort') {
       this.chosenIcon = 'fa-solid fa-sort';
     }
+    if (icon === 'edit') {
+      this.chosenIcon = 'fa-regular fa-pen-to-square';
+    }
   }
 
   onBtnClick() {

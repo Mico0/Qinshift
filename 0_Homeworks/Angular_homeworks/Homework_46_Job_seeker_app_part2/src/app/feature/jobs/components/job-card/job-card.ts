@@ -30,6 +30,12 @@ export class JobCard {
     console.log(this.jobService.selectCompany(this.job().id));
   }
 
+  onEditClick() {
+    this.jobService.selectJob(this.job().id);
+    this.router.navigate(['edit-job']);
+    // console.log(this.jobService.selectJob(this.job().id));
+  }
+
   onApplyJob() {
     this.jobService.applyJob(this.job().id);
 

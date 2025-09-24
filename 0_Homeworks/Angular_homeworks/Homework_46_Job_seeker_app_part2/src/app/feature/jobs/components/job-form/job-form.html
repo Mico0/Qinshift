@@ -1,0 +1,72 @@
+<form [formGroup]="jobForm" (ngSubmit)="onSubmit()" class="job-form">
+  <div>
+    <label>Company Name</label>
+    <input formControlName="companyName" />
+  </div>
+
+  <div>
+    <label>Company Logo (URL)</label>
+    <input formControlName="companyLogo" />
+  </div>
+
+  <div>
+    <label>Expires</label>
+    <input type="date" formControlName="expires" />
+  </div>
+
+  <div>
+    <label>Position</label>
+    <input formControlName="position" />
+  </div>
+
+  <div>
+    <label>Starting Salary</label>
+    <input type="number" formControlName="startingSalary" />
+  </div>
+
+  <div>
+    <label>Work Type</label>
+    <select formControlName="workType">
+      @for (type of workType; track $index) {
+      <option [value]="type">{{ type }}</option>
+      }
+    </select>
+  </div>
+
+  <div>
+    <label>Location</label>
+    <input formControlName="location" />
+  </div>
+
+  <div>
+    <label>Country</label>
+    <input formControlName="country" />
+  </div>
+
+  <div>
+    <label>Qualifications</label>
+    <textarea formControlName="qualifications"></textarea>
+  </div>
+
+  <div>
+    <label>Description</label>
+    <textarea formControlName="description"></textarea>
+  </div>
+
+  <div>
+    <label>Company Address</label>
+    <input formControlName="companyAddress" />
+  </div>
+
+  <div>
+    <label>Industry</label>
+    <input formControlName="companyIndustry" />
+  </div>
+
+  <div>
+    <label>Website</label>
+    <input formControlName="companyWebsite" />
+  </div>
+
+  <button type="submit" [disabled]="jobForm.invalid">Post Job</button>
+</form>

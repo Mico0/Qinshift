@@ -1,0 +1,104 @@
+footer {
+  display: flex;
+  position: sticky;
+  top: 0;
+  margin: 0.5rem auto;
+  width: 85%;
+  border-radius: 0.5rem;
+  place-content: space-between;
+  place-items: center;
+  gap: 0.2rem;
+  padding: 0.5rem 2rem;
+  border: 2px solid rgb(255, 255, 255, 0.5);
+  background-color: rgb(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px) brightness(1.1);
+
+  color: var(--midnight);
+  z-index: 99;
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    gap: 1rem;
+    a {
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--midnight);
+      transition: 0.5 ease-in;
+      padding: 0.2rem 0.5rem;
+
+      &:hover {
+        color: var(--bright-pink);
+      }
+    }
+  }
+
+  h1 {
+    span {
+      color: var(--bright-pink);
+    }
+  }
+
+  .active {
+    border: 2px solid rgb(255, 255, 255, 0.2);
+    background-color: rgb(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px) brightness(1.1);
+    border-radius: 5px;
+    color: var(--bright-pink) !important;
+  }
+}
+
+.social-media a {
+  position: relative;
+  margin-right: 15px;
+  text-decoration: none;
+
+  color: white;
+}
+
+.social-media a:last-child {
+  margin-right: 0;
+}
+
+.social-media a svg {
+  width: 1.1rem;
+  fill: currentColor;
+}
+.tooltip-social {
+  background: #262626;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  padding: 0.5rem 0.4rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -90%);
+  transition: all 0.2s ease;
+  z-index: 1;
+}
+.tooltip-social:after {
+  content: " ";
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  border: solid;
+  border-width: 10px 10px 0 10px;
+  border-color: transparent;
+  transform: translate(-50%, 100%);
+}
+
+.social-media a .tooltip-social:after {
+  border-top-color: #262626;
+}
+
+.social-media a:hover .tooltip-social {
+  opacity: 1;
+  transform: translate(-50%, -130%);
+}

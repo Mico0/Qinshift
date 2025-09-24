@@ -1,4 +1,5 @@
 <div class="panels">
+  @if (numAppliedToJobs() > 0){
   <div class="info-panel jobs-info-panel">
     <h3>Jobs you have applied to:</h3>
     <ul>
@@ -23,6 +24,7 @@
       }
     </ul>
   </div>
+  }
   <div class="info-panel">
     <h3>Info Panel:</h3>
     <h4>

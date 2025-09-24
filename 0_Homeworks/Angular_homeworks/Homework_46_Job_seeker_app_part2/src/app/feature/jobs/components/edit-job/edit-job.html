@@ -1,0 +1,7 @@
+<section class="container">
+  <h2>Edit a Job Posting</h2>
+  <app-job-form
+    [editJobDatta]="selectedJob()"
+    (submitOutput)="onEditJob($event, selectedJob().id)"
+  />
+</section>

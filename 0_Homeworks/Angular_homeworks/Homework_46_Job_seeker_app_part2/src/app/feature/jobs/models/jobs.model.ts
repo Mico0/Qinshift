@@ -1,5 +1,5 @@
 export interface Job {
-  id: number;
+  id?: number;
   // Mandatory to be shown in the posting
   companyName: string;
   companyLogo: string;
